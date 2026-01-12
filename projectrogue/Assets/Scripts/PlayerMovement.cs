@@ -1,38 +1,26 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
-public class playerMovement : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     public Rigidbody2D rb;
-    private Vector2 moveDirection;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
+    private Vector2 moveInput;
 
+    private void Awake()
+    {
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnMove(InputValue value)
     {
-        ProcessInputs();
+        moveInput = value.Get<Vector2>();
     }
 
     private void FixedUpdate()
     {
-        Move();
-    }
-
-    void ProcessInputs()
-    {
-        float moveX = Input.GetAxisRaw("Horizontal");
-        float moveY = Input.GetAxisRaw("Vertical");
-
-        moveDirection = new Vector2(moveX, moveY).normalized;
-    }
-
-    public void Move()
-    {
-        rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, moveDirection.y * moveSpeed);
+        Vector2 direction = moveInput.normalized; // normalized prevents faster diagonal movement
+        rb.linearVelocity = direction * moveSpeed;
     }
 }
