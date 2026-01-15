@@ -283,7 +283,7 @@
                     "name": "Cancel",
                     "type": "Button",
                     "id": "2ecf8e70-de5b-4f88-83d8-8d0549e08261",
-                    "expectedControlType": "Button",
+                    "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
