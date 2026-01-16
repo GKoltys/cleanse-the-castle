@@ -1,5 +1,7 @@
-using UnityEditor;
 using UnityEngine;
+#if UNITY_EDITOR
+using UnityEditor;
+#endif
 
 public class PauseMenuController : MonoBehaviour
 {
@@ -35,6 +37,10 @@ public class PauseMenuController : MonoBehaviour
 
     public void QuitGame()
     {
+    #if UNITY_EDITOR
         EditorApplication.isPlaying = false;
+    #else
+        Application.Quit();
+    #endif
     }
 }
