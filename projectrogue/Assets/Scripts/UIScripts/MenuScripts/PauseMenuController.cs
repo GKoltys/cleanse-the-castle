@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -35,8 +37,15 @@ public class PauseMenuController : MonoBehaviour
         menuCanvas.SetActive(false);
     }
 
+    public void QuitMainMenu()
+    {
+        OnSavePressed();
+        SceneManager.LoadSceneAsync(0);
+    }
+
     public void QuitGame()
     {
+        OnSavePressed();
     #if UNITY_EDITOR
         EditorApplication.isPlaying = false;
     #else
