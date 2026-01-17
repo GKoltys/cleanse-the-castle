@@ -1,5 +1,8 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.EventSystems;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -16,12 +19,48 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private TileBase floorTile;
     [SerializeField] private TileBase wallTile;
 
-	private void Start()
+    [SerializeField] private Transform entitiesRoot;
+    [SerializeField] private GameObject stairsPrefab;
+    [SerializeField] private int minDistanceFromPlayer = 10;
+
+    [SerializeField] private CanvasGroup fadeCanvasGroup;
+    [SerializeField] private float fadeDuration = 0.35f;
+
+    private MapData currentMap;
+    private GameObject currentStairs;
+    private bool isTransitioning;
+
+    private void Start()
 	{
-		var map = GenerateRoom(width, height, padding);
-		Render(map);
-        PlacePlayerInCenter(map);
+        BuildFloor();
 	}
+
+    private void BuildFloor()
+    {
+        currentMap = GenerateRoom(width, height, padding);
+        Render(currentMap);
+        PlacePlayerInCenter(currentMap);
+        PlacePrefabs(currentMap);
+    }
+
+    public void GoToNextFloor()
+    {
+        if (!isTransitioning)
+            StartCoroutine(NextFloorRoutine());
+    }
+
+    private IEnumerator NextFloorRoutine()
+    {
+        isTransitioning = true;
+
+        yield return FadeOut();
+
+        BuildFloor();
+
+        yield return FadeIn();
+
+        isTransitioning = false;
+    }
 
 	private MapData GenerateRoom(int w, int h, int pad)
 	{
@@ -74,8 +113,8 @@ public class MapGenerator : MonoBehaviour
 	private void Render(MapData map)
 	{
         // for clearing previous generated map's tiles
-		//floorTilemap.ClearAllTiles();
-		//wallTilemap.ClearAllTiles();
+		floorTilemap.ClearAllTiles();
+		wallTilemap.ClearAllTiles();
 
         // for each tile sets to which TileType it is
         for (int x = 0; x < map.width; x++)
@@ -102,5 +141,71 @@ public class MapGenerator : MonoBehaviour
         // Center player in the tile
         player.position = new Vector3(x + 0.5f, y + 0.5f, 0f);
     }
+
+    private void PlacePrefabs(MapData map)
+    {
+        // for clearing previous prefabs (just stairs atm)
+        if (currentStairs != null) Destroy(currentStairs);
+
+        // Collect floor tiles
+        var floors = new List<Vector2Int>(map.width * map.height);
+        for (int x = 0; x < map.width; x++)
+            for (int y = 0; y < map.height; y++)
+                if (map.tiles[x, y] == TileType.Floor)
+                    floors.Add(new Vector2Int(x, y));
+
+        // Pick random floor tile far enough from player
+        Vector2 playerGrid = new Vector2(player.position.x, player.position.y);
+        Vector2Int chosen = floors[Random.Range(0, floors.Count)];
+
+        for (int i = 0; i < 30; i++)
+        {
+            var candidate = floors[Random.Range(0, floors.Count)];
+            float dist = Vector2.Distance(new Vector2(candidate.x + 0.5f, candidate.y + 0.5f), playerGrid);
+            if (dist >= minDistanceFromPlayer)
+            {
+                chosen = candidate;
+                break;
+            }
+        }
+
+        // Spawn stairs GameObject at the tile center
+        Vector3 worldPos = new Vector3(chosen.x + 0.5f, chosen.y + 0.5f, 0f);
+        currentStairs = Instantiate(stairsPrefab, worldPos, Quaternion.identity, entitiesRoot);
+
+        // assign StairsController object to stairs var
+        var stairs = currentStairs.GetComponent<StairsController>();
+        if (stairs != null) stairs.Init(this);
+    }
+
+
+    private IEnumerator FadeOut()
+    {
+        if (fadeCanvasGroup == null) yield break;
+
+        float t = 0f;
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            fadeCanvasGroup.alpha = Mathf.Clamp01(t / fadeDuration);
+            yield return null;
+        }
+        fadeCanvasGroup.alpha = 1f;
+    }
+
+    private IEnumerator FadeIn()
+    {
+        if (fadeCanvasGroup == null) yield break;
+
+        float t = 0f;
+        while (t < fadeDuration)
+        {
+            t += Time.deltaTime;
+            fadeCanvasGroup.alpha = 1f - Mathf.Clamp01(t / fadeDuration);
+            yield return null;
+        }
+        fadeCanvasGroup.alpha = 0f;
+    }
+
 
 }
