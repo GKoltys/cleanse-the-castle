@@ -26,6 +26,8 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private CanvasGroup fadeCanvasGroup;
     [SerializeField] private float fadeDuration = 0.35f;
 
+    [SerializeField] private CameraController cameraClamp;
+
     private MapData currentMap;
     private GameObject currentStairs;
     private bool isTransitioning;
@@ -41,6 +43,7 @@ public class MapGenerator : MonoBehaviour
         Render(currentMap);
         PlacePlayerInCenter(currentMap);
         PlacePrefabs(currentMap);
+        cameraClamp.SetBounds(0, width, 0, height);
     }
 
     public void GoToNextFloor()
