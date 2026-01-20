@@ -11,25 +11,32 @@ public class SettingsMenuController: MonoBehaviour
 
     public TMP_Dropdown resolutionDropdown;
 
-    private Resolution[] resolutions;
+    private List<Resolution> uniqueResolutions = new();
     private int currentResIndex;
 
     private void Start()
     {
-        resolutions = Screen.resolutions;
-
         resolutionDropdown.ClearOptions();
+
+        // Filters out all resolution duplicates with different Hz values
+        HashSet<(int w, int h)> resolutionSet = new();
+
+        foreach (var r in Screen.resolutions)
+        {
+            var key = (r.width, r.height);
+            if (resolutionSet.Add(key)) uniqueResolutions.Add(r);
+        }
 
         List<string> resList = new();
 
         currentResIndex = 0;
-        for (int i = 0; i < resolutions.Length; i++)
+        for (int i = 0; i < uniqueResolutions.Count; i++)
         {
-            string res = resolutions[i].width + " x " + resolutions[i].height;
+            string res = uniqueResolutions[i].width + " x " + uniqueResolutions[i].height;
             resList.Add(res);
 
-            if (resolutions[i].width == Screen.currentResolution.width &&
-                resolutions[i].height == Screen.currentResolution.height)
+            if (uniqueResolutions[i].width == Screen.currentResolution.width &&
+                uniqueResolutions[i].height == Screen.currentResolution.height)
             {
                 currentResIndex = i;
             }
@@ -44,25 +51,34 @@ public class SettingsMenuController: MonoBehaviour
     {
         if (displayOption == 0)
         {
-            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
+            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+
+            // Keeps the mouse locked in the window
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
         }
         else if (displayOption == 1)
         {
             Screen.fullScreenMode = FullScreenMode.Windowed;
+
+            // Releases the mouse from game window
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
         else if (displayOption == 2)
         {
             Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-        }
 
-        Resolution r = resolutions[currentResIndex];
-        Screen.SetResolution(r.width, r.height, Screen.fullScreenMode);
+            // Releases the mouse from game window
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
     }
 
     public void SetResolution(int resolutionIndex)
     {
-        Resolution resolution = resolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreen);
+        Resolution resolution = uniqueResolutions[resolutionIndex];
+        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode);
     }
 
     public void SetMasterVolume(float volume)
