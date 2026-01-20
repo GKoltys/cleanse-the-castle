@@ -87,11 +87,25 @@ public class SettingsMenuController: MonoBehaviour
     }
     public void SetMusicVolume(float volume)
     {
-        audioMixer.SetFloat("musicVolume", volume);
+        if (volume == -50)
+        {
+            audioMixer.SetFloat("musicVolume", -80);
+        }
+        else
+        {
+            audioMixer.SetFloat("musicVolume", volume);
+        }
     }
 
     public void SetSfxVolume(float volume)
     {
-        audioMixer.SetFloat("sfxVolume", volume);
+        if (volume == -50)
+        {
+            audioMixer.SetFloat("musicVolume", -80);
+        }
+        else
+        {
+            audioMixer.SetFloat("musicVolume", volume);
+        }
     }
 }
