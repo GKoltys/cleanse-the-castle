@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class StairsController : MonoBehaviour
+public class StairsController : MonoBehaviour, IMapGenInit
 {
     private MapGenerator dungeon;
 
