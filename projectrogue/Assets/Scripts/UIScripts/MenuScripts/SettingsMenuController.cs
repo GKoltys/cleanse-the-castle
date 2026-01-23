@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 // https://www.youtube.com/watch?v=YOaYQrN1oYQ
 
@@ -9,14 +10,19 @@ public class SettingsMenuController: MonoBehaviour
 {
     public AudioMixer audioMixer;
 
-    public TMP_Dropdown resolutionDropdown;
-
     private readonly List<Resolution> uniqueResolutions = new();
     private int currentResIndex;
+
+    [SerializeField] private TMP_Dropdown displayDropdown;
+    [SerializeField] private TMP_Dropdown resolutionDropdown;
+    [SerializeField] private Slider masterSlider;
+    [SerializeField] private Slider musicSlider;
+    [SerializeField] private Slider sfxSlider;
 
     private void Start()
     {
         resolutionDropdown.ClearOptions();
+        var s = SaveSettings.Instance.CurrentSettings;
 
         // Filters out all resolution duplicates with different Hz values
         HashSet<(int w, int h)> resolutionSet = new();
@@ -42,9 +48,20 @@ public class SettingsMenuController: MonoBehaviour
             }
         }
 
+        SetDisplayMode(s.displayModeIndex);
+        SetResolution(s.resolutionIndex);
+        SetMasterVolume(s.masterVolume);
+        SetMusicVolume(s.musicVolume);
+        SetSfxVolume(s.sfxVolume);
+
         resolutionDropdown.AddOptions(resList);
-        resolutionDropdown.value = currentResIndex;
+        resolutionDropdown.value = SaveSettings.Instance.CurrentSettings.resolutionIndex;
         resolutionDropdown.RefreshShownValue();
+
+        displayDropdown.value = s.displayModeIndex;
+        masterSlider.value = s.masterVolume;
+        musicSlider.value = s.musicVolume;
+        sfxSlider.value = s.sfxVolume;
     }
 
     public void SetDisplayMode(int displayOption)
@@ -82,8 +99,6 @@ public class SettingsMenuController: MonoBehaviour
             SaveSettings.Instance.CurrentSettings.displayModeIndex = displayOption;
             SaveSettings.Instance.Save();
         }
-
-        Debug.Log("Save called from dropdown");
     }
 
     public void SetResolution(int resolutionIndex)
@@ -92,8 +107,6 @@ public class SettingsMenuController: MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode);
 
         SaveSettings.Instance.CurrentSettings.resolutionIndex = resolutionIndex;
-
-        Debug.Log("Save called from dropdown");
     }
 
     public void SetMasterVolume(float volume)

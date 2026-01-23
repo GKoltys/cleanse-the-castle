@@ -8,7 +8,6 @@ public class SliderSaveOnRelease : MonoBehaviour, IPointerUpHandler, IEndDragHan
     public void OnPointerUp(PointerEventData eventData)
     {
         Save();
-        Debug.Log("Save called from slider");
     }
 
     // Controller support
