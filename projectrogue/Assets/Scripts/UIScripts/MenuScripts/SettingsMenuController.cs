@@ -55,7 +55,7 @@ public class SettingsMenuController: MonoBehaviour
         SetSfxVolume(s.sfxVolume);
 
         resolutionDropdown.AddOptions(resList);
-        resolutionDropdown.value = SaveSettings.Instance.CurrentSettings.resolutionIndex;
+        resolutionDropdown.value = s.resolutionIndex;
         resolutionDropdown.RefreshShownValue();
 
         displayDropdown.value = s.displayModeIndex;
@@ -107,6 +107,7 @@ public class SettingsMenuController: MonoBehaviour
         Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode);
 
         SaveSettings.Instance.CurrentSettings.resolutionIndex = resolutionIndex;
+        SaveSettings.Instance.Save();
     }
 
     public void SetMasterVolume(float volume)
