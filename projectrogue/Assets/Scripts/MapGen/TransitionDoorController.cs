@@ -11,7 +11,12 @@ public class TransitionDoorController : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             // https://discussions.unity.com/t/how-to-make-the-scene-change-on-a-collision/636855
-            SceneManager.LoadScene(sceneToLoad);
+            if (FadeUIController.Instance != null)
+            {
+                FadeUIController.Instance.FadeAndLoadScene(sceneToLoad);
+            }
+            else
+                SceneManager.LoadScene(sceneToLoad);
         }
     }
 }

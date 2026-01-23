@@ -22,9 +22,6 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private Transform entitiesRoot;
     [SerializeField] private SpawnTable[] spawnEntries;
 
-    [SerializeField] private CanvasGroup fadeCanvasGroup;
-    [SerializeField] private float fadeDuration = 0.35f;
-
     [SerializeField] private CameraController cameraClamp;
 
     private MapData currentMap;
@@ -46,22 +43,23 @@ public class MapGenerator : MonoBehaviour
 
     public void GoToNextFloor()
     {
-        if (!isTransitioning)
-            StartCoroutine(NextFloorRoutine());
+        StartCoroutine(NextFloorTransitionRoutine());
     }
 
-    private IEnumerator NextFloorRoutine()
+    private IEnumerator NextFloorTransitionRoutine()
     {
-        isTransitioning = true;
 
-        yield return FadeOut();
+        if (FadeUIController.Instance != null)
+            yield return FadeUIController.Instance.FadeOut();
 
         BuildFloor();
 
-        yield return FadeIn();
+        yield return null;
 
-        isTransitioning = false;
+        if (FadeUIController.Instance != null)
+            yield return FadeUIController.Instance.FadeIn();
     }
+
 
     private MapData GenerateRoom(int w, int h, int pad)
     {
@@ -219,35 +217,5 @@ public class MapGenerator : MonoBehaviour
         for (int i = entitiesRoot.childCount - 1; i >= 0; i--)
             Destroy(entitiesRoot.GetChild(i).gameObject);
     }
-
-
-    private IEnumerator FadeOut()
-    {
-        if (fadeCanvasGroup == null) yield break;
-
-        float t = 0f;
-        while (t < fadeDuration)
-        {
-            t += Time.deltaTime;
-            fadeCanvasGroup.alpha = Mathf.Clamp01(t / fadeDuration);
-            yield return null;
-        }
-        fadeCanvasGroup.alpha = 1f;
-    }
-
-    private IEnumerator FadeIn()
-    {
-        if (fadeCanvasGroup == null) yield break;
-
-        float t = 0f;
-        while (t < fadeDuration)
-        {
-            t += Time.deltaTime;
-            fadeCanvasGroup.alpha = 1f - Mathf.Clamp01(t / fadeDuration);
-            yield return null;
-        }
-        fadeCanvasGroup.alpha = 0f;
-    }
-
 
 }
