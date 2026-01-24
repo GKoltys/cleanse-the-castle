@@ -145,6 +145,7 @@ static class BuildCommand
         return !string.IsNullOrEmpty(value);
     }
 
+    [Obsolete]
     static void SetScriptingBackendFromEnv(BuildTarget platform) {
         var targetGroup = BuildPipeline.GetBuildTargetGroup(platform);
         if (TryGetEnv(SCRIPTING_BACKEND_ENV_VAR, out string scriptingBackend)) {
@@ -161,6 +162,7 @@ static class BuildCommand
         }
     }
 
+    [Obsolete]
     static void PerformBuild()
     {
         var buildTarget = GetBuildTarget();
