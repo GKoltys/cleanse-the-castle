@@ -27202,6 +27202,7 @@ GameObject:
   - component: {fileID: 1603462566}
   - component: {fileID: 1603462568}
   - component: {fileID: 1603462567}
+  - component: {fileID: 1603462569}
   m_Layer: 5
   m_Name: HealthBar
   m_TagString: Untagged
@@ -27223,11 +27224,11 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2054225816}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 15.5, y: -2.5}
+  m_AnchorMin: {x: 0, y: 0.5}
+  m_AnchorMax: {x: 0, y: 0.5}
+  m_AnchoredPosition: {x: 32, y: -2.5}
   m_SizeDelta: {x: 58, y: 8}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &1603462567
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27266,6 +27267,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1603462565}
   m_CullTransparentMesh: 1
+--- !u!114 &1603462569
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1603462565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edf6c56d3f48238418c6f468077f4ef7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HealthBarUI
+  Health: 0
+  MaxHealth: 0
+  Width: 58
+  Height: 8
+  HealthBar: {fileID: 1603462566}
 --- !u!1 &1628130483
 GameObject:
   m_ObjectHideFlags: 0
@@ -27600,6 +27618,7 @@ GameObject:
   - component: {fileID: 1709631809}
   - component: {fileID: 1709631811}
   - component: {fileID: 1709631810}
+  - component: {fileID: 1709631812}
   m_Layer: 5
   m_Name: CoinCounterTMP
   m_TagString: Untagged
@@ -27726,6 +27745,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709631808}
   m_CullTransparentMesh: 1
+--- !u!114 &1709631812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1709631808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1495df11165d4c24dbd7816151965e1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  coinCounterTMP: {fileID: 1709631810}
 --- !u!1 &1746263166
 GameObject:
   m_ObjectHideFlags: 0
@@ -28228,6 +28260,7 @@ GameObject:
   - component: {fileID: 1841421250}
   - component: {fileID: 1841421255}
   - component: {fileID: 1841421256}
+  - component: {fileID: 1841421257}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -28512,6 +28545,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.44429085, y: 0.5088725}
   m_EdgeRadius: 0
+--- !u!114 &1841421257
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841421249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20f683a36ba314842aad4d03ac3074b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHud
+  Health: 100
+  MaxHealth: 100
+  CoinCounter: 10
+  healthBar: {fileID: 1603462569}
+  coinCounterObj: {fileID: 1709631812}
 --- !u!1 &1854927883
 GameObject:
   m_ObjectHideFlags: 0
