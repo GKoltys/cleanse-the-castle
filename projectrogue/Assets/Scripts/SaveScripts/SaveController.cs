@@ -1,18 +1,11 @@
 using System.IO;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveController : MonoBehaviour
 {
     private string saveLocation;
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        // Should be C:\Users\[Your username]\AppData\LocalLow\DefaultCompany\projectrogue
-        saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
-
-        LoadGame();
-    }
+    private bool shouldLoadOnNextScene;
 
     // https://www.youtube.com/watch?v=VTZ1TQR80Qc
     // Declaring SaveController as a singleton
@@ -28,6 +21,36 @@ public class SaveController : MonoBehaviour
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
+
+        // Should be C:\Users\[Your username]\AppData\LocalLow\DefaultCompany\projectrogue
+        saveLocation = Path.Combine(Application.persistentDataPath, "saveData.json");
+
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDestroy()
+    {
+        if (Instance == this) SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    public bool HasSaveFile()
+    {
+        return File.Exists(saveLocation);
+    }
+
+    public void RequestLoad()
+    {
+        shouldLoadOnNextScene = true;
+    }
+
+    // Called automatically by the engine after LoadScenceAsync()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (!shouldLoadOnNextScene) return;
+
+        shouldLoadOnNextScene = false;
+
+        LoadGame();
     }
 
     public void SaveGame()
