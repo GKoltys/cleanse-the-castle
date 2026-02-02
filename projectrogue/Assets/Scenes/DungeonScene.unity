@@ -6619,9 +6619,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MapGenerator
   player: {fileID: 775115055}
-  width: 25
-  height: 25
+  width: 50
+  height: 50
   padding: 3
+  bspMaxDepth: 4
+  minLeafSize: 10
+  minRoomSize: 5
+  maxRoomSize: 12
   floorTilemap: {fileID: 1975175053}
   wallTilemap: {fileID: 1689641923}
   floorTile: {fileID: 11400000, guid: 50d881a04d50c5a47a307da113954903, type: 2}
@@ -6635,20 +6639,20 @@ MonoBehaviour:
     uniqueTile: 1
   - id: 1
     prefab: {fileID: 6403565685682107765, guid: 8bf1aee03befc8c4b88029f10cb71d63, type: 3}
-    count: 3
-    minDistanceFromPlayer: 5
+    count: 5
+    minDistanceFromPlayer: 7
     uniqueTile: 1
   - id: 2
     prefab: {fileID: 4758445816412349997, guid: dd20011e19dc2bc46bd5dcae9f45b517, type: 3}
-    count: 5
-    minDistanceFromPlayer: 3
+    count: 10
+    minDistanceFromPlayer: 5
     uniqueTile: 1
   - id: 3
     prefab: {fileID: 1571635250321256107, guid: e3aa46abfb295244da35981a7fb21112, type: 3}
-    count: 5
-    minDistanceFromPlayer: 3
+    count: 6
+    minDistanceFromPlayer: 8
     uniqueTile: 1
-  cameraClamp: {fileID: 1723853358}
+  cameraClamp: {fileID: 0}
 --- !u!1 &1548199437
 GameObject:
   m_ObjectHideFlags: 0

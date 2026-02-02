@@ -9,9 +9,13 @@ public class MapGenerator : MonoBehaviour
 
     [SerializeField] private Transform player;
 
-    [SerializeField] private int width = 25;
-    [SerializeField] private int height = 25;
+    [SerializeField] private int width = 50;
+    [SerializeField] private int height = 50;
     [SerializeField] private int padding = 3;
+    [SerializeField] private int bspMaxDepth = 4; // amount of times the map size can be cut
+    [SerializeField] private int minLeafSize = 10;
+    [SerializeField] private int minRoomSize = 5;
+    [SerializeField] private int maxRoomSize = 12;
 
     [SerializeField] private Tilemap floorTilemap;
     [SerializeField] private Tilemap wallTilemap;
@@ -25,7 +29,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private CameraController cameraClamp;
 
     private MapData currentMap;
-    private bool isTransitioning;
+    //private bool isTransitioning;
 
     private void Start()
     {
@@ -34,11 +38,12 @@ public class MapGenerator : MonoBehaviour
 
     private void BuildFloor()
     {
-        currentMap = GenerateRoom(width, height, padding);
+        //currentMap = GenerateRoom(width, height, padding);
+        currentMap = ProceduralGenerator.GenerateFloor(width, height, padding, bspMaxDepth, minLeafSize, minRoomSize, maxRoomSize);
         Render(currentMap);
         PlacePlayerInCenter(currentMap);
         PlacePrefabs(currentMap);
-        cameraClamp.SetBounds(0, width, 0, height);
+        //cameraClamp.SetBounds(0, width, 0, height);
     }
 
     public void GoToNextFloor()
