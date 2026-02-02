@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 // https://www.youtube.com/watch?v=m1x9YFzTX2A
 public class EnemyMovement : MonoBehaviour
@@ -7,11 +8,15 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] private float agroRadius;
     private Rigidbody2D rb;
     private Transform target;
+
     private Vector2 moveDirection;
+    private Vector2 lastMoveDirection;
+    private Animator animator;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void Start()
@@ -21,24 +26,34 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
+        float distance = Vector2.Distance(target.position, transform.position);
         if (distance <= agroRadius)
         {
-            Vector3 direction = (target.position - transform.position).normalized;
-            moveDirection = direction;
+            moveDirection = (target.position - transform.position).normalized;
+            lastMoveDirection = moveDirection.normalized;
         }
     }
 
     private void FixedUpdate()
     {
-        float distance = Vector3.Distance(target.position, transform.position);
+        float distance = Vector2.Distance(target.position, transform.position);
         if (distance <= agroRadius)
         {
             rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
         }
         else
         {
-            rb.linearVelocity = Vector3.zero;
+            rb.linearVelocity = Vector2.zero;
         }
+
+        // Animation
+        bool isMoving = rb.linearVelocity != Vector2.zero;
+        animator.SetBool("IsRunning", isMoving);
+
+        animator.SetFloat("InputX", moveDirection.x);
+        animator.SetFloat("InputY", moveDirection.y);
+
+        animator.SetFloat("LastInputX", lastMoveDirection.x);
+        animator.SetFloat("LastInputY", lastMoveDirection.y);
     }
 }
