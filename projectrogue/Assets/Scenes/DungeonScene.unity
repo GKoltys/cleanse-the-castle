@@ -6622,10 +6622,11 @@ MonoBehaviour:
   width: 50
   height: 50
   padding: 3
-  bspMaxDepth: 4
+  bspMaxDepth: 3
   minLeafSize: 10
   minRoomSize: 5
   maxRoomSize: 12
+  corridorWidth: 2
   floorTilemap: {fileID: 1975175053}
   wallTilemap: {fileID: 1689641923}
   floorTile: {fileID: 11400000, guid: 50d881a04d50c5a47a307da113954903, type: 2}

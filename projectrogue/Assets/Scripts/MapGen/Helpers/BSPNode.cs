@@ -7,6 +7,8 @@ public class BSPNode
     public BSPNode left;
     public BSPNode right;
     public RectInt room;
+    public Vector2Int connector;
+    public bool hasConnector;
 
     public bool IsLeaf => left == null && right == null;
 

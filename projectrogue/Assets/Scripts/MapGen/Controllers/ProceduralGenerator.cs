@@ -5,7 +5,8 @@ using UnityEngine;
 // https://www.roguebasin.com/index.php/Basic_BSP_Dungeon_generation
 public static class ProceduralGenerator
 {
-    public static MapData GenerateFloor(int w, int h, int pad, int bspMaxDepth, int minLeafSize, int minRoomSize, int maxRoomSize)
+    public static MapData GenerateFloor(int w, int h, int pad,
+        int bspMaxDepth, int minLeafSize, int minRoomSize, int maxRoomSize, int corridorWidth)
     {
         // create a room with tiles set to wall and the root partition
         Init(w, h, pad, out MapData map, out BSPNode root);
@@ -17,7 +18,7 @@ public static class ProceduralGenerator
         Carve(map, root, minRoomSize, maxRoomSize);
 
         // connect each room with corridors
-        // Connect(map, root, corridorWidth?)
+        Connect(map, root, corridorWidth);
 
         return map;
 
@@ -131,6 +132,12 @@ public static class ProceduralGenerator
 
     }
 
+    // connect nodes
+    private static void Connect(MapData map, BSPNode root, int corridorWidth)
+    {
+        ConnectNode(map, root, corridorWidth);
+    }
+
     // collect the leaf nodes that are used for room creation
     private static void CollectLeaves(BSPNode node, List<BSPNode> leaves)
     {
@@ -183,9 +190,157 @@ public static class ProceduralGenerator
             for (int y = r.yMin; y < r.yMax; y++)
             {
                 if (map.InBounds(x, y))
+                {
                     map.tiles[x, y] = TileType.Floor;
+                }
             }
         }
+    }
+
+    // recursively connects nodes with corridors
+    private static void ConnectNode(MapData map, BSPNode node, int corridorWidth)
+    {
+        if (node == null) return;
+
+        // for a leaf node, choose a point and set it as the connector if it contains a room
+        if (node.IsLeaf)
+        {
+            if (node.room.width > 0 && node.room.height > 0)
+            {
+                node.connector = PickPointInRoom(node.room);
+                node.hasConnector = true;
+            }
+            else
+            {
+                node.hasConnector = false;
+            }
+            return;
+        }
+
+        // recurse so each child establishes their connector
+        ConnectNode(map, node.left, corridorWidth);
+        ConnectNode(map, node.right, corridorWidth);
+
+        // if either child is missing or does not have a connector, they cannot be connected
+        if (node.left == null || node.right == null)
+        {
+            node.hasConnector = false;
+            return;
+        }
+        if (!node.left.hasConnector || !node.right.hasConnector)
+        {
+            node.hasConnector = false;
+            return;
+        }
+
+        Vector2Int a = node.left.connector;
+        Vector2Int b = node.right.connector;
+
+        // create a corridor between the two subtrees
+        CreateCorridor(map, a, b, corridorWidth);
+
+        // set connector for current subtree
+        node.connector = (Random.value < 0.5f) ? a : b;
+        node.hasConnector = true;
+    }
+
+    // pick a random point for the corridor connection point
+    private static Vector2Int PickPointInRoom(RectInt room)
+    {
+        int x = Random.Range(room.xMin, room.xMax);
+        int y = Random.Range(room.yMin, room.yMax);
+        return new Vector2Int(x, y);
+    }
+
+    // creates a corridor between two points a and b
+    private static void CreateCorridor(MapData map, Vector2Int a, Vector2Int b, int corridorWidth)
+    {
+        // if both points share x or y value, then create a vertical/horizontal corridor
+        if (a.x == b.x)
+        {
+            CarveVertical(map, a.x, a.y, b.y, corridorWidth);
+            return;
+        }
+
+        if (a.y == b.y)
+        {
+            CarveHorizontal(map, a.y, a.x, b.x, corridorWidth);
+            return;
+        }
+
+        // if points don't share value, must create a bend in the corridor
+        // decide if to make bend around an x or y
+        bool useMidX = Random.value < 0.5f;
+
+        if (useMidX)
+        {
+            // choose an x coordinate between the two points a and b
+            int midX = Random.Range(Mathf.Min(a.x, b.x), Mathf.Max(a.x, b.x) + 1);
+
+            // carve horizontally from point a to midX 
+            CarveHorizontal(map, a.y, a.x, midX, corridorWidth);
+            // then carve vertically along the midX until reaching b's y 
+            CarveVertical(map, midX, a.y, b.y, corridorWidth);
+            // carve horizontally until reaching point b
+            CarveHorizontal(map, b.y, midX, b.x, corridorWidth);
+        }
+        else
+        {
+            int midY = Random.Range(Mathf.Min(a.y, b.y), Mathf.Max(a.y, b.y) + 1);
+
+            // carve vertically from point a to midY
+            CarveVertical(map, a.x, a.y, midY, corridorWidth);
+            // carve horizontally along the midY until reaching b's x
+            CarveHorizontal(map, midY, a.x, b.x, corridorWidth);
+            // carve vertically until reaching point b
+            CarveVertical(map, b.x, midY, b.y, corridorWidth);
+        }
+    }
+
+    // carve a horizontal corridor between two x points along y
+    private static void CarveHorizontal(MapData map, int y, int x0, int x1, int corridorWidth)
+    {
+        int min = Mathf.Min(x0, x1);
+        int max = Mathf.Max(x0, x1);
+        for (int x = min; x <= max; x++)
+        {
+            CarveFloor(map, x, y, corridorWidth);
+        }
+    }
+
+    // carve a vertical corridor between two y points along x
+    private static void CarveVertical(MapData map, int x, int y0, int y1, int corridorWidth)
+    {
+        int min = Mathf.Min(y0, y1);
+        int max = Mathf.Max(y0, y1);
+        for (int y = min; y <= max; y++)
+        {
+            CarveFloor(map, x, y, corridorWidth);
+        }
+    }
+
+    // set tiles to floor with a specified width
+    private static void CarveFloor(MapData map, int x, int y, int corridorWidth)
+    {
+        // calculate the corridor area
+        int half = Mathf.Max(0, corridorWidth / 2);
+
+        for (int dx = -half; dx <= half; dx++)
+        {
+            for (int dy = -half; dy <= half; dy++)
+            {
+                int nx = x + dx;
+                int ny = y + dy;
+
+                if (map.InBounds(nx, ny))
+                {
+                    map.tiles[nx, ny] = TileType.Floor;
+                }
+
+            }
+
+        }
+
     }
 
 }
