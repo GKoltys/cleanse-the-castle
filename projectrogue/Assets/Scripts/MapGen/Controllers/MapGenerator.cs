@@ -30,6 +30,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private CameraController cameraClamp;
 
     private MapData currentMap;
+    private Vector2Int playerPos;
     //private bool isTransitioning;
 
     private void Start()
@@ -41,9 +42,9 @@ public class MapGenerator : MonoBehaviour
     {
         //currentMap = GenerateRoom(width, height, padding);
         currentMap = ProceduralGenerator.GenerateFloor(width, height, padding,
-            bspMaxDepth, minLeafSize, minRoomSize, maxRoomSize, corridorWidth);
+            bspMaxDepth, minLeafSize, minRoomSize, maxRoomSize, corridorWidth, out playerPos);
         Render(currentMap);
-        PlacePlayerInCenter(currentMap);
+        PlacePlayer(playerPos);
         PlacePrefabs(currentMap);
         //cameraClamp.SetBounds(0, width, 0, height);
     }
@@ -154,6 +155,12 @@ public class MapGenerator : MonoBehaviour
 
         // Center player in the tile
         player.position = new Vector3(x + 0.5f, y + 0.5f, 0f);
+    }
+
+    // set player to given position
+    private void PlacePlayer(Vector2Int pos)
+    {
+        player.position = new Vector3(pos.x + 0.5f, pos.y + 0.5f, 0f);
     }
 
     // randomly place different types of prefabs across the generated level
