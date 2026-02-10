@@ -5,6 +5,7 @@ using UnityEngine.InputSystem;
 public class EnemyMovement : MonoBehaviour
 {
     private EnemyBase enemy;
+    private EnemyAttack attack;
     private Rigidbody2D rb;
     private Transform target;
 
@@ -18,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
     private void Awake()
     {
         enemy = GetComponent<EnemyBase>();
+        attack = GetComponent<EnemyAttack>();
 
         moveSpeed = enemy.MoveSpeed;
         agroRadius = enemy.AgroRadius;
@@ -44,7 +46,7 @@ public class EnemyMovement : MonoBehaviour
     private void FixedUpdate()
     {
         float distance = Vector2.Distance(target.position, transform.position);
-        if (distance <= agroRadius)
+        if (distance <= agroRadius && (Time.time >= attack.nextAttackTime))
         {
             rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
         }

@@ -10,7 +10,7 @@ public abstract class EnemyBase: MonoBehaviour
     [SerializeField] private float agroRadius;
 
     protected float health;
-    protected Animator animator;
+    public Animator animator;
 
     protected virtual void Awake()
     {

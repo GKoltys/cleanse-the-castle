@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [RequireComponent (typeof(EnemyBase))]
@@ -8,7 +9,7 @@ public abstract class EnemyAttack : MonoBehaviour
 
     protected EnemyBase enemy;
     protected Transform playerTransform;
-    protected float nextAttackTime;
+    [DoNotSerialize] public float nextAttackTime;
 
     protected virtual void Awake()
     {
@@ -27,9 +28,8 @@ public abstract class EnemyAttack : MonoBehaviour
 
         float dist = Vector2.Distance(transform.position, playerTransform.position);
         bool inRange = dist <= attackRange;
-        Debug.Log(inRange);
 
-        enemy.GetComponent<Animator>()?.SetBool("InMeleeRange", inRange);
+        enemy.animator.SetBool("InMeleeRange", inRange);
 
         if (inRange && Time.time >= nextAttackTime)
         {
