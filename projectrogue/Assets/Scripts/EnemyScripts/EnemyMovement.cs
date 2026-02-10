@@ -4,10 +4,12 @@ using UnityEngine.InputSystem;
 // https://www.youtube.com/watch?v=m1x9YFzTX2A
 public class EnemyMovement : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed;
-    [SerializeField] private float agroRadius;
+    private EnemyBase enemy;
     private Rigidbody2D rb;
     private Transform target;
+
+    private float moveSpeed;
+    private float agroRadius;
 
     private Vector2 moveDirection;
     private Vector2 lastMoveDirection;
@@ -15,6 +17,11 @@ public class EnemyMovement : MonoBehaviour
 
     private void Awake()
     {
+        enemy = GetComponent<EnemyBase>();
+
+        moveSpeed = enemy.MoveSpeed;
+        agroRadius = enemy.AgroRadius;
+
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }

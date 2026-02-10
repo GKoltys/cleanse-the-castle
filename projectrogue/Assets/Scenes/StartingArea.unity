@@ -31042,10 +31042,12 @@ GameObject:
   m_Component:
   - component: {fileID: 1971499981}
   - component: {fileID: 1971499980}
-  - component: {fileID: 1971499979}
   - component: {fileID: 1971499982}
   - component: {fileID: 1971499984}
   - component: {fileID: 1971499983}
+  - component: {fileID: 1971499979}
+  - component: {fileID: 1971499985}
+  - component: {fileID: 1971499986}
   m_Layer: 0
   m_Name: GreenZombieEnemy
   m_TagString: Untagged
@@ -31065,8 +31067,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8266148dc8930de44a24a64cad5de3c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
-  moveSpeed: 2.5
-  agroRadius: 5
 --- !u!50 &1971499980
 Rigidbody2D:
   serializedVersion: 5
@@ -31236,6 +31236,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1971499985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971499977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69dc5f6df57829d4088edab9361739ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieEnemy
+  maxHealth: 100
+  damage: 10
+  moveSpeed: 2.5
+  agroRadius: 5
+--- !u!114 &1971499986
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971499977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 410fd24f660f5744c8c2513dd6bf8903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ZombieAttack
+  attackCooldown: 0.75
+  attackRange: 1
 --- !u!1 &2016576286
 GameObject:
   m_ObjectHideFlags: 0
