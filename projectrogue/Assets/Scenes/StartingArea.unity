@@ -30361,6 +30361,7 @@ GameObject:
   - component: {fileID: 1841421255}
   - component: {fileID: 1841421256}
   - component: {fileID: 1841421257}
+  - component: {fileID: 1841421258}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -30662,6 +30663,19 @@ MonoBehaviour:
   CoinCounter: 10
   healthBar: {fileID: 1603462569}
   coinCounterObj: {fileID: 1709631812}
+--- !u!114 &1841421258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841421249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f99481447fab3ec4981c6776b7047a80, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerCombat
+  attackCooldown: 0.5
 --- !u!1 &1854927883
 GameObject:
   m_ObjectHideFlags: 0
