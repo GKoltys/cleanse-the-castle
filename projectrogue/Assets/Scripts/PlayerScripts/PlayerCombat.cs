@@ -4,12 +4,13 @@ using UnityEngine.InputSystem;
 public class PlayerCombat : MonoBehaviour
 {
     [Header("Attack")]
-    [SerializeField] private float attackCooldown = 0.5f; // should probably be set to the duration of the animation
+    [SerializeField] private float attackCooldown;
 
     private Camera cam;
     private Vector2 lastFacing = Vector2.down;
     private float nextAttackTime;
 
+    private MeleeWeapon weapon;
     private PlayerMovement movement;
     private Animator animator;
 
@@ -18,6 +19,9 @@ public class PlayerCombat : MonoBehaviour
         cam = Camera.main;
         animator = GetComponent<Animator>();
         movement = GetComponent<PlayerMovement>();
+        weapon = GetComponentInChildren<MeleeWeapon>();
+
+        attackCooldown = weapon.AttackCooldown;
     }
 
     public void OnAttack()
@@ -53,6 +57,11 @@ public class PlayerCombat : MonoBehaviour
             return new Vector2(Mathf.Sign(raw.x), 0f);
         else
             return new Vector2(0f, Mathf.Sign(raw.y));
+    }
+
+    public void ApplyAttackHit()
+    {
+        weapon.Attack(lastFacing, transform.position);
     }
 
     // Triggered by attack animation events

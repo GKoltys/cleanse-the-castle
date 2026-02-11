@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public abstract class EnemyBase: MonoBehaviour
@@ -26,6 +25,8 @@ public abstract class EnemyBase: MonoBehaviour
         {
             Die();
         }
+
+        Debug.Log(health);
     }
 
     protected virtual void Die()

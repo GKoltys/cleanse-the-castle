@@ -26,11 +26,11 @@ AnimationClip:
       value: {fileID: -5607481886244580120, guid: b3e4c7adb3e4a5a458744226dd34a181, type: 3}
     - time: 0.15
       value: {fileID: 3289595651755015859, guid: b3e4c7adb3e4a5a458744226dd34a181, type: 3}
-    - time: 0.21666667
+    - time: 0.23333333
       value: {fileID: 8729844798648838998, guid: b3e4c7adb3e4a5a458744226dd34a181, type: 3}
-    - time: 0.28333333
+    - time: 0.3
       value: {fileID: 1422613182053833702, guid: b3e4c7adb3e4a5a458744226dd34a181, type: 3}
-    - time: 0.35
+    - time: 0.36666667
       value: {fileID: -2376951460563013464, guid: b3e4c7adb3e4a5a458744226dd34a181, type: 3}
     - time: 0.43333334
       value: {fileID: -8480475632872704443, guid: b3e4c7adb3e4a5a458744226dd34a181, type: 3}
@@ -91,6 +91,13 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
+  - time: 0.25
+    functionName: ApplyAttackHit
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 0.5
     functionName: OnAttackFinished
     data: 
