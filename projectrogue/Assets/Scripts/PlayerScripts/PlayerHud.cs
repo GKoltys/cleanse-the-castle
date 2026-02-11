@@ -23,6 +23,7 @@ public class PlayerHud : MonoBehaviour
         healthBar.SetHealth(Health);
     }
 
+    // TODO:
     // Here we need to add conditions for receiving damage/gaining health
     // Need to add functionality for picking up coins using coinCounter.UpdateCounter()
 }
