@@ -27,7 +27,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private Transform entitiesRoot;
     [SerializeField] private SpawnTable[] spawnEntries;
 
-    [SerializeField] private CameraController cameraClamp;
+
 
     private MapData currentMap;
     private Vector2Int playerPos;
@@ -46,7 +46,6 @@ public class MapGenerator : MonoBehaviour
         Render(currentMap);
         PlacePlayer(playerPos);
         PlacePrefabs(currentMap);
-        //cameraClamp.SetBounds(0, width, 0, height);
     }
 
     public void GoToNextFloor()
