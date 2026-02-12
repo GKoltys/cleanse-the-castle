@@ -22,10 +22,13 @@ public class MeleeWeapon : MonoBehaviour
         var hits = Physics2D.OverlapBoxAll(center, weaponData.hitBoxSize, 0f, enemyLayer);
         foreach (var h in hits)
         {
-            h.GetComponentInParent<EnemyBase>().TakeDamage(weaponData.damage);
+            bool isAlive = h.GetComponentInParent<EnemyBase>().TakeDamage(weaponData.damage);
 
-            Vector2 kbDir = ((Vector2)h.transform.position - origin).normalized;
-            h.GetComponentInParent<EnemyKnockback>().ApplyKnockback(kbDir, weaponData.knockbackForce);
+            if (isAlive)
+            {
+                Vector2 kbDir = ((Vector2)h.transform.position - origin).normalized;
+                h.GetComponentInParent<EnemyKnockback>().ApplyKnockback(kbDir, weaponData.knockbackForce);
+            }
         }
     }
 

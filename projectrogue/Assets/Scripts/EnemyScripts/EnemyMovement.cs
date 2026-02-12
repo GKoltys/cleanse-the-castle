@@ -75,4 +75,11 @@ public class EnemyMovement : MonoBehaviour
     {
         canMove = flag;
     }
+
+    public void SetVelocityZero()
+    {
+        rb.linearVelocity = Vector2.zero;
+        rb.angularVelocity = 0f;
+        //rb.constraints = RigidbodyConstraints2D.FreezeAll;
+    }
 }

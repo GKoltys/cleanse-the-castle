@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public abstract class EnemyBase: MonoBehaviour
@@ -19,26 +20,34 @@ public abstract class EnemyBase: MonoBehaviour
         movement = GetComponent<EnemyMovement>();
     }
 
-    public virtual void TakeDamage(float amount)
+    public virtual bool TakeDamage(float amount)
     {
         health -= amount;
+        Debug.Log(health);
 
         animator.SetTrigger("Hurt");
 
         if (health <= 0f)
         {
-            Die();
+            DieAnimation();
+            return false;
         }
 
-        Debug.Log(health);
+        return true;
     }
 
-    protected virtual void Die()
+    protected virtual void DieAnimation()
+    {
+        movement.SetCanMove(false);
+        animator.SetTrigger("Dying");
+    }
+
+    protected virtual void DestroySelf()
     {
         Destroy(gameObject);
     }
 
-    public void OnHurtFinished()
+    public virtual void OnHurtFinished()
     {
         movement.SetCanMove(true);
     }
