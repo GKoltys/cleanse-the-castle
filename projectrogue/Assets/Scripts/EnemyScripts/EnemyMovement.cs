@@ -16,6 +16,8 @@ public class EnemyMovement : MonoBehaviour
     private Vector2 lastMoveDirection;
     private Animator animator;
 
+    private bool canMove = true;
+
     private void Awake()
     {
         enemy = GetComponent<EnemyBase>();
@@ -45,24 +47,32 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float distance = Vector2.Distance(target.position, transform.position);
-        if (distance <= agroRadius && (Time.time >= attack.nextAttackTime))
+        if (canMove)
         {
-            rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
+            float distance = Vector2.Distance(target.position, transform.position);
+            if (distance <= agroRadius && (Time.time >= attack.nextAttackTime))
+            {
+                rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
+            }
+            else
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
+
+            // Animation
+            bool isMoving = rb.linearVelocity != Vector2.zero;
+            animator.SetBool("IsRunning", isMoving);
+
+            animator.SetFloat("InputX", moveDirection.x);
+            animator.SetFloat("InputY", moveDirection.y);
+
+            animator.SetFloat("LastInputX", lastMoveDirection.x);
+            animator.SetFloat("LastInputY", lastMoveDirection.y);
         }
-        else
-        {
-            rb.linearVelocity = Vector2.zero;
-        }
+    }
 
-        // Animation
-        bool isMoving = rb.linearVelocity != Vector2.zero;
-        animator.SetBool("IsRunning", isMoving);
-
-        animator.SetFloat("InputX", moveDirection.x);
-        animator.SetFloat("InputY", moveDirection.y);
-
-        animator.SetFloat("LastInputX", lastMoveDirection.x);
-        animator.SetFloat("LastInputY", lastMoveDirection.y);
+    public void SetCanMove(bool flag)
+    {
+        canMove = flag;
     }
 }

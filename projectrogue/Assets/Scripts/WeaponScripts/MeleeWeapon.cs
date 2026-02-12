@@ -22,16 +22,11 @@ public class MeleeWeapon : MonoBehaviour
         var hits = Physics2D.OverlapBoxAll(center, weaponData.hitBoxSize, 0f, enemyLayer);
         foreach (var h in hits)
         {
-            Debug.Log(h);
             h.GetComponentInParent<EnemyBase>().TakeDamage(weaponData.damage);
-        }
-    }
 
-    private void OnDrawGizmosSelected()
-    {
-        if (weaponData == null) return;
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, weaponData.hitBoxSize);
+            Vector2 kbDir = ((Vector2)h.transform.position - origin).normalized;
+            h.GetComponentInParent<EnemyKnockback>().ApplyKnockback(kbDir, weaponData.knockbackForce);
+        }
     }
 
     public float AttackCooldown => weaponData.cooldown;

@@ -15,5 +15,6 @@ MonoBehaviour:
   damage: 15
   cooldown: 0.5
   range: 1
-  hitBoxSize: {x: 1, y: 0.6}
+  knockbackForce: 4
+  hitBoxSize: {x: 1, y: 1}
   attackTrigger: Attack

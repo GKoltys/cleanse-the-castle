@@ -10,16 +10,20 @@ public abstract class EnemyBase: MonoBehaviour
 
     protected float health;
     public Animator animator;
+    public EnemyMovement movement;
 
     protected virtual void Awake()
     {
         health = maxHealth;
         animator = GetComponent<Animator>();
+        movement = GetComponent<EnemyMovement>();
     }
 
     public virtual void TakeDamage(float amount)
     {
         health -= amount;
+
+        animator.SetTrigger("Hurt");
 
         if (health <= 0f)
         {
@@ -32,6 +36,11 @@ public abstract class EnemyBase: MonoBehaviour
     protected virtual void Die()
     {
         Destroy(gameObject);
+    }
+
+    public void OnHurtFinished()
+    {
+        movement.SetCanMove(true);
     }
 
     public float MaxHealth => maxHealth;

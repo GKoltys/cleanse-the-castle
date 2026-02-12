@@ -31089,6 +31089,7 @@ GameObject:
   - component: {fileID: 1971499979}
   - component: {fileID: 1971499985}
   - component: {fileID: 1971499986}
+  - component: {fileID: 1971499987}
   m_Layer: 6
   m_Name: GreenZombieEnemy
   m_TagString: Untagged
@@ -31184,7 +31185,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.029958725, y: -0.037273407}
+  m_Offset: {x: 0.029958725, y: -0.0274539}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -31194,7 +31195,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.68590164, y: 0.8232384}
+  m_Size: {x: 0.81682396, y: 0.9345217}
   m_EdgeRadius: 0
 --- !u!212 &1971499983
 SpriteRenderer:
@@ -31291,9 +31292,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ZombieEnemy
   maxHealth: 100
   damage: 10
-  moveSpeed: 2.5
+  moveSpeed: 2
   agroRadius: 5
   animator: {fileID: 0}
+  movement: {fileID: 0}
 --- !u!114 &1971499986
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31309,6 +31311,18 @@ MonoBehaviour:
   attackCooldown: 0.75
   attackRange: 1
   nextAttackTime: 0
+--- !u!114 &1971499987
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1971499977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34ddead5ed69b6047be418f8305ec3d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyKnockback
 --- !u!1 &2016576286
 GameObject:
   m_ObjectHideFlags: 0
