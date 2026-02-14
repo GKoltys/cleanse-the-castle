@@ -8,18 +8,25 @@ public abstract class EnemyAttack : MonoBehaviour
     [SerializeField] protected float attackRange;
 
     protected EnemyBase enemy;
+    protected Animator animator;
+    protected PlayerHealth playerHealth;
     protected Transform playerTransform;
     [DoNotSerialize] public float nextAttackTime;
 
     protected virtual void Awake()
     {
         enemy = GetComponent<EnemyBase>();
+        animator = GetComponent<Animator>();
     }
 
     protected virtual void Start()
     {
-        var player = GameObject.FindWithTag("Player");
-        if (player != null) playerTransform = player.transform;
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            playerTransform = player.transform;
+            playerHealth = player.GetComponent<PlayerHealth>();
+        }
     }
 
     protected virtual void Update()
@@ -27,11 +34,11 @@ public abstract class EnemyAttack : MonoBehaviour
         if (playerTransform == null || enemy == null) return;
 
         float dist = Vector2.Distance(transform.position, playerTransform.position);
-        bool inRange = dist <= attackRange;
+        bool inRange = (dist <= attackRange) && !(playerHealth.GetIsDead);
 
-        enemy.animator.SetBool("InMeleeRange", inRange);
+        animator.SetBool("InMeleeRange", inRange);
 
-        if (inRange && Time.time >= nextAttackTime)
+        if (inRange && Time.time >= nextAttackTime && enemy.IsAlive)
         {
             nextAttackTime = Time.time + attackCooldown;
             Attack();
@@ -40,6 +47,6 @@ public abstract class EnemyAttack : MonoBehaviour
 
     protected virtual void Attack()
     {
-        // Player.takeDamage();
+        playerHealth.TakeDamage(enemy.Damage);
     }
 }

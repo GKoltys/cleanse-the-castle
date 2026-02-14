@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
 public class PlayerMovement : MonoBehaviour
@@ -11,6 +10,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 lastMoveDirection;
     private Animator animator;
 
+    private bool canMove = true;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -19,28 +20,47 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnMove(InputValue value)
     {
-        moveInput = value.Get<Vector2>();
-
-        if (moveInput.sqrMagnitude > 0.01f)
+        if (canMove)
         {
-            lastMoveDirection = moveInput.normalized;
+            moveInput = value.Get<Vector2>();
+
+            if (moveInput.sqrMagnitude > 0.01f)
+            {
+                lastMoveDirection = moveInput.normalized;
+
+                animator.SetFloat("LastInputX", lastMoveDirection.x);
+                animator.SetFloat("LastInputY", lastMoveDirection.y);
+            }
         }
     }
 
     private void FixedUpdate()
     {
-        // Movement
-        Vector2 direction = moveInput.normalized; // "normalized" prevents faster diagonal movement
-        rb.linearVelocity = direction * moveSpeed;
+        if (canMove)
+        {
+            // Movement
+            Vector2 direction = moveInput.normalized; // "normalized" prevents faster diagonal movement
+            rb.linearVelocity = direction * moveSpeed;
 
-        // Animation
-        bool isMoving = moveInput != Vector2.zero;
-        animator.SetBool("IsRunning", isMoving);
+            // Animation
+            bool isMoving = moveInput.sqrMagnitude > 0.01f;
+            animator.SetBool("IsRunning", isMoving);
 
-        animator.SetFloat("InputX", moveInput.x);
-        animator.SetFloat("InputY", moveInput.y);
+            animator.SetFloat("InputX", moveInput.x);
+            animator.SetFloat("InputY", moveInput.y);
+        }
+        else
+        {
+            rb.linearVelocity = Vector2.zero;
 
-        animator.SetFloat("LastInputX", lastMoveDirection.x);
-        animator.SetFloat("LastInputY", lastMoveDirection.y);
+            animator.SetBool("IsRunning", false);
+            animator.SetFloat("InputX", 0f);
+            animator.SetFloat("InputY", 0f);
+        }
+    }
+
+    public void SetCanMove(bool flag)
+    {
+        canMove = flag;
     }
 }

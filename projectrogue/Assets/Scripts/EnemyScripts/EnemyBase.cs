@@ -1,4 +1,4 @@
-using System;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public abstract class EnemyBase: MonoBehaviour
@@ -9,32 +9,57 @@ public abstract class EnemyBase: MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float agroRadius;
 
+    protected bool isAlive = true;
     protected float health;
-    public Animator animator;
+    protected Animator animator;
+    protected EnemyMovement movement;
+    protected Rigidbody2D rb;
 
     protected virtual void Awake()
     {
         health = maxHealth;
         animator = GetComponent<Animator>();
+        movement = GetComponent<EnemyMovement>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    public virtual void TakeDamage(float amount)
+    public virtual bool TakeDamage(float amount)
     {
         health -= amount;
+        Debug.Log(health);
+
+        animator.SetTrigger("Hurt");
 
         if (health <= 0f)
         {
-            Die();
+            isAlive = false;
+            DeathAnimation();
+            return false;
         }
+
+        return true;
     }
 
-    protected virtual void Die()
+    protected virtual void DeathAnimation()
+    {
+        movement.SetCanMove(false);
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        animator.SetTrigger("Dying");
+    }
+
+    protected virtual void DestroySelf()
     {
         Destroy(gameObject);
     }
 
+    public virtual void OnHurtFinished()
+    {
+        movement.SetCanMove(true);
+    }
+
     public float MaxHealth => maxHealth;
-    public float Damge => damage;
+    public float Damage => damage;
     public float MoveSpeed => moveSpeed;
     public float AgroRadius => agroRadius;
+    public bool IsAlive => isAlive;
 }

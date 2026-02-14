@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,7 @@ public class EnemyMovement : MonoBehaviour
     private EnemyAttack attack;
     private Rigidbody2D rb;
     private Transform target;
+    private PlayerHealth playerHealth;
 
     private float moveSpeed;
     private float agroRadius;
@@ -15,6 +17,8 @@ public class EnemyMovement : MonoBehaviour
     private Vector2 moveDirection;
     private Vector2 lastMoveDirection;
     private Animator animator;
+
+    private bool canMove = true;
 
     private void Awake()
     {
@@ -31,6 +35,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         target = GameObject.Find("Player").transform;
+        playerHealth = target.GetComponentInChildren<PlayerHealth>();
     }
 
     private void Update()
@@ -45,24 +50,36 @@ public class EnemyMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        float distance = Vector2.Distance(target.position, transform.position);
-        if (distance <= agroRadius && (Time.time >= attack.nextAttackTime))
+        if (canMove)
         {
-            rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
+            float distance = Vector2.Distance(target.position, transform.position);
+            if ((distance <= agroRadius) && (Time.time >= attack.nextAttackTime) && (!playerHealth.GetIsDead))
+            {
+                rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
+            }
+            else
+            {
+                rb.linearVelocity = Vector2.zero;
+            }
+
+            // Animation
+            bool isMoving = rb.linearVelocity != Vector2.zero;
+            animator.SetBool("IsRunning", isMoving);
+
+            animator.SetFloat("InputX", moveDirection.x);
+            animator.SetFloat("InputY", moveDirection.y);
+
+            animator.SetFloat("LastInputX", lastMoveDirection.x);
+            animator.SetFloat("LastInputY", lastMoveDirection.y);
         }
-        else
+        else if (!enemy.IsAlive)
         {
             rb.linearVelocity = Vector2.zero;
         }
+    }
 
-        // Animation
-        bool isMoving = rb.linearVelocity != Vector2.zero;
-        animator.SetBool("IsRunning", isMoving);
-
-        animator.SetFloat("InputX", moveDirection.x);
-        animator.SetFloat("InputY", moveDirection.y);
-
-        animator.SetFloat("LastInputX", lastMoveDirection.x);
-        animator.SetFloat("LastInputY", lastMoveDirection.y);
+    public void SetCanMove(bool flag)
+    {
+        canMove = flag;
     }
 }
