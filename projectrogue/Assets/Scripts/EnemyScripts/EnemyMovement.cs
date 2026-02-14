@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -8,6 +9,7 @@ public class EnemyMovement : MonoBehaviour
     private EnemyAttack attack;
     private Rigidbody2D rb;
     private Transform target;
+    private PlayerHealth playerHealth;
 
     private float moveSpeed;
     private float agroRadius;
@@ -33,6 +35,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         target = GameObject.Find("Player").transform;
+        playerHealth = target.GetComponentInChildren<PlayerHealth>();
     }
 
     private void Update()
@@ -50,7 +53,7 @@ public class EnemyMovement : MonoBehaviour
         if (canMove)
         {
             float distance = Vector2.Distance(target.position, transform.position);
-            if (distance <= agroRadius && (Time.time >= attack.nextAttackTime))
+            if ((distance <= agroRadius) && (Time.time >= attack.nextAttackTime) && (!playerHealth.GetIsDead))
             {
                 rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
             }
@@ -69,17 +72,14 @@ public class EnemyMovement : MonoBehaviour
             animator.SetFloat("LastInputX", lastMoveDirection.x);
             animator.SetFloat("LastInputY", lastMoveDirection.y);
         }
+        else if (!enemy.IsAlive)
+        {
+            rb.linearVelocity = Vector2.zero;
+        }
     }
 
     public void SetCanMove(bool flag)
     {
         canMove = flag;
-    }
-
-    public void SetVelocityZero()
-    {
-        rb.linearVelocity = Vector2.zero;
-        rb.angularVelocity = 0f;
-        //rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 }

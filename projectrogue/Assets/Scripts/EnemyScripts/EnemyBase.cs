@@ -9,15 +9,18 @@ public abstract class EnemyBase: MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float agroRadius;
 
+    protected bool isAlive = true;
     protected float health;
-    public Animator animator;
-    public EnemyMovement movement;
+    protected Animator animator;
+    protected EnemyMovement movement;
+    protected Rigidbody2D rb;
 
     protected virtual void Awake()
     {
         health = maxHealth;
         animator = GetComponent<Animator>();
         movement = GetComponent<EnemyMovement>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
     public virtual bool TakeDamage(float amount)
@@ -29,16 +32,18 @@ public abstract class EnemyBase: MonoBehaviour
 
         if (health <= 0f)
         {
-            DieAnimation();
+            isAlive = false;
+            DeathAnimation();
             return false;
         }
 
         return true;
     }
 
-    protected virtual void DieAnimation()
+    protected virtual void DeathAnimation()
     {
         movement.SetCanMove(false);
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
         animator.SetTrigger("Dying");
     }
 
@@ -53,7 +58,8 @@ public abstract class EnemyBase: MonoBehaviour
     }
 
     public float MaxHealth => maxHealth;
-    public float Damge => damage;
+    public float Damage => damage;
     public float MoveSpeed => moveSpeed;
     public float AgroRadius => agroRadius;
+    public bool IsAlive => isAlive;
 }

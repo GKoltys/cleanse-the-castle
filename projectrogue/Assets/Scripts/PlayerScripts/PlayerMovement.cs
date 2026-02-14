@@ -20,14 +20,17 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnMove(InputValue value)
     {
-        moveInput = value.Get<Vector2>();
-
-        if (moveInput.sqrMagnitude > 0.01f)
+        if (canMove)
         {
-            lastMoveDirection = moveInput.normalized;
+            moveInput = value.Get<Vector2>();
 
-            animator.SetFloat("LastInputX", lastMoveDirection.x);
-            animator.SetFloat("LastInputY", lastMoveDirection.y);
+            if (moveInput.sqrMagnitude > 0.01f)
+            {
+                lastMoveDirection = moveInput.normalized;
+
+                animator.SetFloat("LastInputX", lastMoveDirection.x);
+                animator.SetFloat("LastInputY", lastMoveDirection.y);
+            }
         }
     }
 

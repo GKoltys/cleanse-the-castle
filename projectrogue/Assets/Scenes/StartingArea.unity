@@ -30383,10 +30383,12 @@ GameObject:
   - component: {fileID: 1841421253}
   - component: {fileID: 1841421252}
   - component: {fileID: 1841421251}
-  - component: {fileID: 1841421250}
   - component: {fileID: 1841421255}
   - component: {fileID: 1841421256}
+  - component: {fileID: 1841421250}
   - component: {fileID: 1841421257}
+  - component: {fileID: 1841421260}
+  - component: {fileID: 1841421259}
   - component: {fileID: 1841421258}
   m_Layer: 3
   m_Name: Player
@@ -30691,6 +30693,35 @@ MonoBehaviour:
   healthBar: {fileID: 1603462569}
   coinCounterObj: {fileID: 1709631812}
 --- !u!114 &1841421258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841421249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3697786676f634145b3db4db67e5f73d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  iFrameSeconds: 0.5
+  maxHealth: 100
+  health: 100
+  coinCount: 0
+  weapon: {fileID: 11400000, guid: 453d1b575025f8f489371168681523b7, type: 2}
+--- !u!114 &1841421259
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841421249}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206608052e42cc14993730e43a9d0848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
+--- !u!114 &1841421260
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -31189,7 +31220,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.5, y: 0.5}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

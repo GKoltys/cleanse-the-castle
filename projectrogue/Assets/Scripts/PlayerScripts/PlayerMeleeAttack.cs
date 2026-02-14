@@ -38,8 +38,6 @@ public class PlayerCombat : MonoBehaviour
 
         animator.SetFloat("LastInputX", direction.x);
         animator.SetFloat("LastInputY", direction.y);
-
-        movement.SetCanMove(false);
     }
 
     // https://discussions.unity.com/t/mouse-position-with-new-input-system/776798/14
@@ -62,11 +60,5 @@ public class PlayerCombat : MonoBehaviour
     public void ApplyAttackHit()
     {
         weapon.Attack(lastFacing, transform.position);
-    }
-
-    // Triggered by attack animation events
-    public void OnAttackFinished()
-    {
-        movement.SetCanMove(true);
     }
 }
