@@ -9,9 +9,14 @@ public class MapGenerator : MonoBehaviour
 
     [SerializeField] private Transform player;
 
-    [SerializeField] private int width = 25;
-    [SerializeField] private int height = 25;
+    [SerializeField] private int width = 50;
+    [SerializeField] private int height = 50;
     [SerializeField] private int padding = 3;
+    [SerializeField] private int bspMaxDepth = 4; // amount of times the map size can be cut
+    [SerializeField] private int minLeafSize = 10;
+    [SerializeField] private int minRoomSize = 5;
+    [SerializeField] private int maxRoomSize = 12;
+    [SerializeField] private int corridorWidth = 1;
 
     [SerializeField] private Tilemap floorTilemap;
     [SerializeField] private Tilemap wallTilemap;
@@ -22,10 +27,11 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private Transform entitiesRoot;
     [SerializeField] private SpawnTable[] spawnEntries;
 
-    [SerializeField] private CameraController cameraClamp;
+
 
     private MapData currentMap;
-    private bool isTransitioning;
+    private Vector2Int playerPos;
+    //private bool isTransitioning;
 
     private void Start()
     {
@@ -34,11 +40,12 @@ public class MapGenerator : MonoBehaviour
 
     private void BuildFloor()
     {
-        currentMap = GenerateRoom(width, height, padding);
+        //currentMap = GenerateRoom(width, height, padding);
+        currentMap = ProceduralGenerator.GenerateFloor(width, height, padding,
+            bspMaxDepth, minLeafSize, minRoomSize, maxRoomSize, corridorWidth, out playerPos);
         Render(currentMap);
-        PlacePlayerInCenter(currentMap);
+        PlacePlayer(playerPos);
         PlacePrefabs(currentMap);
-        cameraClamp.SetBounds(0, width, 0, height);
     }
 
     public void GoToNextFloor()
@@ -72,9 +79,13 @@ public class MapGenerator : MonoBehaviour
 
         // create a room with tiles set to floor
         for (int x = xMin; x <= xMax; x++)
+        {
             for (int y = yMin; y <= yMax; y++)
+            {
                 map.tiles[x, y] = TileType.Floor;
+            }
 
+        }
         // set any tiles adjacent to floor as walls
         for (int x = 0; x < w; x++)
             for (int y = 0; y < h; y++)
@@ -89,7 +100,9 @@ public class MapGenerator : MonoBehaviour
                         if (!map.InBounds(nx, ny)) continue;
 
                         if (map.tiles[nx, ny] == TileType.Empty)
+                        {
                             map.tiles[nx, ny] = TileType.Wall;
+                        }
                     }
             }
 
@@ -117,6 +130,7 @@ public class MapGenerator : MonoBehaviour
 
         // for each tile sets to which TileType it is
         for (int x = 0; x < map.width; x++)
+        {
             for (int y = 0; y < map.height; y++)
             {
                 var pos = new Vector3Int(x, y, 0);
@@ -130,6 +144,7 @@ public class MapGenerator : MonoBehaviour
                         break;
                 }
             }
+        }
     }
 
     private void PlacePlayerInCenter(MapData map)
@@ -141,44 +156,61 @@ public class MapGenerator : MonoBehaviour
         player.position = new Vector3(x + 0.5f, y + 0.5f, 0f);
     }
 
+    // set player to given position
+    private void PlacePlayer(Vector2Int pos)
+    {
+        player.position = new Vector3(pos.x + 0.5f, pos.y + 0.5f, 0f);
+    }
+
+    // randomly place different types of prefabs across the generated level
     // https://docs.unity3d.com/2020.3/Documentation/Manual/InstantiatingPrefabs.html
     private void PlacePrefabs(MapData map)
     {
         // for clearing previous level entities
         ClearEntitiesRoot();
 
+        // collect tiles from map that are set to floor
         var floors = CollectFloorTiles(map);
         if (floors.Count == 0) return;
 
+        // get player position
         Vector2 playerPos = new Vector2(player.position.x, player.position.y);
 
+        // loop through each prefab
         foreach (var entry in spawnEntries)
         {
             if (entry == null || entry.prefab == null || entry.count <= 0) continue;
 
+            // get the count of spawnable prefabs, compare to floor type count in case it exceeds it
             int n = Mathf.Min(entry.count, floors.Count);
 
             for (int i = 0; i < n; i++)
             {
+                // pick a random floor tile using min distance from player
                 Vector2Int tile = PickTile(floors, playerPos, entry.minDistanceFromPlayer, attempts: 30);
                 Vector3 world = new Vector3(tile.x + 0.5f, tile.y + 0.5f, 0f);
 
+                // instantiate the prefab
                 var go = Instantiate(entry.prefab, world, Quaternion.identity, entitiesRoot);
 
+                // initialize the components
                 var initializables = go.GetComponentsInChildren<IMapGenInit>();
                 foreach (var init in initializables)
                 {
                     init.Init(this);
                 }
 
-
+                // remove the tile so nothing else can be spawned
                 if (entry.uniqueTile)
+                {
                     floors.Remove(tile);
+                }
             }
 
         }
     }
 
+    // make a list of tiles that are floor type
     private List<Vector2Int> CollectFloorTiles(MapData map)
     {
         var floors = new List<Vector2Int>(map.width * map.height);
@@ -196,6 +228,7 @@ public class MapGenerator : MonoBehaviour
         return floors;
     }
 
+    // chose a random floor tile with min distance from player
     private Vector2Int PickTile(List<Vector2Int> floors, Vector2 playerPos, float minDist, int attempts)
     {
         Vector2Int chosen = floors[Random.Range(0, floors.Count)];
@@ -211,11 +244,14 @@ public class MapGenerator : MonoBehaviour
         return chosen;
     }
 
+    // remove entities/prefabs from the map
     private void ClearEntitiesRoot()
     {
         if (entitiesRoot == null) return;
         for (int i = entitiesRoot.childCount - 1; i >= 0; i--)
+        {
             Destroy(entitiesRoot.GetChild(i).gameObject);
+        }
     }
 
 }

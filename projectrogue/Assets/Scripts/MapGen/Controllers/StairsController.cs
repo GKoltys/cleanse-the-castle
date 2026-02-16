@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System;
 
 public class StairsController : MonoBehaviour, IMapGenInit
 {
@@ -16,7 +16,41 @@ public class StairsController : MonoBehaviour, IMapGenInit
 
         if (other.CompareTag("Player"))
         {
+            // https://docs.unity3d.com/6000.3/Documentation/ScriptReference/RigidbodyConstraints2D.html
+            // disable movement
+            var rb = other.attachedRigidbody;
+            if (rb)
+            {
+                rb.constraints = RigidbodyConstraints2D.FreezeAll; // freeze movement
+                rb.Sleep();
+            }
+            // disable animation
+            var anim = other.GetComponentInChildren<Animator>();
+            if (anim)
+            {
+                anim.enabled = false;
+            }
+
+            // transition to next floor
             dungeon.GoToNextFloor();
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        // enable movement
+        var rb = other.attachedRigidbody;
+        if (rb)
+        {
+            rb.constraints = RigidbodyConstraints2D.FreezeRotation; // freeze rotation only allowing movement again
+            rb.WakeUp();
+        }
+
+        // enable animation
+        var anim = other.GetComponentInChildren<Animator>();
+        if (anim)
+        {
+            anim.enabled = true;
         }
     }
 }
