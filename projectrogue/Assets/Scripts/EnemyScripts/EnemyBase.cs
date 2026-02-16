@@ -1,4 +1,3 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public abstract class EnemyBase: MonoBehaviour
@@ -15,12 +14,16 @@ public abstract class EnemyBase: MonoBehaviour
     protected EnemyMovement movement;
     protected Rigidbody2D rb;
 
+    protected EnemyCombatUI enemyCombatUI;
+
     protected virtual void Awake()
     {
         health = maxHealth;
         animator = GetComponent<Animator>();
         movement = GetComponent<EnemyMovement>();
         rb = GetComponent<Rigidbody2D>();
+
+        enemyCombatUI = GetComponentInChildren<EnemyCombatUI>();
     }
 
     public virtual bool TakeDamage(float amount)
@@ -29,6 +32,7 @@ public abstract class EnemyBase: MonoBehaviour
         Debug.Log(health);
 
         animator.SetTrigger("Hurt");
+        enemyCombatUI.UpdateHealthBarOnTakeDamage(amount);
 
         if (health <= 0f)
         {
