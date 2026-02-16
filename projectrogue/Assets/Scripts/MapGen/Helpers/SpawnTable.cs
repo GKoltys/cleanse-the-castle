@@ -1,5 +1,11 @@
 ﻿using UnityEngine;
 
+public enum SpawnType
+{
+    Any,        // can spawn on any floor tile
+    Room,       // can spawn only in a room
+}
+
 [System.Serializable]
 public class SpawnTable {
 
@@ -14,4 +20,6 @@ public class SpawnTable {
     public float minDistanceFromPlayer = 0f;
 
     public bool uniqueTile = true;
+
+    public SpawnType spawn;
 }
