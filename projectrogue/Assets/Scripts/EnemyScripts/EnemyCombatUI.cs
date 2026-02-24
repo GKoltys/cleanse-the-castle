@@ -50,4 +50,9 @@ public class EnemyCombatUI : MonoBehaviour
         }
         slowChangeBar.SetWidth(TargetWidth);
     }
+
+    public void ShowDamagePopUp(float damageAmount)
+    {
+        DamagePopUp.Create(transform.position, damageAmount);
+    }
 }

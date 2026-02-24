@@ -33,6 +33,7 @@ public abstract class EnemyBase: MonoBehaviour
 
         animator.SetTrigger("Hurt");
         enemyCombatUI.UpdateHealthBarOnTakeDamage(amount);
+        enemyCombatUI.ShowDamagePopUp(amount);
 
         if (health <= 0f)
         {
