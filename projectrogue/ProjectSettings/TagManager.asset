@@ -15,7 +15,7 @@ TagManager:
   - PlayerAttack
   - EnemyAttack
   - Weapon
-  - 
+  - PopUps
   - 
   - 
   - 
@@ -58,6 +58,9 @@ TagManager:
     locked: 0
   - name: Decor
     uniqueID: 2056844855
+    locked: 0
+  - name: PopUp
+    uniqueID: 1175435643
     locked: 0
   m_RenderingLayers:
   - Default

@@ -57,6 +57,7 @@ public class PlayerCombat : MonoBehaviour
             return new Vector2(0f, Mathf.Sign(raw.y));
     }
 
+    // Called by attackAnimation event
     public void ApplyAttackHit()
     {
         weapon.Attack(lastFacing, transform.position);
