@@ -5,35 +5,47 @@ using UnityEngine.InputSystem;
 public class InteractionDetector : MonoBehaviour
 {
 	private IInteractable interactableInRange = null;
+	public GameObject interactionIcon;
+
+
 	void Start()
 	{
 		// set detection icon to false
+		interactionIcon.SetActive(false);
 	}
 
-	public void OnInteract(InputAction.CallbackContext ctx)
-	{
-		if (ctx.performed)
-		{
-			interactableInRange = interactable;
-			interactableInRange?.Interact();
-		}
-	} 
+    // ✅ Works with PlayerInput "Send Messages"
+    public void OnInteract(UnityEngine.InputSystem.InputValue value)
+    {
 
-	private void OnTriggerEnter2D(Collider2D collision)
-	{
-		if(collision.TryGetComponent(out IInteractable interactable) && interactable.CanInteract())
-		{
-			interactableInRange = interactable;
-            // set detection icon to true
-        }
+        if (!value.isPressed) return;
+        if (interactableInRange == null) return;
+
+        interactionIcon.SetActive(false);
+        interactableInRange?.Interact();
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.TryGetComponent(out IInteractable interactable) && interactable == interactableInRange)
+        var interactable = other.GetComponentInParent<IInteractable>();
+
+        if (interactable == null) return;
+
+        interactableInRange = interactable;
+        interactionIcon.SetActive(true);
+    }
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        var interactable = other.GetComponentInParent<IInteractable>();
+        if (interactable == null) return;
+
+        if (interactableInRange != null && interactable == interactableInRange)
         {
-			interactableInRange = null;
-            // set detection icon to false
+            interactableInRange = null;
+
+            if (interactionIcon != null)
+                interactionIcon.SetActive(false);
         }
     }
 }

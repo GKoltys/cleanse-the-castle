@@ -31,7 +31,7 @@ public class NPC : MonoBehaviour, IInteractable
 
     public bool CanInteract()
     {
-        return !isDialogueActive;
+        return dialogueData != null;
     }
 
     void StartDialogue()
@@ -39,7 +39,7 @@ public class NPC : MonoBehaviour, IInteractable
         isDialogueActive = true;
         dialogueIndex = 0;
 
-        nameText.SetText(dialogueData.name);
+        nameText.SetText(dialogueData.npcName);
         portraitImage.sprite = dialogueData.npcPortrait;
 
         dialoguePanel.SetActive(true);
