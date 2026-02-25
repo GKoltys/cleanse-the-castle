@@ -13,11 +13,13 @@ public class PlayerHealth : MonoBehaviour
 
     private Animator animator;
     private PlayerMovement movement;
+    private PlayerHud playerHud;
 
     private void Awake()
     {
         movement = GetComponent<PlayerMovement>();
         animator = GetComponent<Animator>();
+        playerHud = GetComponent<PlayerHud>();
 
         PlayerStats stats = GetComponent<PlayerStats>();
         iFrameSeconds = stats.GetIFrameSeconds;
@@ -31,10 +33,13 @@ public class PlayerHealth : MonoBehaviour
 
         nextDamageTime = Time.time + iFrameSeconds;
         health -= amount;
+        playerHud.UpdateHealth(health);
 
-        Debug.Log(health);
+        Debug.Log("Hurt " + health);
 
         animator.SetTrigger("Hurt");
+
+
 
         if (health <= 0)
         {
@@ -46,6 +51,9 @@ public class PlayerHealth : MonoBehaviour
     public void Heal(float amount)
     {
         health += amount;
+        playerHud.UpdateHealth(health);
+
+        Debug.Log("Healed " + health);
 
         if (health > maxHealth)
         {

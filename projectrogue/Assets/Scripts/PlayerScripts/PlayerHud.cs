@@ -2,23 +2,34 @@ using UnityEngine;
 
 public class PlayerHud : MonoBehaviour
 {
-    public float Health, MaxHealth;
-    public int CoinCounter = 10;
+    private float Health, MaxHealth;
+    private int CoinCounter;
 
+    private PlayerStats playerStats;
     [SerializeField]  private HealthBarUI healthBar;
     [SerializeField]  private CoinCounterUI coinCounterObj;
+
+    private void Awake()
+    {
+        playerStats = GetComponent<PlayerStats>();
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        MaxHealth = playerStats.GetMaxHealth;
+        Health = playerStats.GetHealth;
+        CoinCounter = playerStats.CoinCount;
+
         healthBar.SetMaxHealth(MaxHealth);
+        healthBar.SetHealth(Health);
+
         coinCounterObj.SetCoins(CoinCounter);
     }
 
-    public void SetHealth(float healthChange)
+    public void UpdateHealth(float newHealth)
     {
-        Health += healthChange;
-        Health = Mathf.Clamp(Health, 0, MaxHealth);
+        Health = Mathf.Clamp(newHealth, 0, MaxHealth);
 
         healthBar.SetHealth(Health);
     }

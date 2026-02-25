@@ -29635,11 +29635,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edf6c56d3f48238418c6f468077f4ef7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HealthBarUI
-  Health: 0
-  MaxHealth: 0
-  Width: 58
-  Height: 8
-  HealthBar: {fileID: 1603462566}
 --- !u!1 &1628130483
 GameObject:
   m_ObjectHideFlags: 0
@@ -31035,9 +31030,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20f683a36ba314842aad4d03ac3074b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHud
-  Health: 100
-  MaxHealth: 100
-  CoinCounter: 10
   healthBar: {fileID: 1603462569}
   coinCounterObj: {fileID: 1709631812}
 --- !u!114 &1841421258
