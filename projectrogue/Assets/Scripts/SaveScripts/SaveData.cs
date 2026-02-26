@@ -6,6 +6,12 @@ using UnityEngine;
 public class SaveData
 {
     public Vector3 playerPosistion;
+    private float playerSpeed;
+    private float playerIFrameSeconds;
+    private float playerMaxHealth;
+    private float playerHealth;
+    private int playerCoinCount;
+    private MeleeWeapon playerWeapon;
 
     // In future we would also need to save things like entire generated level information, enemies, player stats, etc...
 }

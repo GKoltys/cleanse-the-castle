@@ -4,10 +4,13 @@ using UnityEngine.SceneManagement;
 // Health stats will be saved from here to JSON
 public class PlayerBase : MonoBehaviour
 {
-    private float iFrameSeconds;
-    private float maxHealth;
-    private float health;
-    private int coinCount;
+    [Header("Stats and Equipment (Current)")]
+    [SerializeField] private float speed;
+    [SerializeField] private float iFrameSeconds;
+    [SerializeField] private float maxHealth;
+    [SerializeField] private float health;
+    [SerializeField] private int coinCount;
+    [SerializeField] private MeleeWeapon weapon;
 
     private float nextDamageTime;
     private bool isDead = false;
@@ -23,10 +26,12 @@ public class PlayerBase : MonoBehaviour
         playerHud = GetComponent<PlayerHud>();
 
         PlayerStats stats = GetComponent<PlayerStats>();
+        speed = stats.GetSpeed;
         iFrameSeconds = stats.GetIFrameSeconds;
         maxHealth = stats.GetMaxHealth;
         health = stats.GetHealth;
-        coinCount = stats.CoinCount;
+        coinCount = stats.GetCoinCount;
+        weapon = stats.GetWeapon;
     }
 
     public void TakeDamage(float amount)
@@ -92,4 +97,5 @@ public class PlayerBase : MonoBehaviour
 
     // Getter
     public bool GetIsDead => isDead;
+    public MeleeWeapon GetWeapon => weapon;
 }

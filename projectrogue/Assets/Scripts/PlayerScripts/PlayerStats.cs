@@ -5,12 +5,14 @@ using UnityEngine;
 // Their values will be saved to a JSON and read back to here on load
 public class PlayerStats : MonoBehaviour
 {
-    [Header("Stats and Equipment")]
+    // Defaults
+    [Header("Stats and Equipment (Last saved)")]
+    [SerializeField] private float speed = 5f;
     [SerializeField] private float iFrameSeconds = 0.5f;
     [SerializeField] private float maxHealth = 100;
     [SerializeField] private float health = 100;
     [SerializeField] private int coinCount = 0;
-    [SerializeField] private WeaponData weapon;
+    [SerializeField] private MeleeWeapon weapon;
 
     void Start()
     {
@@ -20,9 +22,10 @@ public class PlayerStats : MonoBehaviour
     // void savePlayerStats()
 
     // Getters
+    public float GetSpeed => speed;
     public float GetIFrameSeconds => iFrameSeconds;
     public float GetMaxHealth => maxHealth;
     public float GetHealth => health;
-    public int CoinCount => coinCount;
-    public WeaponData Weapon => weapon;
+    public int GetCoinCount => coinCount;
+    public MeleeWeapon GetWeapon => weapon;
 }

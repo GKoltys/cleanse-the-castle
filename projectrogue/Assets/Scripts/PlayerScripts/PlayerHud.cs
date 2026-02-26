@@ -16,7 +16,7 @@ public class PlayerHud : MonoBehaviour
     {
         healthBar.SetMaxHealth(playerStats.GetMaxHealth);
         healthBar.SetHealth(playerStats.GetHealth);
-        coinCounterObj.UpdateCoinCounter(playerStats.CoinCount);
+        coinCounterObj.UpdateCoinCounter(playerStats.GetCoinCount);
     }
 
     public void UpdateHealth(float newHealth)
