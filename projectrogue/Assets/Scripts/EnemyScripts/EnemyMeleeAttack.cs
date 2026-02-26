@@ -9,7 +9,7 @@ public abstract class EnemyAttack : MonoBehaviour
 
     protected EnemyBase enemy;
     protected Animator animator;
-    protected PlayerHealth playerHealth;
+    protected PlayerBase playerHealth;
     protected Transform playerTransform;
     [DoNotSerialize] public float nextAttackTime;
 
@@ -25,7 +25,7 @@ public abstract class EnemyAttack : MonoBehaviour
         if (player != null)
         {
             playerTransform = player.transform;
-            playerHealth = player.GetComponent<PlayerHealth>();
+            playerHealth = player.GetComponent<PlayerBase>();
         }
     }
 

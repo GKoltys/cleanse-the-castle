@@ -7,6 +7,13 @@ public class CoinController : MonoBehaviour, IMapGenInit
     private MapGenerator dungeon;
     private bool collected = false;
 
+    private PlayerBase player;
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBase>();
+    }
+
     public void Init(MapGenerator controller)
     {
         dungeon = controller;
@@ -22,6 +29,8 @@ public class CoinController : MonoBehaviour, IMapGenInit
 
         collected = true;
         if (col) col.enabled = false;
+
+        player.CoinCollected(1);
 
         if (animator != null && collected)
         {

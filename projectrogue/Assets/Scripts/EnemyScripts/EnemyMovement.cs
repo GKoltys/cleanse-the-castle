@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
     private EnemyAttack attack;
     private Rigidbody2D rb;
     private Transform target;
-    private PlayerHealth playerHealth;
+    private PlayerBase playerHealth;
 
     private float moveSpeed;
     private float agroRadius;
@@ -35,7 +35,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         target = GameObject.Find("Player").transform;
-        playerHealth = target.GetComponentInChildren<PlayerHealth>();
+        playerHealth = target.GetComponentInChildren<PlayerBase>();
     }
 
     private void Update()
