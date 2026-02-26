@@ -2,11 +2,12 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 // Health stats will be saved from here to JSON
-public class PlayerHealth : MonoBehaviour
+public class PlayerBase : MonoBehaviour
 {
     private float iFrameSeconds;
     private float maxHealth;
     private float health;
+    private int coinCount;
 
     private float nextDamageTime;
     private bool isDead = false;
@@ -25,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
         iFrameSeconds = stats.GetIFrameSeconds;
         maxHealth = stats.GetMaxHealth;
         health = stats.GetHealth;
+        coinCount = stats.CoinCount;
     }
 
     public void TakeDamage(float amount)
@@ -59,6 +61,19 @@ public class PlayerHealth : MonoBehaviour
         {
             health = maxHealth;
         }
+    }
+
+    public void CoinCollected(int value)
+    {
+        coinCount += value;
+        Debug.Log("Current coins: " +  coinCount);
+        playerHud.UpdateCoinCounter(coinCount);
+    }
+
+    public void CoinSpent(int value)
+    {
+        coinCount -= value;
+        playerHud.UpdateCoinCounter(coinCount);
     }
 
     private void Die()

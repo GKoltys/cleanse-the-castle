@@ -24,7 +24,7 @@ public class PlayerHud : MonoBehaviour
         healthBar.SetMaxHealth(MaxHealth);
         healthBar.SetHealth(Health);
 
-        coinCounterObj.SetCoins(CoinCounter);
+        coinCounterObj.UpdateCoinCounter(CoinCounter);
     }
 
     public void UpdateHealth(float newHealth)
@@ -34,7 +34,8 @@ public class PlayerHud : MonoBehaviour
         healthBar.SetHealth(Health);
     }
 
-    // TODO:
-    // Here we need to add conditions for receiving damage/gaining health
-    // Need to add functionality for picking up coins using coinCounter.UpdateCounter()
+    public void UpdateCoinCounter(int coinCounter)
+    {
+        coinCounterObj.UpdateCoinCounter(coinCounter);
+    }
 }

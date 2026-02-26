@@ -6,7 +6,7 @@ public class CoinCounterUI : MonoBehaviour
     private int Counter;
     [SerializeField] private TMP_Text coinCounterTMP;
     
-    public void SetCoins(int coins)
+    public void UpdateCoinCounter(int coins)
     {
         if (coinCounterTMP == null)
         {
@@ -15,12 +15,6 @@ public class CoinCounterUI : MonoBehaviour
         }
 
         Counter = coins;
-        coinCounterTMP.SetText($"x {Counter}");
-    }
-
-    public void UpdateCounter(int amount)
-    {
-        Counter += amount;
         coinCounterTMP.SetText($"x {Counter}");
     }
 }
