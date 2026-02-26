@@ -14,7 +14,6 @@ public class InteractionDetector : MonoBehaviour
 		interactionIcon.SetActive(false);
 	}
 
-    // ✅ Works with PlayerInput "Send Messages"
     public void OnInteract(UnityEngine.InputSystem.InputValue value)
     {
 
@@ -22,11 +21,14 @@ public class InteractionDetector : MonoBehaviour
         if (interactableInRange == null) return;
 
         interactionIcon.SetActive(false);
+
+        // call the interact method on the interactlbe object in range
         interactableInRange?.Interact();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        // look for IInteractable on the object 
         var interactable = other.GetComponentInParent<IInteractable>();
 
         if (interactable == null) return;
@@ -37,7 +39,9 @@ public class InteractionDetector : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
+        // look for IInteractable on the object 
         var interactable = other.GetComponentInParent<IInteractable>();
+
         if (interactable == null) return;
 
         if (interactableInRange != null && interactable == interactableInRange)

@@ -34,6 +34,7 @@ public class NPC : MonoBehaviour, IInteractable
         return dialogueData != null;
     }
 
+    // starts dialogue from first line, sets npc name, portrait and displays text panel
     void StartDialogue()
     {
         isDialogueActive = true;
@@ -47,6 +48,7 @@ public class NPC : MonoBehaviour, IInteractable
 
     }
 
+    // when player interacts during dialogue either instantly complete current line or go to next
     void NextLine()
     {
         if(isTyping)
@@ -65,6 +67,7 @@ public class NPC : MonoBehaviour, IInteractable
         }
     }
 
+    // coroutine to type each letter in sentence
     IEnumerator Typeline()
     {
         isTyping = true;
