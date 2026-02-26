@@ -4,10 +4,15 @@ using UnityEngine;
 
 public class HealthBarUI : MonoBehaviour
 {
-    public float Health, MaxHealth, Width, Height;
-
-    [SerializeField]
+    private float Health, MaxHealth, Width, Height;
     private RectTransform HealthBar;
+
+    private void Awake()
+    {
+        HealthBar = GetComponent<RectTransform>();
+        Width = HealthBar.rect.width;
+        Height = HealthBar.rect.height;
+    }
 
     public void SetMaxHealth(float maxHealth)
     {
