@@ -23,7 +23,7 @@ public class PlayerCombat : MonoBehaviour
 
     public void OnAttack()
     {
-        if (weapon == null) return;
+        if (weapon == null || weapon.WeaponId == 0) return;
 
         if (Time.time < nextAttackTime) return;
         nextAttackTime = Time.time + attackCooldown;

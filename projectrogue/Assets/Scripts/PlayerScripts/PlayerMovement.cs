@@ -65,4 +65,6 @@ public class PlayerMovement : MonoBehaviour
     {
         canMove = flag;
     }
+
+    public void SetMoveSpeed(float speed) { moveSpeed = speed; }
 }

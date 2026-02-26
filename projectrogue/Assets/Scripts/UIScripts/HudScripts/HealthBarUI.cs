@@ -6,7 +6,6 @@ public class HealthBarUI : MonoBehaviour
 {
     private float MaxHealth, Width, Height;
     private RectTransform HealthBar;
-    private int mama;
 
     private void Awake()
     {

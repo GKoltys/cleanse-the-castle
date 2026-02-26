@@ -5,13 +5,14 @@ using UnityEngine;
 [System.Serializable]
 public class SaveData
 {
+    // Player related data
     public Vector3 playerPosistion;
-    private float playerSpeed;
-    private float playerIFrameSeconds;
-    private float playerMaxHealth;
-    private float playerHealth;
-    private int playerCoinCount;
-    private MeleeWeapon playerWeapon;
+    public float playerSpeed;
+    public float playerIFrameSeconds;
+    public float playerMaxHealth;
+    public float playerHealth;
+    public int playerCoinCount;
+    public int playerWeaponId;
 
     // In future we would also need to save things like entire generated level information, enemies, player stats, etc...
 }

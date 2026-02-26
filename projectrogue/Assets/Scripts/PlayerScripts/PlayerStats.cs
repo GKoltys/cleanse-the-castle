@@ -12,14 +12,14 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float maxHealth = 100;
     [SerializeField] private float health = 100;
     [SerializeField] private int coinCount = 0;
-    [SerializeField] private MeleeWeapon weapon;
+    [SerializeField] private int weaponId;
 
-    void Start()
-    {
-        // Load saved data to fields
-    }
-
-    // void savePlayerStats()
+    public void SetSpeed(float speed) { this.speed = speed; }
+    public void SetIFrameSeconds(float iFrameSeconds) { this.iFrameSeconds = iFrameSeconds; }
+    public void SetMaxHealth(float maxHealth) { this.maxHealth = maxHealth; }
+    public void SetHealth(float  health) { this.health = health; }
+    public void SetCoinCount(int coinCount) { this.coinCount = coinCount; }
+    public void SetWeapon(int weapon) { this.weaponId = weapon; }
 
     // Getters
     public float GetSpeed => speed;
@@ -27,5 +27,5 @@ public class PlayerStats : MonoBehaviour
     public float GetMaxHealth => maxHealth;
     public float GetHealth => health;
     public int GetCoinCount => coinCount;
-    public MeleeWeapon GetWeapon => weapon;
+    public int GetWeapon => weaponId;
 }

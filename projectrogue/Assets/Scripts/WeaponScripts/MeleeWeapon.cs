@@ -32,5 +32,11 @@ public class MeleeWeapon : MonoBehaviour
         }
     }
 
+    public void SetWeaponData(WeaponData data)
+    {
+        weaponData = data;
+    }
+
     public float AttackCooldown => weaponData.cooldown;
+    public int WeaponId => weaponData.id;
 }
