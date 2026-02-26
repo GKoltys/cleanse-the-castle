@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class CoinCounterUI : MonoBehaviour
 {
-    private int Counter;
     [SerializeField] private TMP_Text coinCounterTMP;
     
     public void UpdateCoinCounter(int coins)
@@ -13,8 +12,6 @@ public class CoinCounterUI : MonoBehaviour
             Debug.LogError("coinCounterTMP is not assigned");
             return;
         }
-
-        Counter = coins;
-        coinCounterTMP.SetText($"x {Counter}");
+        coinCounterTMP.SetText($"x {coins}");
     }
 }

@@ -2,9 +2,6 @@ using UnityEngine;
 
 public class PlayerHud : MonoBehaviour
 {
-    private float Health, MaxHealth;
-    private int CoinCounter;
-
     private PlayerStats playerStats;
     [SerializeField]  private HealthBarUI healthBar;
     [SerializeField]  private CoinCounterUI coinCounterObj;
@@ -17,21 +14,14 @@ public class PlayerHud : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        MaxHealth = playerStats.GetMaxHealth;
-        Health = playerStats.GetHealth;
-        CoinCounter = playerStats.CoinCount;
-
-        healthBar.SetMaxHealth(MaxHealth);
-        healthBar.SetHealth(Health);
-
-        coinCounterObj.UpdateCoinCounter(CoinCounter);
+        healthBar.SetMaxHealth(playerStats.GetMaxHealth);
+        healthBar.SetHealth(playerStats.GetHealth);
+        coinCounterObj.UpdateCoinCounter(playerStats.CoinCount);
     }
 
     public void UpdateHealth(float newHealth)
     {
-        Health = Mathf.Clamp(newHealth, 0, MaxHealth);
-
-        healthBar.SetHealth(Health);
+        healthBar.SetHealth(newHealth);
     }
 
     public void UpdateCoinCounter(int coinCounter)

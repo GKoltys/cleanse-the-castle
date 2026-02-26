@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class HealthBarUI : MonoBehaviour
 {
-    private float Health, MaxHealth, Width, Height;
+    private float MaxHealth, Width, Height;
     private RectTransform HealthBar;
+    private int mama;
 
     private void Awake()
     {
@@ -21,8 +22,7 @@ public class HealthBarUI : MonoBehaviour
 
     public void SetHealth(float health)
     {
-        Health = health;
-        float newWidth = (Health / MaxHealth) * Width;
+        float newWidth = (health / MaxHealth) * Width;
 
         HealthBar.sizeDelta = new Vector2(newWidth, Height);
     }
