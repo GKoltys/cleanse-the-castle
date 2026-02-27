@@ -1160,10 +1160,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraController
   target: {fileID: 1964050140853615474}
-  minX: -26
-  maxX: 25
-  minY: -17
-  maxY: 20
+  minX: 0
+  maxX: 0
+  minY: 0
+  maxY: 0
 --- !u!1 &9097334999545730527
 GameObject:
   m_ObjectHideFlags: 0

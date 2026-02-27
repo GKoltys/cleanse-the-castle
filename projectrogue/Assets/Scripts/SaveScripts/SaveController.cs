@@ -64,7 +64,6 @@ public class SaveController : MonoBehaviour
 
         SaveData saveData = new SaveData
         {
-            
             playerPosistion = player.transform.position,
             playerSpeed = playerBase.GetSpeed,
             playerIFrameSeconds = playerBase.GetIFrameSeconds,

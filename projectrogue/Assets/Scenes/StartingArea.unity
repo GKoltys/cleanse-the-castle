@@ -25365,6 +25365,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834780259}
   m_CullTransparentMesh: 1
+--- !u!114 &877996091 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6109117448723901957, guid: a70267d1ecede5140924a362554a3282, type: 3}
+  m_PrefabInstance: {fileID: 1671903995}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62eceb6025cc38d41a8393b97a470b47, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraController
 --- !u!1 &880171275
 GameObject:
   m_ObjectHideFlags: 0
@@ -29316,6 +29327,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6109117448723901957, guid: a70267d1ecede5140924a362554a3282, type: 3}
+      propertyPath: maxX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109117448723901957, guid: a70267d1ecede5140924a362554a3282, type: 3}
+      propertyPath: maxY
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109117448723901957, guid: a70267d1ecede5140924a362554a3282, type: 3}
+      propertyPath: minX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6109117448723901957, guid: a70267d1ecede5140924a362554a3282, type: 3}
+      propertyPath: minY
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8254896775790499621, guid: a70267d1ecede5140924a362554a3282, type: 3}
       propertyPath: m_Name
       value: Player
@@ -29625,6 +29652,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1746263168}
   - component: {fileID: 1746263167}
+  - component: {fileID: 1746263169}
   m_Layer: 0
   m_Name: Grid
   m_TagString: Untagged
@@ -29664,6 +29692,20 @@ Transform:
   - {fileID: 559565551}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1746263169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1746263166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1d5ab879dae08945ad6ce0f082cba84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StartingAreaCameraClamp
+  cam: {fileID: 877996091}
+  tmc: {fileID: 509683251}
 --- !u!1 &1747921630
 GameObject:
   m_ObjectHideFlags: 0
