@@ -4,10 +4,15 @@ using UnityEngine.SceneManagement;
 // Health stats will be saved from here to JSON
 public class PlayerBase : MonoBehaviour
 {
-    private float iFrameSeconds;
-    private float maxHealth;
-    private float health;
-    private int coinCount;
+    [Header("Stats and Equipment (Current)")]
+    [SerializeField] private float speed;
+    [SerializeField] private float iFrameSeconds;
+    [SerializeField] private float maxHealth;
+    [SerializeField] private float health;
+    [SerializeField] private int coinCount;
+    [SerializeField] private MeleeWeapon weapon;
+
+    [SerializeField] private WeaponDatabase weaponDatabase;
 
     private float nextDamageTime;
     private bool isDead = false;
@@ -21,12 +26,29 @@ public class PlayerBase : MonoBehaviour
         movement = GetComponent<PlayerMovement>();
         animator = GetComponent<Animator>();
         playerHud = GetComponent<PlayerHud>();
+        weapon = GetComponentInChildren<MeleeWeapon>();
 
         PlayerStats stats = GetComponent<PlayerStats>();
+        speed = stats.GetSpeed;
         iFrameSeconds = stats.GetIFrameSeconds;
         maxHealth = stats.GetMaxHealth;
         health = stats.GetHealth;
-        coinCount = stats.CoinCount;
+        coinCount = stats.GetCoinCount;
+        weapon.SetWeaponData(weaponDatabase.GetWeaponById(stats.GetWeapon));
+    }
+
+    public void ApplyLoadedStats(PlayerStats stats)
+    {
+        speed = stats.GetSpeed;
+        iFrameSeconds = stats.GetIFrameSeconds;
+        maxHealth = stats.GetMaxHealth;
+        health = stats.GetHealth;
+        coinCount = stats.GetCoinCount;
+        weapon.SetWeaponData(weaponDatabase.GetWeaponById(stats.GetWeapon));
+
+        // Update defaulted values from before load
+        movement.SetMoveSpeed(speed);
+        playerHud.SetHudOnLoad(maxHealth, health, coinCount);
     }
 
     public void TakeDamage(float amount)
@@ -92,4 +114,11 @@ public class PlayerBase : MonoBehaviour
 
     // Getter
     public bool GetIsDead => isDead;
+    public float GetSpeed => speed;
+    public float GetIFrameSeconds => iFrameSeconds;
+    public float GetMaxHealth => maxHealth;
+    public float GetHealth => health;
+    public int GetCoinCount => coinCount;
+    public MeleeWeapon GetWeapon => weapon;
+    public int GetWeaponId => weapon.WeaponId;
 }

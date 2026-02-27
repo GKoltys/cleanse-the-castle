@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 54c261c35408b2a44aa68795ebdd5144, type: 3}
-  m_Name: SwordWeaponData
+  m_Name: NoWeaponData
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
-  id: 1
-  weaponName: sword
-  damage: 15
-  cooldown: 0.5
-  range: 1
-  knockbackForce: 4
-  hitBoxSize: {x: 1, y: 1}
-  attackTrigger: Attack
+  id: 0
+  weaponName: no_name
+  damage: 0
+  cooldown: 0
+  range: 0
+  knockbackForce: 0
+  hitBoxSize: {x: 0, y: 0}
+  attackTrigger: None

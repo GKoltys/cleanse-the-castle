@@ -4,10 +4,12 @@ public class CameraController : MonoBehaviour
 {
     [SerializeField] private Transform target;
 
-    [SerializeField] private float minX;
-    [SerializeField] private float maxX;
-    [SerializeField] private float minY;
-    [SerializeField] private float maxY;
+    private float minX;
+    private float maxX;
+    private float minY;
+    private float maxY;
+
+    private bool hasBounds;
 
     private Camera cam;
 
@@ -19,6 +21,8 @@ public class CameraController : MonoBehaviour
     private void LateUpdate()
     {
         if (target == null) return;
+
+        if (!hasBounds) return;
 
         // camera half-sizes
         float halfHeight = cam.orthographicSize;
@@ -44,6 +48,18 @@ public class CameraController : MonoBehaviour
             maxY - halfHeight
         );
 
+        // Safety check if map is smaller than camera view
+        float clampMinX = minX + halfWidth;
+        float clampMaxX = maxX - halfWidth;
+        float clampMinY = minY + halfHeight;
+        float clampMaxY = maxY - halfHeight;
+
+        if (clampMinX > clampMaxX) desired.x = (minX + maxX) * 0.5f;
+        else desired.x = Mathf.Clamp(desired.x, clampMinX, clampMaxX);
+
+        if (clampMinY > clampMaxY) desired.y = (minY + maxY) * 0.5f;
+        else desired.y = Mathf.Clamp(desired.y, clampMinY, clampMaxY);
+
         transform.position = desired;
     }
 
@@ -53,5 +69,6 @@ public class CameraController : MonoBehaviour
         this.maxX = maxX;
         this.minY = minY;
         this.maxY = maxY;
+        hasBounds = true;
     }
 }

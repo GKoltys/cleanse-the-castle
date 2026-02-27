@@ -3,29 +3,28 @@ using UnityEngine.InputSystem;
 
 public class PlayerCombat : MonoBehaviour
 {
-    [Header("Attack")]
-    [SerializeField] private float attackCooldown;
+    private float attackCooldown;
 
     private Camera cam;
     private Vector2 lastFacing = Vector2.down;
     private float nextAttackTime;
 
     private MeleeWeapon weapon;
-    private PlayerMovement movement;
     private Animator animator;
 
     private void Awake()
     {
         cam = Camera.main;
         animator = GetComponent<Animator>();
-        movement = GetComponent<PlayerMovement>();
-        weapon = GetComponentInChildren<MeleeWeapon>();
+        weapon = GetComponent<PlayerBase>().GetWeapon;
 
         attackCooldown = weapon.AttackCooldown;
     }
 
     public void OnAttack()
     {
+        if (weapon == null || weapon.WeaponId == 0) return;
+
         if (Time.time < nextAttackTime) return;
         nextAttackTime = Time.time + attackCooldown;
 

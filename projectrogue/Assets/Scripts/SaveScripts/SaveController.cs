@@ -7,6 +7,10 @@ public class SaveController : MonoBehaviour
     private string saveLocation;
     private bool shouldLoadOnNextScene;
 
+    GameObject player;
+    PlayerStats playerStats;
+    PlayerBase playerBase;
+
     // https://www.youtube.com/watch?v=VTZ1TQR80Qc
     // Declaring SaveController as a singleton
     public static SaveController Instance { get; private set; }
@@ -46,7 +50,7 @@ public class SaveController : MonoBehaviour
     // Called automatically by the engine after LoadScenceAsync()
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (!shouldLoadOnNextScene) return;
+        //if (!shouldLoadOnNextScene) return;
 
         shouldLoadOnNextScene = false;
 
@@ -55,9 +59,18 @@ public class SaveController : MonoBehaviour
 
     public void SaveGame()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerBase = player.GetComponent<PlayerBase>();
+
         SaveData saveData = new SaveData
         {
-            playerPosistion = GameObject.FindGameObjectWithTag("Player").transform.position
+            playerPosistion = player.transform.position,
+            playerSpeed = playerBase.GetSpeed,
+            playerIFrameSeconds = playerBase.GetIFrameSeconds,
+            playerMaxHealth = playerBase.GetMaxHealth,
+            playerHealth = playerBase.GetHealth,
+            playerCoinCount = playerBase.GetCoinCount,
+            playerWeaponId = playerBase.GetWeaponId
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
@@ -67,9 +80,21 @@ public class SaveController : MonoBehaviour
     {
         if (File.Exists(saveLocation))
         {
+            player = GameObject.FindGameObjectWithTag("Player");
+            playerStats = player.GetComponent<PlayerStats>();
+            playerBase = player.GetComponent<PlayerBase>();
+
             SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
 
-            GameObject.FindGameObjectWithTag("Player").transform.position = saveData.playerPosistion;
+            player.transform.position = saveData.playerPosistion;
+            playerStats.SetSpeed(saveData.playerSpeed);
+            playerStats.SetIFrameSeconds(saveData.playerIFrameSeconds);
+            playerStats.SetMaxHealth(saveData.playerMaxHealth);
+            playerStats.SetHealth(saveData.playerHealth);
+            playerStats.SetCoinCount(saveData.playerCoinCount);
+            playerStats.SetWeapon(saveData.playerWeaponId);
+
+            playerBase.ApplyLoadedStats(playerStats);
         }
         else
         {
