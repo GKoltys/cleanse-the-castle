@@ -24,6 +24,7 @@ public class InteractionDetector : MonoBehaviour
         if (interactable == null) return;
 
         interactableInRange = interactable;
+        // set the interaction icon to appear on interactable object
         interactable.ShowCanInteract(true);
     }
 

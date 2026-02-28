@@ -42,7 +42,7 @@ public class CoinController : MonoBehaviour, IMapGenInit
 
     public void Despawn()
     {
-        // destory for now, if it affects performance move to object pooling?
+        // destroy for now, if it affects performance move to object pooling?
         Destroy(gameObject);
     }
 }
