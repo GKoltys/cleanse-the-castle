@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54c261c35408b2a44aa68795ebdd5144, type: 3}
   m_Name: BowWeaponData
   m_EditorClassIdentifier: Assembly-CSharp::WeaponData
-  id: 2
+  id: 3
   weaponName: bow
   damage: 0
   cooldown: 0.5

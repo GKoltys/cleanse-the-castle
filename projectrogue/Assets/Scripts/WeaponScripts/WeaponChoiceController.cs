@@ -31,5 +31,6 @@ public class WeaponChoiceController : MonoBehaviour
         chosenPickup.gameObject.SetActive(false);
 
         player.SetWeapon(newPickup.weapon);
+        SaveController.Instance.SaveGame(); // Saving all player data on weapon change since this is just as costly as only changing the weaponId
     }
 }

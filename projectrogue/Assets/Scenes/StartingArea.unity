@@ -26707,7 +26707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpWeapon
   interactableSprite: {fileID: 3572176205635787150, guid: 9d70cc5e18ffe0c46a3c42dbbe97d787, type: 3}
-  weapon: {fileID: 11400000, guid: 88a7c8de1198d7740bfed6c26479278c, type: 2}
+  weapon: {fileID: 11400000, guid: 1f810bf097a83794799e15c338e917e6, type: 2}
 --- !u!61 &1054551088
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -27781,7 +27781,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpWeapon
   interactableSprite: {fileID: 3535580734168908311, guid: 9d70cc5e18ffe0c46a3c42dbbe97d787, type: 3}
-  weapon: {fileID: 11400000, guid: 88a7c8de1198d7740bfed6c26479278c, type: 2}
+  weapon: {fileID: 11400000, guid: c704db7a03577ae4a979f87971247b80, type: 2}
 --- !u!61 &1239764278
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -32306,7 +32306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickUpWeapon
   interactableSprite: {fileID: -8810453482272910411, guid: 9d70cc5e18ffe0c46a3c42dbbe97d787, type: 3}
-  weapon: {fileID: 11400000, guid: 88a7c8de1198d7740bfed6c26479278c, type: 2}
+  weapon: {fileID: 11400000, guid: 1cda3b4cf11cf764891fcc7efbf4c177, type: 2}
 --- !u!61 &2059495401
 BoxCollider2D:
   m_ObjectHideFlags: 0
