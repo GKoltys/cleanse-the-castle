@@ -51,6 +51,11 @@ public class PlayerBase : MonoBehaviour
         playerHud.SetHudOnLoad(maxHealth, health, coinCount);
     }
 
+    public void SetWeapon(WeaponData weaponData)
+    {
+        weapon.SetWeaponData(weaponData);
+    }
+
     public void TakeDamage(float amount)
     {
         if (Time.time < nextDamageTime) return;
