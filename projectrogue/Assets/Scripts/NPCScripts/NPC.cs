@@ -13,8 +13,10 @@ public class NPC : MonoBehaviour, IInteractable
     private int dialogueIndex;
     private bool isTyping, isDialogueActive;
 
-    public void Interact()
+    public GameObject lastInteractor;
+    public void Interact(GameObject interactor)
     {
+        lastInteractor = interactor;
         if(dialogueData == null)
         {
             return;
@@ -42,6 +44,8 @@ public class NPC : MonoBehaviour, IInteractable
 
         nameText.SetText(dialogueData.npcName);
         portraitImage.sprite = dialogueData.npcPortrait;
+
+        lastInteractor.GetComponent<PlayerMovement>().enabled = false;
 
         dialoguePanel.SetActive(true);
         StartCoroutine(Typeline());
@@ -88,6 +92,9 @@ public class NPC : MonoBehaviour, IInteractable
         isDialogueActive = false;
         dialogueText.SetText("");
         dialoguePanel.SetActive(false);
+
+        if (lastInteractor != null)
+            lastInteractor.GetComponent<PlayerMovement>().enabled = true;
     }
 
 }

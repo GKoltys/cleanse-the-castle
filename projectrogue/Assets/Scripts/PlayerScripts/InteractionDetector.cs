@@ -23,7 +23,7 @@ public class InteractionDetector : MonoBehaviour
         interactionIcon.SetActive(false);
 
         // call the interact method on the interactlbe object in range
-        interactableInRange?.Interact();
+        interactableInRange?.Interact(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
