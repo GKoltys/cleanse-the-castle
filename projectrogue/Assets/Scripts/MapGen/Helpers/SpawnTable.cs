@@ -24,6 +24,8 @@ public class SpawnTable {
 
     public bool guaranteeSpawn = true;
 
+    public GameObject spawnAlso; // spawn another object if this object spawns
+
     public bool uniqueTile = true;
 
     public SpawnType spawn;

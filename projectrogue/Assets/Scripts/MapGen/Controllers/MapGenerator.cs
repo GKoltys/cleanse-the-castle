@@ -197,6 +197,7 @@ public class MapGenerator : MonoBehaviour
                 {
                     continue;
                 }
+
                 // pick a random floor tile using min distance from player
                 Vector2Int tile = PickTile(floors, playerPos, entry.minDistanceFromPlayer, attempts: 30);
 
@@ -207,6 +208,27 @@ public class MapGenerator : MonoBehaviour
                 if (entry.uniqueTile)
                 {
                     floors.Remove(tile);
+                }
+
+                // if an object with a spawnAlso element spawned, add to list
+                if (entry.spawnAlso != null)
+                { 
+                    // pick another free tile
+                    Vector2Int extraTile = PickTile(floors, playerPos, entry.minDistanceFromPlayer, attempts: 30);
+                    Vector3 world = new Vector3(extraTile.x + 0.5f, extraTile.y + 0.5f, 0f);
+                    // instantiate prefab
+                    var go = Instantiate(entry.spawnAlso, world, Quaternion.identity, entitiesRoot);
+
+                    // initialize components
+                    var initializables = go.GetComponentsInChildren<IMapGenInit>();
+                    foreach (var init in initializables)
+                    {
+                        init.Init(this);
+                    }
+       
+
+                    // remove tile
+                    floors.Remove(extraTile);
                 }
 
                 spawned++;
@@ -220,7 +242,6 @@ public class MapGenerator : MonoBehaviour
                 // instantiate the prefab
                 SpawnAtTile(entry, tile, floors);
             }
-
         }
     }
 
@@ -261,17 +282,22 @@ public class MapGenerator : MonoBehaviour
     private void SpawnAtTile(SpawnTable entry, Vector2Int tile, List<Vector2Int> floors)
     {
         Vector3 world = new Vector3(tile.x + 0.5f, tile.y + 0.5f, 0f);
-
         // instantiate prefab
         var go = Instantiate(entry.prefab, world, Quaternion.identity, entitiesRoot);
 
         // initialize components
         var initializables = go.GetComponentsInChildren<IMapGenInit>();
         foreach (var init in initializables)
+        {
             init.Init(this);
+        }
+
 
         if (entry.uniqueTile)
+        {
             floors.Remove(tile);
+        }
+
     }
 
     // remove entities/prefabs from the map
