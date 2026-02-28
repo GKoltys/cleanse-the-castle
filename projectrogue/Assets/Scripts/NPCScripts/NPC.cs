@@ -5,6 +5,7 @@ using TMPro;
 
 public class NPC : MonoBehaviour, IInteractable
 {
+    public GameObject interactionIcon;
     public NPCDialogue dialogueData;
     public GameObject dialoguePanel;
     public TMP_Text dialogueText, nameText;
@@ -14,6 +15,12 @@ public class NPC : MonoBehaviour, IInteractable
     private bool isTyping, isDialogueActive;
 
     public GameObject lastInteractor;
+
+    private void Awake()
+    {
+        interactionIcon.SetActive(false);
+    }
+
     public void Interact(GameObject interactor)
     {
         lastInteractor = interactor;
@@ -34,6 +41,11 @@ public class NPC : MonoBehaviour, IInteractable
     public bool CanInteract()
     {
         return dialogueData != null;
+    }
+
+    public void ShowCanInteract(bool show)
+    {
+        interactionIcon.SetActive(show);
     }
 
     // starts dialogue from first line, sets npc name, portrait and displays text panel
