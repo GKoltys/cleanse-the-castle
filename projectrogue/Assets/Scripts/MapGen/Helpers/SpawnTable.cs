@@ -19,6 +19,11 @@ public class SpawnTable {
     [Min(0)]
     public float minDistanceFromPlayer = 0f;
 
+    [Range(0f, 1f)]
+    public float spawnChance = 1f;
+
+    public bool guaranteeSpawn = true;
+
     public bool uniqueTile = true;
 
     public SpawnType spawn;

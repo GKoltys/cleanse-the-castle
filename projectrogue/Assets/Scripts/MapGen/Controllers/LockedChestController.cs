@@ -1,6 +1,6 @@
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ChestController : MonoBehaviour, IMapGenInit, IInteractable
+public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
 {
     public bool IsOpened;
     public GameObject interactionIcon;
@@ -14,7 +14,7 @@ public class ChestController : MonoBehaviour, IMapGenInit, IInteractable
         dungeon = controller;
         animator = GetComponent<Animator>();
     }
-    
+
     // set the chest to closed on spawn
     private void Awake()
     {
@@ -31,11 +31,11 @@ public class ChestController : MonoBehaviour, IMapGenInit, IInteractable
     {
         if (!CanInteract()) return;
         if (dungeon == null) return;
+        // add need key functionality
         lastInteractor = interactor;
         OpenChest();
         if (interactionIcon != null)
             interactionIcon.SetActive(false);
-
 
     }
 
@@ -48,7 +48,7 @@ public class ChestController : MonoBehaviour, IMapGenInit, IInteractable
     private void OpenChest()
     {
         SetIsOpened(true);
-        animator.SetTrigger("OpenChest");
+        animator.SetTrigger("OpenLockedChest");
         // add functionality later like dropping items
     }
 

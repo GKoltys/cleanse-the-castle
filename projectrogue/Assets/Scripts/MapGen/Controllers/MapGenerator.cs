@@ -187,27 +187,38 @@ public class MapGenerator : MonoBehaviour
             // get the count of spawnable prefabs, compare to floor type count in case it exceeds it
             int n = Mathf.Min(entry.count, floors.Count);
 
+            // guarantee at least one instance of a spawn entry
+            int spawned = 0;
+
             for (int i = 0; i < n; i++)
             {
+                // roll chance for this instance of the object
+                if (Random.value > entry.spawnChance)
+                {
+                    continue;
+                }
                 // pick a random floor tile using min distance from player
                 Vector2Int tile = PickTile(floors, playerPos, entry.minDistanceFromPlayer, attempts: 30);
-                Vector3 world = new Vector3(tile.x + 0.5f, tile.y + 0.5f, 0f);
 
                 // instantiate the prefab
-                var go = Instantiate(entry.prefab, world, Quaternion.identity, entitiesRoot);
-
-                // initialize the components
-                var initializables = go.GetComponentsInChildren<IMapGenInit>();
-                foreach (var init in initializables)
-                {
-                    init.Init(this);
-                }
+                SpawnAtTile(entry, tile, floors);
 
                 // remove the tile so nothing else can be spawned
                 if (entry.uniqueTile)
                 {
                     floors.Remove(tile);
                 }
+
+                spawned++;
+            }
+
+            // guarantee one spawn
+            if (spawned == 0 && entry.count > 0 && entry.spawnChance > 0f && entry.guaranteeSpawn)
+            {
+                // pick tile
+                Vector2Int tile = PickTile(floors, playerPos, entry.minDistanceFromPlayer, attempts: 30);
+                // instantiate the prefab
+                SpawnAtTile(entry, tile, floors);
             }
 
         }
@@ -245,6 +256,22 @@ public class MapGenerator : MonoBehaviour
         }
 
         return chosen;
+    }
+
+    private void SpawnAtTile(SpawnTable entry, Vector2Int tile, List<Vector2Int> floors)
+    {
+        Vector3 world = new Vector3(tile.x + 0.5f, tile.y + 0.5f, 0f);
+
+        // instantiate prefab
+        var go = Instantiate(entry.prefab, world, Quaternion.identity, entitiesRoot);
+
+        // initialize components
+        var initializables = go.GetComponentsInChildren<IMapGenInit>();
+        foreach (var init in initializables)
+            init.Init(this);
+
+        if (entry.uniqueTile)
+            floors.Remove(tile);
     }
 
     // remove entities/prefabs from the map
