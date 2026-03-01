@@ -17,6 +17,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private int minRoomSize = 5;
     [SerializeField] private int maxRoomSize = 12;
     [SerializeField] private int corridorWidth = 1;
+    [SerializeField] private int seed;
 
     [SerializeField] private Tilemap floorTilemap;
     [SerializeField] private Tilemap wallTilemap;
@@ -40,9 +41,11 @@ public class MapGenerator : MonoBehaviour
 
     private void BuildFloor()
     {
+        int floorSeed = seed;
+        floorSeed = Random.Range(int.MinValue, int.MaxValue);
         //currentMap = GenerateRoom(width, height, padding);
         currentMap = ProceduralGenerator.GenerateFloor(width, height, padding,
-            bspMaxDepth, minLeafSize, minRoomSize, maxRoomSize, corridorWidth, out playerPos);
+            bspMaxDepth, minLeafSize, minRoomSize, maxRoomSize, floorSeed, corridorWidth, out playerPos);
         Render(currentMap);
         PlacePlayer(playerPos);
         PlacePrefabs(currentMap);
