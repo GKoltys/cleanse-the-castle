@@ -8,6 +8,7 @@ public class ChestController : MonoBehaviour, IMapGenInit, IInteractable
     private MapGenerator dungeon;
 
     public GameObject lastInteractor;
+    private GameObject dropPrefab; // item to come from chest
 
     public void Init(MapGenerator controller)
     {
@@ -49,11 +50,32 @@ public class ChestController : MonoBehaviour, IMapGenInit, IInteractable
     {
         SetIsOpened(true);
         animator.SetTrigger("OpenChest");
-        // add functionality later like dropping items
     }
 
     public void SetIsOpened(bool opened)
     {
         IsOpened = opened;
+    }
+
+    public void SetDrop(GameObject prefab)
+    {
+        dropPrefab = prefab;
+    }
+
+    // run as an animation event, so after chest opens it drops the item
+    public void DropItem()
+    {
+
+        if (dropPrefab != null)
+        {
+            Vector3 dropPos = transform.position + Vector3.up * 0.2f;
+
+            var go = Instantiate(dropPrefab, dropPos, Quaternion.identity);
+
+            // run init so interaction works
+            var initializables = go.GetComponentsInChildren<IMapGenInit>();
+            foreach (var init in initializables)
+                init.Init(dungeon);
+        }
     }
 }
