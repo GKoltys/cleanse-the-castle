@@ -1,0 +1,83 @@
+﻿using UnityEngine;
+using System.Collections;
+
+public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
+{
+    public bool IsOpened;
+    public GameObject interactionIcon;
+    private Animator animator;
+    private MapGenerator dungeon;
+
+    public GameObject lastInteractor;
+
+    private GameObject dropPrefab; // item to come from chest
+
+    public void Init(MapGenerator controller)
+    {
+        dungeon = controller;
+        animator = GetComponent<Animator>();
+    }
+
+    // set the chest to closed on spawn
+    private void Awake()
+    {
+        interactionIcon.SetActive(false);
+        SetIsOpened(false);
+    }
+
+    public bool CanInteract()
+    {
+        return !IsOpened;
+    }
+
+    public void Interact(GameObject interactor)
+    {
+        if (!CanInteract()) return;
+        if (dungeon == null) return;
+        // add need key functionality
+        lastInteractor = interactor;
+        OpenChest();
+        if (interactionIcon != null)
+            interactionIcon.SetActive(false);
+
+    }
+
+    public void ShowCanInteract(bool show)
+    {
+        if (interactionIcon != null)
+            interactionIcon.SetActive(show && CanInteract());
+    }
+
+    private void OpenChest()
+    {
+        SetIsOpened(true);
+        animator.SetTrigger("OpenLockedChest");
+    }
+
+    public void SetIsOpened(bool opened)
+    {
+        IsOpened = opened;
+    }
+
+    public void SetDrop(GameObject prefab)
+    {
+        dropPrefab = prefab;
+    }
+
+    // run as an animation event, so after chest opens it drops the item
+    public void DropItem()
+    {
+
+        if (dropPrefab != null)
+        {
+            Vector3 dropPos = transform.position + Vector3.up * 0.2f;
+
+            var go = Instantiate(dropPrefab, dropPos, Quaternion.identity);
+
+            // run init so interaction works
+            var initializables = go.GetComponentsInChildren<IMapGenInit>();
+            foreach (var init in initializables)
+                init.Init(dungeon);
+        }
+    }
+}

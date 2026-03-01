@@ -17,6 +17,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private int minRoomSize = 5;
     [SerializeField] private int maxRoomSize = 12;
     [SerializeField] private int corridorWidth = 1;
+    [SerializeField] private int seed;
 
     [SerializeField] private Tilemap floorTilemap;
     [SerializeField] private Tilemap wallTilemap;
@@ -40,9 +41,11 @@ public class MapGenerator : MonoBehaviour
 
     private void BuildFloor()
     {
+        int floorSeed = seed;
+        floorSeed = Random.Range(int.MinValue, int.MaxValue);
         //currentMap = GenerateRoom(width, height, padding);
         currentMap = ProceduralGenerator.GenerateFloor(width, height, padding,
-            bspMaxDepth, minLeafSize, minRoomSize, maxRoomSize, corridorWidth, out playerPos);
+            bspMaxDepth, minLeafSize, minRoomSize, maxRoomSize, floorSeed, corridorWidth, out playerPos);
         Render(currentMap);
         PlacePlayer(playerPos);
         PlacePrefabs(currentMap);
@@ -187,29 +190,61 @@ public class MapGenerator : MonoBehaviour
             // get the count of spawnable prefabs, compare to floor type count in case it exceeds it
             int n = Mathf.Min(entry.count, floors.Count);
 
+            // guarantee at least one instance of a spawn entry
+            int spawned = 0;
+
             for (int i = 0; i < n; i++)
             {
+                // roll chance for this instance of the object
+                if (Random.value > entry.spawnChance)
+                {
+                    continue;
+                }
+
                 // pick a random floor tile using min distance from player
                 Vector2Int tile = PickTile(floors, playerPos, entry.minDistanceFromPlayer, attempts: 30);
-                Vector3 world = new Vector3(tile.x + 0.5f, tile.y + 0.5f, 0f);
 
                 // instantiate the prefab
-                var go = Instantiate(entry.prefab, world, Quaternion.identity, entitiesRoot);
-
-                // initialize the components
-                var initializables = go.GetComponentsInChildren<IMapGenInit>();
-                foreach (var init in initializables)
-                {
-                    init.Init(this);
-                }
+                SpawnAtTile(entry, tile, floors);
 
                 // remove the tile so nothing else can be spawned
                 if (entry.uniqueTile)
                 {
                     floors.Remove(tile);
                 }
+
+                // if an object with a spawnAlso element spawned, add to list
+                if (entry.spawnAlso != null)
+                { 
+                    // pick another free tile
+                    Vector2Int extraTile = PickTile(floors, playerPos, entry.minDistanceFromPlayer, attempts: 30);
+                    Vector3 world = new Vector3(extraTile.x + 0.5f, extraTile.y + 0.5f, 0f);
+                    // instantiate prefab
+                    var go = Instantiate(entry.spawnAlso, world, Quaternion.identity, entitiesRoot);
+
+                    // initialize components
+                    var initializables = go.GetComponentsInChildren<IMapGenInit>();
+                    foreach (var init in initializables)
+                    {
+                        init.Init(this);
+                    }
+       
+
+                    // remove tile
+                    floors.Remove(extraTile);
+                }
+
+                spawned++;
             }
 
+            // guarantee one spawn
+            if (spawned == 0 && entry.count > 0 && entry.spawnChance > 0f && entry.guaranteeSpawn)
+            {
+                // pick tile
+                Vector2Int tile = PickTile(floors, playerPos, entry.minDistanceFromPlayer, attempts: 30);
+                // instantiate the prefab
+                SpawnAtTile(entry, tile, floors);
+            }
         }
     }
 
@@ -245,6 +280,34 @@ public class MapGenerator : MonoBehaviour
         }
 
         return chosen;
+    }
+
+    private void SpawnAtTile(SpawnTable entry, Vector2Int tile, List<Vector2Int> floors)
+    {
+        Vector3 world = new Vector3(tile.x + 0.5f, tile.y + 0.5f, 0f);
+        // instantiate prefab
+        var go = Instantiate(entry.prefab, world, Quaternion.identity, entitiesRoot);
+
+        // set item inside chest, for now it's the spawnAlso but could make a list of objects to randomly choose
+        var chest = go.GetComponent<LockedChestController>();
+        if (chest != null && entry.spawnAlso != null)
+        {
+            chest.SetDrop(entry.spawnAlso);
+        }
+
+        // initialize components
+        var initializables = go.GetComponentsInChildren<IMapGenInit>();
+        foreach (var init in initializables)
+        {
+            init.Init(this);
+        }
+
+
+        if (entry.uniqueTile)
+        {
+            floors.Remove(tile);
+        }
+
     }
 
     // remove entities/prefabs from the map

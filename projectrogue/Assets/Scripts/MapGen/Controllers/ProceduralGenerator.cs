@@ -6,8 +6,11 @@ using UnityEngine;
 public static class ProceduralGenerator
 {
     public static MapData GenerateFloor(int w, int h, int pad,
-        int bspMaxDepth, int minLeafSize, int minRoomSize, int maxRoomSize, int corridorWidth, out Vector2Int playerPos)
+        int bspMaxDepth, int minLeafSize, int minRoomSize, int maxRoomSize, int seed, int corridorWidth, out Vector2Int playerPos)
     {
+        // initialize the prng with seed, so same seed will produce the same results
+        // https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Random.InitState.html
+        Random.InitState(seed);
         // create a room with tiles set to wall and the root partition
         Init(w, h, pad, out MapData map, out BSPNode root);
 

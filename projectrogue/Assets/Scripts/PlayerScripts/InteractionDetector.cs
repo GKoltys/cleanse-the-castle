@@ -12,7 +12,7 @@ public class InteractionDetector : MonoBehaviour
         if (!value.isPressed) return;
         if (interactableInRange == null) return;
 
-        // call the interact method on the interactlbe object in range
+        // call the interact method on the interactable object in range
         interactableInRange?.Interact(gameObject);
     }
 
@@ -24,6 +24,7 @@ public class InteractionDetector : MonoBehaviour
         if (interactable == null) return;
 
         interactableInRange = interactable;
+        // set the interaction icon to appear on interactable object
         interactable.ShowCanInteract(true);
     }
 
