@@ -1,14 +1,18 @@
 ﻿using UnityEngine;
 
-public class KeyController : MonoBehaviour, IMapGenInit, IInteractable
+public class KeyController : MonoBehaviour, IMapGenInit
 {
     public bool isCollected;
     public GameObject interactionIcon;
     private Animator animator;
     private MapGenerator dungeon;
-
+    private PlayerBase playerBase;
     public GameObject lastInteractor;
 
+    private void Start()
+    {
+        playerBase = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBase>();
+    }
     public void Init(MapGenerator controller)
     {
         dungeon = controller;
@@ -26,22 +30,14 @@ public class KeyController : MonoBehaviour, IMapGenInit, IInteractable
         return !isCollected;
     }
 
-    public void Interact(GameObject interactor)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!CanInteract()) return;
         if (dungeon == null) return;
-        // add need key functionality
-        lastInteractor = interactor;
+
+        if (!other.CompareTag("Player")) return;
+
         CollectKey();
-        if (interactionIcon != null)
-            interactionIcon.SetActive(false);
-
-    }
-
-    public void ShowCanInteract(bool show)
-    {
-        if (interactionIcon != null)
-            interactionIcon.SetActive(show && CanInteract());
+        // Trigger animations
     }
 
     private void CollectKey()
