@@ -27,15 +27,9 @@ public class KeyController : MonoBehaviour, IMapGenInit
         if (!other.CompareTag("Player")) return;
         if (col) col.enabled = false;
 
-        CollectKey();
-        // Trigger animations
-    }
-
-    private void CollectKey()
-    {
         SetIsCollected(true);
         playerBase.KeyCollected();
-        Despawn();
+        animator.SetTrigger("KeyCollected");
     }
 
     public void SetIsCollected(bool opened)
@@ -43,6 +37,7 @@ public class KeyController : MonoBehaviour, IMapGenInit
         isCollected = opened;
     }
 
+    // Called using KeyCollected animation event
     public void Despawn()
     {
         // destroy for now, if it affects performance move to object pooling?
