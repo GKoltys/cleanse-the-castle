@@ -1,54 +1,35 @@
 ﻿using UnityEngine;
 
-public class KeyController : MonoBehaviour, IMapGenInit, IInteractable
+public class KeyController : MonoBehaviour, IMapGenInit
 {
     public bool isCollected;
-    public GameObject interactionIcon;
     private Animator animator;
+    private BoxCollider2D col;
     private MapGenerator dungeon;
+    private PlayerBase playerBase;
 
-    public GameObject lastInteractor;
+    private void Start()
+    {
+        playerBase = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBase>();
+    }
 
     public void Init(MapGenerator controller)
     {
         dungeon = controller;
         animator = GetComponent<Animator>();
+        col = GetComponent<BoxCollider2D>();
     }
 
-    // set the chest to closed on spawn
-    private void Awake()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        interactionIcon.SetActive(false);
-    }
-
-    public bool CanInteract()
-    {
-        return !isCollected;
-    }
-
-    public void Interact(GameObject interactor)
-    {
-        if (!CanInteract()) return;
         if (dungeon == null) return;
-        // add need key functionality
-        lastInteractor = interactor;
-        CollectKey();
-        if (interactionIcon != null)
-            interactionIcon.SetActive(false);
 
-    }
+        if (!other.CompareTag("Player")) return;
+        if (col) col.enabled = false;
 
-    public void ShowCanInteract(bool show)
-    {
-        if (interactionIcon != null)
-            interactionIcon.SetActive(show && CanInteract());
-    }
-
-    private void CollectKey()
-    {
         SetIsCollected(true);
-        // add functionality for collecting key
-        Despawn();
+        playerBase.KeyCollected();
+        animator.SetTrigger("KeyCollected");
     }
 
     public void SetIsCollected(bool opened)
@@ -56,7 +37,7 @@ public class KeyController : MonoBehaviour, IMapGenInit, IInteractable
         isCollected = opened;
     }
 
-
+    // Called using KeyCollected animation event
     public void Despawn()
     {
         // destroy for now, if it affects performance move to object pooling?

@@ -70,6 +70,7 @@ public class SaveController : MonoBehaviour
             playerMaxHealth = playerBase.GetMaxHealth,
             playerHealth = playerBase.GetHealth,
             playerCoinCount = playerBase.GetCoinCount,
+            playerKeyCount = playerBase.GetKeyCount,
             playerWeaponId = playerBase.GetWeaponId
         };
 
@@ -92,6 +93,7 @@ public class SaveController : MonoBehaviour
             playerStats.SetMaxHealth(saveData.playerMaxHealth);
             playerStats.SetHealth(saveData.playerHealth);
             playerStats.SetCoinCount(saveData.playerCoinCount);
+            playerStats.SetKeyCount(saveData.playerKeyCount);
             playerStats.SetWeapon(saveData.playerWeaponId);
 
             playerBase.ApplyLoadedStats(playerStats);

@@ -3,10 +3,11 @@ using System.Collections;
 
 public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
 {
-    public bool IsOpened;
+    public bool IsOpened = false;
     public GameObject interactionIcon;
     private Animator animator;
     private MapGenerator dungeon;
+    private PlayerBase player;
 
     public GameObject lastInteractor;
 
@@ -16,6 +17,7 @@ public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
     {
         dungeon = controller;
         animator = GetComponent<Animator>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBase>();
     }
 
     // set the chest to closed on spawn
@@ -34,8 +36,9 @@ public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
     {
         if (!CanInteract()) return;
         if (dungeon == null) return;
-        // add need key functionality
+        if (player.GetKeyCount <= 0) return; // Maybe play a chest staying locked animation?
         lastInteractor = interactor;
+        player.KeyUsed();
         OpenChest();
         if (interactionIcon != null)
             interactionIcon.SetActive(false);

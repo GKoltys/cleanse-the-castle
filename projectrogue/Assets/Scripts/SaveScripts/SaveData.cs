@@ -12,6 +12,7 @@ public class SaveData
     public float playerMaxHealth;
     public float playerHealth;
     public int playerCoinCount;
+    public int playerKeyCount;
     public int playerWeaponId;
 
     // In future we would also need to save things like entire generated level information, enemies, player stats, etc...
