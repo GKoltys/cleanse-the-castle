@@ -12,6 +12,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private float maxHealth = 100;
     [SerializeField] private float health = 100;
     [SerializeField] private int coinCount = 0;
+    [SerializeField] private int keyCount = 0;
     [SerializeField] private int weaponId;
 
     public void SetSpeed(float speed) { this.speed = speed; }
@@ -19,6 +20,7 @@ public class PlayerStats : MonoBehaviour
     public void SetMaxHealth(float maxHealth) { this.maxHealth = maxHealth; }
     public void SetHealth(float  health) { this.health = health; }
     public void SetCoinCount(int coinCount) { this.coinCount = coinCount; }
+    public void SetKeyCount(int keyCount) { this.keyCount = keyCount; }
     public void SetWeapon(int weapon) { this.weaponId = weapon; }
 
     // Getters
@@ -27,5 +29,6 @@ public class PlayerStats : MonoBehaviour
     public float GetMaxHealth => maxHealth;
     public float GetHealth => health;
     public int GetCoinCount => coinCount;
+    public int GetKeyCount => keyCount;
     public int GetWeapon => weaponId;
 }

@@ -10,6 +10,7 @@ public class PlayerBase : MonoBehaviour
     [SerializeField] private float maxHealth;
     [SerializeField] private float health;
     [SerializeField] private int coinCount;
+    [SerializeField] private int keyCount;
     [SerializeField] private MeleeWeapon weapon;
 
     [SerializeField] private WeaponDatabase weaponDatabase;
@@ -34,6 +35,7 @@ public class PlayerBase : MonoBehaviour
         maxHealth = stats.GetMaxHealth;
         health = stats.GetHealth;
         coinCount = stats.GetCoinCount;
+        keyCount = stats.GetKeyCount;
         weapon.SetWeaponData(weaponDatabase.GetWeaponById(stats.GetWeapon));
     }
 
@@ -44,6 +46,7 @@ public class PlayerBase : MonoBehaviour
         maxHealth = stats.GetMaxHealth;
         health = stats.GetHealth;
         coinCount = stats.GetCoinCount;
+        keyCount = stats.GetKeyCount;
         weapon.SetWeaponData(weaponDatabase.GetWeaponById(stats.GetWeapon));
 
         // Update defaulted values from before load
@@ -103,6 +106,19 @@ public class PlayerBase : MonoBehaviour
         playerHud.UpdateCoinCounter(coinCount);
     }
 
+    public void KeyCollected()
+    {
+        keyCount += 1;
+        Debug.Log("Current keys: " + keyCount);
+        // TODO: playerHud.UpdateKeyCounter(keyCount);
+    }
+
+    public void KeyUsed()
+    {
+        keyCount -= 1;
+        // playerHud.UpdateKeyCounter(keyCount);
+    }
+
     private void Die()
     {
         movement.SetCanMove(false);
@@ -124,6 +140,7 @@ public class PlayerBase : MonoBehaviour
     public float GetMaxHealth => maxHealth;
     public float GetHealth => health;
     public int GetCoinCount => coinCount;
+    public int GetKeyCount => keyCount;
     public MeleeWeapon GetWeapon => weapon;
     public int GetWeaponId => weapon.WeaponId;
 }
