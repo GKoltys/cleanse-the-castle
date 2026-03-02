@@ -3,31 +3,21 @@
 public class KeyController : MonoBehaviour, IMapGenInit
 {
     public bool isCollected;
-    public GameObject interactionIcon;
     private Animator animator;
+    private BoxCollider2D col;
     private MapGenerator dungeon;
     private PlayerBase playerBase;
-    public GameObject lastInteractor;
 
     private void Start()
     {
         playerBase = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBase>();
     }
+
     public void Init(MapGenerator controller)
     {
         dungeon = controller;
         animator = GetComponent<Animator>();
-    }
-
-    // set the chest to closed on spawn
-    private void Awake()
-    {
-        interactionIcon.SetActive(false);
-    }
-
-    public bool CanInteract()
-    {
-        return !isCollected;
+        col = GetComponent<BoxCollider2D>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -35,6 +25,7 @@ public class KeyController : MonoBehaviour, IMapGenInit
         if (dungeon == null) return;
 
         if (!other.CompareTag("Player")) return;
+        if (col) col.enabled = false;
 
         CollectKey();
         // Trigger animations
@@ -43,7 +34,7 @@ public class KeyController : MonoBehaviour, IMapGenInit
     private void CollectKey()
     {
         SetIsCollected(true);
-        // add functionality for collecting key
+        playerBase.KeyCollected();
         Despawn();
     }
 
@@ -51,7 +42,6 @@ public class KeyController : MonoBehaviour, IMapGenInit
     {
         isCollected = opened;
     }
-
 
     public void Despawn()
     {
