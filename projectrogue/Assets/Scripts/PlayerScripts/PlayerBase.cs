@@ -51,7 +51,7 @@ public class PlayerBase : MonoBehaviour
 
         // Update defaulted values from before load
         movement.SetMoveSpeed(speed);
-        playerHud.SetHudOnLoad(maxHealth, health, coinCount);
+        playerHud.SetHudOnLoad(maxHealth, health, coinCount, keyCount);
     }
 
     public void SetWeapon(WeaponData weaponData)
@@ -110,13 +110,13 @@ public class PlayerBase : MonoBehaviour
     {
         keyCount += 1;
         Debug.Log("Current keys: " + keyCount);
-        // TODO: playerHud.UpdateKeyCounter(keyCount);
+        playerHud.UpdateKeyCounter(keyCount);
     }
 
     public void KeyUsed()
     {
         keyCount -= 1;
-        // playerHud.UpdateKeyCounter(keyCount);
+        playerHud.UpdateKeyCounter(keyCount);
     }
 
     private void Die()
