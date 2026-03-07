@@ -1,3 +1,4 @@
+using System;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -50,11 +51,25 @@ public class SaveController : MonoBehaviour
     // Called automatically by the engine after LoadScenceAsync()
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        //if (!shouldLoadOnNextScene) return;
+        if (!shouldLoadOnNextScene) return;
+        if (scene.name == "OpeningScene")
+        {
+            NewGame();
+            return;
+        }
 
         shouldLoadOnNextScene = false;
-
+        Debug.Log(scene.name);
+       
         LoadGame();
+    }
+
+    public void NewGame()
+    {
+        if (File.Exists(saveLocation))
+        {
+            File.Delete(saveLocation);
+        }
     }
 
     public void SaveGame()
@@ -103,4 +118,6 @@ public class SaveController : MonoBehaviour
             SaveGame();
         }
     }
+
+    public String GetSaveLocation() { return saveLocation; }
 }
