@@ -66,7 +66,7 @@ public class SaveController : MonoBehaviour
 
     public void NewGame()
     {
-        if (File.Exists(saveLocation))
+        if (HasSaveFile())
         {
             File.Delete(saveLocation);
         }
@@ -94,7 +94,7 @@ public class SaveController : MonoBehaviour
 
     public void LoadGame()
     {
-        if (File.Exists(saveLocation))
+        if (HasSaveFile())
         {
             player = GameObject.FindGameObjectWithTag("Player");
             playerStats = player.GetComponent<PlayerStats>();
