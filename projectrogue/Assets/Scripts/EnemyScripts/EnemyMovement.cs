@@ -1,7 +1,4 @@
-using Unity.VisualScripting;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 // https://www.youtube.com/watch?v=m1x9YFzTX2A
 public class EnemyMovement : MonoBehaviour
