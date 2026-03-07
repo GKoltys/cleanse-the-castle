@@ -30,6 +30,10 @@ public class EnemyMovement : MonoBehaviour
     private float patrolTimer;
     private bool isPatrolling;
 
+    [Header("Wall Detection")]
+    [SerializeField] private float wallCheckDistance = 0.3f;
+    [SerializeField] private LayerMask wallMask;
+
     private void Awake()
     {
         enemy = GetComponent<EnemyBase>();
@@ -97,17 +101,19 @@ public class EnemyMovement : MonoBehaviour
             animator.SetFloat("LastInputX", lastMoveDirection.x);
             animator.SetFloat("LastInputY", lastMoveDirection.y);
         }
-        else
-        {
-            rb.linearVelocity = Vector2.zero;
-        }
     }
 
     private void HandlePatrol()
     {
         patrolTimer -= Time.deltaTime;
 
-        if (patrolTimer < 0)
+        if (isPatrolling && isWallAhead())
+        {
+            PickNewPatrolState();
+            return;
+        }
+
+        if (patrolTimer <= 0f)
         {
             PickNewPatrolState();
         }
@@ -138,6 +144,21 @@ public class EnemyMovement : MonoBehaviour
     private Vector2 GetRandomDirection()
     {
         return Random.insideUnitCircle.normalized;
+    }
+
+    // https://discussions.unity.com/t/how-to-detect-wall/737443/2
+    private bool isWallAhead()
+    {
+        if (moveDirection == Vector2.zero) return false;
+
+        RaycastHit2D hit = Physics2D.Raycast(
+            rb.position,
+            moveDirection,
+            wallCheckDistance,
+            wallMask // Could add "| enemyMask" to avoid other enemies too
+        );
+
+        return hit.collider != null;
     }
 
     public void SetCanMove(bool flag)

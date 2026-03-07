@@ -5827,6 +5827,7 @@ MonoBehaviour:
   minRoomSize: 5
   maxRoomSize: 12
   corridorWidth: 2
+  seed: 0
   floorTilemap: {fileID: 1975175053}
   wallTilemap: {fileID: 1689641923}
   floorTile: {fileID: 11400000, guid: 50d881a04d50c5a47a307da113954903, type: 2}
@@ -6751,7 +6752,7 @@ GameObject:
   - component: {fileID: 1689641926}
   - component: {fileID: 1689641925}
   - component: {fileID: 1689641924}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Walls
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9158,6 +9159,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Chest
       objectReference: {fileID: 0}
+    - target: {fileID: 6403565685682107765, guid: 8bf1aee03befc8c4b88029f10cb71d63, type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 6813442685694874494, guid: 8bf1aee03befc8c4b88029f10cb71d63, type: 3}
       propertyPath: m_LocalPosition.x
       value: -8.225116
@@ -9214,6 +9219,10 @@ PrefabInstance:
     - target: {fileID: 2498405988043988622, guid: 8f01d0642cb42144ea40722d5c125808, type: 3}
       propertyPath: m_Name
       value: LockedChest
+      objectReference: {fileID: 0}
+    - target: {fileID: 2498405988043988622, guid: 8f01d0642cb42144ea40722d5c125808, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 8367676487418437259, guid: 8f01d0642cb42144ea40722d5c125808, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9276,6 +9285,10 @@ PrefabInstance:
     - target: {fileID: 1257956701334067999, guid: 09e4240bc2f952047a9cdf8b58f4939f, type: 3}
       propertyPath: m_Name
       value: Stairs
+      objectReference: {fileID: 0}
+    - target: {fileID: 1257956701334067999, guid: 09e4240bc2f952047a9cdf8b58f4939f, type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 3531344210846589613, guid: 09e4240bc2f952047a9cdf8b58f4939f, type: 3}
       propertyPath: m_Size.x

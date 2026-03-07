@@ -358,6 +358,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8266148dc8930de44a24a64cad5de3c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  minPatrolMoveTime: 1
+  maxPatrolMoveTime: 2.5
+  minPatrolIdleTime: 0.5
+  maxPatrolIdleTime: 1.5
+  wallCheckDistance: 0.6
+  wallMask:
+    serializedVersion: 2
+    m_Bits: 2048
 --- !u!114 &4640078778203787206
 MonoBehaviour:
   m_ObjectHideFlags: 0
