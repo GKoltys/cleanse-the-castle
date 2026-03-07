@@ -13,7 +13,7 @@ public abstract class EnemyBase: MonoBehaviour
     protected Animator animator;
     protected EnemyMovement movement;
     protected Rigidbody2D rb;
-
+    protected BoxCollider2D bc;
     protected EnemyCombatUI enemyCombatUI;
 
     protected virtual void Awake()
@@ -22,7 +22,7 @@ public abstract class EnemyBase: MonoBehaviour
         animator = GetComponent<Animator>();
         movement = GetComponent<EnemyMovement>();
         rb = GetComponent<Rigidbody2D>();
-
+        bc = GetComponent<BoxCollider2D>();
         enemyCombatUI = GetComponentInChildren<EnemyCombatUI>();
     }
 
@@ -49,6 +49,7 @@ public abstract class EnemyBase: MonoBehaviour
     {
         movement.SetCanMove(false);
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        bc.enabled = false;
         animator.SetTrigger("Dying");
     }
 
