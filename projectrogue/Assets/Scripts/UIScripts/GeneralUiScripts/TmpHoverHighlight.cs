@@ -6,6 +6,7 @@ using UnityEngine.EventSystems;
 public class TmpHoverHighlight : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     [SerializeField] private Color hoverColour = Color.red;
+    private bool active = true;
     
     private TMP_Text tmp;
     private Color defaultColour;
@@ -18,11 +19,18 @@ public class TmpHoverHighlight : MonoBehaviour, IPointerEnterHandler, IPointerEx
 
     public void OnPointerEnter(PointerEventData eventData)
     {
+        if (!active) return;
         tmp.color = hoverColour;
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        if (!active) return;
         tmp.color = defaultColour;
+    }
+
+    public void SetActive(bool active)
+    {
+        this.active = active;
     }
 }
