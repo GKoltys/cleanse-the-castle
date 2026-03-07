@@ -1,4 +1,5 @@
 using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,6 +21,15 @@ public class EnemyMovement : MonoBehaviour
 
     private bool canMove = true;
 
+    [Header("Patrol")]
+    [SerializeField] private float minPatrolMoveTime = 1f;
+    [SerializeField] private float maxPatrolMoveTime = 2.5f;
+    [SerializeField] private float minPatrolIdleTime = 0.5f;
+    [SerializeField] private float maxPatrolIdleTime = 1.5f;
+
+    private float patrolTimer;
+    private bool isPatrolling;
+
     private void Awake()
     {
         enemy = GetComponent<EnemyBase>();
@@ -34,7 +44,7 @@ public class EnemyMovement : MonoBehaviour
 
     void Start()
     {
-        target = GameObject.Find("Player").transform;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
         playerHealth = target.GetComponentInChildren<PlayerBase>();
     }
 
@@ -46,16 +56,31 @@ public class EnemyMovement : MonoBehaviour
             moveDirection = (target.position - transform.position).normalized;
             lastMoveDirection = moveDirection.normalized;
         }
+        else
+        {
+            HandlePatrol();
+        }
     }
 
     private void FixedUpdate()
     {
-        if (canMove)
+        if (canMove && enemy.IsAlive)
         {
             float distance = Vector2.Distance(target.position, transform.position);
             if ((distance <= agroRadius) && (Time.time >= attack.nextAttackTime) && (!playerHealth.GetIsDead))
             {
                 rb.linearVelocity = new Vector2(moveDirection.x, moveDirection.y) * moveSpeed;
+            }
+            else if (distance >  agroRadius)
+            {
+                if (isPatrolling)
+                {
+                    rb.linearVelocity = moveDirection * moveSpeed;
+                }
+                else
+                {
+                    rb.linearVelocity = Vector2.zero;
+                }
             }
             else
             {
@@ -72,10 +97,47 @@ public class EnemyMovement : MonoBehaviour
             animator.SetFloat("LastInputX", lastMoveDirection.x);
             animator.SetFloat("LastInputY", lastMoveDirection.y);
         }
-        else if (!enemy.IsAlive)
+        else
         {
             rb.linearVelocity = Vector2.zero;
         }
+    }
+
+    private void HandlePatrol()
+    {
+        patrolTimer -= Time.deltaTime;
+
+        if (patrolTimer < 0)
+        {
+            PickNewPatrolState();
+        }
+
+        if (isPatrolling)
+        {
+            lastMoveDirection = moveDirection;
+        }
+    }
+
+    private void PickNewPatrolState()
+    {
+        isPatrolling = Random.value > 0.5f; // 50% chance to move without resting
+
+        if (isPatrolling)
+        {
+            moveDirection = GetRandomDirection();
+            patrolTimer = Random.Range(minPatrolMoveTime, maxPatrolMoveTime);
+        }
+        else
+        {
+            moveDirection = Vector2.zero;
+            patrolTimer = Random.Range(minPatrolIdleTime, maxPatrolIdleTime);
+        }
+    }
+
+    // https://discussions.unity.com/t/creating-a-random-direction-vector/524496
+    private Vector2 GetRandomDirection()
+    {
+        return Random.insideUnitCircle.normalized;
     }
 
     public void SetCanMove(bool flag)
