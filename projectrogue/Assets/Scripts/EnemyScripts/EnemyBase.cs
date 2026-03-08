@@ -53,11 +53,13 @@ public abstract class EnemyBase: MonoBehaviour
         animator.SetTrigger("Dying");
     }
 
+    // Called using animation event in DeathAnimation
     protected virtual void DestroySelf()
     {
         Destroy(gameObject);
     }
 
+    // Called using animation event in HurtAnimation
     public virtual void OnHurtFinished()
     {
         movement.SetCanMove(true);
