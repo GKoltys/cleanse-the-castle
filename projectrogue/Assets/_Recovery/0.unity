@@ -30949,14 +30949,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 5552872791247151080, guid: a70267d1ecede5140924a362554a3282, type: 3}
-      propertyPath: m_Size.x
-      value: 0.443849
-      objectReference: {fileID: 0}
-    - target: {fileID: 5552872791247151080, guid: a70267d1ecede5140924a362554a3282, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.00018654764
-      objectReference: {fileID: 0}
     - target: {fileID: 7507093714498910236, guid: a70267d1ecede5140924a362554a3282, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.006
@@ -32924,18 +32916,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2120538518}
     m_Modifications:
-    - target: {fileID: 661001344192663538, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
-      propertyPath: m_Size.x
-      value: 0.8843012
-      objectReference: {fileID: 0}
-    - target: {fileID: 661001344192663538, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.00000047683716
-      objectReference: {fileID: 0}
-    - target: {fileID: 5101443185087770912, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 1e630ba2ec8a73547851d3668468c27c, type: 2}
     - target: {fileID: 6763044372571811889, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
