@@ -484,6 +484,68 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::StartingAreaCameraClamp
   cam: {fileID: 1315782205}
   tmc: {fileID: 1689641926}
+--- !u!1001 &211305219
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 583981289}
+    m_Modifications:
+    - target: {fileID: 8676218821886197401, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 9.08514
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676218821886197401, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 8.48065
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676218821886197401, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676218821886197401, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676218821886197401, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676218821886197401, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676218821886197401, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676218821886197401, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676218821886197401, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8676218821886197401, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8906884267085178471, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
+      propertyPath: m_Name
+      value: BlueSlimeEnemy
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
+--- !u!4 &211305220 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8676218821886197401, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
+  m_PrefabInstance: {fileID: 211305219}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &233234338
 GameObject:
   m_ObjectHideFlags: 0
@@ -1706,6 +1768,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 211305220}
   - {fileID: 2570564398806811276}
   - {fileID: 988586682}
   - {fileID: 1269319314}
@@ -5886,6 +5949,15 @@ MonoBehaviour:
     spawnChance: 0.3
     guaranteeSpawn: 0
     spawnAlso: {fileID: 3159388518355482823, guid: c7b3509f70f254b4cb13723ace539bb3, type: 3}
+    uniqueTile: 1
+    spawn: 0
+  - id: 6
+    prefab: {fileID: 8906884267085178471, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
+    count: 3
+    minDistanceFromPlayer: 8
+    spawnChance: 0.5
+    guaranteeSpawn: 0
+    spawnAlso: {fileID: 0}
     uniqueTile: 1
     spawn: 0
   cameraClamp: {fileID: 173582554}
