@@ -51,7 +51,8 @@ public class SaveController : MonoBehaviour
     // Called automatically by the engine after LoadScenceAsync()
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (!shouldLoadOnNextScene) return;
+        // Keep this commented until final build
+        //if (!shouldLoadOnNextScene) return;
         if (scene.name == "OpeningScene")
         {
             NewGame();
@@ -60,7 +61,7 @@ public class SaveController : MonoBehaviour
 
         shouldLoadOnNextScene = false;
         Debug.Log(scene.name);
-       
+
         LoadGame();
     }
 

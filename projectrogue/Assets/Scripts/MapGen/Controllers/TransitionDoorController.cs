@@ -16,7 +16,8 @@ public class TransitionDoorController : MonoBehaviour
                 FadeUIController.Instance.FadeAndLoadScene(sceneToLoad);
             }
             else
-                SceneManager.LoadScene(sceneToLoad);
+                SaveController.Instance.RequestLoad();
+                SceneManager.LoadSceneAsync(sceneToLoad);
         }
     }
 }
