@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38800f98f962cb498705be468cf4a78, type: 3}
+  m_Name: RegularHealConsumable
+  m_EditorClassIdentifier: Assembly-CSharp::ConsumableItemData
+  itemName: RegularHealPotion
+  icon: {fileID: -1659760741, guid: 3924ee34ce4048249a4305468ed465c0, type: 3}
+  description: Heals the player 60hp
+  effect: {fileID: 11400000, guid: 59849feb1919ab9418d0495bf9c281d3, type: 2}
