@@ -1,16 +1,48 @@
 using UnityEngine;
 
-public class ConsumableController : MonoBehaviour
+public class ConsumableController : MonoBehaviour, IMapGenInit
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] private ConsumableItemData itemData;
+
+    public bool isCollected;
+    private Animator animator;
+    private BoxCollider2D col;
+    private MapGenerator dungeon;
+    private PlayerBase playerBase;
+
+    private void Start()
     {
-        
+        playerBase = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBase>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Init(MapGenerator controller)
     {
-        
+        dungeon = controller;
+        animator = GetComponent<Animator>();
+        col = GetComponent<BoxCollider2D>();
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        //if (dungeon == null) return;
+
+        if (!other.CompareTag("Player")) return;
+        if (col) col.enabled = false;
+
+        SetIsCollected(true);
+        itemData.effect.Apply(playerBase);
+        animator.SetTrigger("KeyCollected");
+    }
+
+    public void SetIsCollected(bool opened)
+    {
+        isCollected = opened;
+    }
+
+    // Called using animation event
+    public void Despawn()
+    {
+        // destroy for now, if it affects performance move to object pooling?
+        Destroy(gameObject);
     }
 }
