@@ -87,7 +87,7 @@ GameObject:
   - component: {fileID: 8158689929640807287}
   - component: {fileID: 7779299710310391567}
   - component: {fileID: 49608187887159984}
-  - component: {fileID: 1710070569458475008}
+  - component: {fileID: 5813087473750413129}
   m_Layer: 5
   m_Name: ShopSlot
   m_TagString: Untagged
@@ -111,10 +111,10 @@ RectTransform:
   - {fileID: 1373872666884283625}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8158689929640807287
 CanvasRenderer:
@@ -166,7 +166,7 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &1710070569458475008
+--- !u!114 &5813087473750413129
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -175,10 +175,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 669525623362987215}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2599b135d5ec7e4cae3b6b97f856533, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c585f24f29350d44bc16705a8896cc7, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Slot
+  m_EditorClassIdentifier: Assembly-CSharp::ShopSlot
   currentItem: {fileID: 0}
+  itemPrice: 0
+  priceText: {fileID: 0}
 --- !u!1 &5748409157863820267
 GameObject:
   m_ObjectHideFlags: 0
