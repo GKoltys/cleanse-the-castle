@@ -26,7 +26,7 @@ public abstract class ConsumableController : MonoBehaviour
 
         SetIsCollected(true);
         itemData.effect.Apply(playerBase);
-        animator.SetTrigger("ItemCollected");
+        animator.SetTrigger("Collected");
     }
 
     protected virtual void SetIsCollected(bool opened)

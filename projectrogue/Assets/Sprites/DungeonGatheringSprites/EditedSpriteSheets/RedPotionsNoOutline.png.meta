@@ -484,2839 +484,4577 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Set 2.4_0
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 20eb7b0dc675bbcb0800000000000000
-      internalID: -4847184449064419838
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_1
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c064453ff3ad075a0800000000000000
-      internalID: -6525475891859667444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_2
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 52b7634c2a9428a40800000000000000
-      internalID: 5368934669204486949
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_3
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 240e71b6b4c92e450800000000000000
-      internalID: 6116623091655761986
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_4
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4ee11ffe3b80fd1a0800000000000000
-      internalID: -6782692944878952732
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_5
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 51b4c1b188a4f3840800000000000000
-      internalID: 5205961642694429461
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_6
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ee1773414b69fb050800000000000000
-      internalID: 5818534943763427822
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_7
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2131e2f5675e3ce00800000000000000
-      internalID: 1063946233555325714
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_8
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f9ba205856e37c1f0800000000000000
-      internalID: -1024781784459334753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_9
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a0302ddf3597f2b10800000000000000
-      internalID: 1958917764577100554
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_10
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 05d37b81683b71110800000000000000
-      internalID: 1231650411630771536
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_11
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 17482b52d46cdfe90800000000000000
-      internalID: -6990213011961904015
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_12
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e3fb5332b9a756820800000000000000
-      internalID: 2910867540894138174
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_13
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7dfeeb4062cf88400800000000000000
-      internalID: 326788213202939863
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_14
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e3e1b4ccda16f4bf0800000000000000
-      internalID: -337944047944786370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_15
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 58fe82460b3347e80800000000000000
-      internalID: -8181857790337683579
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_16
-      rect:
-        serializedVersion: 2
-        x: 130
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 317be78a121268410800000000000000
-      internalID: 1478905956082300691
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_17
-      rect:
-        serializedVersion: 2
-        x: 130
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 79e25a8a79d1f5f70800000000000000
-      internalID: 9178087102811025047
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_18
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4cd49c8ab4aa153f0800000000000000
-      internalID: -913762007448465980
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_19
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9f8c93e1ec613d3d0800000000000000
-      internalID: -3183175437094631175
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_20
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d786a2f9cf1b9d9f0800000000000000
-      internalID: -443127389759051651
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_21
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a88b6b85e5b5d04c0800000000000000
-      internalID: -4319696006805014390
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_22
-      rect:
-        serializedVersion: 2
-        x: 178
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 73c442569f898c900800000000000000
-      internalID: 704981538594638903
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_23
-      rect:
-        serializedVersion: 2
-        x: 178
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 73c4e119145982710800000000000000
-      internalID: 1668747770780863543
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_24
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a29b456be9f7a0bf0800000000000000
-      internalID: -357332900781967062
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_25
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 91eadf795ce897b00800000000000000
-      internalID: 826848985908882969
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_26
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 135994b7b93a853c0800000000000000
-      internalID: -4370563550179388111
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_27
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4194e0de2d465a640800000000000000
-      internalID: 5090585810895259924
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_28
-      rect:
-        serializedVersion: 2
-        x: 226
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b42b5ebe659c18950800000000000000
-      internalID: 6449657516533330507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_29
-      rect:
-        serializedVersion: 2
-        x: 226
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e5bb5615623409fa0800000000000000
-      internalID: -5796058888572388514
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_30
-      rect:
-        serializedVersion: 2
-        x: 242
-        y: 191
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 226aa4973420826a0800000000000000
-      internalID: -6473921975524088286
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_31
-      rect:
-        serializedVersion: 2
-        x: 242
-        y: 175
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 19a692521d1df7310800000000000000
-      internalID: 1405072304964725393
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_32
+      name: RedPotionsNoOutline_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fd333a722f65ed4b0800000000000000
-      internalID: -5413794104005676065
+      spriteID: a71ad03f98d2b6347b7cad217c76940a
+      internalID: 740804975
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_33
-      rect:
-        serializedVersion: 2
-        x: 2
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 71f2377dc729b43e0800000000000000
-      internalID: -2068398538958360809
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_34
+      name: RedPotionsNoOutline_1
       rect:
         serializedVersion: 2
         x: 16
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5655cf5cde3ec7970800000000000000
-      internalID: 8754122386069804389
+      spriteID: 051c79a5154be1344addb6bf4345e0b8
+      internalID: -2132322591
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_35
-      rect:
-        serializedVersion: 2
-        x: 18
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ea3bdeebcc1af9a80800000000000000
-      internalID: -8457863674429852754
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_36
+      name: RedPotionsNoOutline_2
       rect:
         serializedVersion: 2
         x: 32
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4dda5724639601e80800000000000000
-      internalID: -8209946438932255276
+      spriteID: 25832c22d12c90940ada3db228b82ddc
+      internalID: 996847853
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_37
-      rect:
-        serializedVersion: 2
-        x: 34
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7d6185ce33e9d4bf0800000000000000
-      internalID: -338440451137202473
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_38
+      name: RedPotionsNoOutline_3
       rect:
         serializedVersion: 2
         x: 48
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9527d38b88a3237d0800000000000000
-      internalID: -2940223247838514599
+      spriteID: 810a30c41cef481418f898cd1fae9507
+      internalID: 1929141925
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_39
-      rect:
-        serializedVersion: 2
-        x: 50
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 73303845046a30700800000000000000
-      internalID: 505430378421617463
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_40
+      name: RedPotionsNoOutline_4
       rect:
         serializedVersion: 2
         x: 64
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: acaabae557d821f80800000000000000
-      internalID: -8137286041466066230
+      spriteID: e2f92d781e34b7a4fafd89c53967ffbc
+      internalID: 2135341191
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_41
-      rect:
-        serializedVersion: 2
-        x: 66
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 51df89032ed643030800000000000000
-      internalID: 3473522030854864149
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_42
+      name: RedPotionsNoOutline_5
       rect:
         serializedVersion: 2
         x: 80
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 27646180f986761a0800000000000000
-      internalID: -6816364478757190030
+      spriteID: 93a045bf12f3a3845be84c9de09c7b6e
+      internalID: -1604020669
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_43
-      rect:
-        serializedVersion: 2
-        x: 82
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9127edfa45797e5f0800000000000000
-      internalID: -727446424813407719
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_44
+      name: RedPotionsNoOutline_6
       rect:
         serializedVersion: 2
         x: 96
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e69983eabcaaceba0800000000000000
-      internalID: -6058279606942131858
+      spriteID: 3f1d8be46256fff4283650c9e982669a
+      internalID: -789362899
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_45
-      rect:
-        serializedVersion: 2
-        x: 98
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5097e83b30e465030800000000000000
-      internalID: 3483057139621984517
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_46
+      name: RedPotionsNoOutline_7
       rect:
         serializedVersion: 2
         x: 112
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f4a339f98f0682140800000000000000
-      internalID: 4695109232479124047
+      spriteID: ab66fb4f3fec1d444976484d02450965
+      internalID: -960789403
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_47
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9370f988cae5d32c0800000000000000
-      internalID: -4450296761652672711
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_48
+      name: RedPotionsNoOutline_8
       rect:
         serializedVersion: 2
         x: 128
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 99a05bddad1a33ca0800000000000000
-      internalID: -6038304713979131239
+      spriteID: 9ff6638f3a6d7164b9cf656ee5dd1e29
+      internalID: 696666255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_49
-      rect:
-        serializedVersion: 2
-        x: 130
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c5ab409d10991f360800000000000000
-      internalID: 7201705512357116508
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_50
+      name: RedPotionsNoOutline_9
       rect:
         serializedVersion: 2
         x: 144
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8dca46aabbcd46c30800000000000000
-      internalID: 4351845838522461400
+      spriteID: 8323478cd60551d4db6b19c599f88d20
+      internalID: -328648955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_51
-      rect:
-        serializedVersion: 2
-        x: 146
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 55cbd0aeb32ce9620800000000000000
-      internalID: 2782875182347172949
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_52
+      name: RedPotionsNoOutline_10
       rect:
         serializedVersion: 2
         x: 160
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e38622872acfb2e70800000000000000
-      internalID: 9091638047507900478
+      spriteID: 3ad89dba85f769f449ba4b5219768989
+      internalID: 1761982026
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_53
-      rect:
-        serializedVersion: 2
-        x: 162
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 17680ffa88933c0d0800000000000000
-      internalID: -3403813634131851663
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_54
+      name: RedPotionsNoOutline_11
       rect:
         serializedVersion: 2
         x: 176
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 13d77e4154c75b210800000000000000
-      internalID: 1348120299612634417
+      spriteID: db0bdb42be335114fb8b97924f18ce69
+      internalID: -1076120315
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_55
-      rect:
-        serializedVersion: 2
-        x: 178
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 504be8e1fc3516ec0800000000000000
-      internalID: -3575484480119458811
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_56
+      name: RedPotionsNoOutline_12
       rect:
         serializedVersion: 2
         x: 192
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c9b05902885cf27f0800000000000000
-      internalID: -635071833983087716
+      spriteID: 7659695c97828f84cb50727099545edb
+      internalID: -1556951369
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_57
-      rect:
-        serializedVersion: 2
-        x: 194
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 5c88986f7e8a53860800000000000000
-      internalID: 7509093667937290437
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_58
+      name: RedPotionsNoOutline_13
       rect:
         serializedVersion: 2
         x: 208
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: acacdc111c6ca6880800000000000000
-      internalID: -8616856404490335542
+      spriteID: ab6affe6e29f0dc41ac628c8f6f4efb1
+      internalID: 1813236294
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_59
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e016f18febd171f90800000000000000
-      internalID: -6983079991170866930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_60
+      name: RedPotionsNoOutline_14
       rect:
         serializedVersion: 2
         x: 224
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 50dbd2d163ef3e5e0800000000000000
-      internalID: -1881380710939509499
+      spriteID: 2d70ce159a3fa094a8d269990002ff6f
+      internalID: -321764407
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_61
-      rect:
-        serializedVersion: 2
-        x: 226
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9a85c90251aeb12f0800000000000000
-      internalID: -1000949115697473367
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_62
+      name: RedPotionsNoOutline_15
       rect:
         serializedVersion: 2
         x: 240
-        y: 143
+        y: 192
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7f646451d745c23b0800000000000000
-      internalID: -5535956945740609801
+      spriteID: 976b266ee25844e47ac4fc6611096312
+      internalID: -83562215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_63
-      rect:
-        serializedVersion: 2
-        x: 242
-        y: 159
-        width: 12
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c9b37288c60729050800000000000000
-      internalID: 5805826481077042076
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_64
+      name: RedPotionsNoOutline_16
       rect:
         serializedVersion: 2
         x: 0
-        y: 127
+        y: 176
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 024fd8d3c520a9c80800000000000000
-      internalID: -8315331166793239520
+      spriteID: f98e42a16d071964cbe69ec3983d8f50
+      internalID: -592233584
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_65
+      name: RedPotionsNoOutline_17
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 378249f6fc4e8dd4180b1ea00a78bda8
+      internalID: -1004969275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_18
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c809e282ce3ac44190b8a82b1b35e40
+      internalID: -837120364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_19
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a5d85eeb7077a542ba3f84d6710384f
+      internalID: -222481089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_20
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: baf167020a9c85b489339873b57da664
+      internalID: 1005211972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_21
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e854f6d81d301094eabb4b35c07d5046
+      internalID: 1487488285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_22
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a95b39e7890150a43b5aa8c3095a43ca
+      internalID: 1647598253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_23
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2a7850837b4f3409f19d3a2b2147bd
+      internalID: -407574106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_24
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 010c6c560bb345c41af883ee34b5a207
+      internalID: 651703182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_25
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a4a383e52f7fc4095e592a1e7b7549
+      internalID: -836124274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_26
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35eafa558a50a034c8f6e94f9637aee0
+      internalID: 761966074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_27
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbc16da61c31f504e9b057b0666e0f5f
+      internalID: -1165606072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_28
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 554d9c2a93685dc4fa5613c19f5e04ad
+      internalID: 124148034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_29
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2817020a9cf4ebc4bbc71b7e6537b1bf
+      internalID: -538004278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_30
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34396549780828f4aad5a4b1c5d8b92d
+      internalID: 408961182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_31
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 176
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba9173a81797a7b4caea90a1db94bf09
+      internalID: -203708449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_32
       rect:
         serializedVersion: 2
         x: 0
-        y: 111
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 39a3c70869a0658d0800000000000000
-      internalID: -2858085272003003757
+      spriteID: e8f224472244895419463dc5137c21ff
+      internalID: -422109664
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_66
+      name: RedPotionsNoOutline_33
       rect:
         serializedVersion: 2
         x: 16
-        y: 127
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c04ae188b7f942bb0800000000000000
-      internalID: -4961665536541940724
+      spriteID: b9d110b06ee07d64b8301a094294a868
+      internalID: 2049144242
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_67
-      rect:
-        serializedVersion: 2
-        x: 16
-        y: 111
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 052c021d43658dee0800000000000000
-      internalID: -1236143312866327984
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_68
+      name: RedPotionsNoOutline_34
       rect:
         serializedVersion: 2
         x: 32
-        y: 127
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 874b47672f632c7e0800000000000000
-      internalID: -1746773290468985736
+      spriteID: caf05c7b2e91f1e47aae5da9fb015806
+      internalID: 1848007122
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_69
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 111
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: c81532e75c1849ad0800000000000000
-      internalID: -2696387591663300212
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_70
+      name: RedPotionsNoOutline_35
       rect:
         serializedVersion: 2
         x: 48
-        y: 127
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 12e26b90aa9e87e40800000000000000
-      internalID: 5654526248680304161
+      spriteID: b4cbce34fb1217d4abae5ab0bd8b1b8d
+      internalID: 1206427097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_71
-      rect:
-        serializedVersion: 2
-        x: 48
-        y: 111
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 55b8c12c6fa48db50800000000000000
-      internalID: 6618122076100004693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_72
+      name: RedPotionsNoOutline_36
       rect:
         serializedVersion: 2
         x: 64
-        y: 127
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ec05c387e62f1c050800000000000000
-      internalID: 5819198749816934606
+      spriteID: 2566a29e7b6fcba48b1f0cac498ca4d4
+      internalID: 1526332121
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_73
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 111
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 81558fdc046f13b60800000000000000
-      internalID: 7724225594111055128
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_74
+      name: RedPotionsNoOutline_37
       rect:
         serializedVersion: 2
         x: 80
-        y: 127
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 52c5ebf5690d74b70800000000000000
-      internalID: 8883298134281575461
+      spriteID: f21073315db54cd46a4c4b6bbd83d263
+      internalID: 973780707
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_75
-      rect:
-        serializedVersion: 2
-        x: 80
-        y: 111
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 34f2d0ac4b274f5b0800000000000000
-      internalID: -5335513537717653693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_76
+      name: RedPotionsNoOutline_38
       rect:
         serializedVersion: 2
         x: 96
-        y: 127
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 72551e47076d95a90800000000000000
-      internalID: -7324587540455795417
+      spriteID: 8a909c401388f1044993996aed88326b
+      internalID: 330965475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_77
-      rect:
-        serializedVersion: 2
-        x: 96
-        y: 111
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ac45e8e25dc89caf0800000000000000
-      internalID: -375614246671723318
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_78
+      name: RedPotionsNoOutline_39
       rect:
         serializedVersion: 2
         x: 112
-        y: 127
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 101f52bcd2d0b5b40800000000000000
-      internalID: 5429948266058215681
+      spriteID: 1dbf5794e1cd36443999521856e55843
+      internalID: 1112316097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_79
-      rect:
-        serializedVersion: 2
-        x: 112
-        y: 111
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 078379072e880a810800000000000000
-      internalID: 1774568759316920432
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_80
+      name: RedPotionsNoOutline_40
       rect:
         serializedVersion: 2
         x: 128
-        y: 127
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2f8d651c1f14bd680800000000000000
-      internalID: -8729310946140956430
+      spriteID: 2bd27d1373281f7419ce1db0d1d38ff1
+      internalID: 1095923829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_81
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 111
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 81ab6c5c9bbfc2840800000000000000
-      internalID: 5200808445011737112
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_82
+      name: RedPotionsNoOutline_41
       rect:
         serializedVersion: 2
         x: 144
-        y: 127
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6c9c3fe7b1b53f4f0800000000000000
-      internalID: -796192535462295098
+      spriteID: 99ecd45c91bdc63408d230e933b41d34
+      internalID: -1520084977
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_83
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 111
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e8ad049e595abaeb0800000000000000
-      internalID: -4707486922203669874
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_84
+      name: RedPotionsNoOutline_42
       rect:
         serializedVersion: 2
         x: 160
-        y: 127
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0dd9334e0b37f12b0800000000000000
-      internalID: -5611639407100322352
+      spriteID: 98dce2beee4fee34791088ccd6e931ba
+      internalID: 1717998661
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_85
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 111
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8f394d49f61c19c50800000000000000
-      internalID: 6670325208094905336
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_86
+      name: RedPotionsNoOutline_43
       rect:
         serializedVersion: 2
         x: 176
-        y: 127
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: fb71347df38157150800000000000000
-      internalID: 5869624351820814271
+      spriteID: 00b19e94dc274f24db581f75d2efae37
+      internalID: -1107175575
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_87
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 111
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 62c73fc2fd09c1890800000000000000
-      internalID: -7485949192390345690
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_88
+      name: RedPotionsNoOutline_44
       rect:
         serializedVersion: 2
         x: 192
-        y: 127
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ffddd414f7f13aa80800000000000000
-      internalID: -8456881043854729729
+      spriteID: 5cc4f03f98cce2b47898cb090e0366c5
+      internalID: 1440559683
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_89
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 111
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 88db6f589db11de20800000000000000
-      internalID: 3373508216946605448
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_90
+      name: RedPotionsNoOutline_45
       rect:
         serializedVersion: 2
         x: 208
-        y: 127
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f856f04fd4505d0d0800000000000000
-      internalID: -3398804511415900785
+      spriteID: b7373c6916d06d14ab49649c1efcd4aa
+      internalID: -1497991891
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_91
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 111
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 905177bab0a62ca40800000000000000
-      internalID: 5386984702642427145
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_92
+      name: RedPotionsNoOutline_46
       rect:
         serializedVersion: 2
         x: 224
-        y: 127
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 02402a165a27791a0800000000000000
-      internalID: -6802842657486666720
+      spriteID: 4eb70ae661fedbb4fa08e30da342b054
+      internalID: 115411467
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_93
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 111
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 7a91c9c29af03d4b0800000000000000
-      internalID: -5416968707524257369
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_94
+      name: RedPotionsNoOutline_47
       rect:
         serializedVersion: 2
         x: 240
-        y: 127
+        y: 160
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 84e5146916aec6690800000000000000
-      internalID: -7607447965682016696
+      spriteID: adf738ba2cad1f74785c8e5e7ccb2515
+      internalID: -1493872788
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_95
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 111
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 26ea0046c7d8325c0800000000000000
-      internalID: -4241390858659647902
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_96
+      name: RedPotionsNoOutline_48
       rect:
         serializedVersion: 2
         x: 0
-        y: 95
+        y: 144
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 015c2806e5fa2feb0800000000000000
-      internalID: -4687491442258295536
+      spriteID: 3bb4dc8588bd3fc4b9329ea3237a1ddf
+      internalID: -791824934
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_97
+      name: RedPotionsNoOutline_49
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e761f962dc96fb04c8602627cd9b845a
+      internalID: -779895269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_50
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 533088fd33f6dde428cbcc4fe5a18332
+      internalID: -503644442
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_51
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e7ad8c60d1304444d96b92efd9fb56fa
+      internalID: 839248167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_52
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa070ec8f9ca97d4b8e1ce3e139b332e
+      internalID: -301409317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_53
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b37019765bd5c6141ad12a91b4634ac6
+      internalID: -52648116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_54
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffb0d9ba6fc7efe489490c576fe43c95
+      internalID: 1732531827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_55
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f1a9795acdc4194eb2e96afc9ad3d59
+      internalID: -1552527104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_56
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 820bc8c8597a0b440b1641f5af8dcc69
+      internalID: -1368525745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_57
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6672bf03018f3bc43b0bbc38755f7f27
+      internalID: 743421254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_58
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9638df696c5f1aa4981b3a9aca0759e2
+      internalID: -351063734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_59
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94551ac3dc913644aab9ac94381931db
+      internalID: -1111289847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_60
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fb92b2bc7368d148bfeb806402a127f
+      internalID: -1078274285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_61
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d66483da37896664690f860760eb42c3
+      internalID: 1339174994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_62
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f1ec648944062d4a8e103608e5779af
+      internalID: 312240549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_63
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 144
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64de47859cbf25743813220501a85687
+      internalID: -1488193880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_64
       rect:
         serializedVersion: 2
         x: 0
-        y: 79
+        y: 128
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1410a7b2c1062a490800000000000000
-      internalID: -7736515535764324031
+      spriteID: a8e137756048d0647afdec635d4af6fa
+      internalID: 1170519074
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_98
+      name: RedPotionsNoOutline_65
       rect:
         serializedVersion: 2
         x: 16
-        y: 95
+        y: 128
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f82411b30a2bc40d0800000000000000
-      internalID: -3437176014335032689
+      spriteID: b099362f8466b2446976674cfa33120d
+      internalID: 682593286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_99
+      name: RedPotionsNoOutline_66
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4c5aaf0631f43f41a7796af3d845d71
+      internalID: 1373598105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_67
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e14c48507eaf0c04783eac0ab8e4b582
+      internalID: -2069611159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_68
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c17743b0d1bf056458a9671259485b39
+      internalID: -1418644531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_69
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e75c769b585f9474cbdcd1796f59af77
+      internalID: -995007479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_70
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88abd866485cda64fa99c94512e24242
+      internalID: -1619116522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_71
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da96ff9f1b9156438757eb30a489049
+      internalID: -990399171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_72
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c19d09f44c0eefa4da7e7973ee7268db
+      internalID: -1480902769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_73
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d4454edc051d64a90c59ac61daaf01
+      internalID: -1566449623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_74
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5abd9da132c2114a8ef46d6c33caa03
+      internalID: 357091980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_75
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56cc74e254c9d2245b3c37a657269e66
+      internalID: -1764093096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_76
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed26e9ca9264cdc4383048894ae2a167
+      internalID: -1179999868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_77
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e2fb5e90ddcf6b47a3369bbff485f63
+      internalID: -1631698215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_78
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba7ed110daa8bb84e9832b7313b30dac
+      internalID: -540812795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_79
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 128
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5da17a909426474d8b7e7b5dedbbb76
+      internalID: -1675411953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_80
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1116a39b26f7f464d9c2252b92707953
+      internalID: 1927847807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_81
       rect:
         serializedVersion: 2
         x: 16
-        y: 79
+        y: 112
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: a0c3e8c4370d5a2e0800000000000000
-      internalID: -2115055256356373494
+      spriteID: b49f6c4273ce51f4aa1c0bbb98c656a5
+      internalID: -1008493949
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_100
+      name: RedPotionsNoOutline_82
       rect:
         serializedVersion: 2
         x: 32
-        y: 95
+        y: 112
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 8ba0c7abe84ee5ce0800000000000000
-      internalID: -1414441931282576712
+      spriteID: bd411c1f57f05054fa57ee3201638f7c
+      internalID: -798649223
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_101
+      name: RedPotionsNoOutline_83
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 063a63cb83aa3614c93e3bd805d937e1
+      internalID: 417857092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_84
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea3758f1adcaa8944bc28283e7910e60
+      internalID: -39434890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_85
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f0525af86eb82a49b017b9ad62bd3d1
+      internalID: -706522088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_86
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 036153e997574844d97781776a47e217
+      internalID: 1275177710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_87
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a594fb3d90680842983205b0d6ed7ef
+      internalID: -2008742742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_88
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcefc2b7d105ff14a8044a6fa58e11d8
+      internalID: -1831557556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_89
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd9c734e12d22144d96a245cf3d1aca5
+      internalID: -207906732
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_90
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 311ff3d61ecf79047889512945c6a305
+      internalID: 1828876433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_91
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d7d893b963af9d4ba8352faacde12cc
+      internalID: 1520654486
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_92
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3904664b4289d4409d90d903b425436
+      internalID: 974173659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_93
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39f21092091d9ea489665e301209c327
+      internalID: -235740570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_94
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18c88c60f2e60d248b085139c5748444
+      internalID: 92276294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_95
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 112
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11575db3e5cac564b88607041910d0ee
+      internalID: -1882919251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_96
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31386b6d4ce25fe4d85f3722a65caa1d
+      internalID: 1648953144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_97
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c01da28555f5bb5499283f28bfa6111b
+      internalID: 1060212679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_98
       rect:
         serializedVersion: 2
         x: 32
-        y: 79
+        y: 96
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 45916254eed519e20800000000000000
-      internalID: 3355566475311454548
+      spriteID: eeed1e9031f18e94683622fba497ddbb
+      internalID: -287632559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_102
+      name: RedPotionsNoOutline_99
       rect:
         serializedVersion: 2
         x: 48
-        y: 95
+        y: 96
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 650f51c35ec61b670800000000000000
-      internalID: 8552736899164663894
+      spriteID: 0f77641eb12ad404597c8c9f612f4163
+      internalID: -2078205980
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_103
+      name: RedPotionsNoOutline_100
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7bf698069fb2be64d90eba80acea5dc9
+      internalID: -1928075423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_101
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1493b36d86b1cea4d92691ccc719ce20
+      internalID: 1267408432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_102
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b85306311fb266744b6907372ccd9a83
+      internalID: -475861656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_103
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae53ced42e26920449ffa19f4fcc8dac
+      internalID: -718521488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_104
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e7cf4b362fe234c8ffdbfa416afc40
+      internalID: 1855848118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_105
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9cec081a6754fb4085161d2752f0922
+      internalID: 1263488673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_106
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04fac642ae3e53e439defa6d6c35c874
+      internalID: -287449285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_107
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 853e6ed8edc744d4f967b7a48047d99e
+      internalID: -237879371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_108
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07e3bcd8f54b030448129513bc7d68df
+      internalID: -585298000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_109
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cc9554d3638a40478081e933b3aea6c
+      internalID: 378089646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_110
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af9df56f4b0c7484086df25713f50498
+      internalID: 582624583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_111
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 96
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d347a477e2d5ef4da30b17dc40d8212
+      internalID: -2038028872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_112
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a000eff950822c49a253cf5d93d49b7
+      internalID: 1873267713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_113
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b8283f774493444cad38cbede336ce6
+      internalID: -437062797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_114
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f38b54e0bf6336241b873a2cf31238b0
+      internalID: -185218566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_115
       rect:
         serializedVersion: 2
         x: 48
-        y: 79
+        y: 80
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 76cdc0a99371966b0800000000000000
-      internalID: -5302681550086939545
+      spriteID: 67cb6f77675ecc14c87d39a71d06198f
+      internalID: 1547406789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_104
+      name: RedPotionsNoOutline_116
       rect:
         serializedVersion: 2
         x: 64
-        y: 95
+        y: 80
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 56040fb58c3f8bc10800000000000000
-      internalID: 2069672070638223461
+      spriteID: 7caf78877ceb0f94e9776938ecec9850
+      internalID: 2129151044
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_105
+      name: RedPotionsNoOutline_117
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e95d24aa1be1084ebc87912768b8891
+      internalID: -1109909125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_118
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb527b4c147a6e847a70d74b700ba620
+      internalID: -394801429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_119
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61773fd16b0eb6e43b09b2b696c58efb
+      internalID: 1089202198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_120
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67b2b97c2ac2d094eaf119580e7adf31
+      internalID: -72644358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_121
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1f630ddd7c0e6a45a156c13c562fcb1
+      internalID: -1373491893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_122
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51ee0468ce9b0544794d0b51a29873c2
+      internalID: -1727266340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_123
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fbdb929c81c43e428a6f1e9ee88db5c
+      internalID: -1922922511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_124
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00a42a3889d2e294f822e803efbecbdb
+      internalID: 1938750133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_125
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41610ce1433021d44a8476ea0055873e
+      internalID: 1545303492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_126
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de3e0095378379643a13206ab0386da2
+      internalID: 1240940886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_127
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 80
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7fc94c09100b7064592579a65f0f0a5a
+      internalID: -1661329570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_128
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3c95537cebe69545a55937aaa4a3a94
+      internalID: 2117105553
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_129
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eefc0e8f74f51ed468a2d38c9224f028
+      internalID: -423938570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_130
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cd4f1d6fda2be35449bc414988b04597
+      internalID: -1135652147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_131
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d727dc62a9646f941ab6df7f718e3879
+      internalID: -2081094759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_132
       rect:
         serializedVersion: 2
         x: 64
-        y: 79
+        y: 64
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 6c8644df78ca7e260800000000000000
-      internalID: 7126854635406780614
+      spriteID: 1b1f3c77ec7390249a6fc161df5ad6f1
+      internalID: -234890533
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_106
+      name: RedPotionsNoOutline_133
       rect:
         serializedVersion: 2
         x: 80
-        y: 95
+        y: 64
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 42dec12878ee0ae90800000000000000
-      internalID: -7016345953672303324
+      spriteID: 81f80d4ddcd761541b641ef502ac02c3
+      internalID: -941133984
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_107
+      name: RedPotionsNoOutline_134
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d861ba2d76fa4c418b4d6e80db4cd88
+      internalID: -1665395691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_135
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b75c5ce0712a11d4dba33a853921b648
+      internalID: -1736671326
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_136
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ace4bbdf29160948bae97f1ba6df1af
+      internalID: -790742160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_137
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fae6e3883b0638e43ada9a74994617d9
+      internalID: 1827307918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_138
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d37ccf1ad2e284f8dd38497747d344
+      internalID: 1639140153
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_139
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3decd3ecf75b40149ba85051f947de47
+      internalID: 1505568706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_140
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87888de214865da4e8dc2a3d85686b92
+      internalID: -1873943849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_141
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6aa29d813898b242928c746c596a0b5
+      internalID: 453172382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_142
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 831b6473a9e97e54f93a3688066599ff
+      internalID: 117242849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_143
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 64
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e4439e5e696a174590791e3e2a8cc02
+      internalID: 476433937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_144
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de2f93b3210e7ae45933791cd061d079
+      internalID: -2098310833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_145
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48446781b0316a948964ad460f98ae35
+      internalID: -1470248993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_146
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1881d3cf519c6744a60b07c4019a32c
+      internalID: 2135606445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_147
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2f497bc89f7d60469cc2c957fa30f5c
+      internalID: 2122231650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_148
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b009d2b128552634a9b6263a1ef47aa1
+      internalID: 1937420278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_149
       rect:
         serializedVersion: 2
         x: 80
-        y: 79
+        y: 48
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 4b880e14879b32860800000000000000
-      internalID: 7504045330281826484
+      spriteID: b01614e95bfa8fa4b83242aef4685ddb
+      internalID: -1754952086
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_108
+      name: RedPotionsNoOutline_150
       rect:
         serializedVersion: 2
         x: 96
-        y: 95
+        y: 48
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: db7e8f8074d3eb510800000000000000
-      internalID: 1566757095674013629
+      spriteID: 2e3fa70d74e9383438c631de41fcdc4e
+      internalID: -81929658
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_109
+      name: RedPotionsNoOutline_151
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 317d1b7de591b8949a67af8316050ecb
+      internalID: -704057491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_152
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e260ab5dabd35f5479d079d21c71b898
+      internalID: 1102457390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_153
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0276bf03cb2124a44a8f322b4441c4f3
+      internalID: 913809260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_154
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81f75ced17570a14c99fd9c2ce0178fb
+      internalID: 1468612089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_155
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f10ef8a1bcbac4f8b67323f7529ac4
+      internalID: 2006664804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_156
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 130fde5216e3a934297135ac48a6a509
+      internalID: -426864926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_157
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d9426e52e9b9f942a34d681320742c2
+      internalID: 775843144
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_158
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b4e6c380dca0e943a7da3ede5ad10b7
+      internalID: 1276949948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_159
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 48
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abdab0c0ff59fff4182ec5bdfd520bad
+      internalID: -1918658601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_160
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28aef76b8bd509249bdf6b639ee420d9
+      internalID: -1636185778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_161
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 14de54b3902cbde4f9c0aa82df39e68c
+      internalID: -385304558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_162
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c844d5c22c0af2478147f3031692f87
+      internalID: 1369156841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_163
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb6521606716d0143a30215ac6a4398d
+      internalID: 1883582513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_164
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41af447dd2194734d9df352fed5ea3d6
+      internalID: -579583050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_165
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c55a1d7bfbfdf4aac3c9910d01cbe7
+      internalID: 1438882816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_166
       rect:
         serializedVersion: 2
         x: 96
-        y: 79
+        y: 32
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1f8df822ced579e70800000000000000
-      internalID: 9121862839035746545
+      spriteID: 5e5ec363636327e40ac993a2dafb5324
+      internalID: 445133218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_110
+      name: RedPotionsNoOutline_167
       rect:
         serializedVersion: 2
         x: 112
-        y: 95
+        y: 32
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ad37d5685d81271c0800000000000000
-      internalID: -4507512971683073062
+      spriteID: b2a25cc6288574549becee94c9c59f80
+      internalID: -1990321108
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_111
+      name: RedPotionsNoOutline_168
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765b25e55f921044c954ce0b18525fca
+      internalID: 768489955
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_169
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41ad545ff499c78478f35f8aba87568f
+      internalID: 528278915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_170
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 609af1a6d14b0d6458705361d621dd0f
+      internalID: -1761821465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_171
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39700661e1730f645afde8317b585261
+      internalID: -992967545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_172
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c49f95f5f7a841347a6f2b232903073d
+      internalID: -840649102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_173
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75387db252895be4690aaca2992b5ff5
+      internalID: -439985671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_174
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a9285a409f5dd14cac9e0f0388ad4c4
+      internalID: 2067536693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_175
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 32
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc05c0efbc262ef4d965b91ed55d20cd
+      internalID: 86778604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_176
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6327aaa84b96ee440b4545db892c4c4e
+      internalID: -1098937838
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_177
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f1eca551bbff7d438e0016ceab638ce
+      internalID: -1869646332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_178
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84bb8f787d3018d4a9e486653f5224da
+      internalID: 709487654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_179
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c0a63135147bb444939ab97156a5490
+      internalID: 2118010832
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_180
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87ce9d25caa10ff448485d116861ef74
+      internalID: -1078135386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_181
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ad86deef0266af4fa5040cf6e8b0b0b
+      internalID: 1972710845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_182
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 16
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5ddd34cbff66f448acabe127af41aae
+      internalID: 1379437914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_183
       rect:
         serializedVersion: 2
         x: 112
-        y: 79
+        y: 16
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 7bb02dd70d105ab40800000000000000
-      internalID: 5450764918977596343
+      spriteID: 9339c4b7d785b174aa233392d0c77cfc
+      internalID: -723836825
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_112
+      name: RedPotionsNoOutline_184
       rect:
         serializedVersion: 2
         x: 128
-        y: 95
+        y: 16
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 651b045b8691c9120800000000000000
-      internalID: 2421838637126693206
+      spriteID: 02ec014c464d41f4c89480531c448215
+      internalID: -1690568231
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_113
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 79
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4463e450a55d00090800000000000000
-      internalID: -8070215949635144124
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_114
+      name: RedPotionsNoOutline_185
       rect:
         serializedVersion: 2
         x: 144
-        y: 95
+        y: 16
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e658b97b4f59167d0800000000000000
-      internalID: -2926893404529130130
+      spriteID: 02aaa81c46f436649aa761bb083c6464
+      internalID: 2050703033
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_115
-      rect:
-        serializedVersion: 2
-        x: 144
-        y: 79
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 9c9b8a11424bb4480800000000000000
-      internalID: -8913832970441672247
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_116
+      name: RedPotionsNoOutline_186
       rect:
         serializedVersion: 2
         x: 160
-        y: 95
+        y: 16
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: e5ae469150f20b5b0800000000000000
-      internalID: -5354728257996133794
+      spriteID: d7995c05917ea1f4c81e28c0c6d1c3ea
+      internalID: 30711216
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_117
-      rect:
-        serializedVersion: 2
-        x: 160
-        y: 79
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 009d2eea5acf340c0800000000000000
-      internalID: -4592549406453868288
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_118
+      name: RedPotionsNoOutline_187
       rect:
         serializedVersion: 2
         x: 176
-        y: 95
+        y: 16
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: cbc54d34cbb4648b0800000000000000
-      internalID: -5168360250397139780
+      spriteID: 34a16618707e4a349a883539f3bad817
+      internalID: -391059574
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_119
-      rect:
-        serializedVersion: 2
-        x: 176
-        y: 79
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 738dd25153891a440800000000000000
-      internalID: 4945401219585529911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_120
+      name: RedPotionsNoOutline_188
       rect:
         serializedVersion: 2
         x: 192
-        y: 95
+        y: 16
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c4acf0e2bfcf3f410800000000000000
-      internalID: 1509828455839025740
+      spriteID: 7a1218b23ca219b4d9fc1f2ed4c32832
+      internalID: 1134976844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_121
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 79
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: d6d0fc45f7f8a11a0800000000000000
-      internalID: -6837995307162202771
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_122
+      name: RedPotionsNoOutline_189
       rect:
         serializedVersion: 2
         x: 208
-        y: 95
+        y: 16
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2b7327745f4845460800000000000000
-      internalID: 7229549490837010354
+      spriteID: 2a0e1685c58cdd449bbf498608877e16
+      internalID: 1863383211
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_123
-      rect:
-        serializedVersion: 2
-        x: 208
-        y: 79
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 6824d8e4c026760a0800000000000000
-      internalID: -6888429300042874234
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_124
+      name: RedPotionsNoOutline_190
       rect:
         serializedVersion: 2
         x: 224
-        y: 95
+        y: 16
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 1744b30759c26ce30800000000000000
-      internalID: 4523351896084923505
+      spriteID: dd795ddbaf7228249bb4c309cb6b59c0
+      internalID: 1052844410
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_125
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 79
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: a917b2e0f87045690800000000000000
-      internalID: -7614452758977220198
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_126
+      name: RedPotionsNoOutline_191
       rect:
         serializedVersion: 2
         x: 240
-        y: 95
+        y: 16
         width: 16
-        height: 17
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: dff46761dff1259b0800000000000000
-      internalID: -5092973056738570243
+      spriteID: 1ded705cb4d9abc4f986c479fe38b0b9
+      internalID: 1403789474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Set 2.4_127
-      rect:
-        serializedVersion: 2
-        x: 240
-        y: 79
-        width: 16
-        height: 17
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: b253436bdc43ab5a0800000000000000
-      internalID: -6504828653653445333
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Set 2.4_128
+      name: RedPotionsNoOutline_192
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 256
-        height: 80
+        width: 16
+        height: 16
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 382138cbea5102f80800000000000000
-      internalID: -8133477086799916413
+      spriteID: b104d95c781adde42ab6290c39dde2c3
+      internalID: 517942401
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_193
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a351f8b9248113349b5ebc816a32f88c
+      internalID: -319649901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_194
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b6cef9a9da66a488a012007ee49870
+      internalID: -125276837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_195
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 308e41e917d04e34faab3a117661f050
+      internalID: 152993626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_196
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea81ef33776af4d41b52f347350c6e36
+      internalID: 1981959231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_197
+      rect:
+        serializedVersion: 2
+        x: 80
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d5ac8d1e0dd0814bbdc710d6541cfeb
+      internalID: 733222928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_198
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79a67a6d80417db4aab69a0d8906ad1c
+      internalID: 1904119825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_199
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dbe055c23d453f489872cfd39243ee7
+      internalID: 419551623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_200
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e75d44248a85b46830ba8cbcdddf68
+      internalID: 1600198790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_201
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb9ddb380d0652342862353692daeedd
+      internalID: 1198008933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_202
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e20eb57c035d6d4da7a27a78bab6303
+      internalID: -610591316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_203
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f492d91406c72f4aa043765328deb51
+      internalID: -1543325322
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_204
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 455de7e913c17db42a79eaa9bf10dd4d
+      internalID: 514403276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_205
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 379255fe4278049469e15ecb020aff63
+      internalID: -1952643219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_206
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf06c1b1e4f489c4d8da1641dbe8b06f
+      internalID: -1048522163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RedPotionsNoOutline_207
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 0
+        width: 16
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbd1788900e4f8b48b7379960d9b7419
+      internalID: 976398771
       vertices: []
       indices: 
       edges: []
@@ -3325,7 +5063,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 1fd34d4ddd8e4684cb3c87ef0a29f9d4
     internalID: 0
     vertices: []
     indices: 
@@ -3333,137 +5071,218 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Set 2.4_0: -4847184449064419838
-      Set 2.4_1: -6525475891859667444
-      Set 2.4_10: 1231650411630771536
-      Set 2.4_100: -1414441931282576712
-      Set 2.4_101: 3355566475311454548
-      Set 2.4_102: 8552736899164663894
-      Set 2.4_103: -5302681550086939545
-      Set 2.4_104: 2069672070638223461
-      Set 2.4_105: 7126854635406780614
-      Set 2.4_106: -7016345953672303324
-      Set 2.4_107: 7504045330281826484
-      Set 2.4_108: 1566757095674013629
-      Set 2.4_109: 9121862839035746545
-      Set 2.4_11: -6990213011961904015
-      Set 2.4_110: -4507512971683073062
-      Set 2.4_111: 5450764918977596343
-      Set 2.4_112: 2421838637126693206
-      Set 2.4_113: -8070215949635144124
-      Set 2.4_114: -2926893404529130130
-      Set 2.4_115: -8913832970441672247
-      Set 2.4_116: -5354728257996133794
-      Set 2.4_117: -4592549406453868288
-      Set 2.4_118: -5168360250397139780
-      Set 2.4_119: 4945401219585529911
-      Set 2.4_12: 2910867540894138174
-      Set 2.4_120: 1509828455839025740
-      Set 2.4_121: -6837995307162202771
-      Set 2.4_122: 7229549490837010354
-      Set 2.4_123: -6888429300042874234
-      Set 2.4_124: 4523351896084923505
-      Set 2.4_125: -7614452758977220198
-      Set 2.4_126: -5092973056738570243
-      Set 2.4_127: -6504828653653445333
-      Set 2.4_128: -8133477086799916413
-      Set 2.4_13: 326788213202939863
-      Set 2.4_14: -337944047944786370
-      Set 2.4_15: -8181857790337683579
-      Set 2.4_16: 1478905956082300691
-      Set 2.4_17: 9178087102811025047
-      Set 2.4_18: -913762007448465980
-      Set 2.4_19: -3183175437094631175
-      Set 2.4_2: 5368934669204486949
-      Set 2.4_20: -443127389759051651
-      Set 2.4_21: -4319696006805014390
-      Set 2.4_22: 704981538594638903
-      Set 2.4_23: 1668747770780863543
-      Set 2.4_24: -357332900781967062
-      Set 2.4_25: 826848985908882969
-      Set 2.4_26: -4370563550179388111
-      Set 2.4_27: 5090585810895259924
-      Set 2.4_28: 6449657516533330507
-      Set 2.4_29: -5796058888572388514
-      Set 2.4_3: 6116623091655761986
-      Set 2.4_30: -6473921975524088286
-      Set 2.4_31: 1405072304964725393
-      Set 2.4_32: -5413794104005676065
-      Set 2.4_33: -2068398538958360809
-      Set 2.4_34: 8754122386069804389
-      Set 2.4_35: -8457863674429852754
-      Set 2.4_36: -8209946438932255276
-      Set 2.4_37: -338440451137202473
-      Set 2.4_38: -2940223247838514599
-      Set 2.4_39: 505430378421617463
-      Set 2.4_4: -6782692944878952732
-      Set 2.4_40: -8137286041466066230
-      Set 2.4_41: 3473522030854864149
-      Set 2.4_42: -6816364478757190030
-      Set 2.4_43: -727446424813407719
-      Set 2.4_44: -6058279606942131858
-      Set 2.4_45: 3483057139621984517
-      Set 2.4_46: 4695109232479124047
-      Set 2.4_47: -4450296761652672711
-      Set 2.4_48: -6038304713979131239
-      Set 2.4_49: 7201705512357116508
-      Set 2.4_5: 5205961642694429461
-      Set 2.4_50: 4351845838522461400
-      Set 2.4_51: 2782875182347172949
-      Set 2.4_52: 9091638047507900478
-      Set 2.4_53: -3403813634131851663
-      Set 2.4_54: 1348120299612634417
-      Set 2.4_55: -3575484480119458811
-      Set 2.4_56: -635071833983087716
-      Set 2.4_57: 7509093667937290437
-      Set 2.4_58: -8616856404490335542
-      Set 2.4_59: -6983079991170866930
-      Set 2.4_6: 5818534943763427822
-      Set 2.4_60: -1881380710939509499
-      Set 2.4_61: -1000949115697473367
-      Set 2.4_62: -5535956945740609801
-      Set 2.4_63: 5805826481077042076
-      Set 2.4_64: -8315331166793239520
-      Set 2.4_65: -2858085272003003757
-      Set 2.4_66: -4961665536541940724
-      Set 2.4_67: -1236143312866327984
-      Set 2.4_68: -1746773290468985736
-      Set 2.4_69: -2696387591663300212
-      Set 2.4_7: 1063946233555325714
-      Set 2.4_70: 5654526248680304161
-      Set 2.4_71: 6618122076100004693
-      Set 2.4_72: 5819198749816934606
-      Set 2.4_73: 7724225594111055128
-      Set 2.4_74: 8883298134281575461
-      Set 2.4_75: -5335513537717653693
-      Set 2.4_76: -7324587540455795417
-      Set 2.4_77: -375614246671723318
-      Set 2.4_78: 5429948266058215681
-      Set 2.4_79: 1774568759316920432
-      Set 2.4_8: -1024781784459334753
-      Set 2.4_80: -8729310946140956430
-      Set 2.4_81: 5200808445011737112
-      Set 2.4_82: -796192535462295098
-      Set 2.4_83: -4707486922203669874
-      Set 2.4_84: -5611639407100322352
-      Set 2.4_85: 6670325208094905336
-      Set 2.4_86: 5869624351820814271
-      Set 2.4_87: -7485949192390345690
-      Set 2.4_88: -8456881043854729729
-      Set 2.4_89: 3373508216946605448
-      Set 2.4_9: 1958917764577100554
-      Set 2.4_90: -3398804511415900785
-      Set 2.4_91: 5386984702642427145
-      Set 2.4_92: -6802842657486666720
-      Set 2.4_93: -5416968707524257369
-      Set 2.4_94: -7607447965682016696
-      Set 2.4_95: -4241390858659647902
-      Set 2.4_96: -4687491442258295536
-      Set 2.4_97: -7736515535764324031
-      Set 2.4_98: -3437176014335032689
-      Set 2.4_99: -2115055256356373494
+      RedPotionsNoOutline_0: 740804975
+      RedPotionsNoOutline_1: -2132322591
+      RedPotionsNoOutline_10: 1761982026
+      RedPotionsNoOutline_100: -1928075423
+      RedPotionsNoOutline_101: 1267408432
+      RedPotionsNoOutline_102: -475861656
+      RedPotionsNoOutline_103: -718521488
+      RedPotionsNoOutline_104: 1855848118
+      RedPotionsNoOutline_105: 1263488673
+      RedPotionsNoOutline_106: -287449285
+      RedPotionsNoOutline_107: -237879371
+      RedPotionsNoOutline_108: -585298000
+      RedPotionsNoOutline_109: 378089646
+      RedPotionsNoOutline_11: -1076120315
+      RedPotionsNoOutline_110: 582624583
+      RedPotionsNoOutline_111: -2038028872
+      RedPotionsNoOutline_112: 1873267713
+      RedPotionsNoOutline_113: -437062797
+      RedPotionsNoOutline_114: -185218566
+      RedPotionsNoOutline_115: 1547406789
+      RedPotionsNoOutline_116: 2129151044
+      RedPotionsNoOutline_117: -1109909125
+      RedPotionsNoOutline_118: -394801429
+      RedPotionsNoOutline_119: 1089202198
+      RedPotionsNoOutline_12: -1556951369
+      RedPotionsNoOutline_120: -72644358
+      RedPotionsNoOutline_121: -1373491893
+      RedPotionsNoOutline_122: -1727266340
+      RedPotionsNoOutline_123: -1922922511
+      RedPotionsNoOutline_124: 1938750133
+      RedPotionsNoOutline_125: 1545303492
+      RedPotionsNoOutline_126: 1240940886
+      RedPotionsNoOutline_127: -1661329570
+      RedPotionsNoOutline_128: 2117105553
+      RedPotionsNoOutline_129: -423938570
+      RedPotionsNoOutline_13: 1813236294
+      RedPotionsNoOutline_130: -1135652147
+      RedPotionsNoOutline_131: -2081094759
+      RedPotionsNoOutline_132: -234890533
+      RedPotionsNoOutline_133: -941133984
+      RedPotionsNoOutline_134: -1665395691
+      RedPotionsNoOutline_135: -1736671326
+      RedPotionsNoOutline_136: -790742160
+      RedPotionsNoOutline_137: 1827307918
+      RedPotionsNoOutline_138: 1639140153
+      RedPotionsNoOutline_139: 1505568706
+      RedPotionsNoOutline_14: -321764407
+      RedPotionsNoOutline_140: -1873943849
+      RedPotionsNoOutline_141: 453172382
+      RedPotionsNoOutline_142: 117242849
+      RedPotionsNoOutline_143: 476433937
+      RedPotionsNoOutline_144: -2098310833
+      RedPotionsNoOutline_145: -1470248993
+      RedPotionsNoOutline_146: 2135606445
+      RedPotionsNoOutline_147: 2122231650
+      RedPotionsNoOutline_148: 1937420278
+      RedPotionsNoOutline_149: -1754952086
+      RedPotionsNoOutline_15: -83562215
+      RedPotionsNoOutline_150: -81929658
+      RedPotionsNoOutline_151: -704057491
+      RedPotionsNoOutline_152: 1102457390
+      RedPotionsNoOutline_153: 913809260
+      RedPotionsNoOutline_154: 1468612089
+      RedPotionsNoOutline_155: 2006664804
+      RedPotionsNoOutline_156: -426864926
+      RedPotionsNoOutline_157: 775843144
+      RedPotionsNoOutline_158: 1276949948
+      RedPotionsNoOutline_159: -1918658601
+      RedPotionsNoOutline_16: -592233584
+      RedPotionsNoOutline_160: -1636185778
+      RedPotionsNoOutline_161: -385304558
+      RedPotionsNoOutline_162: 1369156841
+      RedPotionsNoOutline_163: 1883582513
+      RedPotionsNoOutline_164: -579583050
+      RedPotionsNoOutline_165: 1438882816
+      RedPotionsNoOutline_166: 445133218
+      RedPotionsNoOutline_167: -1990321108
+      RedPotionsNoOutline_168: 768489955
+      RedPotionsNoOutline_169: 528278915
+      RedPotionsNoOutline_17: -1004969275
+      RedPotionsNoOutline_170: -1761821465
+      RedPotionsNoOutline_171: -992967545
+      RedPotionsNoOutline_172: -840649102
+      RedPotionsNoOutline_173: -439985671
+      RedPotionsNoOutline_174: 2067536693
+      RedPotionsNoOutline_175: 86778604
+      RedPotionsNoOutline_176: -1098937838
+      RedPotionsNoOutline_177: -1869646332
+      RedPotionsNoOutline_178: 709487654
+      RedPotionsNoOutline_179: 2118010832
+      RedPotionsNoOutline_18: -837120364
+      RedPotionsNoOutline_180: -1078135386
+      RedPotionsNoOutline_181: 1972710845
+      RedPotionsNoOutline_182: 1379437914
+      RedPotionsNoOutline_183: -723836825
+      RedPotionsNoOutline_184: -1690568231
+      RedPotionsNoOutline_185: 2050703033
+      RedPotionsNoOutline_186: 30711216
+      RedPotionsNoOutline_187: -391059574
+      RedPotionsNoOutline_188: 1134976844
+      RedPotionsNoOutline_189: 1863383211
+      RedPotionsNoOutline_19: -222481089
+      RedPotionsNoOutline_190: 1052844410
+      RedPotionsNoOutline_191: 1403789474
+      RedPotionsNoOutline_192: 517942401
+      RedPotionsNoOutline_193: -319649901
+      RedPotionsNoOutline_194: -125276837
+      RedPotionsNoOutline_195: 152993626
+      RedPotionsNoOutline_196: 1981959231
+      RedPotionsNoOutline_197: 733222928
+      RedPotionsNoOutline_198: 1904119825
+      RedPotionsNoOutline_199: 419551623
+      RedPotionsNoOutline_2: 996847853
+      RedPotionsNoOutline_20: 1005211972
+      RedPotionsNoOutline_200: 1600198790
+      RedPotionsNoOutline_201: 1198008933
+      RedPotionsNoOutline_202: -610591316
+      RedPotionsNoOutline_203: -1543325322
+      RedPotionsNoOutline_204: 514403276
+      RedPotionsNoOutline_205: -1952643219
+      RedPotionsNoOutline_206: -1048522163
+      RedPotionsNoOutline_207: 976398771
+      RedPotionsNoOutline_21: 1487488285
+      RedPotionsNoOutline_22: 1647598253
+      RedPotionsNoOutline_23: -407574106
+      RedPotionsNoOutline_24: 651703182
+      RedPotionsNoOutline_25: -836124274
+      RedPotionsNoOutline_26: 761966074
+      RedPotionsNoOutline_27: -1165606072
+      RedPotionsNoOutline_28: 124148034
+      RedPotionsNoOutline_29: -538004278
+      RedPotionsNoOutline_3: 1929141925
+      RedPotionsNoOutline_30: 408961182
+      RedPotionsNoOutline_31: -203708449
+      RedPotionsNoOutline_32: -422109664
+      RedPotionsNoOutline_33: 2049144242
+      RedPotionsNoOutline_34: 1848007122
+      RedPotionsNoOutline_35: 1206427097
+      RedPotionsNoOutline_36: 1526332121
+      RedPotionsNoOutline_37: 973780707
+      RedPotionsNoOutline_38: 330965475
+      RedPotionsNoOutline_39: 1112316097
+      RedPotionsNoOutline_4: 2135341191
+      RedPotionsNoOutline_40: 1095923829
+      RedPotionsNoOutline_41: -1520084977
+      RedPotionsNoOutline_42: 1717998661
+      RedPotionsNoOutline_43: -1107175575
+      RedPotionsNoOutline_44: 1440559683
+      RedPotionsNoOutline_45: -1497991891
+      RedPotionsNoOutline_46: 115411467
+      RedPotionsNoOutline_47: -1493872788
+      RedPotionsNoOutline_48: -791824934
+      RedPotionsNoOutline_49: -779895269
+      RedPotionsNoOutline_5: -1604020669
+      RedPotionsNoOutline_50: -503644442
+      RedPotionsNoOutline_51: 839248167
+      RedPotionsNoOutline_52: -301409317
+      RedPotionsNoOutline_53: -52648116
+      RedPotionsNoOutline_54: 1732531827
+      RedPotionsNoOutline_55: -1552527104
+      RedPotionsNoOutline_56: -1368525745
+      RedPotionsNoOutline_57: 743421254
+      RedPotionsNoOutline_58: -351063734
+      RedPotionsNoOutline_59: -1111289847
+      RedPotionsNoOutline_6: -789362899
+      RedPotionsNoOutline_60: -1078274285
+      RedPotionsNoOutline_61: 1339174994
+      RedPotionsNoOutline_62: 312240549
+      RedPotionsNoOutline_63: -1488193880
+      RedPotionsNoOutline_64: 1170519074
+      RedPotionsNoOutline_65: 682593286
+      RedPotionsNoOutline_66: 1373598105
+      RedPotionsNoOutline_67: -2069611159
+      RedPotionsNoOutline_68: -1418644531
+      RedPotionsNoOutline_69: -995007479
+      RedPotionsNoOutline_7: -960789403
+      RedPotionsNoOutline_70: -1619116522
+      RedPotionsNoOutline_71: -990399171
+      RedPotionsNoOutline_72: -1480902769
+      RedPotionsNoOutline_73: -1566449623
+      RedPotionsNoOutline_74: 357091980
+      RedPotionsNoOutline_75: -1764093096
+      RedPotionsNoOutline_76: -1179999868
+      RedPotionsNoOutline_77: -1631698215
+      RedPotionsNoOutline_78: -540812795
+      RedPotionsNoOutline_79: -1675411953
+      RedPotionsNoOutline_8: 696666255
+      RedPotionsNoOutline_80: 1927847807
+      RedPotionsNoOutline_81: -1008493949
+      RedPotionsNoOutline_82: -798649223
+      RedPotionsNoOutline_83: 417857092
+      RedPotionsNoOutline_84: -39434890
+      RedPotionsNoOutline_85: -706522088
+      RedPotionsNoOutline_86: 1275177710
+      RedPotionsNoOutline_87: -2008742742
+      RedPotionsNoOutline_88: -1831557556
+      RedPotionsNoOutline_89: -207906732
+      RedPotionsNoOutline_9: -328648955
+      RedPotionsNoOutline_90: 1828876433
+      RedPotionsNoOutline_91: 1520654486
+      RedPotionsNoOutline_92: 974173659
+      RedPotionsNoOutline_93: -235740570
+      RedPotionsNoOutline_94: 92276294
+      RedPotionsNoOutline_95: -1882919251
+      RedPotionsNoOutline_96: 1648953144
+      RedPotionsNoOutline_97: 1060212679
+      RedPotionsNoOutline_98: -287632559
+      RedPotionsNoOutline_99: -2078205980
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
