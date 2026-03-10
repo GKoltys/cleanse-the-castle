@@ -83,14 +83,15 @@ public class PlayerBase : MonoBehaviour
     public void Heal(float amount)
     {
         health += amount;
-        playerHud.UpdateHealth(health);
 
-        Debug.Log("Healed " + health);
+        Debug.Log("Healed " + amount);
 
         if (health > maxHealth)
         {
             health = maxHealth;
         }
+
+        playerHud.UpdateHealth(health);
     }
 
     public void CoinCollected(int value)
