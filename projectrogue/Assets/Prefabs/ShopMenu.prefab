@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 1912431225084951150}
   - component: {fileID: 1485775623512789392}
   - component: {fileID: 8626863571459857637}
-  - component: {fileID: 7938001993637824517}
   m_Layer: 5
   m_Name: ShopMenu
   m_TagString: Untagged
@@ -81,18 +80,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &7938001993637824517
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 666878350256870744}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15b5b209f91a90e41823b2e5be4ad1aa, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
 --- !u!1 &751866221933560699
 GameObject:
   m_ObjectHideFlags: 0
@@ -643,8 +630,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -419, y: 298}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchoredPosition: {x: -235.45685, y: 298}
+  m_SizeDelta: {x: 567.0863, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8197283173347763133
 CanvasRenderer:

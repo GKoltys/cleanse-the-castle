@@ -102,8 +102,8 @@ GameObject:
   - component: {fileID: 6226318659091792594}
   - component: {fileID: 2521957833422316782}
   - component: {fileID: 811969808337611413}
-  - component: {fileID: 5059529295351530218}
-  m_Layer: 0
+  - component: {fileID: 612138101304792625}
+  m_Layer: 3
   m_Name: Shopkeeper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,7 +231,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.875, y: 1}
   m_EdgeRadius: 0
---- !u!114 &5059529295351530218
+--- !u!114 &612138101304792625
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -240,13 +240,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 4914398961023793015}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1770df0618944e4c87c307c8016fb0c, type: 3}
+  m_Script: {fileID: 11500000, guid: 641268ed930ff7144983f41810c0d8d1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::NPC
+  m_EditorClassIdentifier: Assembly-CSharp::ShopNPC
   interactionIcon: {fileID: 4785004298303324245}
-  dialogueData: {fileID: 11400000, guid: 6b15ce5838748444cba5622429bc8594, type: 2}
-  dialoguePanel: {fileID: 0}
-  dialogueText: {fileID: 0}
-  nameText: {fileID: 0}
-  portraitImage: {fileID: 0}
-  lastInteractor: {fileID: 0}
+  shopID: shop_merchant_01
+  shopkeeperName: Merchant

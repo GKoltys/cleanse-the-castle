@@ -17,3 +17,4 @@ MonoBehaviour:
   description: Heals the player 100hp
   dropChance: 0.02
   effect: {fileID: 11400000, guid: da569fb02f75a1c4cb4a43448e2135ff, type: 2}
+  buyPrice: 35
