@@ -1,46 +1,41 @@
 using UnityEngine;
 
-public class ConsumableController : MonoBehaviour, IMapGenInit
+public abstract class ConsumableController : MonoBehaviour
 {
     [SerializeField] private ConsumableItemData itemData;
 
-    public bool isCollected;
-    private Animator animator;
-    private BoxCollider2D col;
-    private MapGenerator dungeon;
-    private PlayerBase playerBase;
+    protected bool isCollected;
+    protected Animator animator;
+    protected BoxCollider2D col;
+    protected PlayerBase playerBase;
 
-    private void Start()
+    protected virtual void Awake()
+    {
+        animator = GetComponent<Animator>();
+        col = GetComponent<BoxCollider2D>();
+    }
+    protected virtual void Start()
     {
         playerBase = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBase>();
     }
 
-    public void Init(MapGenerator controller)
+    protected virtual void OnTriggerEnter2D(Collider2D other)
     {
-        dungeon = controller;
-        animator = GetComponent<Animator>();
-        col = GetComponent<BoxCollider2D>();
-    }
-
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        //if (dungeon == null) return;
-
         if (!other.CompareTag("Player")) return;
         if (col) col.enabled = false;
 
         SetIsCollected(true);
         itemData.effect.Apply(playerBase);
-        animator.SetTrigger("KeyCollected");
+        animator.SetTrigger("ItemCollected");
     }
 
-    public void SetIsCollected(bool opened)
+    protected virtual void SetIsCollected(bool opened)
     {
         isCollected = opened;
     }
 
     // Called using animation event
-    public void Despawn()
+    protected virtual void Despawn()
     {
         // destroy for now, if it affects performance move to object pooling?
         Destroy(gameObject);

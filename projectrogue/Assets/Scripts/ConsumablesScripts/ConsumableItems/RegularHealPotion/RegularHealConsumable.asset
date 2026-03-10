@@ -15,4 +15,5 @@ MonoBehaviour:
   itemName: RegularHealPotion
   icon: {fileID: -1659760741, guid: 3924ee34ce4048249a4305468ed465c0, type: 3}
   description: Heals the player 60hp
+  dropChance: 0.05
   effect: {fileID: 11400000, guid: 59849feb1919ab9418d0495bf9c281d3, type: 2}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8466949317256716555}
   - component: {fileID: 1440065465992873517}
   - component: {fileID: 2957840630959700658}
-  - component: {fileID: 2017735650676634401}
+  - component: {fileID: 7155014664636305849}
   m_Layer: 12
   m_Name: SmallHealPotion
   m_TagString: Untagged
@@ -162,7 +162,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.25068045, y: 0.4106202}
   m_EdgeRadius: 0
---- !u!114 &2017735650676634401
+--- !u!114 &7155014664636305849
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -171,8 +171,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 813777909600454607}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7044dddd47d11954a81c4cf76c6edde4, type: 3}
+  m_Script: {fileID: 11500000, guid: e600512146a9acf43a797016392eefb4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::ConsumableController
+  m_EditorClassIdentifier: Assembly-CSharp::SmallHealController
   itemData: {fileID: 11400000, guid: 65bcc05f35757af47bcb9cbb10715eba, type: 2}
-  isCollected: 0
