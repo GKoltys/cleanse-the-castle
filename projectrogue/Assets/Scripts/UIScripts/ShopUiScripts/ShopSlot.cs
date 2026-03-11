@@ -79,4 +79,15 @@ public class ShopSlot : MonoBehaviour
         itemQuantity = quantity;
         UpdateDisplay();
     }
+
+    public void OnBuyPressed()
+    {
+        if (!isShopSlot) return;
+        if (currentItemData == null) return;
+        if (ShopController.instance == null) return;
+
+        Debug.Log("pressed");
+
+        ShopController.instance.BuyItem(currentItemData, itemPrice);
+    }
 }

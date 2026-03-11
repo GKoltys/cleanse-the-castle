@@ -5954,13 +5954,99 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3208817035475879716, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 606730743}
   m_SourcePrefab: {fileID: 100100000, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
 --- !u!224 &606730740 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1912431225084951150, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
   m_PrefabInstance: {fileID: 606730739}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &606730741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3208817035475879716, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
+  m_PrefabInstance: {fileID: 606730739}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &606730742 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8557679311935243088, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
+  m_PrefabInstance: {fileID: 606730739}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606730741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+--- !u!114 &606730743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606730741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Button
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 606730742}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5813087473750413129, guid: 34ec5a02d8d49e6419efaa51d416de3f, type: 3}
+        m_TargetAssemblyTypeName: ShopSlot, Assembly-CSharp
+        m_MethodName: OnBuyPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &606730744 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4956647814777728269, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
+  m_PrefabInstance: {fileID: 606730739}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1 &616243092
 GameObject:
   m_ObjectHideFlags: 0
@@ -27661,12 +27747,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15b5b209f91a90e41823b2e5be4ad1aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopController
-  playerStats: {fileID: 1917799909}
+  playerBase: {fileID: 1917799913}
   shopPanel: {fileID: 41941224}
   shopGrid: {fileID: 1372228078}
   shopSlotPrefab: {fileID: 669525623362987215, guid: 34ec5a02d8d49e6419efaa51d416de3f, type: 3}
   playerMoneyText: {fileID: 1071713684}
   shopTitleText: {fileID: 567774453}
+  shopStatusText: {fileID: 606730744}
 --- !u!1 &1210473539
 GameObject:
   m_ObjectHideFlags: 0
@@ -31790,17 +31877,17 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1917799909 stripped
+--- !u!114 &1917799913 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3921989527922571780, guid: a70267d1ecede5140924a362554a3282, type: 3}
+  m_CorrespondingSourceObject: {fileID: 2957798997873762978, guid: a70267d1ecede5140924a362554a3282, type: 3}
   m_PrefabInstance: {fileID: 1763845187}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3697786676f634145b3db4db67e5f73d, type: 3}
+  m_Script: {fileID: 11500000, guid: 206608052e42cc14993730e43a9d0848, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
 --- !u!1 &1945558401
 GameObject:
   m_ObjectHideFlags: 0

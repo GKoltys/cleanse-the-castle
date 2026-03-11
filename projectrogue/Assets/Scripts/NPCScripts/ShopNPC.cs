@@ -71,6 +71,7 @@ public class ShopNPC : MonoBehaviour, IInteractable
 
     public List<ShopStockItem> GetCurrentStock()
     {
+        InitializeShop();
         return currentShopStock;
     }
 
@@ -101,6 +102,8 @@ public class ShopNPC : MonoBehaviour, IInteractable
 
     public bool RemoveFromShopStock(ConsumableItemData itemData, int quantity)
     {
+        InitializeShop();
+
         if (itemData == null || quantity <= 0) return false;
 
         ShopStockItem existing = currentShopStock.Find(s => s.itemData == itemData);

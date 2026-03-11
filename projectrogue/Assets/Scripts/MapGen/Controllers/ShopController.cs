@@ -10,7 +10,7 @@ public class ShopController : MonoBehaviour
     public GameObject shopPanel;
     public Transform shopGrid;
     public GameObject shopSlotPrefab;
-    public TMP_Text playerMoneyText, shopTitleText;
+    public TMP_Text playerMoneyText, shopTitleText, shopStatusText;
 
     // current instance of shop, can have multiple different shops
     private ShopNPC currentShop;
@@ -96,6 +96,54 @@ public class ShopController : MonoBehaviour
 
         slot.isShopSlot = isShop;
         slot.SetItem(itemData, itemData.buyPrice, quantity);
+    }
+
+    public void BuyItem(ConsumableItemData itemData, int price)
+    {
+
+        if (currentShop == null || itemData == null || playerBase == null)
+        {
+            Debug.Log("Null error");
+            return;
+        }
+
+        // not enough gold
+        if (!playerBase.SpendGold(price))
+        {
+            ShowStatus("Not enough gold!");
+            return;
+        }
+
+        // TODO - apply item effects to the player
+
+        // remove one of the purchased item from the shop stock
+        bool removed = currentShop.RemoveFromShopStock(itemData, 1);
+
+        Debug.Log($"Bought {itemData.itemName} for {price} gold.");
+
+        UpdateMoneyDisplay(playerBase.GetCoinCount);
+        RefreshShopDisplay();
+        ShowStatus("Item bought!");
+    }
+
+    // display a text in the shop ui on successful/unsuccessful shop purchase
+    private void ShowStatus(string message)
+    {
+        if (shopStatusText == null) return;
+
+        shopStatusText.text = message;
+        StopAllCoroutines();
+        StartCoroutine(ClearStatusAfterDelay());
+    }
+
+    private System.Collections.IEnumerator ClearStatusAfterDelay()
+    {
+        yield return new WaitForSeconds(2f);
+
+        if (shopStatusText != null)
+        {
+            shopStatusText.text = "";
+        }
     }
 }
     

@@ -4581,6 +4581,7 @@ MonoBehaviour:
   shopSlotPrefab: {fileID: 669525623362987215, guid: 34ec5a02d8d49e6419efaa51d416de3f, type: 3}
   playerMoneyText: {fileID: 1129798206}
   shopTitleText: {fileID: 1249246747}
+  shopStatusText: {fileID: 2076976205}
 --- !u!114 &1249246747 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1126592050973581264, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
@@ -6033,7 +6034,7 @@ MonoBehaviour:
     prefab: {fileID: 4758445816412349997, guid: dd20011e19dc2bc46bd5dcae9f45b517, type: 3}
     count: 10
     minDistanceFromPlayer: 5
-    spawnChance: 0.7
+    spawnChance: 1
     guaranteeSpawn: 1
     spawnAlso: {fileID: 0}
     uniqueTile: 1
@@ -9058,10 +9059,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: ShopMenu
       objectReference: {fileID: 0}
-    - target: {fileID: 666878350256870744, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1912431225084951150, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -9142,59 +9139,22 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2423377335124814685, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2423377335124814685, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2423377335124814685, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2423377335124814685, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2423377335124814685, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2423377335124814685, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592962956748802059, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592962956748802059, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592962956748802059, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592962956748802059, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592962956748802059, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5592962956748802059, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
+--- !u!114 &2076976205 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4956647814777728269, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
+  m_PrefabInstance: {fileID: 2076976204}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &1139990790858357026
 PrefabInstance:
   m_ObjectHideFlags: 0
