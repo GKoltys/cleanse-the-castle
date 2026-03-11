@@ -21,7 +21,7 @@ public abstract class ConsumableController : MonoBehaviour
 
     protected virtual void OnTriggerEnter2D(Collider2D other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("PlayerPickUp")) return;
         if (col) col.enabled = false;
 
         SetIsCollected(true);

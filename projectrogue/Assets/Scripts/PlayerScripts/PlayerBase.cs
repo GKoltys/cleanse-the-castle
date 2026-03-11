@@ -131,7 +131,7 @@ public class PlayerBase : MonoBehaviour
         animator.SetTrigger("FinishAnimations");
         // This should wipe save file to default in SaveController
         // SaveController.Instance.StartNewRun();
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 
     // Getter

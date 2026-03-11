@@ -357,11 +357,12 @@ GameObject:
   - component: {fileID: 8055005055432302699}
   - component: {fileID: 661001344192663538}
   - component: {fileID: 5351525904480175791}
-  - component: {fileID: 3844352060265103314}
-  - component: {fileID: 8505746647010670866}
   - component: {fileID: 7973479200105551359}
   - component: {fileID: 8589035596032759619}
   - component: {fileID: 5101443185087770912}
+  - component: {fileID: 5220715564908764880}
+  - component: {fileID: 314052343704183663}
+  - component: {fileID: 6958504908099552675}
   m_Layer: 6
   m_Name: BlueSlimeEnemy
   m_TagString: Untagged
@@ -517,37 +518,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &3844352060265103314
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8906884267085178471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d641f3e70aa4269418e2fe1bae6eecf9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlimeEnemy
-  maxHealth: 80
-  damage: 10
-  moveSpeed: 1.5
-  agroRadius: 5
---- !u!114 &8505746647010670866
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8906884267085178471}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1eb684dadb5812f4e94ce9f6ed6ac78c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Slime
-  attackCooldown: 0.75
-  attackRange: 1
-  nextAttackTime: 0
 --- !u!114 &7973479200105551359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,3 +572,47 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5220715564908764880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8906884267085178471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d641f3e70aa4269418e2fe1bae6eecf9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SlimeEnemy
+  maxHealth: 80
+  damage: 10
+  moveSpeed: 1.5
+  agroRadius: 5
+--- !u!114 &314052343704183663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8906884267085178471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1eb684dadb5812f4e94ce9f6ed6ac78c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Slime
+  attackCooldown: 0.75
+  attackRange: 1
+  nextAttackTime: 0
+--- !u!114 &6958504908099552675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8906884267085178471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ad97548ce2ed4a4b9e58d5e4b5d7371, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyLootDropper
+  dropTable: {fileID: 11400000, guid: 5c61860c3836df14d9f547cd49a3ee0b, type: 2}
