@@ -9,12 +9,14 @@ public abstract class EnemyBase: MonoBehaviour
     [SerializeField] private float agroRadius;
 
     protected bool isAlive = true;
+    protected bool hasBeenDestroyed = false;
     protected float health;
     protected Animator animator;
     protected EnemyMovement movement;
     protected Rigidbody2D rb;
     protected BoxCollider2D bc;
     protected EnemyCombatUI enemyCombatUI;
+    protected EnemyLootDropper enemyLootDropper;
 
     protected virtual void Awake()
     {
@@ -24,6 +26,7 @@ public abstract class EnemyBase: MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         bc = GetComponent<BoxCollider2D>();
         enemyCombatUI = GetComponentInChildren<EnemyCombatUI>();
+        enemyLootDropper = GetComponent<EnemyLootDropper>();
     }
 
     public virtual bool TakeDamage(float amount)
@@ -54,8 +57,12 @@ public abstract class EnemyBase: MonoBehaviour
     }
 
     // Called using animation event in DeathAnimation
-    protected virtual void DestroySelf()
+    public virtual void Despawn()
     {
+        if (hasBeenDestroyed) return;
+        hasBeenDestroyed = true;
+
+        enemyLootDropper.DropLoot();
         Destroy(gameObject);
     }
 
