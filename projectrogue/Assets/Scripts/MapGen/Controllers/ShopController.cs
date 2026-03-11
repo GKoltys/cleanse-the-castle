@@ -98,6 +98,7 @@ public class ShopController : MonoBehaviour
         slot.SetItem(itemData, itemData.buyPrice, quantity);
     }
 
+    // buys the selected item
     public void BuyItem(ConsumableItemData itemData, int price)
     {
 
@@ -114,14 +115,17 @@ public class ShopController : MonoBehaviour
             return;
         }
 
-        // TODO - apply item effects to the player
+        // apply effect of item to player
+        itemData.effect.Apply(playerBase);
 
         // remove one of the purchased item from the shop stock
         bool removed = currentShop.RemoveFromShopStock(itemData, 1);
 
         Debug.Log($"Bought {itemData.itemName} for {price} gold.");
 
+        // update player money count
         UpdateMoneyDisplay(playerBase.GetCoinCount);
+        // refresh shop grid
         RefreshShopDisplay();
         ShowStatus("Item bought!");
     }

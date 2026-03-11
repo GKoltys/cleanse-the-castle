@@ -86,8 +86,6 @@ public class ShopSlot : MonoBehaviour
         if (currentItemData == null) return;
         if (ShopController.instance == null) return;
 
-        Debug.Log("pressed");
-
         ShopController.instance.BuyItem(currentItemData, itemPrice);
     }
 }

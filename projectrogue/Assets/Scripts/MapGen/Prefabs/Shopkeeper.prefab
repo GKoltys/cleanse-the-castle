@@ -248,7 +248,7 @@ MonoBehaviour:
   shopkeeperName: Merchant
   defaultShopStock:
   - itemData: {fileID: 11400000, guid: 65bcc05f35757af47bcb9cbb10715eba, type: 2}
-    quantity: 5
+    quantity: 2
   - itemData: {fileID: 11400000, guid: 6b20ed7c8cd3f854a91d512e1254fc83, type: 2}
     quantity: 3
   - itemData: {fileID: 11400000, guid: 05339fe420529404c84d30588c556795, type: 2}
