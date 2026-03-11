@@ -1,7 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
+[Serializable]
 public class ShopStockItem
 {
-	public int itemID;
+	public ConsumableItemData itemData;
 	public int quantity;
 }

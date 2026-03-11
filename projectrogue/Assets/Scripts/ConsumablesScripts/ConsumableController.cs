@@ -41,8 +41,4 @@ public abstract class ConsumableController : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public int GetBuyPrice()
-    {
-        return itemData.buyPrice;
-    }
 }

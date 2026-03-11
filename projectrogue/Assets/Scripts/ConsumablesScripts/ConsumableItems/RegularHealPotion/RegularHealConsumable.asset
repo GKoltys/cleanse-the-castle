@@ -18,3 +18,4 @@ MonoBehaviour:
   dropChance: 0.05
   effect: {fileID: 11400000, guid: 59849feb1919ab9418d0495bf9c281d3, type: 2}
   buyPrice: 15
+  itemPrefab: {fileID: 5648255974331334683, guid: da6718c887231b7498dcf139d24fa331, type: 3}

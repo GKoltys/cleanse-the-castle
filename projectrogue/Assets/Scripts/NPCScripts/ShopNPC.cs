@@ -16,14 +16,14 @@ public class ShopNPC : MonoBehaviour, IInteractable
 
     private void Awake()
     {
-        interactionIcon.SetActive(false);
-    }
+        if (interactionIcon != null)
+        {
+            interactionIcon.SetActive(false);
+        }
 
-    void Start()
-    {
         InitializeShop();
     }
-    
+
     // fill the shop ui grid with default shop stock items
     private void InitializeShop()
     {
@@ -32,9 +32,11 @@ public class ShopNPC : MonoBehaviour, IInteractable
         currentShopStock = new List<ShopStockItem>();
         foreach (var item in defaultShopStock)
         {
+            if (item == null || item.itemData == null) continue;
+
             currentShopStock.Add(new ShopStockItem
             {
-                itemID = item.itemID,
+                itemData = item.itemData,
                 quantity = item.quantity
             });
         }
@@ -77,28 +79,44 @@ public class ShopNPC : MonoBehaviour, IInteractable
         currentShopStock = stock;
     }
 
-    public void AddToStock(int itemID, int quantity)
+    public void AddToStock(ConsumableItemData itemData, int quantity)
     {
-        ShopStockItem existing = currentShopStock.Find(s => s.itemID == itemID);
-        if (existing != null) {
+        if (itemData == null || quantity <= 0) return;
+
+        ShopStockItem existing = currentShopStock.Find(s => s.itemData == itemData);
+
+        if (existing != null)
+        {
             existing.quantity += quantity;
         }
         else
         {
-            currentShopStock.Add(new ShopStockItem { itemID = itemID, quantity = quantity });
+            currentShopStock.Add(new ShopStockItem
+            {
+                itemData = itemData,
+                quantity = quantity
+            });
         }
     }
 
-    public bool RemoveFromShopStock(int itemID, int quantity)
+    public bool RemoveFromShopStock(ConsumableItemData itemData, int quantity)
     {
-        ShopStockItem existing = currentShopStock.Find(s => s.itemID == itemID);
-        if (existing != null && existing.quantity >= quantity) {
+        if (itemData == null || quantity <= 0) return false;
+
+        ShopStockItem existing = currentShopStock.Find(s => s.itemData == itemData);
+
+        if (existing != null && existing.quantity >= quantity)
+        {
             existing.quantity -= quantity;
+
+            if (existing.quantity <= 0)
+            {
+                currentShopStock.Remove(existing);
+            }
+
             return true;
         }
-        else
-        {
-            return false;
-        }
+
+        return false;
     }
 }
