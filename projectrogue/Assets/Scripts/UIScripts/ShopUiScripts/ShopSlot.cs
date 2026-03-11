@@ -63,7 +63,7 @@ public class ShopSlot : MonoBehaviour
 
         if (itemNameText != null)
         {
-            itemNameText.text = currentItemData.itemName;
+            itemNameText.text = currentItemData.itemShopName;
         }
 
         if (itemIcon != null)

@@ -4,6 +4,7 @@ using UnityEngine;
 public class ConsumableItemData : ScriptableObject
 {
     public string itemName;
+    public string itemShopName;
     public Sprite icon;
     public string description;
     public ConsumableEffect effect;
