@@ -30,7 +30,19 @@ public class ShopNPC : MonoBehaviour, IInteractable
         if (isInitialized) return;
 
         currentShopStock = new List<ShopStockItem>();
-        foreach (var item in defaultShopStock)
+
+        // copy default stock
+        List<ShopStockItem> shuffled = new List<ShopStockItem>(defaultShopStock);
+
+        // shuffle
+        for (int i = 0; i < shuffled.Count; i++)
+        {
+            int swapIndex = Random.Range(i, shuffled.Count);
+            (shuffled[i], shuffled[swapIndex]) = (shuffled[swapIndex], shuffled[i]);
+        }
+        
+        // could change to be a random number of items in shop?
+        foreach (var item in shuffled)
         {
             if (item == null || item.itemData == null) continue;
 
