@@ -5,7 +5,7 @@ public class HealEffect : ConsumableEffect
 {
     [SerializeField] private float healAmount;
 
-    public override void Apply(PlayerBase player)
+    public override void Apply(PlayerApplyEffect player)
     {
         player.Heal(healAmount);
     }
