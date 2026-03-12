@@ -24,4 +24,10 @@ public class PlayerApplyEffect : MonoBehaviour
 
         playerHud.UpdateHealth(health);
     }
+
+    public void AddPermanentSpeedBoost(float speedIncrease)
+    {
+        player.SetSpeed(player.GetSpeed + speedIncrease);
+        Debug.Log("Speed boosted to " + player.GetSpeed + " by +" +  speedIncrease);
+    }
 }
