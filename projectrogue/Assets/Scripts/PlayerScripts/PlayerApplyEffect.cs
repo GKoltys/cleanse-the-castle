@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerApplyEffect : MonoBehaviour
@@ -22,12 +23,26 @@ public class PlayerApplyEffect : MonoBehaviour
             health = maxHealth;
         }
 
+        player.SetHealth(health);
         playerHud.UpdateHealth(health);
     }
 
-    public void AddPermanentSpeedBoost(float speedIncrease)
+    public void ChangePlayerSpeed(float speedChange)
     {
-        player.SetSpeed(player.GetSpeed + speedIncrease);
-        Debug.Log("Speed boosted to " + player.GetSpeed + " by +" +  speedIncrease);
+        player.SetSpeed(player.GetSpeed + speedChange);
+        Debug.Log("Speed changed to " + player.GetSpeed + " by +" +  speedChange);
+    }
+
+    public void ChangePlayerMaxHealth(float maxHealthChange)
+    {
+        float newMaxHealth = player.GetMaxHealth + maxHealthChange;
+
+        player.SetMaxHealth(newMaxHealth);
+        Heal(maxHealthChange);
+
+        playerHud.UpdateMaxHealth(newMaxHealth);
+        playerHud.UpdateHealth(player.GetHealth);
+
+        Debug.Log("MaxHealth changed to " + player.GetMaxHealth + " by +" + maxHealthChange);
     }
 }
