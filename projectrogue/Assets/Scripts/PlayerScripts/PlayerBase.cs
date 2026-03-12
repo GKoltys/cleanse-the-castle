@@ -116,7 +116,11 @@ public class PlayerBase : MonoBehaviour
     }
 
     // Setters
-    public void SetSpeed(float speed) { this.speed =  speed; }
+    public void SetSpeed(float speed)
+    {
+        this.speed =  speed;
+        movement.SetMoveSpeed(speed);
+    }
     public void SetIFrameSeconds(float seconds) { this.iFrameSeconds = seconds; }
     public void SetMaxHealth(float maxHealth) { this.maxHealth = maxHealth; }
     public void SetHealth(float health) { this.health = health; }

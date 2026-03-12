@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b38800f98f962cb498705be468cf4a78, type: 3}
-  m_Name: RegularHealConsumable
+  m_Name: RegularHealItemData
   m_EditorClassIdentifier: Assembly-CSharp::ConsumableItemData
   itemName: RegularHealPotion
   icon: {fileID: -1659760741, guid: 3924ee34ce4048249a4305468ed465c0, type: 3}
