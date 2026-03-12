@@ -35,15 +35,20 @@ public class ShopNPC : MonoBehaviour, IInteractable
         List<ShopStockItem> shuffled = new List<ShopStockItem>(defaultShopStock);
 
         // shuffle
+        // could possibly sort by price or something?
         for (int i = 0; i < shuffled.Count; i++)
         {
             int swapIndex = Random.Range(i, shuffled.Count);
             (shuffled[i], shuffled[swapIndex]) = (shuffled[swapIndex], shuffled[i]);
         }
-        
-        // could change to be a random number of items in shop?
-        foreach (var item in shuffled)
+
+        // add a range of 1-3 items to the shop
+        int randomCount = Random.Range(1, 4);
+
+        for (int i = 0; i < randomCount; i++)
         {
+            var item = shuffled[i];
+
             if (item == null || item.itemData == null) continue;
 
             currentShopStock.Add(new ShopStockItem
@@ -52,6 +57,7 @@ public class ShopNPC : MonoBehaviour, IInteractable
                 quantity = item.quantity
             });
         }
+
         isInitialized = true;
     }
 
