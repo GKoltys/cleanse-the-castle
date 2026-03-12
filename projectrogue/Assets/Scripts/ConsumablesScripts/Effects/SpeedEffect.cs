@@ -1,12 +1,12 @@
 using UnityEngine;
 
 [CreateAssetMenu(menuName = "Items/Effects/Speed")]
-public class SpeedBoostEffect : ConsumableEffect
+public class SpeedEffect : ConsumableEffect
 {
     [SerializeField] private float speedBoost;
 
     public override void Apply(PlayerApplyEffect player)
     {
-        player.AddPermanentSpeedBoost(speedBoost);
+        player.ChangePlayerSpeed(speedBoost);
     }
 }
