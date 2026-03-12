@@ -10,7 +10,7 @@ public class ShopController : MonoBehaviour
     public GameObject shopPanel;
     public Transform shopGrid;
     public GameObject shopSlotPrefab;
-    public TMP_Text playerMoneyText, shopTitleText, shopStatusText;
+    public TMP_Text playerMoneyText, shopTitleText, shopStatusText, itemDescriptionText;
 
     // current instance of shop, can have multiple different shops
     private ShopNPC currentShop;
@@ -147,6 +147,22 @@ public class ShopController : MonoBehaviour
         if (shopStatusText != null)
         {
             shopStatusText.text = "";
+        }
+    }
+
+    public void ShowItemDescription(string description)
+    {
+        if (itemDescriptionText != null)
+        {
+            itemDescriptionText.text = description;
+        }
+    }
+
+    public void ClearItemDescription()
+    {
+        if (itemDescriptionText != null)
+        {
+            itemDescriptionText.text = "";
         }
     }
 }

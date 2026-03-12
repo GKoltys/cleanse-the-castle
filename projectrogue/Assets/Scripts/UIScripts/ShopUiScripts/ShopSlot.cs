@@ -1,8 +1,9 @@
 ﻿using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
-public class ShopSlot : MonoBehaviour
+public class ShopSlot : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     public ConsumableItemData currentItemData;
     public int itemPrice;
@@ -87,5 +88,24 @@ public class ShopSlot : MonoBehaviour
         if (ShopController.instance == null) return;
 
         ShopController.instance.BuyItem(currentItemData, itemPrice);
+    }
+
+    // pointer events so that when hovering over a shop slot it will display description
+    public void OnPointerEnter(PointerEventData eventData)
+    {
+        if (currentItemData == null) return;
+
+        if (ShopController.instance != null)
+        {
+            ShopController.instance.ShowItemDescription(currentItemData.description);
+        }
+    }
+
+    public void OnPointerExit(PointerEventData eventData)
+    {
+        if (ShopController.instance != null)
+        {
+            ShopController.instance.ClearItemDescription();
+        }
     }
 }
