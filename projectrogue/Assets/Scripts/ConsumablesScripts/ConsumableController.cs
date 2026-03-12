@@ -7,7 +7,7 @@ public abstract class ConsumableController : MonoBehaviour
     protected bool isCollected;
     protected Animator animator;
     protected BoxCollider2D col;
-    protected PlayerBase playerBase;
+    protected PlayerApplyEffect player;
 
     protected virtual void Awake()
     {
@@ -16,7 +16,7 @@ public abstract class ConsumableController : MonoBehaviour
     }
     protected virtual void Start()
     {
-        playerBase = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBase>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerApplyEffect>();
     }
 
     protected virtual void OnTriggerEnter2D(Collider2D other)
@@ -25,7 +25,7 @@ public abstract class ConsumableController : MonoBehaviour
         if (col) col.enabled = false;
 
         SetIsCollected(true);
-        itemData.effect.Apply(playerBase);
+        itemData.effect.Apply(player);
         animator.SetTrigger("Collected");
     }
 

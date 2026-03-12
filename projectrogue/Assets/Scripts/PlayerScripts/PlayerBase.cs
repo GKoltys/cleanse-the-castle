@@ -54,11 +54,6 @@ public class PlayerBase : MonoBehaviour
         playerHud.SetHudOnLoad(maxHealth, health, coinCount, keyCount);
     }
 
-    public void SetWeapon(WeaponData weaponData)
-    {
-        weapon.SetWeaponData(weaponData);
-    }
-
     public void TakeDamage(float amount)
     {
         if (Time.time < nextDamageTime) return;
@@ -78,20 +73,6 @@ public class PlayerBase : MonoBehaviour
             isDead = true;
             Die();
         }
-    }
-
-    public void Heal(float amount)
-    {
-        health += amount;
-
-        Debug.Log("Healed " + amount);
-
-        if (health > maxHealth)
-        {
-            health = maxHealth;
-        }
-
-        playerHud.UpdateHealth(health);
     }
 
     public void CoinCollected(int value)
@@ -133,6 +114,23 @@ public class PlayerBase : MonoBehaviour
         // SaveController.Instance.StartNewRun();
         SceneManager.LoadScene(2);
     }
+
+    // Setters
+    public void SetSpeed(float speed) { this.speed =  speed; }
+    public void SetIFrameSeconds(float seconds) { this.iFrameSeconds = seconds; }
+    public void SetMaxHealth(float maxHealth) { this.maxHealth = maxHealth; }
+    public void SetHealth(float health) { this.health = health; }
+    public void SetCointCount(int coinCount)
+    {
+        this.coinCount = coinCount;
+        playerHud.UpdateCoinCounter(coinCount);
+    }
+    public void SetKeyCount(int keyCount)
+    {
+        this.keyCount = keyCount;
+        playerHud.UpdateKeyCounter(keyCount);
+    }
+    public void SetWeapon(WeaponData weaponData) { weapon.SetWeaponData(weaponData); }
 
     // Getter
     public bool GetIsDead => isDead;
