@@ -107,6 +107,16 @@ public class PlayerBase : MonoBehaviour
         playerHud.UpdateCoinCounter(coinCount);
     }
 
+    public bool SpendGold(int amount)
+    {
+        if (coinCount >= amount)
+        {
+            CoinSpent(amount);
+            return true; // spent gold
+        }
+        return false; // not enough gold
+    }
+
     public void KeyCollected()
     {
         keyCount += 1;

@@ -40,4 +40,5 @@ public abstract class ConsumableController : MonoBehaviour
         // destroy for now, if it affects performance move to object pooling?
         Destroy(gameObject);
     }
+
 }

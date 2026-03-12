@@ -13,7 +13,10 @@ MonoBehaviour:
   m_Name: SmallHealConsumable
   m_EditorClassIdentifier: Assembly-CSharp::ConsumableItemData
   itemName: SmallHealPotion
+  itemShopName: Small Heal Potion
   icon: {fileID: 2116684346, guid: 3924ee34ce4048249a4305468ed465c0, type: 3}
   description: Heals the player 30hp
   dropChance: 0.1
   effect: {fileID: 11400000, guid: 92c4e6417d1658143a2d5d74e0e62be4, type: 2}
+  buyPrice: 5
+  itemPrefab: {fileID: 813777909600454607, guid: 9a6fc01e6d80fea438f3dbdf8ee5d049, type: 3}
