@@ -45,4 +45,9 @@ public class PlayerApplyEffect : MonoBehaviour
 
         Debug.Log("MaxHealth changed to " + player.GetMaxHealth + " by +" + maxHealthChange);
     }
+
+    public void ChangePlayerDamageMultiplier(float damageMultiplierChange)
+    {
+        player.SetDamageMultiplier(player.GetDamageMultiplier +  damageMultiplierChange);
+    }
 }

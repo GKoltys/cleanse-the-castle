@@ -1,9 +1,11 @@
+using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerCombat : MonoBehaviour
 {
     private float attackCooldown;
+    private float damageMultiplier;
 
     private Camera cam;
     private Vector2 lastFacing = Vector2.down;
@@ -16,9 +18,11 @@ public class PlayerCombat : MonoBehaviour
     {
         cam = Camera.main;
         animator = GetComponent<Animator>();
-        weapon = GetComponent<PlayerBase>().GetWeapon;
 
+        PlayerBase player = GetComponent<PlayerBase>();
+        weapon = player.GetWeapon;
         attackCooldown = weapon.AttackCooldown;
+        damageMultiplier = player.GetDamageMultiplier;
     }
 
     public void OnAttack()
@@ -59,6 +63,11 @@ public class PlayerCombat : MonoBehaviour
     // Called by attackAnimation event
     public void ApplyAttackHit()
     {
-        weapon.Attack(lastFacing, transform.position);
+        weapon.Attack(lastFacing, transform.position, damageMultiplier);
+    }
+
+    public void SetDamageMultiplier(float damageMultiplier)
+    {
+        this.damageMultiplier = damageMultiplier;
     }
 }

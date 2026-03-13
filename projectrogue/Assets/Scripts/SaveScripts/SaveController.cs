@@ -87,7 +87,8 @@ public class SaveController : MonoBehaviour
             playerHealth = playerBase.GetHealth,
             playerCoinCount = playerBase.GetCoinCount,
             playerKeyCount = playerBase.GetKeyCount,
-            playerWeaponId = playerBase.GetWeaponId
+            playerWeaponId = playerBase.GetWeaponId,
+            playerDamageMultiplier = playerBase.GetDamageMultiplier
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
@@ -111,6 +112,7 @@ public class SaveController : MonoBehaviour
             playerStats.SetCoinCount(saveData.playerCoinCount);
             playerStats.SetKeyCount(saveData.playerKeyCount);
             playerStats.SetWeapon(saveData.playerWeaponId);
+            playerStats.SetDamageMulitplier(saveData.playerDamageMultiplier);
 
             playerBase.ApplyLoadedStats(playerStats);
         }
