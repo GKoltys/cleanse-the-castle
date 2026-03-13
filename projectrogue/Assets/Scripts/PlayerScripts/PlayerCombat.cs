@@ -1,3 +1,4 @@
+using UnityEditor.U2D.Aseprite;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -20,7 +21,6 @@ public class PlayerCombat : MonoBehaviour
 
         PlayerBase player = GetComponent<PlayerBase>();
         weapon = player.GetWeapon;
-        Debug.Log("Weapon: " + weapon);
         attackCooldown = weapon.AttackCooldown;
         damageMultiplier = player.GetDamageMultiplier;
     }
