@@ -14,6 +14,7 @@ public class SaveData
     public int playerCoinCount;
     public int playerKeyCount;
     public int playerWeaponId;
+    public float playerDamageMultiplier;
 
     // In future we would also need to save things like entire generated level information, enemies, player stats, etc...
 }
