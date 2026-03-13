@@ -12,6 +12,7 @@ public class PlayerBase : MonoBehaviour
     [SerializeField] private int coinCount;
     [SerializeField] private int keyCount;
     [SerializeField] private MeleeWeapon weapon;
+    [SerializeField] private float damageMultiplier;
 
     [SerializeField] private WeaponDatabase weaponDatabase;
 
@@ -21,6 +22,7 @@ public class PlayerBase : MonoBehaviour
     private Animator animator;
     private PlayerMovement movement;
     private PlayerHud playerHud;
+    private PlayerCombat combat;
 
     private void Awake()
     {
@@ -28,6 +30,7 @@ public class PlayerBase : MonoBehaviour
         animator = GetComponent<Animator>();
         playerHud = GetComponent<PlayerHud>();
         weapon = GetComponentInChildren<MeleeWeapon>();
+        combat = GetComponent<PlayerCombat>();
 
         PlayerStats stats = GetComponent<PlayerStats>();
         speed = stats.GetSpeed;
@@ -37,6 +40,7 @@ public class PlayerBase : MonoBehaviour
         coinCount = stats.GetCoinCount;
         keyCount = stats.GetKeyCount;
         weapon.SetWeaponData(weaponDatabase.GetWeaponById(stats.GetWeapon));
+        damageMultiplier = stats.GetDamageMultiplier;
     }
 
     public void ApplyLoadedStats(PlayerStats stats)
@@ -48,15 +52,11 @@ public class PlayerBase : MonoBehaviour
         coinCount = stats.GetCoinCount;
         keyCount = stats.GetKeyCount;
         weapon.SetWeaponData(weaponDatabase.GetWeaponById(stats.GetWeapon));
+        SetDamageMultiplier(stats.GetDamageMultiplier);
 
         // Update defaulted values from before load
         movement.SetMoveSpeed(speed);
         playerHud.SetHudOnLoad(maxHealth, health, coinCount, keyCount);
-    }
-
-    public void SetWeapon(WeaponData weaponData)
-    {
-        weapon.SetWeaponData(weaponData);
     }
 
     public void TakeDamage(float amount)
@@ -78,20 +78,6 @@ public class PlayerBase : MonoBehaviour
             isDead = true;
             Die();
         }
-    }
-
-    public void Heal(float amount)
-    {
-        health += amount;
-
-        Debug.Log("Healed " + amount);
-
-        if (health > maxHealth)
-        {
-            health = maxHealth;
-        }
-
-        playerHud.UpdateHealth(health);
     }
 
     public void CoinCollected(int value)
@@ -144,6 +130,32 @@ public class PlayerBase : MonoBehaviour
         SceneManager.LoadScene(2);
     }
 
+    // Setters
+    public void SetSpeed(float speed)
+    {
+        this.speed =  speed;
+        movement.SetMoveSpeed(speed);
+    }
+    public void SetIFrameSeconds(float seconds) { this.iFrameSeconds = seconds; }
+    public void SetMaxHealth(float maxHealth) { this.maxHealth = maxHealth; } // might need to update hud from here
+    public void SetHealth(float health) { this.health = health; }
+    public void SetCointCount(int coinCount)
+    {
+        this.coinCount = coinCount;
+        playerHud.UpdateCoinCounter(coinCount);
+    }
+    public void SetKeyCount(int keyCount)
+    {
+        this.keyCount = keyCount;
+        playerHud.UpdateKeyCounter(keyCount);
+    }
+    public void SetWeapon(WeaponData weaponData) { weapon.SetWeaponData(weaponData); }
+    public void SetDamageMultiplier(float damageMultiplier)
+    {
+        this.damageMultiplier = damageMultiplier;
+        combat.SetDamageMultiplier(damageMultiplier);
+    }
+
     // Getter
     public bool GetIsDead => isDead;
     public float GetSpeed => speed;
@@ -154,4 +166,5 @@ public class PlayerBase : MonoBehaviour
     public int GetKeyCount => keyCount;
     public MeleeWeapon GetWeapon => weapon;
     public int GetWeaponId => weapon.WeaponId;
+    public float GetDamageMultiplier => damageMultiplier;
 }

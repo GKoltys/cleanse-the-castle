@@ -4,6 +4,7 @@ using UnityEngine;
 public class ShopController : MonoBehaviour
 {
     [SerializeField] private PlayerBase playerBase;
+    [SerializeField] private PlayerApplyEffect playerEffect; // You will need to use this to apply any effect onto the player instead of PlayerBase
     public static ShopController instance;
 
     // shop ui
@@ -116,7 +117,7 @@ public class ShopController : MonoBehaviour
         }
 
         // apply effect of item to player
-        itemData.effect.Apply(playerBase);
+        itemData.effect.Apply(playerEffect);
 
         // remove one of the purchased item from the shop stock
         bool removed = currentShop.RemoveFromShopStock(itemData, 1);

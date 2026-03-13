@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     [SerializeField] private int coinCount = 0;
     [SerializeField] private int keyCount = 0;
     [SerializeField] private int weaponId;
+    [SerializeField] private float damageMultiplier = 1f;
 
     public void SetSpeed(float speed) { this.speed = speed; }
     public void SetIFrameSeconds(float iFrameSeconds) { this.iFrameSeconds = iFrameSeconds; }
@@ -22,6 +23,7 @@ public class PlayerStats : MonoBehaviour
     public void SetCoinCount(int coinCount) { this.coinCount = coinCount; }
     public void SetKeyCount(int keyCount) { this.keyCount = keyCount; }
     public void SetWeapon(int weapon) { this.weaponId = weapon; }
+    public void SetDamageMulitplier(float damageMultiplier) { this.damageMultiplier = damageMultiplier; }
 
     // Getters
     public float GetSpeed => speed;
@@ -31,4 +33,5 @@ public class PlayerStats : MonoBehaviour
     public int GetCoinCount => coinCount;
     public int GetKeyCount => keyCount;
     public int GetWeapon => weaponId;
+    public float GetDamageMultiplier => damageMultiplier;
 }
