@@ -4,11 +4,12 @@ using UnityEngine;
 public class PlayerHud : MonoBehaviour
 {
     private PlayerStats playerStats;
-    [SerializeField]  private HealthBarUI healthBar;
-    [SerializeField]  private CoinCounterUI coinCounterObj;
-    [SerializeField]  private KeyCounterUI keyCounterObj;
+    [SerializeField] private HealthBarUI healthBar;
+    [SerializeField] private CoinCounterUI coinCounterObj;
+    [SerializeField] private KeyCounterUI keyCounterObj;
     [SerializeField] private Transform buffContainer;
     [SerializeField] private BuffIconUI buffIconPrefab;
+    [SerializeField] private BuffToolTipUI buffToolTip;
     private readonly List<BuffIconUI> buffIconList = new();
 
     private void Awake()
@@ -47,11 +48,7 @@ public class PlayerHud : MonoBehaviour
         }
 
         BuffIconUI newIcon = Instantiate(buffIconPrefab, buffContainer);
-
-        newIcon.SetName(itemData.name);
-        newIcon.SetIcon(itemData.icon);
-        newIcon.SetStatDescription(itemData.statDescription);
-        newIcon.SetStat(updatedStat);
+        newIcon.Setup(itemData.icon, itemData.name, itemData.statDescription, updatedStat, buffToolTip);
 
         buffIconList.Add(newIcon);
     }
