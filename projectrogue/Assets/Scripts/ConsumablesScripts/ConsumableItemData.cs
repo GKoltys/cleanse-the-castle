@@ -7,6 +7,7 @@ public class ConsumableItemData : ScriptableObject
     public string itemShopName;
     public Sprite icon;
     public string description;
+    public string statDescription;
     public ConsumableEffect effect;
     public int buyPrice;
 

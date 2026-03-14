@@ -2,12 +2,14 @@ using UnityEngine;
 
 public abstract class ConsumableController : MonoBehaviour
 {
-    [SerializeField] private ConsumableItemData itemData;
+    [SerializeField] protected ConsumableItemData itemData;
 
     protected bool isCollected;
     protected Animator animator;
     protected BoxCollider2D col;
-    protected PlayerApplyEffect player;
+    protected PlayerBase playerBase; 
+    protected PlayerApplyEffect playerEffect;
+    protected PlayerHud playerHud;
 
     protected virtual void Awake()
     {
@@ -16,18 +18,13 @@ public abstract class ConsumableController : MonoBehaviour
     }
     protected virtual void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerApplyEffect>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        playerBase = player.GetComponent<PlayerBase>();
+        playerEffect = player.GetComponent<PlayerApplyEffect>();
+        playerHud = player.GetComponent <PlayerHud>();
     }
 
-    protected virtual void OnTriggerEnter2D(Collider2D other)
-    {
-        if (!other.CompareTag("PlayerPickUp")) return;
-        if (col) col.enabled = false;
-
-        SetIsCollected(true);
-        itemData.effect.Apply(player);
-        animator.SetTrigger("Collected");
-    }
+    protected abstract void OnTriggerEnter2D(Collider2D other);
 
     protected virtual void SetIsCollected(bool opened)
     {
