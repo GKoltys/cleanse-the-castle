@@ -3,6 +3,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "ConsumableItemData", menuName = "Items/ConsumableItemData")]
 public class ConsumableItemData : ScriptableObject
 {
+    public ConsumableType consumableType;
     public string itemName;
     public string itemShopName;
     public Sprite icon;
@@ -12,4 +13,10 @@ public class ConsumableItemData : ScriptableObject
     public int buyPrice;
 
     public GameObject itemPrefab;
+}
+
+public enum ConsumableType
+{
+    BUFF,
+    POTION
 }

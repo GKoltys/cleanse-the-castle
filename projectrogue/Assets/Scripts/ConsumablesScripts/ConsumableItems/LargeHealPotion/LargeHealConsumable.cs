@@ -12,7 +12,6 @@ public class LargeHealConsumable : ConsumableController
 
         SetIsCollected(true);
         itemData.effect.Apply(playerEffect);
-        playerHud.AddBuffIcon(itemData, playerBase.GetHealth);
         animator.SetTrigger("Collected");
     }
 }
