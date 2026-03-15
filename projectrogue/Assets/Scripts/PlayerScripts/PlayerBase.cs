@@ -134,7 +134,11 @@ public class PlayerBase : MonoBehaviour
     }
 
     // Setters
-    public void SetFlootCount(int floorCount) { this.floorCount = floorCount; }
+    public void SetFloorCount(int floorCount)
+    {
+        this.floorCount = floorCount;
+        playerHud.UpdateFloorCounter(floorCount);
+    }
     public void SetSpeed(float speed)
     {
         this.speed =  speed;

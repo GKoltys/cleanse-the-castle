@@ -151,3 +151,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f544b1b33f8dbe47a9c3e3dcef81d6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StairsController
+  playerBase: {fileID: 2957798997873762978, guid: a70267d1ecede5140924a362554a3282, type: 3}

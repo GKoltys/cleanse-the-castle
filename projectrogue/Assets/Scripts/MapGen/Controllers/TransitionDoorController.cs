@@ -3,6 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class TransitionDoorController : MonoBehaviour
 {
+    [SerializeField] PlayerBase playerBase; 
     private string sceneToLoad = "DungeonScene";
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -16,8 +17,10 @@ public class TransitionDoorController : MonoBehaviour
                 FadeUIController.Instance.FadeAndLoadScene(sceneToLoad);
             }
             else
+            {
                 SaveController.Instance.RequestLoad();
                 SceneManager.LoadSceneAsync(sceneToLoad);
+            }
         }
     }
 }

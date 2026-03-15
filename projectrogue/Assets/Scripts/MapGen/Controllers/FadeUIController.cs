@@ -76,8 +76,9 @@ public class FadeUIController : MonoBehaviour
     private IEnumerator FadeAndLoad(string sceneName)
     {
         yield return FadeOut();
-        SceneManager.LoadScene(sceneName);
-     
+        SaveController.Instance.RequestLoad();
+        SceneManager.LoadSceneAsync(sceneName);
+
     }
 
 }
