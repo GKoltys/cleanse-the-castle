@@ -59,7 +59,7 @@ public class PlayerBase : MonoBehaviour
 
         // Update defaulted values from before load
         movement.SetMoveSpeed(speed);
-        playerHud.SetHudOnLoad(maxHealth, health, coinCount, keyCount);
+        playerHud.SetHudOnLoad(maxHealth, health, coinCount, keyCount, floorCount);
     }
 
     public void TakeDamage(float amount)

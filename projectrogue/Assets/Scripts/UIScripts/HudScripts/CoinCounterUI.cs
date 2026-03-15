@@ -9,7 +9,7 @@ public class CoinCounterUI : MonoBehaviour
     {
         if (coinCounterTMP == null)
         {
-            Debug.LogError("keyCounterTMP is not assigned");
+            Debug.LogError("floorCounterTMP is not assigned");
             return;
         }
         coinCounterTMP.SetText($"x {coins}");
