@@ -200,8 +200,11 @@ public class MapGenerator : MonoBehaviour
 
             for (int i = 0; i < n; i++)
             {
+                // increase/decrease spawnchance of spawn entry
+                float chance = entry.GetSpawnChance(playerBase.GetFloorCount);
+
                 // roll chance for this instance of the object
-                if (Random.value > entry.spawnChance)
+                if (Random.value > chance)
                 {
                     continue;
                 }

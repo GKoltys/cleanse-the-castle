@@ -1531,6 +1531,30 @@ MonoBehaviour:
     spawnAlso: {fileID: 0}
     uniqueTile: 1
     spawn: 0
+    floorMultiplier:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 10
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - id: 1
     prefab: {fileID: 6403565685682107765, guid: 8bf1aee03befc8c4b88029f10cb71d63, type: 3}
     count: 2
@@ -1540,6 +1564,30 @@ MonoBehaviour:
     spawnAlso: {fileID: 0}
     uniqueTile: 1
     spawn: 0
+    floorMultiplier:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 10
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - id: 2
     prefab: {fileID: 4758445816412349997, guid: dd20011e19dc2bc46bd5dcae9f45b517, type: 3}
     count: 20
@@ -1549,6 +1597,30 @@ MonoBehaviour:
     spawnAlso: {fileID: 0}
     uniqueTile: 1
     spawn: 0
+    floorMultiplier:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 10
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - id: 3
     prefab: {fileID: 1571635250321256107, guid: e3aa46abfb295244da35981a7fb21112, type: 3}
     count: 6
@@ -1558,6 +1630,30 @@ MonoBehaviour:
     spawnAlso: {fileID: 0}
     uniqueTile: 1
     spawn: 0
+    floorMultiplier:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 10
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - id: 4
     prefab: {fileID: 7914762690392339576, guid: ca6355f6011f1fd40ba2cdb97796aaa8, type: 3}
     count: 3
@@ -1567,6 +1663,30 @@ MonoBehaviour:
     spawnAlso: {fileID: 0}
     uniqueTile: 1
     spawn: 0
+    floorMultiplier:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 10
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - id: 5
     prefab: {fileID: 2498405988043988622, guid: 8f01d0642cb42144ea40722d5c125808, type: 3}
     count: 2
@@ -1576,15 +1696,63 @@ MonoBehaviour:
     spawnAlso: {fileID: 3159388518355482823, guid: c7b3509f70f254b4cb13723ace539bb3, type: 3}
     uniqueTile: 1
     spawn: 0
+    floorMultiplier:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 10
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - id: 6
     prefab: {fileID: 8906884267085178471, guid: a58f0cad2bb150a4b9362954dc9672fa, type: 3}
     count: 3
     minDistanceFromPlayer: 8
-    spawnChance: 0.5
+    spawnChance: 0.8
     guaranteeSpawn: 0
     spawnAlso: {fileID: 0}
     uniqueTile: 1
     spawn: 0
+    floorMultiplier:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 10
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - id: 7
     prefab: {fileID: 4914398961023793015, guid: 6a43f59d759de564fa8e7524e1b0a77a, type: 3}
     count: 1
@@ -1594,6 +1762,30 @@ MonoBehaviour:
     spawnAlso: {fileID: 0}
     uniqueTile: 1
     spawn: 0
+    floorMultiplier:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 10
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   cameraClamp: {fileID: 173582554}
 --- !u!4 &1571347227 stripped
 Transform:
