@@ -13,10 +13,9 @@ MonoBehaviour:
   m_Name: DamageBuffItemData
   m_EditorClassIdentifier: Assembly-CSharp::ConsumableItemData
   itemName: DamageBuff
-  itemShopName: 
+  itemShopName: Chains of Honor
   icon: {fileID: 1864747242, guid: 46929af3baea0704289622f4705bac66, type: 3}
   description: Gives the player a permanent damage buff
-  statDescription: x
   effect: {fileID: 11400000, guid: 5729c75999f792940a1e3331e06e7dc8, type: 2}
-  buyPrice: 0
+  buyPrice: 30
   itemPrefab: {fileID: 131934325148844041, guid: 7112c90b940db064f8113580d7e76e5b, type: 3}

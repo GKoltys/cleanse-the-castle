@@ -12,12 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38800f98f962cb498705be468cf4a78, type: 3}
   m_Name: MaxHealthBuffItemData
   m_EditorClassIdentifier: Assembly-CSharp::ConsumableItemData
-  consumableType: 0
   itemName: MaxHealthBuff
-  itemShopName: 
+  itemShopName: Heart of the Oak
   icon: {fileID: -2120944159, guid: 46929af3baea0704289622f4705bac66, type: 3}
   description: Increases the players max health
-  statDescription: 
   effect: {fileID: 11400000, guid: 427117a348753c044b000fa879957a04, type: 2}
-  buyPrice: 0
+  buyPrice: 30
   itemPrefab: {fileID: 6353035039282316475, guid: 106bef1def13a604d80476e52e0a05e9, type: 3}
