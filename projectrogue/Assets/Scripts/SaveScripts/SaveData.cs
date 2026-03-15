@@ -7,6 +7,7 @@ public class SaveData
 {
     // Player related data
     public Vector3 playerPosistion;
+    public int playerFloorCount;
     public float playerSpeed;
     public float playerIFrameSeconds;
     public float playerMaxHealth;

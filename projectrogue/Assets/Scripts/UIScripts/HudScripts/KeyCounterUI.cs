@@ -9,7 +9,7 @@ public class KeyCounterUI : MonoBehaviour
     {
         if (keyCounterTMP == null)
         {
-            Debug.LogError("keyCounterTMP is not assigned");
+            Debug.LogError("floorCounterTMP is not assigned");
             return;
         }
         keyCounterTMP.SetText($"x {key}");

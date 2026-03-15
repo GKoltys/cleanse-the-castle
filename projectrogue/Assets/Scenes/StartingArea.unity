@@ -23232,6 +23232,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c5f45ca42b0f5a4e9c779f9609545f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::TransitionDoorController
+  playerBase: {fileID: 1505855755}
 --- !u!61 &1014874037
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -25091,6 +25092,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1505855755 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2957798997873762978, guid: a70267d1ecede5140924a362554a3282, type: 3}
+  m_PrefabInstance: {fileID: 1763845187}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 206608052e42cc14993730e43a9d0848, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
 --- !u!4 &1517914102 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7896392686115848554, guid: 9a6fc01e6d80fea438f3dbdf8ee5d049, type: 3}

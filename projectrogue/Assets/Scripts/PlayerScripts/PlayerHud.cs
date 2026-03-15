@@ -8,6 +8,7 @@ public class PlayerHud : MonoBehaviour
     [SerializeField] private HealthBarUI healthBar;
     [SerializeField] private CoinCounterUI coinCounterObj;
     [SerializeField] private KeyCounterUI keyCounterObj;
+    [SerializeField] private FloorCounterUI floorCounterObj;
     [SerializeField] private Transform buffContainer;
     [SerializeField] private BuffIconUI buffIconPrefab;
     [SerializeField] private BuffToolTipUI buffToolTip;
@@ -28,14 +29,16 @@ public class PlayerHud : MonoBehaviour
         healthBar.SetHealth(playerStats.GetHealth);
         coinCounterObj.UpdateCoinCounter(playerStats.GetCoinCount);
         keyCounterObj.UpdateKeyCounter(playerStats.GetKeyCount);
+        floorCounterObj.UpdateFloorCounter(playerStats.GetFloorCount);
     }
 
-    public void SetHudOnLoad(float maxHealth, float health, int coinCounter, int keyCounter)
+    public void SetHudOnLoad(float maxHealth, float health, int coinCounter, int keyCounter, int floorCounter)
     {
         healthBar.SetMaxHealth(maxHealth);
         healthBar.SetHealth(health);
         coinCounterObj.UpdateCoinCounter(coinCounter);
         keyCounterObj.UpdateKeyCounter(keyCounter);
+        floorCounterObj.UpdateFloorCounter(floorCounter);
 
         foreach (ConsumableItemData buff in buffList)
         {
@@ -100,5 +103,10 @@ public class PlayerHud : MonoBehaviour
     public void UpdateKeyCounter(int keyCounter)
     {
         keyCounterObj.UpdateKeyCounter(keyCounter);
+    }
+
+    public void UpdateFloorCounter(int floorCounter)
+    {
+        floorCounterObj.UpdateFloorCounter(floorCounter);
     }
 }

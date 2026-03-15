@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 public class PlayerBase : MonoBehaviour
 {
     [Header("Stats and Equipment (Current)")]
+    [SerializeField] private int floorCount;
     [SerializeField] private float speed;
     [SerializeField] private float iFrameSeconds;
     [SerializeField] private float maxHealth;
@@ -33,6 +34,7 @@ public class PlayerBase : MonoBehaviour
         combat = GetComponent<PlayerCombat>();
 
         PlayerStats stats = GetComponent<PlayerStats>();
+        floorCount = stats.GetFloorCount;
         speed = stats.GetSpeed;
         iFrameSeconds = stats.GetIFrameSeconds;
         maxHealth = stats.GetMaxHealth;
@@ -45,6 +47,7 @@ public class PlayerBase : MonoBehaviour
 
     public void ApplyLoadedStats(PlayerStats stats)
     {
+        floorCount = stats.GetFloorCount;
         speed = stats.GetSpeed;
         iFrameSeconds = stats.GetIFrameSeconds;
         maxHealth = stats.GetMaxHealth;
@@ -56,7 +59,7 @@ public class PlayerBase : MonoBehaviour
 
         // Update defaulted values from before load
         movement.SetMoveSpeed(speed);
-        playerHud.SetHudOnLoad(maxHealth, health, coinCount, keyCount);
+        playerHud.SetHudOnLoad(maxHealth, health, coinCount, keyCount, floorCount);
     }
 
     public void TakeDamage(float amount)
@@ -131,6 +134,11 @@ public class PlayerBase : MonoBehaviour
     }
 
     // Setters
+    public void SetFloorCount(int floorCount)
+    {
+        this.floorCount = floorCount;
+        playerHud.UpdateFloorCounter(floorCount);
+    }
     public void SetSpeed(float speed)
     {
         this.speed =  speed;
@@ -158,6 +166,7 @@ public class PlayerBase : MonoBehaviour
 
     // Getter
     public bool GetIsDead => isDead;
+    public int GetFloorCount => floorCount;
     public float GetSpeed => speed;
     public float GetIFrameSeconds => iFrameSeconds;
     public float GetMaxHealth => maxHealth;

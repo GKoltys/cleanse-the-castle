@@ -3,10 +3,12 @@ using System;
 
 public class StairsController : MonoBehaviour, IMapGenInit
 {
+    private PlayerBase playerBase;
     private MapGenerator dungeon;
 
     public void Init(MapGenerator controller)
     {
+        playerBase = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBase>();
         dungeon = controller;
     }
 

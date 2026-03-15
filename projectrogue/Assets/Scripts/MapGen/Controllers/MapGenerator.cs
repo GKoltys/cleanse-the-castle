@@ -8,6 +8,7 @@ public class MapGenerator : MonoBehaviour
 {
 
     [SerializeField] private Transform player;
+    [SerializeField] private PlayerBase playerBase;
 
     [SerializeField] private int width = 50;
     [SerializeField] private int height = 50;
@@ -52,6 +53,10 @@ public class MapGenerator : MonoBehaviour
         
         // Clamping camera after map is generated
         cameraClamp.SetBoundsAfterGeneration(currentMap.width, currentMap.height);
+
+        // Set the new floor count and SaveGame()
+        playerBase.SetFloorCount(playerBase.GetFloorCount + 1);
+        SaveController.Instance.SaveGame();
     }
 
     public void GoToNextFloor()
