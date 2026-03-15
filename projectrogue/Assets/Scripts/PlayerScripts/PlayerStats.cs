@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 // Keep this as a data container
@@ -7,6 +8,7 @@ public class PlayerStats : MonoBehaviour
 {
     // Defaults
     [Header("Stats and Equipment (Last saved)")]
+    [SerializeField] private int floorCount = 0;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float iFrameSeconds = 0.5f;
     [SerializeField] private float maxHealth = 100;
@@ -24,8 +26,10 @@ public class PlayerStats : MonoBehaviour
     public void SetKeyCount(int keyCount) { this.keyCount = keyCount; }
     public void SetWeapon(int weapon) { this.weaponId = weapon; }
     public void SetDamageMulitplier(float damageMultiplier) { this.damageMultiplier = damageMultiplier; }
+    public void SetFloorCount(int playerFloorCount) { this.floorCount = playerFloorCount; }
 
     // Getters
+    public int GetFloorCount => floorCount;
     public float GetSpeed => speed;
     public float GetIFrameSeconds => iFrameSeconds;
     public float GetMaxHealth => maxHealth;

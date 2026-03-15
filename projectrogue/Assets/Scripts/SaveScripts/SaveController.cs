@@ -81,6 +81,7 @@ public class SaveController : MonoBehaviour
         SaveData saveData = new SaveData
         {
             playerPosistion = player.transform.position,
+            playerFloorCount = playerBase.GetFloorCount,
             playerSpeed = playerBase.GetSpeed,
             playerIFrameSeconds = playerBase.GetIFrameSeconds,
             playerMaxHealth = playerBase.GetMaxHealth,
@@ -105,6 +106,7 @@ public class SaveController : MonoBehaviour
             SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
 
             player.transform.position = saveData.playerPosistion;
+            playerStats.SetFloorCount(saveData.playerFloorCount);
             playerStats.SetSpeed(saveData.playerSpeed);
             playerStats.SetIFrameSeconds(saveData.playerIFrameSeconds);
             playerStats.SetMaxHealth(saveData.playerMaxHealth);
