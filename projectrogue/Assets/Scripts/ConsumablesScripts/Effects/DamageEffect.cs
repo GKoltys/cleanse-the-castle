@@ -9,4 +9,9 @@ public class DamageEffect : ConsumableEffect
     {
         player.ChangePlayerDamageMultiplier(damageMultiplierChange);
     }
+
+    public override float GetStatChangeValue()
+    {
+        return damageMultiplierChange;
+    }
 }

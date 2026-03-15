@@ -16,6 +16,8 @@ MonoBehaviour:
   itemName: DamageBuff
   itemShopName: Chains of Honor
   icon: {fileID: 1864747242, guid: 46929af3baea0704289622f4705bac66, type: 3}
+  statType: 1
+  baseStat: 1
   description: Gives the player a permanent damage buff
   statDescription: x
   effect: {fileID: 11400000, guid: 5729c75999f792940a1e3331e06e7dc8, type: 2}

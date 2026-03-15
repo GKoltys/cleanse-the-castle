@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerHud : MonoBehaviour
 {
     private PlayerStats playerStats;
+    private PlayerBase playerBase;
     [SerializeField] private HealthBarUI healthBar;
     [SerializeField] private CoinCounterUI coinCounterObj;
     [SerializeField] private KeyCounterUI keyCounterObj;
@@ -12,9 +13,12 @@ public class PlayerHud : MonoBehaviour
     [SerializeField] private BuffToolTipUI buffToolTip;
     private readonly List<BuffIconUI> buffIconList = new();
 
+    [SerializeField] private List<ConsumableItemData> buffList;
+
     private void Awake()
     {
         playerStats = GetComponent<PlayerStats>();
+        playerBase = GetComponent<PlayerBase>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -32,23 +36,48 @@ public class PlayerHud : MonoBehaviour
         healthBar.SetHealth(health);
         coinCounterObj.UpdateCoinCounter(coinCounter);
         keyCounterObj.UpdateKeyCounter(keyCounter);
+
+        foreach (ConsumableItemData buff in buffList)
+        {
+            float current = GetStatValue(buff.statType);
+            if (current != buff.baseStat) AddBuffIcon(buff);
+        }
     }
 
-    public void AddBuffIcon(ConsumableItemData itemData, float updatedStat)
+    private float GetStatValue(StatType statType)
+    {
+        switch (statType)
+        {
+            case StatType.SPEED:
+                return playerBase.GetSpeed;
+
+            case StatType.DAMAGEMULTIPLIER:
+                return playerBase.GetDamageMultiplier;
+
+            case StatType.MAXHEALTH:
+                return playerBase.GetMaxHealth;
+        }
+        Debug.LogWarning("PlayerHud: unhandled StatType: " + statType);
+        return 0f;
+    }
+
+    public void AddBuffIcon(ConsumableItemData itemData)
     {
         if (itemData == null) return;
+
+        float currentStat = GetStatValue(itemData.statType);
 
         foreach (BuffIconUI icon in buffIconList)
         {
             if (icon.GetName == itemData.itemName)
             {
-                icon.SetStat(updatedStat);
+                icon.SetStat(currentStat);
                 return;
             }
         }
 
         BuffIconUI newIcon = Instantiate(buffIconPrefab, buffContainer);
-        newIcon.Setup(itemData.icon, itemData.itemName, itemData.statDescription, updatedStat, buffToolTip);
+        newIcon.Setup(itemData.icon, itemData.itemName, itemData.statDescription, currentStat, buffToolTip);
 
         buffIconList.Add(newIcon);
     }

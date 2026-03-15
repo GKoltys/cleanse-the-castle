@@ -1684,6 +1684,10 @@ MonoBehaviour:
   buffContainer: {fileID: 2187846669233787577}
   buffIconPrefab: {fileID: 6527362023583408168, guid: 8c15d2cf61f3e4c4c8c03da378308209, type: 3}
   buffToolTip: {fileID: 7624023809211047796}
+  buffList:
+  - {fileID: 11400000, guid: ab58d1e7680a4b840b3633c64d8e68ff, type: 2}
+  - {fileID: 11400000, guid: 7471f040f55d648459c9395e24922030, type: 2}
+  - {fileID: 11400000, guid: 76c0e399631f0b2449b97028e646dac2, type: 2}
 --- !u!114 &7283814037057487736
 MonoBehaviour:
   m_ObjectHideFlags: 0

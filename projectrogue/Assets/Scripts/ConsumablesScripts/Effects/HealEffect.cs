@@ -9,4 +9,9 @@ public class HealEffect : ConsumableEffect
     {
         player.Heal(healAmount);
     }
+
+    public override float GetStatChangeValue()
+    {
+        return healAmount;
+    }
 }

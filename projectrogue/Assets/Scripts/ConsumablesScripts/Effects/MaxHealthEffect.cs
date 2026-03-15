@@ -9,4 +9,9 @@ public class MaxHeathEffect : ConsumableEffect
     {
         player.ChangePlayerMaxHealth(maxHealthChange);
     }
+
+    public override float GetStatChangeValue()
+    {
+        return maxHealthChange;
+    }
 }

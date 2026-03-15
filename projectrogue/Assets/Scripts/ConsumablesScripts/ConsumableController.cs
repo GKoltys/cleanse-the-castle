@@ -22,14 +22,6 @@ public abstract class ConsumableController : MonoBehaviour
         playerBase = player.GetComponent<PlayerBase>();
         playerEffect = player.GetComponent<PlayerApplyEffect>();
         playerHud = player.GetComponent <PlayerHud>();
-
-        AddBuffIconOnLoad();
-    }
-
-    // You need to override this for any buff consumable
-    protected virtual void AddBuffIconOnLoad()
-    {
-        return;
     }
 
     protected abstract void OnTriggerEnter2D(Collider2D other);

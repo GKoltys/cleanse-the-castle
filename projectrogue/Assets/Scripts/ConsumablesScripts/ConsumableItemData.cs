@@ -7,6 +7,8 @@ public class ConsumableItemData : ScriptableObject
     public string itemName;
     public string itemShopName;
     public Sprite icon;
+    public StatType statType;
+    public float baseStat;
     public string description;
     public string statDescription;
     public ConsumableEffect effect;
@@ -19,4 +21,12 @@ public enum ConsumableType
 {
     BUFF,
     POTION
+}
+
+public enum StatType
+{
+    SPEED,
+    DAMAGEMULTIPLIER,
+    IFRAMESECONDS,
+    MAXHEALTH
 }
