@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38800f98f962cb498705be468cf4a78, type: 3}
   m_Name: RegularHealItemData
   m_EditorClassIdentifier: Assembly-CSharp::ConsumableItemData
+  consumableType: 1
   itemName: RegularHealPotion
   itemShopName: Regular Heal Potion
   icon: {fileID: -1659760741, guid: 3924ee34ce4048249a4305468ed465c0, type: 3}
   description: Heals the player 60hp
-  dropChance: 0.05
+  statDescription: 
   effect: {fileID: 11400000, guid: 59849feb1919ab9418d0495bf9c281d3, type: 2}
   buyPrice: 15
   itemPrefab: {fileID: 5648255974331334683, guid: da6718c887231b7498dcf139d24fa331, type: 3}

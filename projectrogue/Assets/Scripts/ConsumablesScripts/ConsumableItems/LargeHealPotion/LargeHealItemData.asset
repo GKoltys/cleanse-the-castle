@@ -12,11 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38800f98f962cb498705be468cf4a78, type: 3}
   m_Name: LargeHealItemData
   m_EditorClassIdentifier: Assembly-CSharp::ConsumableItemData
+  consumableType: 1
   itemName: LargeHealPotion
   itemShopName: Large Heal Potion
   icon: {fileID: 1027758443, guid: 3924ee34ce4048249a4305468ed465c0, type: 3}
   description: Heals the player 100hp
-  dropChance: 0.02
+  statDescription: 
   effect: {fileID: 11400000, guid: da569fb02f75a1c4cb4a43448e2135ff, type: 2}
   buyPrice: 35
   itemPrefab: {fileID: 8459918572179552668, guid: 1575d3cce1d3b0c4ba1397ba86bf1444, type: 3}

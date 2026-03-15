@@ -1,11 +1,16 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerHud : MonoBehaviour
 {
     private PlayerStats playerStats;
-    [SerializeField]  private HealthBarUI healthBar;
-    [SerializeField]  private CoinCounterUI coinCounterObj;
-    [SerializeField]  private KeyCounterUI keyCounterObj;
+    [SerializeField] private HealthBarUI healthBar;
+    [SerializeField] private CoinCounterUI coinCounterObj;
+    [SerializeField] private KeyCounterUI keyCounterObj;
+    [SerializeField] private Transform buffContainer;
+    [SerializeField] private BuffIconUI buffIconPrefab;
+    [SerializeField] private BuffToolTipUI buffToolTip;
+    private readonly List<BuffIconUI> buffIconList = new();
 
     private void Awake()
     {
@@ -27,6 +32,25 @@ public class PlayerHud : MonoBehaviour
         healthBar.SetHealth(health);
         coinCounterObj.UpdateCoinCounter(coinCounter);
         keyCounterObj.UpdateKeyCounter(keyCounter);
+    }
+
+    public void AddBuffIcon(ConsumableItemData itemData, float updatedStat)
+    {
+        if (itemData == null) return;
+
+        foreach (BuffIconUI icon in buffIconList)
+        {
+            if (icon.GetName == itemData.itemName)
+            {
+                icon.SetStat(updatedStat);
+                return;
+            }
+        }
+
+        BuffIconUI newIcon = Instantiate(buffIconPrefab, buffContainer);
+        newIcon.Setup(itemData.icon, itemData.itemName, itemData.statDescription, updatedStat, buffToolTip);
+
+        buffIconList.Add(newIcon);
     }
 
     public void UpdateHealth(float newHealth)
