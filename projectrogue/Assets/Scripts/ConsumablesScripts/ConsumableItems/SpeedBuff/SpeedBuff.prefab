@@ -175,3 +175,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpeedBuffController
   itemData: {fileID: 11400000, guid: ab58d1e7680a4b840b3633c64d8e68ff, type: 2}
+  baseSpeed: 5

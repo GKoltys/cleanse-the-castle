@@ -25397,6 +25397,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4391749565592231967, guid: a70267d1ecede5140924a362554a3282, type: 3}
+      propertyPath: buffList.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4391749565592231967, guid: a70267d1ecede5140924a362554a3282, type: 3}
+      propertyPath: 'buffList.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ab58d1e7680a4b840b3633c64d8e68ff, type: 2}
+    - target: {fileID: 4391749565592231967, guid: a70267d1ecede5140924a362554a3282, type: 3}
+      propertyPath: 'buffList.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 7471f040f55d648459c9395e24922030, type: 2}
+    - target: {fileID: 4391749565592231967, guid: a70267d1ecede5140924a362554a3282, type: 3}
+      propertyPath: 'buffList.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 76c0e399631f0b2449b97028e646dac2, type: 2}
     - target: {fileID: 5552872791247151080, guid: a70267d1ecede5140924a362554a3282, type: 3}
       propertyPath: m_Size.x
       value: 0.443849

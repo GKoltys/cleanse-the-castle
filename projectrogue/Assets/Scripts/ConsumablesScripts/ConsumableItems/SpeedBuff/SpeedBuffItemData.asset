@@ -12,10 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b38800f98f962cb498705be468cf4a78, type: 3}
   m_Name: SpeedBuffItemData
   m_EditorClassIdentifier: Assembly-CSharp::ConsumableItemData
+  consumableType: 0
   itemName: SpeedBuff
   itemShopName: Enigma
   icon: {fileID: 7665509898997316563, guid: 46929af3baea0704289622f4705bac66, type: 3}
+  statType: 0
+  baseStat: 5
   description: Gives the player a permanent speed boost
+  statDescription: 
   effect: {fileID: 11400000, guid: 0e57d4877750a4040996b477c4725d65, type: 2}
   buyPrice: 30
   itemPrefab: {fileID: 4227109411642996397, guid: 16cef5ea255798b42a8f884f817b7a46, type: 3}

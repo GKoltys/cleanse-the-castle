@@ -278,6 +278,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopController
   playerBase: {fileID: 2030741573}
   playerEffect: {fileID: 1370688780}
+  playerHud: {fileID: 1370688781}
   shopPanel: {fileID: 2008413810}
   shopGrid: {fileID: 1512923139}
   shopSlotPrefab: {fileID: 669525623362987215, guid: 34ec5a02d8d49e6419efaa51d416de3f, type: 3}
@@ -1444,6 +1445,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ffc83732ba8f62446a60b298230d9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerApplyEffect
+--- !u!114 &1370688781 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4391749565592231967, guid: a70267d1ecede5140924a362554a3282, type: 3}
+  m_PrefabInstance: {fileID: 1370688779}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20f683a36ba314842aad4d03ac3074b5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHud
 --- !u!224 &1512923139 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7987036592912070004, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}

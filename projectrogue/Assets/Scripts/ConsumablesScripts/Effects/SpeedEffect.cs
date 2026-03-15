@@ -9,4 +9,9 @@ public class SpeedEffect : ConsumableEffect
     {
         player.ChangePlayerSpeed(speedBoost);
     }
+
+    public override float GetStatChangeValue()
+    {
+        return speedBoost;
+    }
 }
