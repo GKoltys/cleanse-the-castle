@@ -40,7 +40,7 @@ public class PlayerHud : MonoBehaviour
 
         foreach (BuffIconUI icon in buffIconList)
         {
-            if (icon.name == itemData.name)
+            if (icon.GetName == itemData.itemName)
             {
                 icon.SetStat(updatedStat);
                 return;
@@ -48,7 +48,7 @@ public class PlayerHud : MonoBehaviour
         }
 
         BuffIconUI newIcon = Instantiate(buffIconPrefab, buffContainer);
-        newIcon.Setup(itemData.icon, itemData.name, itemData.statDescription, updatedStat, buffToolTip);
+        newIcon.Setup(itemData.icon, itemData.itemName, itemData.statDescription, updatedStat, buffToolTip);
 
         buffIconList.Add(newIcon);
     }

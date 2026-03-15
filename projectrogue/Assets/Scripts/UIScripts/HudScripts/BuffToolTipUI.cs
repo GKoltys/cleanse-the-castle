@@ -17,7 +17,6 @@ public class BuffToolTipUI : MonoBehaviour
         float containerBottomY = corners[0].y;
         float iconCentreX = buffIconTransform.position.x;
 
-
         float tooltipHeight = buffIconTransform.rect.height;
         rectTransform.position = new Vector2(iconCentreX, containerBottomY - tooltipHeight);
         gameObject.SetActive(true);
