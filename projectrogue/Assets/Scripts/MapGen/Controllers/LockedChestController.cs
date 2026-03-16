@@ -11,7 +11,8 @@ public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
 
     public GameObject lastInteractor;
 
-    private GameObject dropPrefab; // item to come from chest
+    [SerializeField] private EnemyDropTable chestLootTable; // items that can come from chest
+    private GameObject dropPrefab;
 
     public void Init(MapGenerator controller)
     {
@@ -38,6 +39,13 @@ public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
         if (dungeon == null) return;
         if (player.GetKeyCount <= 0) return; // Maybe play a chest staying locked animation?
         lastInteractor = interactor;
+
+        if (chestLootTable != null)
+        {
+            dropPrefab = chestLootTable.GetRandomLootItem();
+            Debug.Log($"dropPrefab = {dropPrefab}");
+        }
+
         player.KeyUsed();
         OpenChest();
         if (interactionIcon != null)

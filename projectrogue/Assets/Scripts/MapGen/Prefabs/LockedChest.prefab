@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 318618382632848295}
   - component: {fileID: 3280721877354426766}
   - component: {fileID: 2007023166645735642}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: LockedChest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2498405988043988622}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -3.0908797, y: 1.6745291, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -262,6 +262,7 @@ MonoBehaviour:
   IsOpened: 0
   interactionIcon: {fileID: 7721076992166930556}
   lastInteractor: {fileID: 0}
+  chestLootTable: {fileID: 11400000, guid: 0a18439e2ebf41a46b3cb246366ce7a1, type: 2}
 --- !u!1 &7721076992166930556
 GameObject:
   m_ObjectHideFlags: 0

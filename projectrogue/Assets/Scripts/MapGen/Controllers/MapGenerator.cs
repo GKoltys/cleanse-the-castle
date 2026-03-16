@@ -296,13 +296,6 @@ public class MapGenerator : MonoBehaviour
         // instantiate prefab
         var go = Instantiate(entry.prefab, world, Quaternion.identity, entitiesRoot);
 
-        // set item inside chest, for now it's the spawnAlso but could make a list of objects to randomly choose
-        var chest = go.GetComponent<LockedChestController>();
-        if (chest != null && entry.spawnAlso != null)
-        {
-            chest.SetDrop(entry.spawnAlso);
-        }
-
         // initialize components
         var initializables = go.GetComponentsInChildren<IMapGenInit>();
         foreach (var init in initializables)
