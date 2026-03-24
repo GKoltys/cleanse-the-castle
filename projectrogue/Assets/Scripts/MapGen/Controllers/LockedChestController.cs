@@ -4,14 +4,18 @@ using System.Collections;
 public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
 {
     public bool IsOpened = false;
-    public GameObject interactionIcon;
+
+    public GameObject interactionIcon; // normal interact icon
+    public GameObject noKeyIcon;       // shown when player has no key
+
     private Animator animator;
     private MapGenerator dungeon;
     private PlayerBase player;
 
     public GameObject lastInteractor;
 
-    private GameObject dropPrefab; // item to come from chest
+    [SerializeField] private EnemyDropTable chestLootTable; // items that can come from chest
+    private GameObject dropPrefab;
 
     public void Init(MapGenerator controller)
     {
@@ -24,6 +28,7 @@ public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
     private void Awake()
     {
         interactionIcon.SetActive(false);
+        noKeyIcon.SetActive(false);
         SetIsOpened(false);
     }
 
@@ -38,6 +43,13 @@ public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
         if (dungeon == null) return;
         if (player.GetKeyCount <= 0) return; // Maybe play a chest staying locked animation?
         lastInteractor = interactor;
+
+        if (chestLootTable != null)
+        {
+            dropPrefab = chestLootTable.GetRandomLootItem();
+            Debug.Log($"dropPrefab = {dropPrefab}");
+        }
+
         player.KeyUsed();
         OpenChest();
         if (interactionIcon != null)
@@ -45,10 +57,33 @@ public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
 
     }
 
+    // sets which interaction icon to show depending on player key count
     public void ShowCanInteract(bool show)
     {
+        HideAllIcons();
+
+        if (!show || !CanInteract() || player == null)
+            return;
+
+        if (player.GetKeyCount > 0)
+        {
+            if (interactionIcon != null)
+                interactionIcon.SetActive(true);
+        }
+        else
+        {
+            if (noKeyIcon != null)
+                noKeyIcon.SetActive(true);
+        }
+    }
+
+    private void HideAllIcons()
+    {
         if (interactionIcon != null)
-            interactionIcon.SetActive(show && CanInteract());
+            interactionIcon.SetActive(false);
+
+        if (noKeyIcon != null)
+            noKeyIcon.SetActive(false);
     }
 
     private void OpenChest()
@@ -75,12 +110,17 @@ public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
         {
             Vector3 dropPos = transform.position + Vector3.up * 0.2f;
 
-            var go = Instantiate(dropPrefab, dropPos, Quaternion.identity);
+            // spawn prefab as part of dungeon map to handle clearing on next build floor
+            Transform parent = dungeon != null ? dungeon.EntitiesRoot : null;
+            var go = Instantiate(dropPrefab, dropPos, Quaternion.identity, parent);
 
             // run init so interaction works
             var initializables = go.GetComponentsInChildren<IMapGenInit>();
             foreach (var init in initializables)
                 init.Init(dungeon);
         }
+        // despawn after opening
+        Destroy(gameObject);
+
     }
 }

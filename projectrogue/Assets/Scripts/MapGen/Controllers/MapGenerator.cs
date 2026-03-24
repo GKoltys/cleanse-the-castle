@@ -27,6 +27,8 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private TileBase wallTile;
 
     [SerializeField] private Transform entitiesRoot;
+    public Transform EntitiesRoot => entitiesRoot;
+
     [SerializeField] private SpawnTable[] spawnEntries;
 
     [SerializeField] private StartingAreaCameraClamp cameraClamp;
@@ -200,8 +202,11 @@ public class MapGenerator : MonoBehaviour
 
             for (int i = 0; i < n; i++)
             {
+                // increase/decrease spawnchance of spawn entry
+                float chance = entry.GetSpawnChance(playerBase.GetFloorCount);
+
                 // roll chance for this instance of the object
-                if (Random.value > entry.spawnChance)
+                if (Random.value > chance)
                 {
                     continue;
                 }
@@ -292,13 +297,6 @@ public class MapGenerator : MonoBehaviour
         Vector3 world = new Vector3(tile.x + 0.5f, tile.y + 0.5f, 0f);
         // instantiate prefab
         var go = Instantiate(entry.prefab, world, Quaternion.identity, entitiesRoot);
-
-        // set item inside chest, for now it's the spawnAlso but could make a list of objects to randomly choose
-        var chest = go.GetComponent<LockedChestController>();
-        if (chest != null && entry.spawnAlso != null)
-        {
-            chest.SetDrop(entry.spawnAlso);
-        }
 
         // initialize components
         var initializables = go.GetComponentsInChildren<IMapGenInit>();

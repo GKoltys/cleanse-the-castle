@@ -29,4 +29,14 @@ public class SpawnTable {
     public bool uniqueTile = true;
 
     public SpawnType spawn;
+
+    // https://docs.unity3d.com/Packages/com.unity.visualeffectgraph@10.5/manual/Operator-InlineAnimationCurve.html
+    // increase/decrease spawn chance
+    public AnimationCurve floorMultiplier = AnimationCurve.Linear(1, 1, 10, 1);
+
+    public float GetSpawnChance(int floor)
+    {
+        float multiplier = floorMultiplier.Evaluate(floor);
+        return Mathf.Clamp01(spawnChance * multiplier);
+    }
 }
