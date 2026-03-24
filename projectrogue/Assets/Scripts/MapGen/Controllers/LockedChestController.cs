@@ -4,7 +4,10 @@ using System.Collections;
 public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
 {
     public bool IsOpened = false;
-    public GameObject interactionIcon;
+
+    public GameObject interactionIcon; // normal interact icon
+    public GameObject noKeyIcon;       // shown when player has no key
+
     private Animator animator;
     private MapGenerator dungeon;
     private PlayerBase player;
@@ -25,6 +28,7 @@ public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
     private void Awake()
     {
         interactionIcon.SetActive(false);
+        noKeyIcon.SetActive(false);
         SetIsOpened(false);
     }
 
@@ -53,10 +57,33 @@ public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
 
     }
 
+    // sets which interaction icon to show depending on player key count
     public void ShowCanInteract(bool show)
     {
+        HideAllIcons();
+
+        if (!show || !CanInteract() || player == null)
+            return;
+
+        if (player.GetKeyCount > 0)
+        {
+            if (interactionIcon != null)
+                interactionIcon.SetActive(true);
+        }
+        else
+        {
+            if (noKeyIcon != null)
+                noKeyIcon.SetActive(true);
+        }
+    }
+
+    private void HideAllIcons()
+    {
         if (interactionIcon != null)
-            interactionIcon.SetActive(show && CanInteract());
+            interactionIcon.SetActive(false);
+
+        if (noKeyIcon != null)
+            noKeyIcon.SetActive(false);
     }
 
     private void OpenChest()
