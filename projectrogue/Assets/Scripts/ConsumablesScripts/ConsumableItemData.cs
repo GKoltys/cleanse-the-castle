@@ -20,7 +20,8 @@ public class ConsumableItemData : ScriptableObject
 public enum ConsumableType
 {
     BUFF,
-    POTION
+    POTION,
+    RELIC
 }
 
 public enum StatType
