@@ -78,12 +78,16 @@ public class ChestController : MonoBehaviour, IMapGenInit, IInteractable
         {
             Vector3 dropPos = transform.position + Vector3.up * 0.2f;
 
-            var go = Instantiate(dropPrefab, dropPos, Quaternion.identity);
+            // spawn prefab as part of dungeon map to handle clearing on next build floor
+            Transform parent = dungeon != null ? dungeon.EntitiesRoot : null;
+            var go = Instantiate(dropPrefab, dropPos, Quaternion.identity, parent);
 
             // run init so interaction works
             var initializables = go.GetComponentsInChildren<IMapGenInit>();
             foreach (var init in initializables)
                 init.Init(dungeon);
         }
+        // despawn after opening
+        Destroy(gameObject);
     }
 }

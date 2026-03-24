@@ -27,6 +27,8 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private TileBase wallTile;
 
     [SerializeField] private Transform entitiesRoot;
+    public Transform EntitiesRoot => entitiesRoot;
+
     [SerializeField] private SpawnTable[] spawnEntries;
 
     [SerializeField] private StartingAreaCameraClamp cameraClamp;
