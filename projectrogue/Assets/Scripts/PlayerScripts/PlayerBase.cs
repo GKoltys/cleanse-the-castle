@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 // Health stats will be saved from here to JSON
 public class PlayerBase : MonoBehaviour
@@ -128,9 +127,7 @@ public class PlayerBase : MonoBehaviour
     // Called using animation event
     public void TriggerSceneReload()
     {
-        animator.SetTrigger("FinishAnimations");
-        SceneManager.LoadScene(2);
-        // This should wipe save file to default in SaveController
+        SaveController.Instance.RequestLoad();
         SaveController.Instance.StartNewRun();
     }
 

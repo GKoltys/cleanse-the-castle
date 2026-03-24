@@ -16,6 +16,7 @@ public class SaveController : MonoBehaviour
     private readonly int defaultWeaponId = 0;
     private readonly float defaultDamageMultiplier = 1f;
 
+    private bool newRun = false;
     private string saveLocation;
     private bool shouldLoadOnNextScene;
 
@@ -62,6 +63,9 @@ public class SaveController : MonoBehaviour
     // Called automatically by the engine after LoadScenceAsync()
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        shouldLoadOnNextScene = false;
+        Debug.Log(scene.name);
+
         // Get new references to Player
         player = GameObject.FindGameObjectWithTag("Player");
         playerBase = player.GetComponent<PlayerBase>();
@@ -69,14 +73,11 @@ public class SaveController : MonoBehaviour
 
         // Keep this commented until final build
         //if (!shouldLoadOnNextScene) return;
-        if (scene.name == "OpeningScene")
+        if (scene.name == "OpeningScene" || newRun)
         {
-            StartNewRun();
-            return;
+            newRun = false;
+            WipeSaveFile();
         }
-
-        shouldLoadOnNextScene = false;
-        Debug.Log(scene.name);
 
         LoadGame();
     }
@@ -127,6 +128,12 @@ public class SaveController : MonoBehaviour
 
     public void StartNewRun()
     {
+        newRun = true;
+        SceneManager.LoadScene(2);
+    }
+
+    public void WipeSaveFile()
+    {
         SaveData saveData = new SaveData
         {
             playerPosistion = defaultPosition,
@@ -142,8 +149,6 @@ public class SaveController : MonoBehaviour
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
-
-        LoadGame();
     }
 
     public String GetSaveLocation() { return saveLocation; }

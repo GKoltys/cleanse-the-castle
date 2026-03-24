@@ -22,7 +22,7 @@ public class OpeningSceneController : MonoBehaviour
     {
         Debug.Log("cutscene is over");
         SaveController.Instance.RequestLoad();
-        SceneManager.LoadSceneAsync(2);
+        SaveController.Instance.StartNewRun();
     }
 
     // To skip cutscene
@@ -32,7 +32,7 @@ public class OpeningSceneController : MonoBehaviour
         {
             Debug.Log("cutscene was skipped");
             SaveController.Instance.RequestLoad();
-            SceneManager.LoadSceneAsync(2);
+            SaveController.Instance.StartNewRun();
         }
     }
 }
