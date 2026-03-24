@@ -5,6 +5,17 @@ using UnityEngine.SceneManagement;
 
 public class SaveController : MonoBehaviour
 {
+    private readonly Vector3 defaultPosition = Vector3.zero;
+    private readonly int defaultFloorCount = 0;
+    private readonly float defaultSpeed = 5f;
+    private readonly float defaultIFrameSeconds = 0.5f;
+    private readonly float defaultMaxHealth = 100;
+    private readonly float defaultHealth = 100;
+    private readonly int defaultCoinCount = 0;
+    private readonly int defaultKeyCount = 0;
+    private readonly int defaultWeaponId = 0;
+    private readonly float defaultDamageMultiplier = 1f;
+
     private string saveLocation;
     private bool shouldLoadOnNextScene;
 
@@ -51,11 +62,16 @@ public class SaveController : MonoBehaviour
     // Called automatically by the engine after LoadScenceAsync()
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // Get new references to Player
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerBase = player.GetComponent<PlayerBase>();
+        playerStats = player.GetComponent<PlayerStats>();
+
         // Keep this commented until final build
         //if (!shouldLoadOnNextScene) return;
         if (scene.name == "OpeningScene")
         {
-            NewGame();
+            StartNewRun();
             return;
         }
 
@@ -65,19 +81,8 @@ public class SaveController : MonoBehaviour
         LoadGame();
     }
 
-    public void NewGame()
-    {
-        if (HasSaveFile())
-        {
-            File.Delete(saveLocation);
-        }
-    }
-
     public void SaveGame()
     {
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerBase = player.GetComponent<PlayerBase>();
-
         SaveData saveData = new SaveData
         {
             playerPosistion = player.transform.position,
@@ -99,10 +104,6 @@ public class SaveController : MonoBehaviour
     {
         if (HasSaveFile())
         {
-            player = GameObject.FindGameObjectWithTag("Player");
-            playerStats = player.GetComponent<PlayerStats>();
-            playerBase = player.GetComponent<PlayerBase>();
-
             SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
 
             player.transform.position = saveData.playerPosistion;
@@ -122,6 +123,27 @@ public class SaveController : MonoBehaviour
         {
             SaveGame();
         }
+    }
+
+    public void StartNewRun()
+    {
+        SaveData saveData = new SaveData
+        {
+            playerPosistion = defaultPosition,
+            playerFloorCount = defaultFloorCount,
+            playerSpeed = defaultSpeed,
+            playerIFrameSeconds = defaultIFrameSeconds,
+            playerMaxHealth = defaultMaxHealth,
+            playerHealth = defaultHealth,
+            playerCoinCount = defaultCoinCount,
+            playerKeyCount = defaultKeyCount,
+            playerWeaponId = defaultWeaponId,
+            playerDamageMultiplier = defaultDamageMultiplier
+        };
+
+        File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
+
+        LoadGame();
     }
 
     public String GetSaveLocation() { return saveLocation; }

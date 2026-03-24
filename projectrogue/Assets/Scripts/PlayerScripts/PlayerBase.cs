@@ -125,12 +125,13 @@ public class PlayerBase : MonoBehaviour
         animator.SetTrigger("Dying");
     }
 
+    // Called using animation event
     public void TriggerSceneReload()
     {
         animator.SetTrigger("FinishAnimations");
-        // This should wipe save file to default in SaveController
-        // SaveController.Instance.StartNewRun();
         SceneManager.LoadScene(2);
+        // This should wipe save file to default in SaveController
+        SaveController.Instance.StartNewRun();
     }
 
     // Setters
