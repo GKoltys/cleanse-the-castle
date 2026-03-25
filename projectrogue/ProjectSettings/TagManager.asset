@@ -19,7 +19,7 @@ TagManager:
   - PopUps
   - EnemyCollision
   - Consumable
-  - 
+  - VisibilityMesh
   - 
   - 
   - 
@@ -62,6 +62,9 @@ TagManager:
     locked: 0
   - name: PopUp
     uniqueID: 1175435643
+    locked: 0
+  - name: FogOfWar
+    uniqueID: 2223741115
     locked: 0
   m_RenderingLayers:
   - Default
