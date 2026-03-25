@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 874751898328743240}
   - component: {fileID: 7594273644953108171}
   - component: {fileID: 5136830551348724855}
+  - component: {fileID: 2908679196025307936}
   m_Layer: 0
   m_Name: SpeedBuff
   m_TagString: Untagged
@@ -175,4 +176,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpeedBuffController
   itemData: {fileID: 11400000, guid: ab58d1e7680a4b840b3633c64d8e68ff, type: 2}
-  baseSpeed: 5
+--- !u!114 &2908679196025307936
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4227109411642996397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79dd2dd3a54b3994399570956749f2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityVisibility

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5771058485452665899}
   - component: {fileID: 1569743290728334375}
   - component: {fileID: 2865152706664099915}
+  - component: {fileID: 6906553937356292007}
   m_Layer: 0
   m_Name: DamageBuff
   m_TagString: Untagged
@@ -175,3 +176,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DamageBuffContoller
   itemData: {fileID: 11400000, guid: 76c0e399631f0b2449b97028e646dac2, type: 2}
+--- !u!114 &6906553937356292007
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 131934325148844041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79dd2dd3a54b3994399570956749f2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityVisibility

@@ -30,6 +30,7 @@ public class EnemyMovement : MonoBehaviour
     [Header("Wall Detection")]
     [SerializeField] private float wallCheckDistance = 0.3f;
     [SerializeField] private LayerMask wallMask;
+    [SerializeField] private LayerMask interactableMask;
 
     private void Awake()
     {
@@ -152,7 +153,7 @@ public class EnemyMovement : MonoBehaviour
             rb.position,
             moveDirection,
             wallCheckDistance,
-            wallMask // Could add "| enemyMask" to avoid other enemies too
+            wallMask | interactableMask // Could add "| enemyMask" to avoid other enemies too
         );
 
         return hit.collider != null;

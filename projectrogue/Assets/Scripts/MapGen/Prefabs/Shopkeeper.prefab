@@ -103,7 +103,8 @@ GameObject:
   - component: {fileID: 2521957833422316782}
   - component: {fileID: 811969808337611413}
   - component: {fileID: 612138101304792625}
-  m_Layer: 3
+  - component: {fileID: 6603299944361449756}
+  m_Layer: 14
   m_Name: Shopkeeper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -259,3 +260,15 @@ MonoBehaviour:
     quantity: 1
   - itemData: {fileID: 11400000, guid: 7471f040f55d648459c9395e24922030, type: 2}
     quantity: 1
+--- !u!114 &6603299944361449756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4914398961023793015}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79dd2dd3a54b3994399570956749f2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityVisibility

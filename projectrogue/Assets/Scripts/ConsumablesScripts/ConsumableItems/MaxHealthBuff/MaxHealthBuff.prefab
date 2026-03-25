@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4686062435849962678}
   - component: {fileID: 1519468099289689357}
   - component: {fileID: 1286978747561571555}
+  - component: {fileID: 6036557705090113055}
   m_Layer: 0
   m_Name: MaxHealthBuff
   m_TagString: Untagged
@@ -175,3 +176,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MaxHealthBuffController
   itemData: {fileID: 11400000, guid: 7471f040f55d648459c9395e24922030, type: 2}
+--- !u!114 &6036557705090113055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353035039282316475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79dd2dd3a54b3994399570956749f2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityVisibility

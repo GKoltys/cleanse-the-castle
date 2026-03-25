@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7927515672820126076}
   - component: {fileID: 3531344210846589613}
   - component: {fileID: 6693203883164213609}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Stairs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1257956701334067999}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8.47167, y: 1.7744136, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -151,4 +151,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7f544b1b33f8dbe47a9c3e3dcef81d6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::StairsController
-  playerBase: {fileID: 2957798997873762978, guid: a70267d1ecede5140924a362554a3282, type: 3}
