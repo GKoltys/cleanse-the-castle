@@ -170,6 +170,7 @@ GameObject:
   - component: {fileID: 9165406746645325477}
   - component: {fileID: 5564655366055592588}
   - component: {fileID: 3203319873814246328}
+  - component: {fileID: 7751584170637844421}
   m_Layer: 6
   m_Name: GreenZombieEnemy
   m_TagString: Untagged
@@ -423,6 +424,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyLootDropper
   dropTable: {fileID: 11400000, guid: faddf7df0c809d04fbc08d97acee660a, type: 2}
+--- !u!114 &7751584170637844421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7914762690392339576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7854655e2f28e5442beb26ea7dfd5b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyVisibility
 --- !u!1 &8393581288945670670
 GameObject:
   m_ObjectHideFlags: 0

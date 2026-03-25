@@ -363,6 +363,7 @@ GameObject:
   - component: {fileID: 5220715564908764880}
   - component: {fileID: 314052343704183663}
   - component: {fileID: 6958504908099552675}
+  - component: {fileID: 4842793810291852587}
   m_Layer: 6
   m_Name: BlueSlimeEnemy
   m_TagString: Untagged
@@ -616,3 +617,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyLootDropper
   dropTable: {fileID: 11400000, guid: 5c61860c3836df14d9f547cd49a3ee0b, type: 2}
+--- !u!114 &4842793810291852587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8906884267085178471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7854655e2f28e5442beb26ea7dfd5b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyVisibility
