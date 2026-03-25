@@ -18,6 +18,6 @@ public class SliderSaveOnRelease : MonoBehaviour, IPointerUpHandler, IEndDragHan
 
     private void Save()
     {
-        if (SaveSettings.Instance != null) SaveSettings.Instance.Save();
+        if (SaveSettingsController.Instance != null) SaveSettingsController.Instance.Save();
     }
 }

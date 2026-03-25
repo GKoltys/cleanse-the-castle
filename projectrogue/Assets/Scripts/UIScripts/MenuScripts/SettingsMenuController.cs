@@ -11,7 +11,6 @@ public class SettingsMenuController: MonoBehaviour
     public AudioMixer audioMixer;
 
     private readonly List<Resolution> uniqueResolutions = new();
-    private int currentResIndex;
 
     [SerializeField] private TMP_Dropdown displayDropdown;
     [SerializeField] private TMP_Dropdown resolutionDropdown;
@@ -22,7 +21,7 @@ public class SettingsMenuController: MonoBehaviour
     private void Start()
     {
         resolutionDropdown.ClearOptions();
-        var s = SaveSettings.Instance.CurrentSettings;
+        var s = SaveSettingsController.Instance.CurrentSettings;
 
         // Filters out all resolution duplicates with different Hz values
         HashSet<(int w, int h)> resolutionSet = new();
@@ -35,24 +34,11 @@ public class SettingsMenuController: MonoBehaviour
 
         List<string> resList = new();
 
-        currentResIndex = 0;
         for (int i = 0; i < uniqueResolutions.Count; i++)
         {
             string res = uniqueResolutions[i].width + " x " + uniqueResolutions[i].height;
             resList.Add(res);
-
-            if (uniqueResolutions[i].width == Screen.currentResolution.width &&
-                uniqueResolutions[i].height == Screen.currentResolution.height)
-            {
-                currentResIndex = i;
-            }
         }
-
-        SetDisplayMode(s.displayModeIndex);
-        SetResolution(s.resolutionIndex);
-        SetMasterVolume(s.masterVolume);
-        SetMusicVolume(s.musicVolume);
-        SetSfxVolume(s.sfxVolume);
 
         resolutionDropdown.AddOptions(resList);
         resolutionDropdown.value = s.resolutionIndex;
@@ -64,84 +50,28 @@ public class SettingsMenuController: MonoBehaviour
         sfxSlider.value = s.sfxVolume;
     }
 
-    public void SetDisplayMode(int displayOption)
+    public void SetDisplayMode(int index)
     {
-        if (displayOption == 0)
-        {
-            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-
-            // Keeps the mouse locked in the window
-            Cursor.lockState = CursorLockMode.Confined;
-            Cursor.visible = true;
-
-            SaveSettings.Instance.CurrentSettings.displayModeIndex = displayOption;
-            SaveSettings.Instance.Save();
-        }
-        else if (displayOption == 1)
-        {
-            Screen.fullScreenMode = FullScreenMode.Windowed;
-
-            // Releases the mouse from game window
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-
-            SaveSettings.Instance.CurrentSettings.displayModeIndex = displayOption;
-            SaveSettings.Instance.Save();
-        }
-        else if (displayOption == 2)
-        {
-            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
-
-            // Releases the mouse from game window
-            Cursor.lockState = CursorLockMode.None;
-            Cursor.visible = true;
-
-            SaveSettings.Instance.CurrentSettings.displayModeIndex = displayOption;
-            SaveSettings.Instance.Save();
-        }
+        SaveSettingsController.Instance.SetDisplayMode(index);
     }
 
-    public void SetResolution(int resolutionIndex)
+    public void SetResolution(int index)
     {
-        Resolution resolution = uniqueResolutions[resolutionIndex];
-        Screen.SetResolution(resolution.width, resolution.height, Screen.fullScreenMode);
-
-        SaveSettings.Instance.CurrentSettings.resolutionIndex = resolutionIndex;
-        SaveSettings.Instance.Save();
+        SaveSettingsController.Instance.SetResolution(index);
     }
 
     public void SetMasterVolume(float volume)
     {
-        audioMixer.SetFloat("masterVolume", volume);
-
-        SaveSettings.Instance.CurrentSettings.masterVolume = volume;
+        SaveSettingsController.Instance.SetMasterVolume(volume);
     }
 
     public void SetMusicVolume(float volume)
     {
-        if (volume == -50)
-        {
-            audioMixer.SetFloat("musicVolume", -80);
-        }
-        else
-        {
-            audioMixer.SetFloat("musicVolume", volume);
-        }
-
-        SaveSettings.Instance.CurrentSettings.musicVolume = volume;
+        SaveSettingsController.Instance.SetMusicVolume(volume);
     }
 
     public void SetSfxVolume(float volume)
     {
-        if (volume == -50)
-        {
-            audioMixer.SetFloat("sfxVolume", -80);
-        }
-        else
-        {
-            audioMixer.SetFloat("sfxVolume", volume);
-        }
-
-        SaveSettings.Instance.CurrentSettings.sfxVolume = volume;
+        SaveSettingsController.Instance.SetSfxVolume(volume);
     }
 }
