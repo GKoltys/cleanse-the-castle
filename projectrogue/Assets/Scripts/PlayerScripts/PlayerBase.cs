@@ -61,7 +61,7 @@ public class PlayerBase : MonoBehaviour
         playerHud.SetHudOnLoad(maxHealth, health, coinCount, keyCount, floorCount);
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, EnemyBase attacker)
     {
         if (Time.time < nextDamageTime) return;
         SoundEffectManager.Play(SoundGroupName.PLAYERHURT);
@@ -69,6 +69,9 @@ public class PlayerBase : MonoBehaviour
         nextDamageTime = Time.time + iFrameSeconds;
         health -= amount;
         playerHud.UpdateHealth(health);
+
+        // deals damage when attacked by enemy
+        GetComponent<PlayerRelics>()?.TriggerThorns(attacker);
 
         Debug.Log("Hurt " + health);
 
