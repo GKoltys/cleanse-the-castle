@@ -155,6 +155,7 @@ Transform:
   - {fileID: 311626225}
   - {fileID: 592319230}
   - {fileID: 100329661}
+  - {fileID: 759535095}
   m_Father: {fileID: 2120538518}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &47469561
@@ -22618,6 +22619,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!4 &759535095 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2595784271319010039, guid: af864e08057edd948a862cb55703948b, type: 3}
+  m_PrefabInstance: {fileID: 6096817438907724140}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &794820889
 GameObject:
   m_ObjectHideFlags: 0
@@ -26525,6 +26531,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a6fc01e6d80fea438f3dbdf8ee5d049, type: 3}
+--- !u!1001 &6096817438907724140
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 2732245}
+    m_Modifications:
+    - target: {fileID: 2595784271319010039, guid: af864e08057edd948a862cb55703948b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595784271319010039, guid: af864e08057edd948a862cb55703948b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595784271319010039, guid: af864e08057edd948a862cb55703948b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595784271319010039, guid: af864e08057edd948a862cb55703948b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595784271319010039, guid: af864e08057edd948a862cb55703948b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595784271319010039, guid: af864e08057edd948a862cb55703948b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595784271319010039, guid: af864e08057edd948a862cb55703948b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595784271319010039, guid: af864e08057edd948a862cb55703948b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595784271319010039, guid: af864e08057edd948a862cb55703948b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2595784271319010039, guid: af864e08057edd948a862cb55703948b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5571707283497684087, guid: af864e08057edd948a862cb55703948b, type: 3}
+      propertyPath: m_Name
+      value: GlassCannon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: af864e08057edd948a862cb55703948b, type: 3}
 --- !u!1001 &6310080895133460795
 PrefabInstance:
   m_ObjectHideFlags: 0

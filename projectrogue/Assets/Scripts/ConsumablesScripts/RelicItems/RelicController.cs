@@ -13,6 +13,7 @@ public class RelicController : ConsumableController
 
     protected override void OnTriggerEnter2D(Collider2D other)
     {
+        Debug.Log($"Relic hit by: {other.name}, tag: {other.tag}");
         if (!other.CompareTag("PlayerPickUp")) return;
         if (col) col.enabled = false;
 

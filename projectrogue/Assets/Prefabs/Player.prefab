@@ -237,8 +237,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -889, y: 142}
-  m_SizeDelta: {x: 109.066, y: 296.8658}
+  m_AnchoredPosition: {x: -889, y: -45}
+  m_SizeDelta: {x: 109.066, y: 375.2325}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &7268587886159263559
 MonoBehaviour:
@@ -256,9 +256,9 @@ MonoBehaviour:
     m_Left: 0
     m_Right: 0
     m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 4
-  m_Spacing: 30
+    m_Bottom: 100
+  m_ChildAlignment: 1
+  m_Spacing: 0
   m_ChildForceExpandWidth: 1
   m_ChildForceExpandHeight: 1
   m_ChildControlWidth: 0
@@ -2360,6 +2360,7 @@ MonoBehaviour:
   keyCount: 0
   weapon: {fileID: 0}
   damageMultiplier: 0
+  damageTakenMultiplier: 1
   weaponDatabase: {fileID: 11400000, guid: b1897e7230ef1864db2bb0e76c39df3f, type: 2}
 --- !u!114 &3921989527922571780
 MonoBehaviour:

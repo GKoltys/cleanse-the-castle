@@ -55,4 +55,10 @@ public class PlayerApplyEffect : MonoBehaviour
         player.SetDamageMultiplier(player.GetDamageMultiplier +  damageMultiplierChange);
         SoundEffectManager.Play(SoundGroupName.BUFF);
     }
+
+    public void ChangePlayerDamageTakenMultiplier(float change)
+    {
+        player.SetDamageTakenMultiplier(player.GetDamageTakenMultiplier + change);
+        Debug.Log("Damage taken multiplier changed to " + player.GetDamageTakenMultiplier);
+    }
 }

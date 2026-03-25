@@ -13,6 +13,7 @@ public class PlayerBase : MonoBehaviour
     [SerializeField] private int keyCount;
     [SerializeField] private MeleeWeapon weapon;
     [SerializeField] private float damageMultiplier;
+    [SerializeField] private float damageTakenMultiplier = 1f;
 
     [SerializeField] private WeaponDatabase weaponDatabase;
 
@@ -67,7 +68,10 @@ public class PlayerBase : MonoBehaviour
         SoundEffectManager.Play(SoundGroupName.PLAYERHURT);
 
         nextDamageTime = Time.time + iFrameSeconds;
-        health -= amount;
+        float finalDamage = amount * damageTakenMultiplier;
+        Debug.Log($"Incoming damage: {amount}, multiplier: {damageTakenMultiplier}, final: {finalDamage}");
+
+        health -= finalDamage;
         playerHud.UpdateHealth(health);
 
         // deals damage when attacked by enemy
@@ -166,6 +170,11 @@ public class PlayerBase : MonoBehaviour
         combat.SetDamageMultiplier(damageMultiplier);
     }
 
+    public void SetDamageTakenMultiplier(float multiplier)
+    {
+        damageTakenMultiplier = multiplier;
+    }
+
     // Getter
     public bool GetIsDead => isDead;
     public int GetFloorCount => floorCount;
@@ -178,4 +187,5 @@ public class PlayerBase : MonoBehaviour
     public MeleeWeapon GetWeapon => weapon;
     public int GetWeaponId => weapon.WeaponId;
     public float GetDamageMultiplier => damageMultiplier;
+    public float GetDamageTakenMultiplier => damageTakenMultiplier;
 }
