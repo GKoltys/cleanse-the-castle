@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1440065465992873517}
   - component: {fileID: 2957840630959700658}
   - component: {fileID: 7155014664636305849}
+  - component: {fileID: 6104629407227443993}
   m_Layer: 12
   m_Name: SmallHealPotion
   m_TagString: Untagged
@@ -175,3 +176,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SmallHealController
   itemData: {fileID: 11400000, guid: 65bcc05f35757af47bcb9cbb10715eba, type: 2}
+--- !u!114 &6104629407227443993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 813777909600454607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79dd2dd3a54b3994399570956749f2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityVisibility

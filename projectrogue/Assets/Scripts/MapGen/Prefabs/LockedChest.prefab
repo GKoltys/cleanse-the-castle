@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 318618382632848295}
   - component: {fileID: 3280721877354426766}
   - component: {fileID: 2007023166645735642}
+  - component: {fileID: 3963249477666720071}
   m_Layer: 14
   m_Name: LockedChest
   m_TagString: Untagged
@@ -265,6 +266,18 @@ MonoBehaviour:
   noKeyIcon: {fileID: 4261209647788386073}
   lastInteractor: {fileID: 0}
   chestLootTable: {fileID: 11400000, guid: 0a18439e2ebf41a46b3cb246366ce7a1, type: 2}
+--- !u!114 &3963249477666720071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2498405988043988622}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79dd2dd3a54b3994399570956749f2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityVisibility
 --- !u!1 &4261209647788386073
 GameObject:
   m_ObjectHideFlags: 0
