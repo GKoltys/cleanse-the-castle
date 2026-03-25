@@ -66,6 +66,19 @@ public class SaveController : MonoBehaviour
         shouldLoadOnNextScene = false;
         Debug.Log(scene.name);
 
+        if (scene.name == "MainMenu") return;
+        if (scene.name == "OpeningScene")
+        {
+            WipeSaveFile();
+            return;
+        }
+        if (newRun)
+        {
+            newRun = false;
+            WipeSaveFile();
+        }
+
+        Debug.Log("Player should be instantiated");
         // Get new references to Player
         player = GameObject.FindGameObjectWithTag("Player");
         playerBase = player.GetComponent<PlayerBase>();
@@ -73,11 +86,6 @@ public class SaveController : MonoBehaviour
 
         // Keep this commented until final build
         //if (!shouldLoadOnNextScene) return;
-        if (scene.name == "OpeningScene" || newRun)
-        {
-            newRun = false;
-            WipeSaveFile();
-        }
 
         LoadGame();
     }

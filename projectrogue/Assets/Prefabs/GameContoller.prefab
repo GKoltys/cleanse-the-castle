@@ -45,9 +45,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd23368ce3daee47b0550c6d1d700b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveController
-  player: {fileID: 8254896775790499621, guid: a70267d1ecede5140924a362554a3282, type: 3}
-  playerStats: {fileID: 3921989527922571780, guid: a70267d1ecede5140924a362554a3282, type: 3}
-  playerBase: {fileID: 2957798997873762978, guid: a70267d1ecede5140924a362554a3282, type: 3}
 --- !u!114 &2894927728550960611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -60,3 +57,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d460109bde1002748a0fc18f2e45d50a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveSettings
+  audioMixer: {fileID: 24100000, guid: 36faf0167d2e72e4bbcb741152c80da0, type: 2}

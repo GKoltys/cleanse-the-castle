@@ -639,11 +639,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca6355f6011f1fd40ba2cdb97796aaa8, type: 3}
---- !u!1 &195457061 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8254896775790499621, guid: a70267d1ecede5140924a362554a3282, type: 3}
-  m_PrefabInstance: {fileID: 1763845187}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &251097833 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5971840601295690927, guid: ca6355f6011f1fd40ba2cdb97796aaa8, type: 3}
@@ -25045,23 +25040,12 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2957798997873762978, guid: a70267d1ecede5140924a362554a3282, type: 3}
   m_PrefabInstance: {fileID: 1763845187}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195457061}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 206608052e42cc14993730e43a9d0848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
---- !u!114 &1505855760 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3921989527922571780, guid: a70267d1ecede5140924a362554a3282, type: 3}
-  m_PrefabInstance: {fileID: 1763845187}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195457061}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3697786676f634145b3db4db67e5f73d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerStats
 --- !u!4 &1517914102 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7896392686115848554, guid: 9a6fc01e6d80fea438f3dbdf8ee5d049, type: 3}
@@ -26597,18 +26581,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameContoller
       objectReference: {fileID: 0}
-    - target: {fileID: 8211832730696593397, guid: 25e844b3b58dbdd4a976dca2d5a89a29, type: 3}
-      propertyPath: player
-      value: 
-      objectReference: {fileID: 195457061}
-    - target: {fileID: 8211832730696593397, guid: 25e844b3b58dbdd4a976dca2d5a89a29, type: 3}
-      propertyPath: playerBase
-      value: 
-      objectReference: {fileID: 1505855755}
-    - target: {fileID: 8211832730696593397, guid: 25e844b3b58dbdd4a976dca2d5a89a29, type: 3}
-      propertyPath: playerStats
-      value: 
-      objectReference: {fileID: 1505855760}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

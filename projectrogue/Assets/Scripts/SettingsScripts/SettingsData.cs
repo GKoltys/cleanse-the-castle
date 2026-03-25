@@ -1,7 +1,4 @@
-﻿using System;
-using UnityEngine;
-
-[System.Serializable]
+﻿[System.Serializable]
 public class SettingsData
 {
     public int displayModeIndex = 0;
