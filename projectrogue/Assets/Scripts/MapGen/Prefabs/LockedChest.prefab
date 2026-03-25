@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 318618382632848295}
   - component: {fileID: 3280721877354426766}
   - component: {fileID: 2007023166645735642}
-  m_Layer: 11
+  m_Layer: 14
   m_Name: LockedChest
   m_TagString: Untagged
   m_Icon: {fileID: 0}
