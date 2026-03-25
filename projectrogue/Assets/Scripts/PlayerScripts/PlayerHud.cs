@@ -93,7 +93,7 @@ public class PlayerHud : MonoBehaviour
         }
 
         BuffIconUI newIcon = Instantiate(buffIconPrefab, buffContainer);
-        newIcon.Setup(itemData.icon, itemData.itemName, itemData.statDescription, currentStat, buffToolTip);
+        newIcon.Setup(itemData.icon, itemData.itemName, itemData.statDescription, currentStat, buffToolTip, false);
 
         buffIconList.Add(newIcon);
     }
@@ -118,10 +118,11 @@ public class PlayerHud : MonoBehaviour
 
         newIcon.Setup(
             itemData.icon,
-            itemData.itemName,
-            itemData.statDescription,
+            itemData.itemShopName,
+            itemData.description,
             currentStat,
-            relicToolTip
+            relicToolTip,
+            true
         );
 
         relicIconList.Add(newIcon);

@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: ThornsRelicItemData
   m_EditorClassIdentifier: Assembly-CSharp::ConsumableItemData
   consumableType: 2
-  itemName: golden_ball
-  itemShopName: Golden Ball
-  icon: {fileID: 273116443144055761, guid: 58657ca60aeab9e44b76c6e9e49db9a0, type: 3}
+  itemName: spiky_rose
+  itemShopName: Spiky Rose
+  icon: {fileID: 8852880837276311669, guid: 58657ca60aeab9e44b76c6e9e49db9a0, type: 3}
   statType: 0
   baseStat: 0
   description: Deals damage to enemy based on Max HP.
