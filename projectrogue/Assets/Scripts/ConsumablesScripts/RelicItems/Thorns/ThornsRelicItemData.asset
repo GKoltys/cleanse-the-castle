@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: ThornsRelicItemData
   m_EditorClassIdentifier: Assembly-CSharp::ConsumableItemData
   consumableType: 2
-  itemName: Golden Ball
+  itemName: golden_ball
   itemShopName: Golden Ball
   icon: {fileID: 273116443144055761, guid: 58657ca60aeab9e44b76c6e9e49db9a0, type: 3}
   statType: 0

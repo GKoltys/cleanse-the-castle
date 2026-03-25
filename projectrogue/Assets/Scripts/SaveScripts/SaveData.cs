@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic;
 
 // https://www.youtube.com/watch?v=rDZztBWGMIs&t=2s
 
@@ -16,6 +17,7 @@ public class SaveData
     public int playerKeyCount;
     public int playerWeaponId;
     public float playerDamageMultiplier;
+    public List<string> playerRelicIds = new();
 
     // In future we would also need to save things like entire generated level information, enemies, player stats, etc...
 }

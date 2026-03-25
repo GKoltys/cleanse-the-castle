@@ -51,6 +51,19 @@ public class PlayerRelics : MonoBehaviour
         return relics;
     }
 
+    public List<string> GetRelicNames()
+    {
+        List<string> names = new();
+
+        foreach (ConsumableItemData relic in relics)
+        {
+            if (relic != null && !string.IsNullOrEmpty(relic.itemName))
+                names.Add(relic.itemName);
+        }
+
+        return names;
+    }
+
     // thorns effect functionality
     public void AddThorns(float percent)
     {
