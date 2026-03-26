@@ -16,6 +16,8 @@ public class PlayerApplyEffect : MonoBehaviour
         float maxHealth = player.GetMaxHealth;
         float health = player.GetHealth + amount;
 
+        SoundEffectManager.Play(SoundGroupName.HEAL);
+
         Debug.Log("Healed " + amount);
 
         if (health > maxHealth)
@@ -30,6 +32,7 @@ public class PlayerApplyEffect : MonoBehaviour
     public void ChangePlayerSpeed(float speedChange)
     {
         player.SetSpeed(player.GetSpeed + speedChange);
+        SoundEffectManager.Play(SoundGroupName.BUFF);
         Debug.Log("Speed changed to " + player.GetSpeed + " by +" +  speedChange);
     }
 
@@ -39,6 +42,7 @@ public class PlayerApplyEffect : MonoBehaviour
 
         player.SetMaxHealth(newMaxHealth);
         Heal(maxHealthChange);
+        SoundEffectManager.Play(SoundGroupName.BUFF);
 
         playerHud.UpdateMaxHealth(newMaxHealth);
         playerHud.UpdateHealth(player.GetHealth);
@@ -49,5 +53,6 @@ public class PlayerApplyEffect : MonoBehaviour
     public void ChangePlayerDamageMultiplier(float damageMultiplierChange)
     {
         player.SetDamageMultiplier(player.GetDamageMultiplier +  damageMultiplierChange);
+        SoundEffectManager.Play(SoundGroupName.BUFF);
     }
 }

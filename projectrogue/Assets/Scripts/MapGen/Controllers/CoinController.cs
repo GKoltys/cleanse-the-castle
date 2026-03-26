@@ -28,6 +28,7 @@ public class CoinController : MonoBehaviour, IMapGenInit
         if (!other.CompareTag("Player")) return;
 
         collected = true;
+        SoundEffectManager.Play(SoundGroupName.COIN);
         if (col) col.enabled = false;
 
         player.CoinCollected(1);
