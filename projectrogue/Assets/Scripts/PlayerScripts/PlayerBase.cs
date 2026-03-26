@@ -13,6 +13,7 @@ public class PlayerBase : MonoBehaviour
     [SerializeField] private int keyCount;
     [SerializeField] private MeleeWeapon weapon;
     [SerializeField] private float damageMultiplier;
+    [SerializeField] private float damageTakenMultiplier = 1f;
 
     [SerializeField] private WeaponDatabase weaponDatabase;
 
@@ -61,14 +62,31 @@ public class PlayerBase : MonoBehaviour
         playerHud.SetHudOnLoad(maxHealth, health, coinCount, keyCount, floorCount);
     }
 
-    public void TakeDamage(float amount)
+    public void TakeDamage(float amount, EnemyBase attacker)
     {
         if (Time.time < nextDamageTime) return;
         SoundEffectManager.Play(SoundGroupName.PLAYERHURT);
 
         nextDamageTime = Time.time + iFrameSeconds;
-        health -= amount;
+        PlayerRelics playerRelics = GetComponent<PlayerRelics>();
+
+        if (playerRelics != null && playerRelics.TryDodge())
+        {
+            Debug.Log("Attack dodged!");
+            nextDamageTime = Time.time + iFrameSeconds;
+
+            animator.SetTrigger("Hurt"); // replace with dodge animation later
+            return;
+        }
+
+        float finalDamage = amount * damageTakenMultiplier;
+        Debug.Log($"Incoming damage: {amount}, multiplier: {damageTakenMultiplier}, final: {finalDamage}");
+
+        health -= finalDamage;
         playerHud.UpdateHealth(health);
+
+        // deals damage when attacked by enemy if player has thorns multiplier
+        playerRelics?.TriggerThorns(attacker);
 
         Debug.Log("Hurt " + health);
 
@@ -78,6 +96,12 @@ public class PlayerBase : MonoBehaviour
 
         if (health <= 0)
         {
+
+            if (playerRelics != null && playerRelics.TryUseRevive())
+            {
+                Debug.Log("Player revived instead of dying.");
+                return;
+            }
             isDead = true;
             Die();
         }
@@ -85,7 +109,15 @@ public class PlayerBase : MonoBehaviour
 
     public void CoinCollected(int value)
     {
-        coinCount += value;
+        PlayerRelics playerRelics = GetComponent<PlayerRelics>();
+
+        int finalValue = value;
+        // for extra gold relic
+        if (playerRelics != null)
+        {
+            finalValue += playerRelics.GetBonusGold();
+        }
+        coinCount += finalValue;
         Debug.Log("Current coins: " +  coinCount);
         playerHud.UpdateCoinCounter(coinCount);
     }
@@ -163,6 +195,11 @@ public class PlayerBase : MonoBehaviour
         combat.SetDamageMultiplier(damageMultiplier);
     }
 
+    public void SetDamageTakenMultiplier(float multiplier)
+    {
+        damageTakenMultiplier = multiplier;
+    }
+
     // Getter
     public bool GetIsDead => isDead;
     public int GetFloorCount => floorCount;
@@ -175,4 +212,5 @@ public class PlayerBase : MonoBehaviour
     public MeleeWeapon GetWeapon => weapon;
     public int GetWeaponId => weapon.WeaponId;
     public float GetDamageMultiplier => damageMultiplier;
+    public float GetDamageTakenMultiplier => damageTakenMultiplier;
 }

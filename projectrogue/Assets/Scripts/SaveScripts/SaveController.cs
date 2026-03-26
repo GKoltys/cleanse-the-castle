@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -23,6 +24,8 @@ public class SaveController : MonoBehaviour
     GameObject player;
     PlayerStats playerStats;
     PlayerBase playerBase;
+    PlayerRelics playerRelics;
+    [SerializeField] private RelicLookup relicLookup;
 
     // https://www.youtube.com/watch?v=VTZ1TQR80Qc
     // Declaring SaveController as a singleton
@@ -83,6 +86,7 @@ public class SaveController : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         playerBase = player.GetComponent<PlayerBase>();
         playerStats = player.GetComponent<PlayerStats>();
+        playerRelics = player.GetComponent<PlayerRelics>();
 
         // Keep this commented until final build
         //if (!shouldLoadOnNextScene) return;
@@ -103,7 +107,8 @@ public class SaveController : MonoBehaviour
             playerCoinCount = playerBase.GetCoinCount,
             playerKeyCount = playerBase.GetKeyCount,
             playerWeaponId = playerBase.GetWeaponId,
-            playerDamageMultiplier = playerBase.GetDamageMultiplier
+            playerDamageMultiplier = playerBase.GetDamageMultiplier,
+            playerRelicIds = playerRelics != null ? playerRelics.GetRelicNames() : new List<string>()
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
@@ -127,6 +132,15 @@ public class SaveController : MonoBehaviour
             playerStats.SetDamageMulitplier(saveData.playerDamageMultiplier);
 
             playerBase.ApplyLoadedStats(playerStats);
+
+            // get each relic information
+            foreach (string relicId in saveData.playerRelicIds)
+            {
+                ConsumableItemData relic = relicLookup.GetRelicByName(relicId);
+
+                if (relic != null)
+                    playerRelics.AddRelic(relic);
+            }
         }
         else
         {

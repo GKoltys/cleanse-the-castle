@@ -10,16 +10,21 @@ public class PlayerHud : MonoBehaviour
     [SerializeField] private KeyCounterUI keyCounterObj;
     [SerializeField] private FloorCounterUI floorCounterObj;
     [SerializeField] private Transform buffContainer;
+    [SerializeField] private Transform relicContainer;
     [SerializeField] private BuffIconUI buffIconPrefab;
     [SerializeField] private BuffToolTipUI buffToolTip;
+    [SerializeField] private BuffToolTipUI relicToolTip;
     private readonly List<BuffIconUI> buffIconList = new();
+    private readonly List<BuffIconUI> relicIconList = new();
 
     [SerializeField] private List<ConsumableItemData> buffList;
+    private PlayerRelics playerRelics;
 
     private void Awake()
     {
         playerStats = GetComponent<PlayerStats>();
         playerBase = GetComponent<PlayerBase>();
+        playerRelics = GetComponent<PlayerRelics>();
     }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -44,6 +49,14 @@ public class PlayerHud : MonoBehaviour
         {
             float current = GetStatValue(buff.statType);
             if (current != buff.baseStat) AddBuffIcon(buff);
+        }
+
+        if (playerRelics != null)
+        {
+            foreach (ConsumableItemData relic in playerRelics.GetRelics())
+            {
+                AddRelicIcon(relic);
+            }
         }
     }
 
@@ -80,9 +93,57 @@ public class PlayerHud : MonoBehaviour
         }
 
         BuffIconUI newIcon = Instantiate(buffIconPrefab, buffContainer);
-        newIcon.Setup(itemData.icon, itemData.itemName, itemData.statDescription, currentStat, buffToolTip);
+        newIcon.Setup(itemData.icon, itemData.itemName, itemData.statDescription, currentStat, buffToolTip, false);
 
         buffIconList.Add(newIcon);
+    }
+
+
+    public void AddRelicIcon(ConsumableItemData itemData)
+    {
+        if (itemData == null) return;
+
+        float currentStat = GetStatValue(itemData.statType);
+        Debug.Log($"AddRelicIcon: adding icon for {itemData.itemName}");
+
+        foreach (BuffIconUI icon in relicIconList)
+        {
+            if (icon.GetName == itemData.itemName)
+            {
+                icon.SetStat(currentStat);
+                return;
+            }
+        }
+
+        BuffIconUI newIcon = Instantiate(buffIconPrefab, relicContainer);
+
+        newIcon.Setup(
+            itemData.icon,
+            itemData.itemShopName,
+            itemData.description,
+            currentStat,
+            relicToolTip,
+            true
+        );
+
+        relicIconList.Add(newIcon);
+    }
+
+    public void RemoveRelicIcon(ConsumableItemData itemData)
+    {
+        if (itemData == null) return;
+
+        for (int i = relicIconList.Count - 1; i >= 0; i--)
+        {
+            if (relicIconList[i] != null && relicIconList[i].GetName == itemData.itemShopName)
+            {
+                Destroy(relicIconList[i].gameObject);
+                relicIconList.RemoveAt(i);
+                return;
+            }
+        }
+
+        Debug.LogWarning("RemoveRelicIcon: could not find icon for " + itemData.itemName);
     }
 
     public void UpdateHealth(float newHealth)

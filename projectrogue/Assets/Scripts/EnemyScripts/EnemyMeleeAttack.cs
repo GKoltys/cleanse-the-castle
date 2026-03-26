@@ -47,6 +47,6 @@ public abstract class EnemyAttack : MonoBehaviour
 
     protected virtual void Attack()
     {
-        playerHealth.TakeDamage(enemy.Damage);
+        playerHealth.TakeDamage(enemy.Damage, enemy);
     }
 }
