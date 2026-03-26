@@ -176,6 +176,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameContoller
       objectReference: {fileID: 0}
+    - target: {fileID: 8211832730696593397, guid: 25e844b3b58dbdd4a976dca2d5a89a29, type: 3}
+      propertyPath: relicLookup
+      value: 
+      objectReference: {fileID: 11400000, guid: ef4ee8229fd95a24e95ed6dfa4895aff, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
