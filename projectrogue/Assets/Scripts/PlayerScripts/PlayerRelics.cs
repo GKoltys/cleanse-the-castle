@@ -14,6 +14,7 @@ public class PlayerRelics : MonoBehaviour
     private float reviveHealthPercent = 0f;
     private float lifeStealPercent = 0f;
     private float dodgeChancePerSpeed = 0f;
+    private int bonusGold = 0;
 
     private void Awake()
     {
@@ -189,6 +190,24 @@ public class PlayerRelics : MonoBehaviour
         Debug.Log($"TryDodge: chance={dodgeChance}, roll={roll}");
 
         return roll < dodgeChance;
+    }
+
+    // extra gold functionality
+    public void AddBonusGold(int amount)
+    {
+        bonusGold += amount;
+        Debug.Log("Bonus coins per pickup increased to " + bonusGold);
+    }
+
+    public void RemoveBonusGold(int amount)
+    {
+        bonusGold -= amount;
+        if (bonusGold < 0) bonusGold = 0;
+    }
+
+    public int GetBonusGold()
+    {
+        return bonusGold;
     }
 
 }

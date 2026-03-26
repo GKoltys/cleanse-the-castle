@@ -109,7 +109,15 @@ public class PlayerBase : MonoBehaviour
 
     public void CoinCollected(int value)
     {
-        coinCount += value;
+        PlayerRelics playerRelics = GetComponent<PlayerRelics>();
+
+        int finalValue = value;
+        // for extra gold relic
+        if (playerRelics != null)
+        {
+            finalValue += playerRelics.GetBonusGold();
+        }
+        coinCount += finalValue;
         Debug.Log("Current coins: " +  coinCount);
         playerHud.UpdateCoinCounter(coinCount);
     }
