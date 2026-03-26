@@ -13,6 +13,7 @@ public class PlayerRelics : MonoBehaviour
     private readonly List<ConsumableItemData> reviveRelics = new();
     private float reviveHealthPercent = 0f;
     private float lifeStealPercent = 0f;
+    private float dodgeChancePerSpeed = 0f;
 
     private void Awake()
     {
@@ -157,6 +158,37 @@ public class PlayerRelics : MonoBehaviour
         playerEffect.Heal(healAmount);
 
         Debug.Log($"Lifesteal healed {healAmount} from {damageDealt} damage dealt");
+    }
+
+    // dodge chance functionality
+    public void AddSpeedDodge(float amountPerSpeed)
+    {
+        dodgeChancePerSpeed += amountPerSpeed;
+        Debug.Log("Dodge chance per speed increased to " + dodgeChancePerSpeed);
+    }
+
+    public void RemoveSpeedDodge(float amountPerSpeed)
+    {
+        dodgeChancePerSpeed -= amountPerSpeed;
+        if (dodgeChancePerSpeed < 0f) dodgeChancePerSpeed = 0f;
+    }
+
+    public float GetDodgeChance()
+    {
+        if (playerBase == null) return 0f;
+
+        float dodgeChance = playerBase.GetSpeed * dodgeChancePerSpeed;
+        return Mathf.Clamp(dodgeChance, 0f, 0.5f);
+    }
+
+    public bool TryDodge()
+    {
+        float dodgeChance = GetDodgeChance();
+        float roll = Random.value;
+
+        Debug.Log($"TryDodge: chance={dodgeChance}, roll={roll}");
+
+        return roll < dodgeChance;
     }
 
 }

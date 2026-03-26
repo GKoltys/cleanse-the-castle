@@ -68,14 +68,25 @@ public class PlayerBase : MonoBehaviour
         SoundEffectManager.Play(SoundGroupName.PLAYERHURT);
 
         nextDamageTime = Time.time + iFrameSeconds;
+        PlayerRelics playerRelics = GetComponent<PlayerRelics>();
+
+        if (playerRelics != null && playerRelics.TryDodge())
+        {
+            Debug.Log("Attack dodged!");
+            nextDamageTime = Time.time + iFrameSeconds;
+
+            animator.SetTrigger("Hurt"); // replace with dodge animation later
+            return;
+        }
+
         float finalDamage = amount * damageTakenMultiplier;
         Debug.Log($"Incoming damage: {amount}, multiplier: {damageTakenMultiplier}, final: {finalDamage}");
 
         health -= finalDamage;
         playerHud.UpdateHealth(health);
 
-        // deals damage when attacked by enemy
-        GetComponent<PlayerRelics>()?.TriggerThorns(attacker);
+        // deals damage when attacked by enemy if player has thorns multiplier
+        playerRelics?.TriggerThorns(attacker);
 
         Debug.Log("Hurt " + health);
 
@@ -85,7 +96,6 @@ public class PlayerBase : MonoBehaviour
 
         if (health <= 0)
         {
-            PlayerRelics playerRelics = GetComponent<PlayerRelics>();
 
             if (playerRelics != null && playerRelics.TryUseRevive())
             {
