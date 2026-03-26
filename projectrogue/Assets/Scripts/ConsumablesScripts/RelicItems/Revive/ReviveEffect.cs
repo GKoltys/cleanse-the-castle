@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 [CreateAssetMenu(fileName = "Revive", menuName = "Items/Effects/Revive")]
-public class ReviveRelicEffect : ConsumableEffect
+public class ReviveEffect : ConsumableEffect
 {
     [SerializeField] private float reviveHealthPercent;
 

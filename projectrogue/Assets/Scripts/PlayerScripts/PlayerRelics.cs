@@ -12,6 +12,7 @@ public class PlayerRelics : MonoBehaviour
     private float thornPercent = 0f;
     private readonly List<ConsumableItemData> reviveRelics = new();
     private float reviveHealthPercent = 0f;
+    private float lifeStealPercent = 0f;
 
     private void Awake()
     {
@@ -29,7 +30,7 @@ public class PlayerRelics : MonoBehaviour
         relics.Add(relicData);
         relicData.effect.Apply(playerEffect);
 
-        if (relicData.effect is ReviveRelicEffect reviveEffect)
+        if (relicData.effect is ReviveEffect reviveEffect)
         {
             AddReviveRelic(relicData, reviveEffect.GetStatChangeValue());
         }
@@ -133,4 +134,29 @@ public class PlayerRelics : MonoBehaviour
 
         return true;
     }
+
+    // lifesteal functionality
+    public void AddLifeSteal(float percent)
+    {
+        lifeStealPercent += percent;
+        Debug.Log("Lifesteal increased to " + lifeStealPercent);
+    }
+
+    public void RemoveLifeSteal(float percent)
+    {
+        lifeStealPercent -= percent;
+        if (lifeStealPercent < 0f) lifeStealPercent = 0f;
+    }
+
+    public void TriggerLifeSteal(float damageDealt)
+    {
+        if (lifeStealPercent <= 0f) return;
+        if (damageDealt <= 0f) return;
+
+        float healAmount = damageDealt * lifeStealPercent;
+        playerEffect.Heal(healAmount);
+
+        Debug.Log($"Lifesteal healed {healAmount} from {damageDealt} damage dealt");
+    }
+
 }

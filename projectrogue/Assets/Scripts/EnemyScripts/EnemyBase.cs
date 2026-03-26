@@ -17,6 +17,7 @@ public abstract class EnemyBase: MonoBehaviour
     protected BoxCollider2D bc;
     protected EnemyCombatUI enemyCombatUI;
     protected EnemyLootDropper enemyLootDropper;
+    protected PlayerRelics playerRelics;
 
     protected virtual void Awake()
     {
@@ -27,12 +28,18 @@ public abstract class EnemyBase: MonoBehaviour
         bc = GetComponent<BoxCollider2D>();
         enemyCombatUI = GetComponentInChildren<EnemyCombatUI>();
         enemyLootDropper = GetComponent<EnemyLootDropper>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        if (player != null)
+        {
+            playerRelics = player.GetComponent<PlayerRelics>();
+        }
     }
 
     public virtual bool TakeDamage(float amount)
     {
         health -= amount;
         Debug.Log(health);
+        playerRelics?.TriggerLifeSteal(amount);
 
         animator.SetTrigger("Hurt");
         enemyCombatUI.UpdateHealthBarOnTakeDamage(amount);
