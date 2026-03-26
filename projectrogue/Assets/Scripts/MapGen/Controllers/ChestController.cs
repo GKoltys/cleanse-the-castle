@@ -58,6 +58,7 @@ public class ChestController : MonoBehaviour, IMapGenInit, IInteractable
     private void OpenChest()
     {
         SetIsOpened(true);
+        //SoundEffectManager.Play(SoundGroupName.CHEST);
         animator.SetTrigger("OpenChest");
     }
 

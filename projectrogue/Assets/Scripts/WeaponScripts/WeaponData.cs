@@ -11,4 +11,5 @@ public class WeaponData : ScriptableObject
     public float knockbackForce = 4f;
     public Vector2 hitBoxSize = new(1f, 0.6f);
     public string attackTrigger = "None";
+    public SoundGroupName soundGroupName;
 }

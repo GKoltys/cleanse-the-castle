@@ -20,3 +20,4 @@ MonoBehaviour:
   knockbackForce: 4
   hitBoxSize: {x: 1, y: 1}
   attackTrigger: Attack
+  soundGroupName: 1

@@ -16,6 +16,7 @@ public class MeleeWeapon : MonoBehaviour
     {
         if (!CanAttack()) return;
         nextAttackTime = Time.time + weaponData.cooldown;
+        SoundEffectManager.Play(weaponData.soundGroupName);
 
         Vector2 center = origin + dir * weaponData.range;
 

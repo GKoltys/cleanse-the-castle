@@ -64,6 +64,7 @@ public class PlayerBase : MonoBehaviour
     public void TakeDamage(float amount)
     {
         if (Time.time < nextDamageTime) return;
+        SoundEffectManager.Play(SoundGroupName.PLAYERHURT);
 
         nextDamageTime = Time.time + iFrameSeconds;
         health -= amount;
