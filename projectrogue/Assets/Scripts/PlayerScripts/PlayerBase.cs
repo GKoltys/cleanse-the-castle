@@ -85,6 +85,13 @@ public class PlayerBase : MonoBehaviour
 
         if (health <= 0)
         {
+            PlayerRelics playerRelics = GetComponent<PlayerRelics>();
+
+            if (playerRelics != null && playerRelics.TryUseRevive())
+            {
+                Debug.Log("Player revived instead of dying.");
+                return;
+            }
             isDead = true;
             Die();
         }

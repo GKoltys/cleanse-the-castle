@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b38800f98f962cb498705be468cf4a78, type: 3}
+  m_Name: ReviveRelicItemData
+  m_EditorClassIdentifier: Assembly-CSharp::ConsumableItemData
+  consumableType: 2
+  itemName: last_blessing
+  itemShopName: Last Blessing
+  icon: {fileID: 3630184208200975988, guid: 58657ca60aeab9e44b76c6e9e49db9a0, type: 3}
+  statType: 0
+  baseStat: 0
+  description: Revives player with 50% HP.
+  statDescription: 
+  effect: {fileID: 11400000, guid: 0bc14416a54ddc7429ef90bf1a9917a8, type: 2}
+  buyPrice: 0
+  itemPrefab: {fileID: 0}

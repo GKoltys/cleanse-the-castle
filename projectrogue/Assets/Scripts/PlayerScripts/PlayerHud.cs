@@ -104,6 +104,7 @@ public class PlayerHud : MonoBehaviour
         if (itemData == null) return;
 
         float currentStat = GetStatValue(itemData.statType);
+        Debug.Log($"AddRelicIcon: adding icon for {itemData.itemName}");
 
         foreach (BuffIconUI icon in relicIconList)
         {
@@ -126,6 +127,23 @@ public class PlayerHud : MonoBehaviour
         );
 
         relicIconList.Add(newIcon);
+    }
+
+    public void RemoveRelicIcon(ConsumableItemData itemData)
+    {
+        if (itemData == null) return;
+
+        for (int i = relicIconList.Count - 1; i >= 0; i--)
+        {
+            if (relicIconList[i] != null && relicIconList[i].GetName == itemData.itemShopName)
+            {
+                Destroy(relicIconList[i].gameObject);
+                relicIconList.RemoveAt(i);
+                return;
+            }
+        }
+
+        Debug.LogWarning("RemoveRelicIcon: could not find icon for " + itemData.itemName);
     }
 
     public void UpdateHealth(float newHealth)

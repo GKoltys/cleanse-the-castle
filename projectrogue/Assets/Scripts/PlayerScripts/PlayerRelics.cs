@@ -10,6 +10,8 @@ public class PlayerRelics : MonoBehaviour
     private readonly List<ConsumableItemData> relics = new();
 
     private float thornPercent = 0f;
+    private readonly List<ConsumableItemData> reviveRelics = new();
+    private float reviveHealthPercent = 0f;
 
     private void Awake()
     {
@@ -26,6 +28,12 @@ public class PlayerRelics : MonoBehaviour
         // add relic to list and apply effect
         relics.Add(relicData);
         relicData.effect.Apply(playerEffect);
+
+        if (relicData.effect is ReviveRelicEffect reviveEffect)
+        {
+            AddReviveRelic(relicData, reviveEffect.GetStatChangeValue());
+        }
+
         playerHud?.AddRelicIcon(relicData);
 
         Debug.Log("Relic collected: " + relicData.itemName);
@@ -39,6 +47,7 @@ public class PlayerRelics : MonoBehaviour
         // remove effect of relic and remove from list
         relicData.effect.Remove(playerEffect);
         relics.Remove(relicData);
+        playerHud?.RemoveRelicIcon(relicData);
     }
 
     public bool HasRelic(ConsumableItemData relicData)
@@ -86,5 +95,42 @@ public class PlayerRelics : MonoBehaviour
         attacker.TakeDamage(reflectedDamage);
 
         Debug.Log($"Thorns dealt {reflectedDamage} damage to {attacker.name}");
+    }
+
+    // revive functionality
+    public void AddReviveRelic(ConsumableItemData relicData, float healthPercent)
+    {
+        reviveRelics.Add(relicData);
+        reviveHealthPercent = healthPercent;
+
+    }
+
+    public bool TryUseRevive()
+    {
+
+        if (reviveRelics.Count == 0)
+            return false;
+
+        ConsumableItemData relicUsed = reviveRelics[0];
+
+        if (relicUsed == null)
+        {
+            return false;
+        }
+
+        reviveRelics.RemoveAt(0);
+
+        float reviveHealth = playerBase.GetMaxHealth * reviveHealthPercent;
+        playerBase.SetHealth(reviveHealth);
+        playerHud.UpdateHealth(reviveHealth);
+
+        Debug.Log($"Revive triggered by relic: {relicUsed.itemName}");
+        Debug.Log($"Reviving to {reviveHealth} HP");
+
+        RemoveRelic(relicUsed);
+
+        Debug.Log($"After RemoveRelic, still has relic? {relics.Contains(relicUsed)}");
+
+        return true;
     }
 }
