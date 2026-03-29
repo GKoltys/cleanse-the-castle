@@ -28,7 +28,7 @@ public class EnemyMovement : MonoBehaviour
     private bool isPatrolling;
 
     [Header("Wall Detection")]
-    [SerializeField] private float wallCheckDistance = 0.3f;
+    [SerializeField] private float wallCheckDistance = 0.6f;
     [SerializeField] private LayerMask wallMask;
     [SerializeField] private LayerMask interactableMask;
 
