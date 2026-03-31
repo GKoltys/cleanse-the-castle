@@ -22,11 +22,25 @@ public class MapGenerator : MonoBehaviour
 
     [SerializeField] private Tilemap floorTilemap;
     [SerializeField] private Tilemap wallTilemap;
+    [SerializeField] private Tilemap decorTilemap;
+    [SerializeField] private Tilemap colliderDecorTilemap;
 
     [SerializeField] private TileBase floorTile;
+    [SerializeField] private TileBase floorTileFire;
     [SerializeField] private TileBase wallTile;
+    [SerializeField] private TileBase wallTileFire;
+    [SerializeField] private TileBase colliderDecorTile;
+    [SerializeField] private TileBase colliderDecorTileFire;
+    [SerializeField] private TileBase[] decorTiles;
+    [SerializeField] private TileBase[] decorTilesFire;
+    [SerializeField] private TileBase[] decorWallTiles;
+    [SerializeField] private GameObject[] decorPrefabs;
+
+    [SerializeField] private float decorChance;
+    [SerializeField] private float colliderDecorChance;
 
     [SerializeField] private Transform entitiesRoot;
+    [SerializeField] private Transform decorRoot;
     public Transform EntitiesRoot => entitiesRoot;
 
     [SerializeField] private SpawnTable[] spawnEntries;
@@ -140,6 +154,33 @@ public class MapGenerator : MonoBehaviour
         // for clearing previous generated map's tiles
         floorTilemap.ClearAllTiles();
         wallTilemap.ClearAllTiles();
+        decorTilemap.ClearAllTiles();
+        colliderDecorTilemap.ClearAllTiles();
+        ClearDecorRoot();
+
+        // get reference to player floor count
+        float floors = playerBase.GetFloorCount;
+
+        TileBase currentFloorTile;
+        TileBase currentWallTile;
+        TileBase[] currentDecorTile;
+        TileBase currentColliderDecorTile;
+
+        // change floor/wall tiles depending on floor count
+        if (floors < 15)
+        {
+            currentFloorTile = floorTile;
+            currentWallTile = wallTile;
+            currentDecorTile = decorTiles;
+            currentColliderDecorTile = colliderDecorTile;
+        }
+        else
+        {
+            currentFloorTile = floorTileFire;
+            currentWallTile = wallTileFire;
+            currentDecorTile = decorTilesFire;
+            currentColliderDecorTile = colliderDecorTileFire;
+        }
 
         // for each tile sets to which TileType it is
         for (int x = 0; x < map.width; x++)
@@ -150,10 +191,33 @@ public class MapGenerator : MonoBehaviour
                 switch (map.tiles[x, y])
                 {
                     case TileType.Floor:
-                        floorTilemap.SetTile(pos, floorTile);
-                        break;
+                        floorTilemap.SetTile(pos, currentFloorTile);
+                        // randomly place decor on some floor tiles
+                        if (currentDecorTile.Length > 0 && Random.value < decorChance)
+                        {
+                            TileBase randomDecor = currentDecorTile[Random.Range(0, currentDecorTile.Length)];
+                            decorTilemap.SetTile(pos, randomDecor);
+                        }
+                        if (Random.value < colliderDecorChance)
+                        {
+                            colliderDecorTilemap.SetTile(pos, currentColliderDecorTile);
+                        }
+                            break;
                     case TileType.Wall:
-                        wallTilemap.SetTile(pos, wallTile);
+                        wallTilemap.SetTile(pos, currentWallTile);
+                        // random place decor on some wall tiles
+                        if (IsWallFace(map, x, y) && decorWallTiles.Length > 0 && Random.value < decorChance)
+                        { 
+                            TileBase decor = decorWallTiles[Random.Range(0, decorWallTiles.Length)];
+                            decorTilemap.SetTile(pos, decor);
+                        }
+                        // random place prefab on wall tiles
+                        if (IsWallFace(map, x, y) && decorPrefabs.Length > 0 && Random.value < decorChance)
+                        {
+                            Debug.Log("SPAWNING PREFAB");
+                            SpawnDecorPrefab(pos);
+
+                        }
                         break;
                 }
             }
@@ -266,7 +330,17 @@ public class MapGenerator : MonoBehaviour
         {
             for (int y = 0; y < map.height; y++)
             {
-                if (map.tiles[x, y] == TileType.Floor)
+                if (map.tiles[x, y] != TileType.Floor)
+                    continue;
+
+                var cellPos = new Vector3Int(x, y, 0);
+                // don't spawn prefabs on decor tiles
+                if (!decorTilemap.HasTile(cellPos))
+                {
+                    floors.Add(new Vector2Int(x, y));
+                }
+
+                if(!colliderDecorTilemap.HasTile(cellPos))
                 {
                     floors.Add(new Vector2Int(x, y));
                 }
@@ -321,6 +395,44 @@ public class MapGenerator : MonoBehaviour
         {
             Destroy(entitiesRoot.GetChild(i).gameObject);
         }
+    }
+
+    // check if wall has floor below to place decor
+    private bool IsWallFace(MapData map, int x, int y)
+    {
+        if (map.tiles[x, y] != TileType.Wall)
+            return false;
+
+        // visible wall face if floor is below
+        if (y > 0 && map.tiles[x, y - 1] == TileType.Floor)
+            return true;
+
+        return false;
+    }
+
+    private void ClearDecorRoot()
+    {
+        if (decorRoot == null) return;
+
+        for (int i = decorRoot.childCount - 1; i >= 0; i--)
+        {
+            Destroy(decorRoot.GetChild(i).gameObject);
+        }
+    }
+
+    private void SpawnDecorPrefab(Vector3Int pos)
+    {
+        if (decorPrefabs.Length == 0)
+            return;
+
+        GameObject prefab =
+            decorPrefabs[Random.Range(0, decorPrefabs.Length)];
+
+        Vector3 worldPos =
+            wallTilemap.GetCellCenterWorld(pos) +
+            new Vector3(0f, -0.2f, 0f);
+
+        Instantiate(prefab, worldPos, Quaternion.identity, decorRoot);
     }
 
 }
