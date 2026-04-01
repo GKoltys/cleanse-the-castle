@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Attack1UpBlueKnight
+  m_Name: DeathUpBlueKnight
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,21 +21,21 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: 7851110130440486348, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
-    - time: 0.33333334
-      value: {fileID: -7271740902550050814, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
-    - time: 0.5833333
-      value: {fileID: -7962833314449909054, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
-    - time: 0.65
-      value: {fileID: 4601861724362612065, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
-    - time: 0.71666664
-      value: {fileID: -3334691389356523084, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
-    - time: 0.78333336
-      value: {fileID: -5193200537948202058, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
-    - time: 0.85
-      value: {fileID: -2130208877312670365, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
-    - time: 1
-      value: {fileID: 2482718059758216740, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
+      value: {fileID: -71310667555405780, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
+    - time: 0.18333334
+      value: {fileID: 7738997512518337612, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
+    - time: 0.31666666
+      value: {fileID: -3462459135659745953, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
+    - time: 0.5
+      value: {fileID: 4126808192446033824, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
+    - time: 0.9166667
+      value: {fileID: -6665011670512097081, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
+    - time: 1.1333333
+      value: {fileID: -4295293337803786234, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
+    - time: 1.2833333
+      value: {fileID: -6764328624139074364, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
+    - time: 1.5
+      value: {fileID: -1765506747124579195, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -58,20 +58,20 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: 7851110130440486348, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
-    - {fileID: -7271740902550050814, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
-    - {fileID: -7962833314449909054, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
-    - {fileID: 4601861724362612065, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
-    - {fileID: -3334691389356523084, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
-    - {fileID: -5193200537948202058, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
-    - {fileID: -2130208877312670365, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
-    - {fileID: 2482718059758216740, guid: 6e45c9fbf61acd64981379643e4dd687, type: 3}
+    - {fileID: -71310667555405780, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
+    - {fileID: 7738997512518337612, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
+    - {fileID: -3462459135659745953, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
+    - {fileID: 4126808192446033824, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
+    - {fileID: -6665011670512097081, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
+    - {fileID: -4295293337803786234, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
+    - {fileID: -6764328624139074364, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
+    - {fileID: -1765506747124579195, guid: 155d3d5d000990045bfdc2a49d289726, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 1.0166667
+    m_StopTime: 1.75
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -91,8 +91,8 @@ AnimationClip:
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events:
-  - time: 0.65
-    functionName: SwipeAttack
+  - time: 1.75
+    functionName: Despawn
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
