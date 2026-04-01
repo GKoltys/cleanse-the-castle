@@ -205,18 +205,22 @@ public class MapGenerator : MonoBehaviour
                             break;
                     case TileType.Wall:
                         wallTilemap.SetTile(pos, currentWallTile);
-                        // random place decor on some wall tiles
-                        if (IsWallFace(map, x, y) && decorWallTiles.Length > 0 && Random.value < decorChance)
-                        { 
-                            TileBase decor = decorWallTiles[Random.Range(0, decorWallTiles.Length)];
-                            decorTilemap.SetTile(pos, decor);
-                        }
-                        // random place prefab on wall tiles
-                        if (IsWallFace(map, x, y) && decorPrefabs.Length > 0 && Random.value < decorChance)
+                        // random place decor or prefab on some wall tiles
+                        if (IsWallFace(map, x, y))
                         {
-                            Debug.Log("SPAWNING PREFAB");
-                            SpawnDecorPrefab(pos);
+                            float roll = Random.value;
 
+                            if (roll < decorChance && decorWallTiles.Length > 0)
+                            {
+                                TileBase decor =
+                                    decorWallTiles[Random.Range(0, decorWallTiles.Length)];
+
+                                decorTilemap.SetTile(pos, decor);
+                            }
+                            else if (roll < decorChance * 2f && decorPrefabs.Length > 0)
+                            {
+                                SpawnDecorPrefab(pos);
+                            }
                         }
                         break;
                 }
@@ -335,15 +339,13 @@ public class MapGenerator : MonoBehaviour
 
                 var cellPos = new Vector3Int(x, y, 0);
                 // don't spawn prefabs on decor tiles
-                if (!decorTilemap.HasTile(cellPos))
-                {
-                    floors.Add(new Vector2Int(x, y));
-                }
+                if (decorTilemap.HasTile(cellPos))
+                    continue;
 
-                if(!colliderDecorTilemap.HasTile(cellPos))
-                {
-                    floors.Add(new Vector2Int(x, y));
-                }
+                if (colliderDecorTilemap.HasTile(cellPos))
+                    continue;
+
+                floors.Add(new Vector2Int(x, y));
             }
 
         }    
