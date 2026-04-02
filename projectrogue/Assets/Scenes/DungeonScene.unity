@@ -736,6 +736,182 @@ Transform:
   - {fileID: 1681050575}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &600723278
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 600723282}
+  - component: {fileID: 600723281}
+  - component: {fileID: 600723280}
+  - component: {fileID: 600723279}
+  m_Layer: 0
+  m_Name: SoundEffectManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &600723279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600723278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d3739ba19895ac347b6da07c56c4918f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEffectLibrary
+  soundEffectGroups:
+  - name: 1
+    audioClips:
+    - {fileID: 8300000, guid: 2872167c489283f41998be4736004936, type: 3}
+    - {fileID: 8300000, guid: b2859704d84de7a42a7b35922c711932, type: 3}
+    - {fileID: 8300000, guid: 656d8394ab3267d4d83eafd395ae853b, type: 3}
+    - {fileID: 8300000, guid: 03e6e25b280956d40a59986a502b2345, type: 3}
+    - {fileID: 8300000, guid: fe109f1da35c78246b56d0ec5d30fb5f, type: 3}
+  - name: 2
+    audioClips:
+    - {fileID: 8300000, guid: a6257dca19c2e324e9de126948c89af4, type: 3}
+  - name: 0
+    audioClips:
+    - {fileID: 8300000, guid: b02f843935518294cb3b686d7d48020f, type: 3}
+    - {fileID: 8300000, guid: 7ac5d6acd70921b4aa2a11b4ec843dfa, type: 3}
+  - name: 3
+    audioClips:
+    - {fileID: 8300000, guid: 329fb0359c2950d4d88f1a19431b65b6, type: 3}
+  - name: 4
+    audioClips:
+    - {fileID: 8300000, guid: aef4b4aa0ccb5c941af090b564dd2ccf, type: 3}
+--- !u!114 &600723280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600723278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b340ac0a0de7b541bb588b3dba8f4cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundEffectManager
+--- !u!82 &600723281
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600723278}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -2049129733480788453, guid: 36faf0167d2e72e4bbcb741152c80da0, type: 2}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &600723282
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600723278}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 25.58929, y: 21.78012, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &887223657 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 1912431225084951150, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
@@ -1924,12 +2100,8 @@ MonoBehaviour:
   colliderDecorTileFire: {fileID: 11400000, guid: 43505e85e3f113d41b13ef9db5aa3e3a, type: 2}
   decorTiles:
   - {fileID: 11400000, guid: c8881de24143a894dbb5c37951f43b59, type: 2}
-  - {fileID: 11400000, guid: ee7d5955478fe1248b94a9d1c3eb9f1f, type: 2}
   - {fileID: 11400000, guid: 8f2b2771b20320e4ca252ca529861f38, type: 2}
   - {fileID: 11400000, guid: d07856cd1d6663b4fb59177e392fd1c6, type: 2}
-  - {fileID: 11400000, guid: 8f10641bf8c12e142ba2bf995c82ef52, type: 2}
-  - {fileID: 11400000, guid: b12c9f1b2ff11714fb610a7cce46921b, type: 2}
-  - {fileID: 11400000, guid: 22197f4ef5f32874bad2318b7eea8493, type: 2}
   decorTilesFire:
   - {fileID: 11400000, guid: b22ecc702e3f17242a1b8652cbd62e21, type: 2}
   - {fileID: 11400000, guid: 98a1cb4053bf9dd4da7b3ff56d2230e5, type: 2}
@@ -3825,3 +3997,4 @@ SceneRoots:
   - {fileID: 242147753}
   - {fileID: 149818127}
   - {fileID: 1182259967}
+  - {fileID: 600723282}
