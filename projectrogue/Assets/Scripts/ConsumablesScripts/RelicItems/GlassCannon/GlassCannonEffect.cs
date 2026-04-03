@@ -8,13 +8,13 @@ public class GlassCannonRelicEffect : ConsumableEffect
 
     public override void Apply(PlayerApplyEffect player)
     {
-        player.ChangePlayerDamageMultiplier(damageBonus);
+        player.ChangePlayerDamageMultiplier(damageBonus, false);
         player.ChangePlayerDamageTakenMultiplier(extraDamageTaken);
     }
 
     public override void Remove(PlayerApplyEffect player)
     {
-        player.ChangePlayerDamageMultiplier(-damageBonus);
+        player.ChangePlayerDamageMultiplier(-damageBonus, false);
         player.ChangePlayerDamageTakenMultiplier(-extraDamageTaken);
     }
 

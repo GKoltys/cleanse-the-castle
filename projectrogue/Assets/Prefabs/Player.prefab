@@ -1051,7 +1051,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &614654621244162189
 Transform:
   m_ObjectHideFlags: 0
@@ -2310,8 +2310,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PickupController
   animator: {fileID: 0}
+  movement: {fileID: 1219722819142506925}
+  playerInput: {fileID: 7662369420789867201}
   heldItemRenderer: {fileID: 67522101189739716}
   pickupTriggerName: Pickup
+  pickupPanel: {fileID: 0}
+  rb: {fileID: 7397555308839779280}
 --- !u!1 &8705689538394337160
 GameObject:
   m_ObjectHideFlags: 0
