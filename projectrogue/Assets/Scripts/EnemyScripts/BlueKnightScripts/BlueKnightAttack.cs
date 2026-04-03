@@ -1,16 +1,17 @@
-using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class BlueKnightAttack : EnemyAttack
 {
-    [SerializeField] private Transform attackPoint;
-    [SerializeField] private float attackRadius = 1f;
+    [SerializeField] private float attackRadius = 0.8f;
+    [SerializeField] private float attackDistance = 0.8f;
     [SerializeField] private LayerMask playerLayer;
 
     private Rigidbody2D rb;
+    private Vector2 attackDirection;
     private Vector2 dashDirection;
     [SerializeField] private float dashForce = 10f;
     private bool isDashing;
+    private bool isAttacking;
 
     protected override void Awake()
     {
@@ -25,59 +26,104 @@ public class BlueKnightAttack : EnemyAttack
         float dist = Vector2.Distance(transform.position, playerTransform.position);
         bool inRange = (dist <= attackRange) && !(playerHealth.GetIsDead);
 
-        if (inRange && Time.time >= nextAttackTime && enemy.IsAlive)
+        if (inRange && Time.time >= nextAttackTime && enemy.IsAlive && !isAttacking)
         {
+            isAttacking = true;
+
             nextAttackTime = Time.time + attackCooldown;
-            RollAttack();
+
+            if (dist <= attackRadius + attackDistance)
+            {
+                RollAttack();
+                Debug.Log("Rolling attack");
+                return;
+            }
+
+            Debug.Log("Dashing");
+            dashDirection = (playerTransform.position - transform.position).normalized;
+            animator.SetTrigger("AttackDash");
+        }
+
+        // Handles dash attack
+        if (isDashing)
+        {
+            Vector2 attackPoint = (Vector2)transform.position + dashDirection * attackDistance;
+
+            //Collider2D hit = Physics2D.OverlapCircle(attackPoint, attackRadius, playerLayer);
+            Collider2D hit = Physics2D.OverlapBox(attackPoint, new Vector2(1, 1), 0f, playerLayer);
+
+            if (hit != null)
+            {
+                playerHealth.TakeDamage(50, enemy);
+            }
         }
     }
 
     private void RollAttack()
     {
-        int attackChoice = UnityEngine.Random.Range(1, 3);
+        int attackChoice = UnityEngine.Random.Range(1, 4);
 
         if (attackChoice == 1)
         {
+            dashDirection = (playerTransform.position - transform.position).normalized;
+            animator.SetTrigger("AttackDash");
+            
+        }
+        else
+        {
+            attackDirection = (playerTransform.position - transform.position).normalized;
             animator.SetTrigger("AttackSwipe");
         }
-        else if (attackChoice == 2)
-        {
-            animator.SetTrigger("AttackDash");
-        }
+    }
+
+    // Called by animation event
+    private void StopUpdatingMovement()
+    {
+        enemy.movement.SetCanMove(false);
     }
 
     // Called by animation event
     private void SwipeAttack()
     {
-        Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius, playerLayer);
+        Vector2 attackPoint = (Vector2)transform.position + attackDirection * attackDistance;
+
+        Collider2D hit = Physics2D.OverlapBox(attackPoint, new Vector2(1, 1), 0f, playerLayer);
 
         if (hit != null)
         {
-            playerHealth.TakeDamage(enemy.Damage, enemy);
+            playerHealth.TakeDamage(30, enemy);
         }
+    }
+
+    private void SwipeAttackEnd()
+    {
+        isAttacking = false;
+        animator.SetTrigger("EndAttack");
+        enemy.movement.SetCanMove(true);
+        nextAttackTime = Time.time + attackCooldown;
     }
 
     // Called by animation event
     private void DashAttackStart()
     {
         isDashing = true;
-        dashDirection = (playerTransform.position - transform.position).normalized;
-
         rb.linearVelocity = dashDirection * dashForce;
-
-        while (isDashing)
-        {
-            Collider2D hit = Physics2D.OverlapCircle(attackPoint.position, attackRadius, playerLayer);
-
-            if (hit != null)
-            {
-                playerHealth.TakeDamage(enemy.Damage, enemy);
-            }
-        }
     }
 
     private void DashAttackEnd()
     {
         isDashing = false;
+        isAttacking = false;
+        animator.SetTrigger("EndAttack");
+        enemy.movement.SetCanMove(true);
+        nextAttackTime = Time.time + attackCooldown;
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Vector2 attackPoint = (Vector2)transform.position + attackDirection * attackDistance;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(attackPoint, attackRadius);
     }
 }

@@ -12,7 +12,7 @@ public abstract class EnemyBase: MonoBehaviour
     protected bool hasBeenDestroyed = false;
     protected float health;
     protected Animator animator;
-    protected EnemyMovement movement;
+    [HideInInspector] public EnemyMovement movement;
     protected Rigidbody2D rb;
     protected BoxCollider2D bc;
     protected EnemyCombatUI enemyCombatUI;
