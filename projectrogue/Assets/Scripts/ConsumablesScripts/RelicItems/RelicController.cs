@@ -4,16 +4,17 @@
 public class RelicController : ConsumableController
 {
     private PlayerRelics playerRelics;
+    private PickupController pickupController;
 
     protected override void Start()
     {
         base.Start();
         playerRelics = playerBase.GetComponent<PlayerRelics>();
+        pickupController = playerBase.GetComponent<PickupController>();
     }
 
     protected override void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log($"Relic hit by: {other.name}, tag: {other.tag}");
         if (!other.CompareTag("PlayerPickUp")) return;
         if (col) col.enabled = false;
 
@@ -22,6 +23,12 @@ public class RelicController : ConsumableController
         if (playerRelics != null)
         {
             playerRelics.AddRelic(itemData);
+        }
+
+        if (pickupController != null && itemData != null && itemData.icon != null)
+        {
+            // play pickup animation of relic
+            pickupController.PlayPickupAnimation(itemData.icon, itemData.itemShopName);
         }
 
         Despawn();

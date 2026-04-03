@@ -7,7 +7,6 @@ public class LifeStealRelicEffect : ConsumableEffect
 
     public override void Apply(PlayerApplyEffect player)
     {
-        Debug.Log("LifeStealRelicEffect.Apply called");
         PlayerRelics relics = player.GetComponent<PlayerRelics>();
         if (relics != null)
         {

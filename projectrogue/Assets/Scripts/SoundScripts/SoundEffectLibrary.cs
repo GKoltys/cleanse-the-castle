@@ -7,7 +7,8 @@ public enum SoundGroupName
     SWORDSLASH,
     COIN,
     HEAL,
-    BUFF
+    BUFF,
+    RELIC
 }
 
 // https://www.youtube.com/watch?v=rAX_r0yBwzQ

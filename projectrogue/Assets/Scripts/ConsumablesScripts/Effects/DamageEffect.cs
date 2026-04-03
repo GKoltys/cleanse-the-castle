@@ -7,7 +7,7 @@ public class DamageEffect : ConsumableEffect
 
     public override void Apply(PlayerApplyEffect player)
     {
-        player.ChangePlayerDamageMultiplier(damageMultiplierChange);
+        player.ChangePlayerDamageMultiplier(damageMultiplierChange, true);
     }
 
     public override float GetStatChangeValue()

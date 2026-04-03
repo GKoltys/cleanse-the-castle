@@ -50,10 +50,14 @@ public class PlayerApplyEffect : MonoBehaviour
         Debug.Log("MaxHealth changed to " + player.GetMaxHealth + " by +" + maxHealthChange);
     }
 
-    public void ChangePlayerDamageMultiplier(float damageMultiplierChange)
+    public void ChangePlayerDamageMultiplier(float damageMultiplierChange, bool playSfx)
     {
         player.SetDamageMultiplier(player.GetDamageMultiplier +  damageMultiplierChange);
-        SoundEffectManager.Play(SoundGroupName.BUFF);
+
+        if (playSfx)
+        {
+            SoundEffectManager.Play(SoundGroupName.BUFF);
+        }
     }
 
     public void ChangePlayerDamageTakenMultiplier(float change)

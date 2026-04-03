@@ -1035,6 +1035,97 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyCounterUI
   keyCounterTMP: {fileID: 3059197578900699149}
+--- !u!1 &4541095709663283486
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 614654621244162189}
+  - component: {fileID: 67522101189739716}
+  m_Layer: 3
+  m_Name: ItemHold
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &614654621244162189
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4541095709663283486}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.59, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1964050140853615474}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &67522101189739716
+SpriteRenderer:
+  serializedVersion: 2
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4541095709663283486}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 2056844855
+  m_SortingLayer: 6
+  m_SortingOrder: 10
+  m_MaskInteraction: 0
+  m_Sprite: {fileID: 273116443144055761, guid: 58657ca60aeab9e44b76c6e9e49db9a0, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 1, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_SpriteSortPoint: 0
 --- !u!1 &4984238598363474008
 GameObject:
   m_ObjectHideFlags: 0
@@ -1763,6 +1854,7 @@ GameObject:
   - component: {fileID: 1501413209333103760}
   - component: {fileID: 6686668721383909481}
   - component: {fileID: 5260274667612588986}
+  - component: {fileID: 6858143424196907391}
   m_Layer: 3
   m_Name: Player
   m_TagString: Player
@@ -1789,6 +1881,7 @@ Transform:
   - {fileID: 1994089636243033903}
   - {fileID: 5463469308360824066}
   - {fileID: 8970674295579793988}
+  - {fileID: 614654621244162189}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9142937295674385985
@@ -2204,6 +2297,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b099f3ebd9b9de4e82d9cd498d28afc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerRelics
+--- !u!114 &6858143424196907391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8254896775790499621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50c2160dcbbb7f141965da344a704f24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PickupController
+  animator: {fileID: 0}
+  movement: {fileID: 1219722819142506925}
+  playerInput: {fileID: 7662369420789867201}
+  heldItemRenderer: {fileID: 67522101189739716}
+  pickupTriggerName: Pickup
+  pickupPanel: {fileID: 0}
+  rb: {fileID: 7397555308839779280}
 --- !u!1 &8705689538394337160
 GameObject:
   m_ObjectHideFlags: 0
