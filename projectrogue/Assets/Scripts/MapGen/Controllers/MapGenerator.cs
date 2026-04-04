@@ -13,6 +13,8 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private int width = 50;
     [SerializeField] private int height = 50;
     [SerializeField] private int padding = 3;
+    [SerializeField] private int bossWidth = 25;
+    [SerializeField] private int bossHeight = 25;
     [SerializeField] private int bspMaxDepth = 4; // amount of times the map size can be cut
     [SerializeField] private int minLeafSize = 10;
     [SerializeField] private int minRoomSize = 5;
@@ -35,6 +37,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private TileBase[] decorTilesFire;
     [SerializeField] private TileBase[] decorWallTiles;
     [SerializeField] private GameObject[] decorPrefabs;
+    [SerializeField] private GameObject[] bossPrefabs;
 
     [SerializeField] private float decorChance;
     [SerializeField] private float colliderDecorChance;
@@ -48,8 +51,8 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private StartingAreaCameraClamp cameraClamp;
 
     private MapData currentMap;
-    private Vector2Int playerPos;
-    //private bool isTransitioning;
+    private int nextBossIndex = 0;
+    private GameObject currentBoss;
 
     private void Start()
     {
@@ -58,12 +61,39 @@ public class MapGenerator : MonoBehaviour
 
     private void BuildFloor()
     {
+        // for clearing previous level entities
+        ClearEntitiesRoot();
+        ClearDecorRoot();
+
+        int floorNumber = playerBase.GetFloorCount + 1;
+
+        Debug.Log(floorNumber);
+
+        bool isBoss = IsBossFloor(floorNumber);
+
+        if (isBoss)
+        {
+            BuildBossFloor(isBoss);
+        } else
+        {
+            BuildDungeonFloor(isBoss);
+        }
+
+        // Clamping camera after map is generated
+        cameraClamp.SetBoundsAfterGeneration(currentMap.width, currentMap.height);
+
+        // Set the new floor count and SaveGame()
+        playerBase.SetFloorCount(floorNumber);
+        SaveController.Instance.SaveGame();
+    }
+
+    private void BuildDungeonFloor(bool isBoss)
+    {
         int floorSeed = seed;
         floorSeed = Random.Range(int.MinValue, int.MaxValue);
-        //currentMap = GenerateRoom(width, height, padding);
         currentMap = ProceduralGenerator.GenerateFloor(width, height, padding,
             bspMaxDepth, minLeafSize, minRoomSize, maxRoomSize, floorSeed, corridorWidth);
-        Render(currentMap);
+        Render(currentMap, isBoss);
 
         var freeFloors = CollectFloorTiles(currentMap);
 
@@ -74,18 +104,52 @@ public class MapGenerator : MonoBehaviour
         freeFloors.Remove(playerPos);
 
         // place prefabs on map
-        PlacePrefabs(currentMap, freeFloors);
+        PlacePrefabs(currentMap, freeFloors, playerPos);
 
         // place player position
         PlacePlayer(playerPos);
 
-        // Clamping camera after map is generated
-        cameraClamp.SetBoundsAfterGeneration(currentMap.width, currentMap.height);
-
-        // Set the new floor count and SaveGame()
-        playerBase.SetFloorCount(playerBase.GetFloorCount + 1);
-        SaveController.Instance.SaveGame();
     }
+
+    private void BuildBossFloor(bool isBoss)
+    {
+        currentMap = GenerateBossRoom(bossWidth, bossHeight, padding);
+        Render(currentMap, isBoss);
+
+        // boss spawn in the middle of map
+        Vector2Int bossTile = new Vector2Int(currentMap.width / 2, currentMap.height / 2);
+        // player spawns below
+        Vector2Int playerTile = new Vector2Int(currentMap.width / 2, 6);
+
+        PlacePlayer(playerTile);
+        PlaceBoss(bossTile);
+    }
+
+    private void PlaceBoss(Vector2Int bossPos)
+    {
+        // get next boss in array each time?
+        GameObject boss = bossPrefabs[nextBossIndex];
+
+        Vector3 world = new Vector3(bossPos.x + 0.5f, bossPos.y + 0.5f, 0f);
+
+        currentBoss = Instantiate(
+            boss,
+            world,
+            Quaternion.identity,
+            entitiesRoot
+        );
+
+        var initializables = currentBoss.GetComponentsInChildren<IMapGenInit>();
+
+        foreach (var init in initializables)
+        {
+            init.Init(this);
+        }
+
+        nextBossIndex++;
+
+    }
+
 
     public void GoToNextFloor()
     {
@@ -106,8 +170,8 @@ public class MapGenerator : MonoBehaviour
             yield return FadeUIController.Instance.FadeIn();
     }
 
-
-    private MapData GenerateRoom(int w, int h, int pad)
+    //
+    private MapData GenerateBossRoom(int w, int h, int pad)
     {
         var map = new MapData(w, h);
 
@@ -161,14 +225,13 @@ public class MapGenerator : MonoBehaviour
         return map;
     }
 
-    private void Render(MapData map)
+    private void Render(MapData map, bool isBoss)
     {
         // for clearing previous generated map's tiles
         floorTilemap.ClearAllTiles();
         wallTilemap.ClearAllTiles();
         decorTilemap.ClearAllTiles();
         colliderDecorTilemap.ClearAllTiles();
-        ClearDecorRoot();
 
         // get reference to player floor count
         float floors = playerBase.GetFloorCount;
@@ -204,34 +267,42 @@ public class MapGenerator : MonoBehaviour
                 {
                     case TileType.Floor:
                         floorTilemap.SetTile(pos, currentFloorTile);
-                        // randomly place decor on some floor tiles
-                        if (currentDecorTile.Length > 0 && Random.value < decorChance)
+                        // check for boss floor
+                        if (!isBoss)
                         {
-                            TileBase randomDecor = currentDecorTile[Random.Range(0, currentDecorTile.Length)];
-                            decorTilemap.SetTile(pos, randomDecor);
+                            // randomly place decor on some floor tiles
+                            if (currentDecorTile.Length > 0 && Random.value < decorChance)
+                            {
+                                TileBase randomDecor = currentDecorTile[Random.Range(0, currentDecorTile.Length)];
+                                decorTilemap.SetTile(pos, randomDecor);
+                            }
+                            if (Random.value < colliderDecorChance)
+                            {
+                                colliderDecorTilemap.SetTile(pos, currentColliderDecorTile);
+                            }
                         }
-                        if (Random.value < colliderDecorChance)
-                        {
-                            colliderDecorTilemap.SetTile(pos, currentColliderDecorTile);
-                        }
-                            break;
+                        break;
                     case TileType.Wall:
                         wallTilemap.SetTile(pos, currentWallTile);
-                        // random place decor or prefab on some wall tiles
-                        if (IsWallFace(map, x, y))
+                        // check for boss floor
+                        if (!isBoss)
                         {
-                            float roll = Random.value;
-
-                            if (roll < decorChance && decorWallTiles.Length > 0)
+                            // random place decor or prefab on some wall tiles
+                            if (IsWallFace(map, x, y))
                             {
-                                TileBase decor =
-                                    decorWallTiles[Random.Range(0, decorWallTiles.Length)];
+                                float roll = Random.value;
 
-                                decorTilemap.SetTile(pos, decor);
-                            }
-                            else if (roll < decorChance * 2f && decorPrefabs.Length > 0)
-                            {
-                                SpawnDecorPrefab(pos);
+                                if (roll < decorChance && decorWallTiles.Length > 0)
+                                {
+                                    TileBase decor =
+                                        decorWallTiles[Random.Range(0, decorWallTiles.Length)];
+
+                                    decorTilemap.SetTile(pos, decor);
+                                }
+                                else if (roll < decorChance * 2f && decorPrefabs.Length > 0)
+                                {
+                                    SpawnDecorPrefab(pos);
+                                }
                             }
                         }
                         break;
@@ -257,16 +328,13 @@ public class MapGenerator : MonoBehaviour
 
     // randomly place different types of prefabs across the generated level
     // https://docs.unity3d.com/2020.3/Documentation/Manual/InstantiatingPrefabs.html
-    private void PlacePrefabs(MapData map, List<Vector2Int> floors)
+    private void PlacePrefabs(MapData map, List<Vector2Int> floors, Vector2Int playerTile)
     {
-        // for clearing previous level entities
-        ClearEntitiesRoot();
-
         // collect tiles from map that are set to floor
         if (floors.Count == 0) return;
 
         // get player position
-        Vector2 playerPos = new Vector2(player.position.x, player.position.y);
+        Vector2 playerPos = new Vector2(playerTile.x + 0.5f, playerTile.y + 0.5f);
 
         // loop through each prefab
         foreach (var entry in spawnEntries)
@@ -454,6 +522,12 @@ public class MapGenerator : MonoBehaviour
             return new Vector2Int(0, 0);
 
         return freeFloors[Random.Range(0, freeFloors.Count)];
+    }
+
+    // check floor count so every 10 is a boss room
+    private bool IsBossFloor(int nextFloorNumber)
+    {
+        return nextFloorNumber % 10 == 0;
     }
 
 }
