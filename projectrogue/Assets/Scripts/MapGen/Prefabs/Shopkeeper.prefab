@@ -244,6 +244,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 641268ed930ff7144983f41810c0d8d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ShopNPC
+  playerInput: {fileID: 0}
   interactionIcon: {fileID: 4785004298303324245}
   shopID: shop_merchant_01
   shopkeeperName: Merchant

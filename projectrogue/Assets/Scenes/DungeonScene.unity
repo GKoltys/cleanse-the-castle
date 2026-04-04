@@ -1448,6 +1448,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 583981289}
     m_Modifications:
+    - target: {fileID: 612138101304792625, guid: 6a43f59d759de564fa8e7524e1b0a77a, type: 3}
+      propertyPath: playerInput
+      value: 
+      objectReference: {fileID: 1370688782}
     - target: {fileID: 4914398961023793015, guid: 6a43f59d759de564fa8e7524e1b0a77a, type: 3}
       propertyPath: m_Name
       value: Shopkeeper
@@ -1863,6 +1867,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3921964602864391719, guid: a70267d1ecede5140924a362554a3282, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662369420789867201, guid: a70267d1ecede5140924a362554a3282, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8254896775790499621, guid: a70267d1ecede5140924a362554a3282, type: 3}
@@ -2484,6 +2492,24 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7929754841581827765, guid: e3aa46abfb295244da35981a7fb21112, type: 3}
   m_PrefabInstance: {fileID: 1892626100331254843}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1571799527 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2759750743775860459, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
+  m_PrefabInstance: {fileID: 2076976204}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1571799532
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571799527}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 202345b9a3ed66641a354f44d99f0140, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ShopCloseButton
+  playerInput: {fileID: 1370688782}
 --- !u!1 &1599518770
 GameObject:
   m_ObjectHideFlags: 0
@@ -3311,10 +3337,41 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8334121549391848185, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334121549391848185, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334121549391848185, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 1571799532}
+    - target: {fileID: 8334121549391848185, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334121549391848185, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: OnClose
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334121549391848185, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: ShopCloseButton, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 8334121549391848185, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2759750743775860459, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1571799532}
   m_SourcePrefab: {fileID: 100100000, guid: cf3ac6abbecaca747bd2ee97d38bc30f, type: 3}
 --- !u!114 &2076976205 stripped
 MonoBehaviour:

@@ -1,8 +1,11 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class ShopNPC : MonoBehaviour, IInteractable
 {
+    private PlayerInput playerInput;
+
     // shop npc references
     public GameObject interactionIcon;
     public string shopID = "shop_merchant_01";
@@ -22,6 +25,11 @@ public class ShopNPC : MonoBehaviour, IInteractable
         }
 
         InitializeShop();
+    }
+
+    private void Start()
+    {
+        playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
     }
 
     // fill the shop ui grid with default shop stock items
@@ -79,11 +87,17 @@ public class ShopNPC : MonoBehaviour, IInteractable
 
         if (ShopController.instance.shopPanel.activeSelf)
         {
+            Debug.Log("Shop closed, inputs back on");
             ShopController.instance.CloseShop();
+            playerInput.actions["Attack"].Enable();
+            playerInput.actions["Move"].Enable();
         }
         else
         {
+            Debug.Log("Shop opened, inputs off");
             ShopController.instance.OpenShop(this);
+            playerInput.actions["Attack"].Disable();
+            playerInput.actions["Move"].Disable();
         }
     }
 
