@@ -62,6 +62,46 @@ public class PlayerBase : MonoBehaviour
         playerHud.SetHudOnLoad(maxHealth, health, coinCount, keyCount, floorCount);
     }
 
+    public void TakeDamage(float amount)
+    {
+        if (Time.time < nextDamageTime) return;
+        SoundEffectManager.Play(SoundGroupName.PLAYERHURT);
+
+        nextDamageTime = Time.time + iFrameSeconds;
+        PlayerRelics playerRelics = GetComponent<PlayerRelics>();
+
+        if (playerRelics != null && playerRelics.TryDodge())
+        {
+            Debug.Log("Attack dodged!");
+            nextDamageTime = Time.time + iFrameSeconds;
+
+            animator.SetTrigger("Hurt"); // replace with dodge animation later
+            return;
+        }
+
+        float finalDamage = amount * damageTakenMultiplier;
+        Debug.Log($"Incoming damage: {amount}, multiplier: {damageTakenMultiplier}, final: {finalDamage}");
+
+        health -= finalDamage;
+        playerHud.UpdateHealth(health);
+
+        Debug.Log("Hurt " + health);
+
+        animator.SetTrigger("Hurt");
+
+        if (health <= 0)
+        {
+
+            if (playerRelics != null && playerRelics.TryUseRevive())
+            {
+                Debug.Log("Player revived instead of dying.");
+                return;
+            }
+            isDead = true;
+            Die();
+        }
+    }
+
     public void TakeDamage(float amount, EnemyBase attacker)
     {
         if (Time.time < nextDamageTime) return;

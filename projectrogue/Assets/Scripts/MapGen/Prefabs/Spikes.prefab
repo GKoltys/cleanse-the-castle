@@ -174,3 +174,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef23b6c7a2ccef3408c23626483b5d53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpikeController
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  spikeTiming: 5
+  spikeDamage: 15

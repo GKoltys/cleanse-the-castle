@@ -2,39 +2,69 @@
 
 public class SpikeController : MonoBehaviour, IMapGenInit
 {
+    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] private float spikeTiming = 5f;
+    [SerializeField] private float spikeDamage = 15f;
+    private float nextActivationTime;
+    private bool spikesActive = false;
+
+    private PlayerBase player;
     private Animator animator;
     private Collider2D col;
     private MapGenerator dungeon;
 
     public void Init(MapGenerator controller)
     {
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerBase>();
         dungeon = controller;
         animator = GetComponent<Animator>();
         col = GetComponent<Collider2D>();
+        nextActivationTime = Time.time + spikeTiming;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    public void Update()
     {
-        if (dungeon == null) return;
-
-        if (!other.CompareTag("Player")) return;
-
-        if (animator != null)
+        if (Time.time > nextActivationTime)
         {
-            // animation transitions - https://docs.unity3d.com/6000.3/Documentation/Manual/class-Transition.html
-            animator.SetBool("OnSpike", true);
+            animator.SetTrigger("SpikeTrigger");
+            nextActivationTime = Time.time + spikeTiming;
         }
 
-    }
-
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (!other.CompareTag("Player")) return;
-
-        if (animator != null)
+        if (spikesActive)
         {
-            animator.SetBool("OnSpike", false);
+            Collider2D hit = Physics2D.OverlapBox(transform.position, new Vector2(1, 1), 0f, playerLayer);
+
+            if (hit != null)
+            {
+                player.TakeDamage(spikeDamage);
+            }
         }
     }
 
+    // All called through animation events
+    public void SpikesHurtOn()
+    {
+        spikesActive = true;
+    }
+
+    public void SpikesHurtOff()
+    {
+        spikesActive = false;
+    }
+
+    public void SetSpikesDown()
+    {
+        animator.SetTrigger("SpikeLeave");
+    }
+
+    public void SpikesIdle()
+    {
+        animator.SetTrigger("SpikeIdle");
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(transform.position, new Vector3(1, 1, 0));
+    }
 }
