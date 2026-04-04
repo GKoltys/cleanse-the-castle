@@ -61,10 +61,4 @@ public class SpikeController : MonoBehaviour, IMapGenInit
     {
         animator.SetTrigger("SpikeIdle");
     }
-
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(transform.position, new Vector3(1, 1, 0));
-    }
 }
