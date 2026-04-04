@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &4708647977442856815
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2297265468156238403, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: maxHealth
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 2297265468156238403, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: moveSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2852358968330711830, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: dropTable
+      value: 
+      objectReference: {fileID: 11400000, guid: 3d229cdf039605740b8e1e57123d7935, type: 2}
+    - target: {fileID: 3408430495609360286, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: m_Name
+      value: RedKnightEnemy
+      objectReference: {fileID: 0}
+    - target: {fileID: 3478841012607061419, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -6038538450870676446, guid: e368d29c2e5f0ca44bd2d33918566f80, type: 3}
+    - target: {fileID: 5275936383569819829, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1444.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275936383569819829, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -546.85
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275936383569819829, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275936383569819829, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275936383569819829, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275936383569819829, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275936383569819829, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275936383569819829, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275936383569819829, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5275936383569819829, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8005465404003862567, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 91bb6a0e176929f418f2d9ded54b4613, type: 2}
+    - target: {fileID: 8068425484603737859, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: dashForce
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 8068425484603737859, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: attackRange
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8068425484603737859, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: attackCooldown
+      value: 2
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 8068425484603737859, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+    - {fileID: 2297265468156238403, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3408430495609360286, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2328930165573954855}
+    - targetCorrespondingSourceObject: {fileID: 3408430495609360286, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4141398909171489894}
+  m_SourcePrefab: {fileID: 100100000, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+--- !u!1 &7932342085576835313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3408430495609360286, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+  m_PrefabInstance: {fileID: 4708647977442856815}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2328930165573954855
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932342085576835313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776508c3d74d4c44d828f8dd0dfaaa7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RedKnightEnemy
+  maxHealth: 500
+  damage: 50
+  moveSpeed: 2
+  agroRadius: 8
+  movement: {fileID: 0}
+--- !u!114 &4141398909171489894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932342085576835313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 992df22e61a87da49a1f800919b882da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RedKnightAttack
+  attackCooldown: 2
+  attackRange: 8
+  nextAttackTime: 0
+  attackRadius: 0.8
+  attackDistance: 0.8
+  playerLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  dashChainCount: 2
+  dashForce: 10
