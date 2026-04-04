@@ -22,7 +22,7 @@ public class SaveController : MonoBehaviour
     private bool shouldLoadOnNextScene;
 
     GameObject player;
-    PlayerStats playerStats;
+    public PlayerStats playerStats;
     PlayerBase playerBase;
     PlayerRelics playerRelics;
     [SerializeField] private RelicLookup relicLookup;
@@ -171,6 +171,17 @@ public class SaveController : MonoBehaviour
         };
 
         File.WriteAllText(saveLocation, JsonUtility.ToJson(saveData));
+    }
+
+    public int GetLastFloor()
+    {
+        if (HasSaveFile())
+        {
+            SaveData saveData = JsonUtility.FromJson<SaveData>(File.ReadAllText(saveLocation));
+
+            return saveData.playerFloorCount;
+        }
+        return 0;
     }
 
     public String GetSaveLocation() { return saveLocation; }
