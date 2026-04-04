@@ -6,7 +6,7 @@ using UnityEngine;
 public static class ProceduralGenerator
 {
     public static MapData GenerateFloor(int w, int h, int pad,
-        int bspMaxDepth, int minLeafSize, int minRoomSize, int maxRoomSize, int seed, int corridorWidth, out Vector2Int playerPos)
+        int bspMaxDepth, int minLeafSize, int minRoomSize, int maxRoomSize, int seed, int corridorWidth)
     {
         // initialize the prng with seed, so same seed will produce the same results
         // https://docs.unity3d.com/6000.3/Documentation/ScriptReference/Random.InitState.html
@@ -22,9 +22,6 @@ public static class ProceduralGenerator
 
         // connect each room with corridors
         Connect(map, root, corridorWidth);
-
-        // choose player position in map
-        playerPos = PickPlayerStart(map, root);
 
         return map;
 
@@ -347,47 +344,6 @@ public static class ProceduralGenerator
 
         }
 
-    }
-
-    // choose the starting position for the player
-    private static Vector2Int PickPlayerStart(MapData map, BSPNode root)
-    {
-        // collect a list of leaves then rooms
-        var leaves = new List<BSPNode>();
-        CollectLeaves(root, leaves);
-
-        var rooms = new List<RectInt>();
-        foreach (var leaf in leaves)
-        {
-            if (leaf.room.width > 0 && leaf.room.height > 0)
-            {
-                rooms.Add(leaf.room);
-            }
-  
-        }
-
-        // pick a position within a room
-        if (rooms.Count > 0)
-        {
-            RectInt room = rooms[Random.Range(0, rooms.Count)];
-            int x = Random.Range(room.xMin, room.xMax);
-            int y = Random.Range(room.yMin, room.yMax);
-            return new Vector2Int(x, y);
-        }
-
-        // fallback with any floor tile
-        for (int x = 0; x < map.width; x++)
-        {
-            for (int y = 0; y < map.height; y++)
-            {
-                if (map.tiles[x, y] == TileType.Floor)
-                {
-                    return new Vector2Int(x, y);
-                }
-            }
-        }
-
-        return new Vector2Int(0, 0);
     }
 
 }

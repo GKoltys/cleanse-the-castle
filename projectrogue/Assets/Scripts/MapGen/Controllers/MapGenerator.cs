@@ -62,11 +62,23 @@ public class MapGenerator : MonoBehaviour
         floorSeed = Random.Range(int.MinValue, int.MaxValue);
         //currentMap = GenerateRoom(width, height, padding);
         currentMap = ProceduralGenerator.GenerateFloor(width, height, padding,
-            bspMaxDepth, minLeafSize, minRoomSize, maxRoomSize, floorSeed, corridorWidth, out playerPos);
+            bspMaxDepth, minLeafSize, minRoomSize, maxRoomSize, floorSeed, corridorWidth);
         Render(currentMap);
+
+        var freeFloors = CollectFloorTiles(currentMap);
+
+        // choose safe player spawn tile
+        Vector2Int playerPos = PickPlayerSpawnTile(freeFloors);
+
+        // reserve tile so nothing spawns there later
+        freeFloors.Remove(playerPos);
+
+        // place prefabs on map
+        PlacePrefabs(currentMap, freeFloors);
+
+        // place player position
         PlacePlayer(playerPos);
-        PlacePrefabs(currentMap);
-        
+
         // Clamping camera after map is generated
         cameraClamp.SetBoundsAfterGeneration(currentMap.width, currentMap.height);
 
@@ -245,13 +257,12 @@ public class MapGenerator : MonoBehaviour
 
     // randomly place different types of prefabs across the generated level
     // https://docs.unity3d.com/2020.3/Documentation/Manual/InstantiatingPrefabs.html
-    private void PlacePrefabs(MapData map)
+    private void PlacePrefabs(MapData map, List<Vector2Int> floors)
     {
         // for clearing previous level entities
         ClearEntitiesRoot();
 
         // collect tiles from map that are set to floor
-        var floors = CollectFloorTiles(map);
         if (floors.Count == 0) return;
 
         // get player position
@@ -435,6 +446,14 @@ public class MapGenerator : MonoBehaviour
             new Vector3(0f, -0.2f, 0f);
 
         Instantiate(prefab, worldPos, Quaternion.identity, decorRoot);
+    }
+
+    private Vector2Int PickPlayerSpawnTile(List<Vector2Int> freeFloors)
+    {
+        if (freeFloors == null || freeFloors.Count == 0)
+            return new Vector2Int(0, 0);
+
+        return freeFloors[Random.Range(0, freeFloors.Count)];
     }
 
 }
