@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class UIController : MonoBehaviour
 {
     public GameObject menuCanvas;
+    [SerializeField] private PlayerInput playerInput;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -15,7 +16,11 @@ public class UIController : MonoBehaviour
     {
         if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
+            bool isActive = !menuCanvas.activeSelf;
+
             menuCanvas.SetActive(!menuCanvas.activeSelf);
+
+            playerInput.enabled = !isActive;
         }
     }
 }
