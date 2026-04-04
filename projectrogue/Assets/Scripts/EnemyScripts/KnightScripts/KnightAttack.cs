@@ -1,17 +1,19 @@
 using UnityEngine;
 
-public class BlueKnightAttack : EnemyAttack
+public abstract class KnightAttack: EnemyAttack
 {
-    [SerializeField] private float attackRadius = 0.8f;
-    [SerializeField] private float attackDistance = 0.8f;
-    [SerializeField] private LayerMask playerLayer;
+    [SerializeField] protected float attackRadius = 0.8f;
+    [SerializeField] protected float attackDistance = 0.8f;
+    [SerializeField] protected LayerMask playerLayer;
 
-    private Rigidbody2D rb;
-    private Vector2 attackDirection;
-    private Vector2 dashDirection;
-    [SerializeField] private float dashForce = 10f;
-    private bool isDashing;
-    private bool isAttacking;
+    protected Rigidbody2D rb;
+    protected Vector2 attackDirection;
+    protected Vector2 dashDirection;
+    [SerializeField] protected int dashChainCount = 1;
+    [SerializeField] protected float dashForce = 10f;
+    protected int remainingDashes;
+    protected bool isDashing;
+    protected bool isAttacking;
 
     protected override void Awake()
     {
@@ -35,13 +37,10 @@ public class BlueKnightAttack : EnemyAttack
             if (dist <= attackRadius + attackDistance)
             {
                 RollAttack();
-                Debug.Log("Rolling attack");
                 return;
             }
 
-            Debug.Log("Dashing");
-            dashDirection = (playerTransform.position - transform.position).normalized;
-            animator.SetTrigger("AttackDash");
+            DashChainController();
         }
 
         // Handles dash attack
@@ -59,15 +58,15 @@ public class BlueKnightAttack : EnemyAttack
         }
     }
 
-    private void RollAttack()
+    // Called only when player is in swipe range
+    protected virtual void RollAttack()
     {
         int attackChoice = UnityEngine.Random.Range(1, 4);
 
+        // Prioritising swipes up close with a chance of a dash
         if (attackChoice == 1)
         {
-            dashDirection = (playerTransform.position - transform.position).normalized;
-            animator.SetTrigger("AttackDash");
-            
+            DashChainController();
         }
         else
         {
@@ -77,13 +76,19 @@ public class BlueKnightAttack : EnemyAttack
     }
 
     // Called by animation event
-    private void StopUpdatingMovement()
+    protected virtual void StopUpdatingMovement()
     {
         enemy.movement.SetCanMove(false);
     }
 
+    protected virtual void UpdateMovement()
+    {
+        rb.linearVelocity = Vector2.zero;
+        DoNextDash();
+    }
+
     // Called by animation event
-    private void SwipeAttack()
+    protected virtual void SwipeAttack()
     {
         Vector2 attackPoint = (Vector2)transform.position + attackDirection * attackDistance;
 
@@ -95,7 +100,7 @@ public class BlueKnightAttack : EnemyAttack
         }
     }
 
-    private void SwipeAttackEnd()
+    protected virtual void SwipeAttackEnd()
     {
         isAttacking = false;
         animator.SetTrigger("EndAttack");
@@ -104,26 +109,47 @@ public class BlueKnightAttack : EnemyAttack
     }
 
     // Called by animation event
-    private void DashAttackStart()
+    protected virtual void DashAttackStart()
     {
         isDashing = true;
         rb.linearVelocity = dashDirection * dashForce;
     }
 
-    private void DashAttackEnd()
+    protected virtual void DashChainController()
+    {
+        remainingDashes = dashChainCount;
+
+        DoNextDash();
+    }
+
+    protected void DoNextDash()
+    {
+        if (remainingDashes <= 0)
+        {
+            DashAttackEnd();
+            return;
+        }
+
+        Debug.Log("Remaining Dashes: " + remainingDashes);
+        remainingDashes--;
+
+        dashDirection = (playerTransform.position - transform.position).normalized;
+        animator.SetTrigger("AttackDash");
+    }
+
+    protected void EndChainDash()
     {
         isDashing = false;
+
+        DoNextDash();
+    }
+
+    // Called by animation event
+    protected virtual void DashAttackEnd()
+    {
         isAttacking = false;
         animator.SetTrigger("EndAttack");
         enemy.movement.SetCanMove(true);
         nextAttackTime = Time.time + attackCooldown;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Vector2 attackPoint = (Vector2)transform.position + attackDirection * attackDistance;
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(attackPoint, attackRadius);
     }
 }

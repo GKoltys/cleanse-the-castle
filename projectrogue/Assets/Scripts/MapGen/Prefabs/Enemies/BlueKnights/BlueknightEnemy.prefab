@@ -212,7 +212,7 @@ GameObject:
   - component: {fileID: 8007088869471703290}
   - component: {fileID: 2852358968330711830}
   - component: {fileID: 2297265468156238403}
-  - component: {fileID: 1390868426973598411}
+  - component: {fileID: 8068425484603737859}
   m_Layer: 6
   m_Name: BlueknightEnemy
   m_TagString: Untagged
@@ -455,7 +455,7 @@ MonoBehaviour:
   moveSpeed: 1.5
   agroRadius: 8
   movement: {fileID: 0}
---- !u!114 &1390868426973598411
+--- !u!114 &8068425484603737859
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -464,18 +464,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 3408430495609360286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3c13b186156f4d2419f1c599f3cf6b9c, type: 3}
+  m_Script: {fileID: 11500000, guid: 5f9f56aaf1317b740b7501c91765963c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BlueKnightAttack
-  attackCooldown: 3
-  attackRange: 3
+  attackCooldown: 2.5
+  attackRange: 8
   nextAttackTime: 0
   attackRadius: 0.8
   attackDistance: 0.8
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  dashForce: 10
+  dashForce: 8
 --- !u!1 &6108977836635097067
 GameObject:
   m_ObjectHideFlags: 0

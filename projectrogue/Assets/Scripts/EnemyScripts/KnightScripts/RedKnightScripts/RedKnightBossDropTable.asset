@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cb620205d1450f41a26ab26851583a4, type: 3}
+  m_Name: RedKnightBossDropTable
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyDropTable
+  lootTable:
+  - itemPrefab: {fileID: 9197613124708395033, guid: af157993c492c1e4fa500b14747d7322, type: 3}
+    weight: 33.3
+  - itemPrefab: {fileID: 5571707283497684087, guid: af864e08057edd948a862cb55703948b, type: 3}
+    weight: 33.3
+  - itemPrefab: {fileID: 7959990911241844214, guid: 0b25f2686b236714bb95e872fe89f65f, type: 3}
+    weight: 33.3
+  noDropWeight: 0
