@@ -130,7 +130,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -144,7 +144,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 16
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -168,7 +168,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -196,12 +196,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 152
-        width: 16
-        height: 25
+        x: 0
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -218,12 +218,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_1
       rect:
         serializedVersion: 2
-        x: 65
-        y: 153
-        width: 16
-        height: 24
+        x: 48
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -240,12 +240,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_2
       rect:
         serializedVersion: 2
-        x: 113
-        y: 153
-        width: 16
-        height: 24
+        x: 96
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -262,12 +262,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_3
       rect:
         serializedVersion: 2
-        x: 161
-        y: 148
-        width: 15
-        height: 27
+        x: 144
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -284,12 +284,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_4
       rect:
         serializedVersion: 2
-        x: 209
-        y: 145
-        width: 15
-        height: 30
+        x: 192
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -306,12 +306,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_5
       rect:
         serializedVersion: 2
-        x: 257
+        x: 240
         y: 144
-        width: 15
-        height: 31
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -328,12 +328,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_6
       rect:
         serializedVersion: 2
-        x: 305
-        y: 143
-        width: 15
-        height: 33
+        x: 288
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -350,12 +350,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_7
       rect:
         serializedVersion: 2
-        x: 352
-        y: 150
-        width: 17
-        height: 27
+        x: 336
+        y: 144
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -372,12 +372,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_8
       rect:
         serializedVersion: 2
-        x: 16
-        y: 111
-        width: 21
-        height: 18
+        x: 0
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -394,12 +394,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_9
       rect:
         serializedVersion: 2
-        x: 64
-        y: 111
-        width: 20
-        height: 18
+        x: 48
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -416,12 +416,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_10
       rect:
         serializedVersion: 2
-        x: 112
-        y: 111
-        width: 20
-        height: 18
+        x: 96
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -438,12 +438,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_11
       rect:
         serializedVersion: 2
-        x: 163
-        y: 111
-        width: 25
-        height: 17
+        x: 144
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -460,12 +460,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_12
       rect:
         serializedVersion: 2
-        x: 211
-        y: 111
-        width: 28
-        height: 17
+        x: 192
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -482,12 +482,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_13
       rect:
         serializedVersion: 2
-        x: 259
-        y: 111
-        width: 29
-        height: 17
+        x: 240
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -504,12 +504,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_14
       rect:
         serializedVersion: 2
-        x: 305
-        y: 111
-        width: 32
-        height: 17
+        x: 288
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -526,12 +526,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_15
       rect:
         serializedVersion: 2
-        x: 353
-        y: 111
-        width: 21
-        height: 18
+        x: 336
+        y: 96
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -548,12 +548,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_16
       rect:
         serializedVersion: 2
-        x: 15
-        y: 63
-        width: 16
-        height: 20
+        x: 0
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -570,12 +570,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_17
       rect:
         serializedVersion: 2
-        x: 63
-        y: 63
-        width: 16
-        height: 19
+        x: 48
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -592,12 +592,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_18
       rect:
         serializedVersion: 2
-        x: 111
-        y: 63
-        width: 16
-        height: 19
+        x: 96
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -614,12 +614,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_19
       rect:
         serializedVersion: 2
-        x: 160
-        y: 63
-        width: 16
-        height: 25
+        x: 144
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -636,12 +636,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_20
       rect:
         serializedVersion: 2
-        x: 208
-        y: 63
-        width: 16
-        height: 28
+        x: 192
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -658,12 +658,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_21
       rect:
         serializedVersion: 2
-        x: 256
-        y: 63
-        width: 16
-        height: 29
+        x: 240
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -680,12 +680,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_22
       rect:
         serializedVersion: 2
-        x: 304
-        y: 63
-        width: 16
-        height: 30
+        x: 288
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -702,12 +702,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_23
       rect:
         serializedVersion: 2
-        x: 351
-        y: 63
-        width: 17
-        height: 23
+        x: 336
+        y: 48
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -724,12 +724,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_24
       rect:
         serializedVersion: 2
-        x: 11
-        y: 15
-        width: 21
-        height: 18
+        x: 0
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -746,12 +746,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_25
       rect:
         serializedVersion: 2
-        x: 60
-        y: 15
-        width: 20
-        height: 18
+        x: 48
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -768,12 +768,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_26
       rect:
         serializedVersion: 2
-        x: 108
-        y: 15
-        width: 20
-        height: 18
+        x: 96
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -790,12 +790,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_27
       rect:
         serializedVersion: 2
-        x: 148
-        y: 15
-        width: 25
-        height: 17
+        x: 144
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -812,12 +812,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_28
       rect:
         serializedVersion: 2
-        x: 193
-        y: 15
-        width: 28
-        height: 17
+        x: 192
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -835,11 +835,11 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 240
-        y: 15
-        width: 29
-        height: 17
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -856,12 +856,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_30
       rect:
         serializedVersion: 2
-        x: 287
-        y: 15
-        width: 31
-        height: 17
+        x: 288
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -878,12 +878,12 @@ TextureImporter:
       name: Dark Knight attack 2 Sprite-sheet 32x32_31
       rect:
         serializedVersion: 2
-        x: 346
-        y: 15
-        width: 21
-        height: 18
+        x: 336
+        y: 0
+        width: 48
+        height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -900,7 +900,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5465446b7b3f7534f892d49d4aae1e7c
     internalID: 0
     vertices: []
     indices: 
@@ -908,7 +908,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":48.0,"y":48.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Dark Knight attack 2 Sprite-sheet 32x32_0: 6465716568153395289
       Dark Knight attack 2 Sprite-sheet 32x32_1: -5450996372359118741

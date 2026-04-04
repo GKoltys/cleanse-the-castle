@@ -5,10 +5,13 @@ public abstract class KnightAttack: EnemyAttack
     [SerializeField] protected float attackRadius = 0.8f;
     [SerializeField] protected float attackDistance = 0.8f;
     [SerializeField] protected LayerMask playerLayer;
+    [SerializeField] protected float swipeDamage = 40f;
+    [SerializeField] protected float dashDamage = 30f;
 
     protected Rigidbody2D rb;
     protected Vector2 attackDirection;
     protected Vector2 dashDirection;
+    protected bool dashQueued;
     [SerializeField] protected int dashChainCount = 1;
     [SerializeField] protected float dashForce = 10f;
     protected int remainingDashes;
@@ -53,7 +56,7 @@ public abstract class KnightAttack: EnemyAttack
 
             if (hit != null)
             {
-                playerHealth.TakeDamage(50, enemy);
+                playerHealth.TakeDamage(dashDamage, enemy);
             }
         }
     }
@@ -81,6 +84,7 @@ public abstract class KnightAttack: EnemyAttack
         enemy.movement.SetCanMove(false);
     }
 
+    // Called by animation event
     protected virtual void UpdateMovement()
     {
         rb.linearVelocity = Vector2.zero;
@@ -96,10 +100,11 @@ public abstract class KnightAttack: EnemyAttack
 
         if (hit != null)
         {
-            playerHealth.TakeDamage(30, enemy);
+            playerHealth.TakeDamage(swipeDamage, enemy);
         }
     }
 
+    // Called by animation event
     protected virtual void SwipeAttackEnd()
     {
         isAttacking = false;
@@ -111,6 +116,7 @@ public abstract class KnightAttack: EnemyAttack
     // Called by animation event
     protected virtual void DashAttackStart()
     {
+        dashQueued = false;
         isDashing = true;
         rb.linearVelocity = dashDirection * dashForce;
     }
@@ -130,24 +136,21 @@ public abstract class KnightAttack: EnemyAttack
             return;
         }
 
-        Debug.Log("Remaining Dashes: " + remainingDashes);
+        if (dashQueued) return;
+
+        dashQueued = true;
+
+        //Debug.Log("Remaining Dashes: " + remainingDashes);
         remainingDashes--;
 
         dashDirection = (playerTransform.position - transform.position).normalized;
         animator.SetTrigger("AttackDash");
     }
 
-    protected void EndChainDash()
-    {
-        isDashing = false;
-
-        DoNextDash();
-    }
-
-    // Called by animation event
     protected virtual void DashAttackEnd()
     {
         isAttacking = false;
+        isDashing = false;
         animator.SetTrigger("EndAttack");
         enemy.movement.SetCanMove(true);
         nextAttackTime = Time.time + attackCooldown;
