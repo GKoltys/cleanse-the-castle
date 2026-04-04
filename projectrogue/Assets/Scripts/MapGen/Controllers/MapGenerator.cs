@@ -38,6 +38,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private TileBase[] decorWallTiles;
     [SerializeField] private GameObject[] decorPrefabs;
     [SerializeField] private GameObject[] bossPrefabs;
+    [SerializeField] private GameObject stairsPrefab;
 
     [SerializeField] private float decorChance;
     [SerializeField] private float colliderDecorChance;
@@ -51,8 +52,9 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private StartingAreaCameraClamp cameraClamp;
 
     private MapData currentMap;
-    private int nextBossIndex = 0;
+    private int bossFloorThreshold = 10;
     private GameObject currentBoss;
+    private Vector2Int currentBossTile;
 
     private void Start()
     {
@@ -67,13 +69,12 @@ public class MapGenerator : MonoBehaviour
 
         int floorNumber = playerBase.GetFloorCount + 1;
 
-        Debug.Log(floorNumber);
-
         bool isBoss = IsBossFloor(floorNumber);
 
+        // choose whether to make boss or dungeon floor
         if (isBoss)
         {
-            BuildBossFloor(isBoss);
+            BuildBossFloor(floorNumber, isBoss);
         } else
         {
             BuildDungeonFloor(isBoss);
@@ -111,24 +112,23 @@ public class MapGenerator : MonoBehaviour
 
     }
 
-    private void BuildBossFloor(bool isBoss)
+    private void BuildBossFloor(int floorNumber, bool isBoss)
     {
-        currentMap = GenerateBossRoom(bossWidth, bossHeight, padding);
+        currentMap = BossFloorGenerator.GenerateBossRoom(bossWidth, bossHeight, padding);
         Render(currentMap, isBoss);
 
-        // boss spawn in the middle of map
-        Vector2Int bossTile = new Vector2Int(currentMap.width / 2, currentMap.height / 2);
-        // player spawns below
-        Vector2Int playerTile = new Vector2Int(currentMap.width / 2, 6);
+        Vector2Int bossTile = BossFloorGenerator.GetBossSpawnTile(currentMap);
+        Vector2Int playerTile = BossFloorGenerator.GetPlayerSpawnTile(currentMap, padding);
+
+        currentBossTile = bossTile;
 
         PlacePlayer(playerTile);
-        PlaceBoss(bossTile);
+        PlaceBoss(floorNumber, bossTile);
     }
 
-    private void PlaceBoss(Vector2Int bossPos)
+    private void PlaceBoss(int floorNumber, Vector2Int bossPos)
     {
-        // get next boss in array each time?
-        GameObject boss = bossPrefabs[nextBossIndex];
+        GameObject boss = BossFloorGenerator.GetBossForFloor(bossPrefabs, floorNumber, bossFloorThreshold);
 
         Vector3 world = new Vector3(bossPos.x + 0.5f, bossPos.y + 0.5f, 0f);
 
@@ -146,10 +146,7 @@ public class MapGenerator : MonoBehaviour
             init.Init(this);
         }
 
-        nextBossIndex++;
-
     }
-
 
     public void GoToNextFloor()
     {
@@ -168,61 +165,6 @@ public class MapGenerator : MonoBehaviour
 
         if (FadeUIController.Instance != null)
             yield return FadeUIController.Instance.FadeIn();
-    }
-
-    //
-    private MapData GenerateBossRoom(int w, int h, int pad)
-    {
-        var map = new MapData(w, h);
-
-        int xMin = pad;
-        int yMin = pad;
-        int xMax = w - pad - 1;
-        int yMax = h - pad - 1;
-
-        // create a room with tiles set to floor
-        for (int x = xMin; x <= xMax; x++)
-        {
-            for (int y = yMin; y <= yMax; y++)
-            {
-                map.tiles[x, y] = TileType.Floor;
-            }
-
-        }
-        // set any tiles adjacent to floor as walls
-        for (int x = 0; x < w; x++)
-            for (int y = 0; y < h; y++)
-            {
-                if (map.tiles[x, y] != TileType.Floor) continue;
-
-                for (int dx = -1; dx <= 1; dx++)
-                    for (int dy = -1; dy <= 1; dy++)
-                    {
-                        int nx = x + dx;
-                        int ny = y + dy;
-                        if (!map.InBounds(nx, ny)) continue;
-
-                        if (map.tiles[nx, ny] == TileType.Empty)
-                        {
-                            map.tiles[nx, ny] = TileType.Wall;
-                        }
-                    }
-            }
-
-        // set padded boundary to wall
-        for (int x = 0; x < w; x++)
-        {
-            if (map.tiles[x, 0] == TileType.Empty) map.tiles[x, 0] = TileType.Wall;
-            if (map.tiles[x, h - 1] == TileType.Empty) map.tiles[x, h - 1] = TileType.Wall;
-        }
-
-        for (int y = 0; y < h; y++)
-        {
-            if (map.tiles[0, y] == TileType.Empty) map.tiles[0, y] = TileType.Wall;
-            if (map.tiles[w - 1, y] == TileType.Empty) map.tiles[w - 1, y] = TileType.Wall;
-        }
-
-        return map;
     }
 
     private void Render(MapData map, bool isBoss)
@@ -528,6 +470,53 @@ public class MapGenerator : MonoBehaviour
     private bool IsBossFloor(int nextFloorNumber)
     {
         return nextFloorNumber % 10 == 0;
+    }
+
+    // called by boss enemy
+    public void OnBossDied()
+    {
+        SpawnStairsNearBoss();
+    }
+
+    private void SpawnStairsNearBoss()
+    {
+        if (stairsPrefab == null)
+        {
+            Debug.LogWarning("No stairs prefab assigned.");
+            return;
+        }
+
+        var freeFloors = CollectFloorTiles(currentMap);
+
+        if (freeFloors == null || freeFloors.Count == 0)
+        {
+            Debug.LogWarning("No valid tiles available for stairs spawn.");
+            return;
+        }
+
+        // don't place stairs directly on boss tile
+        freeFloors.Remove(currentBossTile);
+
+        Vector2 bossWorldPos = new Vector2(currentBossTile.x + 0.5f, currentBossTile.y + 0.5f);
+
+        // pick spawn for stairs
+        Vector2Int stairsTile = BossFloorGenerator.PickTileNear(freeFloors, bossWorldPos, 3f);
+
+        Vector3 world = new Vector3(stairsTile.x + 0.5f, stairsTile.y + 0.5f, 0f);
+        GameObject stairs = Instantiate(
+          stairsPrefab,
+          world,
+          Quaternion.identity,
+          entitiesRoot
+        );
+
+        var initializables = stairs.GetComponentsInChildren<IMapGenInit>();
+
+        // initialize prefab
+        foreach (var init in initializables)
+        {
+            init.Init(this);
+        }
     }
 
 }

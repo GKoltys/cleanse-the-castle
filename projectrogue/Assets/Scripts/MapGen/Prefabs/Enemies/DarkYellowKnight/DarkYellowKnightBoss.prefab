@@ -287,8 +287,8 @@ GameObject:
   - component: {fileID: 6531801425869532029}
   - component: {fileID: 5104901331434227787}
   - component: {fileID: 7650279043030460941}
-  - component: {fileID: 2877392402540800839}
   - component: {fileID: 6157688854468549667}
+  - component: {fileID: 6135429506695268486}
   m_Layer: 6
   m_Name: DarkYellowKnightBoss
   m_TagString: Untagged
@@ -526,23 +526,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7854655e2f28e5442beb26ea7dfd5b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyVisibility
---- !u!114 &2877392402540800839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3047241900703854372}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5220f927449709042ba360d16bddc4f4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::DarkYellowKnightEnemy
-  maxHealth: 1000
-  damage: 50
-  moveSpeed: 2.5
-  agroRadius: 100
-  movement: {fileID: 0}
 --- !u!114 &6157688854468549667
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -567,6 +550,23 @@ MonoBehaviour:
   dashDamage: 30
   dashChainCount: 3
   dashForce: 12
+--- !u!114 &6135429506695268486
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3047241900703854372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f445754f9987be4faa9697d760c0556, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DarkYellowKnightBossEnemy
+  maxHealth: 1000
+  damage: 50
+  moveSpeed: 2.5
+  agroRadius: 100
+  movement: {fileID: 0}
 --- !u!1 &8066813873372973203
 GameObject:
   m_ObjectHideFlags: 0
