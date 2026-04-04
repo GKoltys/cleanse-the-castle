@@ -9,7 +9,7 @@ public class TransitionDoorController : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
 
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && playerBase.GetWeaponId != 0)
         {
             // https://discussions.unity.com/t/how-to-make-the-scene-change-on-a-collision/636855
             if (FadeUIController.Instance != null)
