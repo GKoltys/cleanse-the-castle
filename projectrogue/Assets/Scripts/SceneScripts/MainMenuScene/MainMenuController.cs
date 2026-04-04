@@ -38,10 +38,20 @@ public class MainMenuController : MonoBehaviour
         SaveController.Instance.RequestLoad();
         SceneManager.LoadSceneAsync(1);
     }
+
     public void ContinueGame()
     {
-        SaveController.Instance.RequestLoad();
-        SceneManager.LoadSceneAsync(2);
+        int lastFloor = SaveController.Instance.GetLastFloor();
+        if (lastFloor > 0)
+        {
+            SaveController.Instance.RequestLoad();
+            SceneManager.LoadSceneAsync(3);
+        }
+        else
+        {
+            SaveController.Instance.RequestLoad();
+            SceneManager.LoadSceneAsync(2);
+        }
     }
 
     public void Settings()
