@@ -79,6 +79,7 @@ public static class BossFloorGenerator
     public static Vector2Int PickTileNear(
         List<Vector2Int> floors,
         Vector2 centerPos,
+        float minDist,
         float maxDist,
         int attempts = 30)
     {
@@ -98,7 +99,7 @@ public static class BossFloorGenerator
                 centerPos
             );
 
-            if (d <= maxDist)
+            if (d >= minDist && d <= maxDist)
                 return candidate;
         }
 

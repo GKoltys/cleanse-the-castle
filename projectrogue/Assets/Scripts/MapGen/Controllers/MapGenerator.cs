@@ -55,6 +55,7 @@ public class MapGenerator : MonoBehaviour
     private int bossFloorThreshold = 10;
     private GameObject currentBoss;
     private Vector2Int currentBossTile;
+    private bool bossStairsSpawned;
 
     private void Start()
     {
@@ -70,6 +71,8 @@ public class MapGenerator : MonoBehaviour
         int floorNumber = playerBase.GetFloorCount + 1;
 
         bool isBoss = IsBossFloor(floorNumber);
+
+        bossStairsSpawned = false;
 
         // choose whether to make boss or dungeon floor
         if (isBoss)
@@ -475,6 +478,10 @@ public class MapGenerator : MonoBehaviour
     // called by boss enemy
     public void OnBossDied()
     {
+        if (bossStairsSpawned)
+            return;
+
+        bossStairsSpawned = true;
         SpawnStairsNearBoss();
     }
 
@@ -500,7 +507,7 @@ public class MapGenerator : MonoBehaviour
         Vector2 bossWorldPos = new Vector2(currentBossTile.x + 0.5f, currentBossTile.y + 0.5f);
 
         // pick spawn for stairs
-        Vector2Int stairsTile = BossFloorGenerator.PickTileNear(freeFloors, bossWorldPos, 3f);
+        Vector2Int stairsTile = BossFloorGenerator.PickTileNear(freeFloors, bossWorldPos, 3f, 5f);
 
         Vector3 world = new Vector3(stairsTile.x + 0.5f, stairsTile.y + 0.5f, 0f);
         GameObject stairs = Instantiate(
