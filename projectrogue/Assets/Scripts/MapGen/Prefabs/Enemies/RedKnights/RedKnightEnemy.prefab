@@ -96,6 +96,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3408430495609360286, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4141398909171489894}
+    - targetCorrespondingSourceObject: {fileID: 3408430495609360286, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 322078742635072567}
   m_SourcePrefab: {fileID: 100100000, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
 --- !u!1 &7932342085576835313 stripped
 GameObject:
@@ -141,3 +144,15 @@ MonoBehaviour:
     m_Bits: 8
   dashChainCount: 2
   dashForce: 10
+--- !u!114 &322078742635072567
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932342085576835313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7854655e2f28e5442beb26ea7dfd5b08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyVisibility

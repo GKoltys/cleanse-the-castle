@@ -148,6 +148,7 @@ public abstract class KnightAttack: EnemyAttack
     protected virtual void DashAttackEnd()
     {
         isAttacking = false;
+        isDashing = false;
         animator.SetTrigger("EndAttack");
         enemy.movement.SetCanMove(true);
         nextAttackTime = Time.time + attackCooldown;
