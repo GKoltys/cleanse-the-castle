@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5657983591423568866}
   - component: {fileID: 450603305510995834}
   - component: {fileID: 1400544258419049478}
+  - component: {fileID: 1798467653303638694}
   m_Layer: 0
   m_Name: Spikes
   m_TagString: Untagged
@@ -179,3 +180,15 @@ MonoBehaviour:
     m_Bits: 8
   spikeTiming: 5
   spikeDamage: 15
+--- !u!114 &1798467653303638694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1571635250321256107}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 79dd2dd3a54b3994399570956749f2b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EntityVisibility
