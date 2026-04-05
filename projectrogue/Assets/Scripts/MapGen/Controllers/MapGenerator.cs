@@ -56,6 +56,7 @@ public class MapGenerator : MonoBehaviour
     private GameObject currentBoss;
     private Vector2Int currentBossTile;
     private bool bossStairsSpawned;
+    private GameObject currentStairs;
 
     private void Start()
     {
@@ -73,6 +74,7 @@ public class MapGenerator : MonoBehaviour
         bool isBoss = IsBossFloor(floorNumber);
 
         bossStairsSpawned = false;
+        currentStairs = null;
 
         // choose whether to make boss or dungeon floor
         if (isBoss)
@@ -127,6 +129,7 @@ public class MapGenerator : MonoBehaviour
 
         PlacePlayer(playerTile);
         PlaceBoss(floorNumber, bossTile);
+        SpawnStairsNearBoss();
     }
 
     private void PlaceBoss(int floorNumber, Vector2Int bossPos)
@@ -213,7 +216,15 @@ public class MapGenerator : MonoBehaviour
                     case TileType.Floor:
                         floorTilemap.SetTile(pos, currentFloorTile);
                         // check for boss floor
-                        if (!isBoss)
+                        if (isBoss)
+                        {
+                            // surround boss arena with collider decor on floor tiles next to walls
+                            if (IsBossArenaBorder(map, x, y))
+                            {
+                                colliderDecorTilemap.SetTile(pos, currentColliderDecorTile);
+                            }
+                        }
+                        else
                         {
                             // randomly place decor on some floor tiles
                             if (currentDecorTile.Length > 0 && Random.value < decorChance)
@@ -226,6 +237,7 @@ public class MapGenerator : MonoBehaviour
                                 colliderDecorTilemap.SetTile(pos, currentColliderDecorTile);
                             }
                         }
+
                         break;
                     case TileType.Wall:
                         wallTilemap.SetTile(pos, currentWallTile);
@@ -473,7 +485,14 @@ public class MapGenerator : MonoBehaviour
             return;
 
         bossStairsSpawned = true;
-        SpawnStairsNearBoss();
+        if (currentStairs != null)
+        {
+            var stairs = currentStairs.GetComponentInChildren<StairsController>();
+            if (stairs != null)
+            {
+                stairs.Unlock();
+            }
+        }
     }
 
     private void SpawnStairsNearBoss()
@@ -501,20 +520,41 @@ public class MapGenerator : MonoBehaviour
         Vector2Int stairsTile = BossFloorGenerator.PickTileNear(freeFloors, bossWorldPos, 3f, 5f);
 
         Vector3 world = new Vector3(stairsTile.x + 0.5f, stairsTile.y + 0.5f, 0f);
-        GameObject stairs = Instantiate(
+        currentStairs = Instantiate(
           stairsPrefab,
           world,
           Quaternion.identity,
           entitiesRoot
         );
 
-        var initializables = stairs.GetComponentsInChildren<IMapGenInit>();
+        var initializables = currentStairs.GetComponentsInChildren<IMapGenInit>();
 
         // initialize prefab
         foreach (var init in initializables)
         {
             init.Init(this);
         }
+
+        // lock stairs
+        var stairs = currentStairs.GetComponentInChildren<StairsController>();
+        if (stairs != null)
+        {
+            stairs.Lock();
+        }
+    }
+
+    private bool IsBossArenaBorder(MapData map, int x, int y)
+    {
+        if (map.tiles[x, y] != TileType.Floor)
+            return false;
+
+        // floor tile touching any wall tile
+        if (x > 0 && map.tiles[x - 1, y] == TileType.Wall) return true;
+        if (x < map.width - 1 && map.tiles[x + 1, y] == TileType.Wall) return true;
+        if (y > 0 && map.tiles[x, y - 1] == TileType.Wall) return true;
+        if (y < map.height - 1 && map.tiles[x, y + 1] == TileType.Wall) return true;
+
+        return false;
     }
 
 }
