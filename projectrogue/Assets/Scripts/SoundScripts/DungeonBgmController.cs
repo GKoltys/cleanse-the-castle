@@ -6,6 +6,7 @@ public class DungeonBgmController : MonoBehaviour
 {
     private AudioSource audioSource;
 
+    [SerializeField] private AudioClip startingArea;
     [SerializeField] private AudioClip dungeon;
     [SerializeField] private AudioClip bossBattle;
     [SerializeField] private AudioClip finalBattle;
@@ -32,6 +33,10 @@ public class DungeonBgmController : MonoBehaviour
 
         switch (floor)
         {
+            case 0:
+                newClip = startingArea;
+                break;
+
             case 10:
             case 20:
                 newClip = bossBattle;

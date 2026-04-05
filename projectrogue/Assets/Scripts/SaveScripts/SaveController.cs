@@ -69,6 +69,10 @@ public class SaveController : MonoBehaviour
         shouldLoadOnNextScene = false;
         Debug.Log(scene.name);
 
+        if (scene.name == "StartingArea")
+        {
+            DungeonBgmController.Instance.ChangeMusic(0);
+        }
         if (scene.name == "MainMenu") return;
         if (scene.name == "OpeningScene")
         {
