@@ -210,4 +210,9 @@ public class PlayerRelics : MonoBehaviour
         return bonusGold;
     }
 
+    // Called using animation event
+    public void EnableUiListener()
+    {
+        UIController.Instance.SetUiListener(true);
+    }
 }

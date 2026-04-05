@@ -27,6 +27,7 @@ public class RelicController : ConsumableController
 
         if (pickupController != null && itemData != null && itemData.icon != null)
         {
+            UIController.Instance.SetUiListener(false);
             // play pickup animation of relic
             pickupController.PlayPickupAnimation(itemData.icon, itemData.itemShopName);
         }

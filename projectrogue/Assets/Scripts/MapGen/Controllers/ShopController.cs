@@ -46,6 +46,8 @@ public class ShopController : MonoBehaviour
     // show the shop ui of a given shop npc
     public void OpenShop(ShopNPC shop)
     {
+        UIController.Instance.SetUiListener(false);
+
         currentShop = shop;
         shopPanel.SetActive(true);
         if (shopTitleText != null)
@@ -64,6 +66,8 @@ public class ShopController : MonoBehaviour
     {
         shopPanel.SetActive(false);
         currentShop = null;
+
+        UIController.Instance.SetUiListener(true);
     }
 
     // clear the shop grid and re add shop slots with current stock

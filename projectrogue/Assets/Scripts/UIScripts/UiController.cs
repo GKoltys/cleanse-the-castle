@@ -5,7 +5,22 @@ public class UIController : MonoBehaviour
 {
     public GameObject menuCanvas;
     [SerializeField] private PlayerInput playerInput;
+    private bool listenForInput = true;
 
+    public static UIController Instance { get; private set; }
+
+    private void Awake()
+    {
+
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,7 +29,7 @@ public class UIController : MonoBehaviour
 
     private void Update()
     {
-        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
+        if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame && listenForInput)
         {
             bool isActive = !menuCanvas.activeSelf;
 
@@ -22,5 +37,10 @@ public class UIController : MonoBehaviour
 
             playerInput.enabled = !isActive;
         }
+    }
+
+    public void SetUiListener(bool flag)
+    {
+        listenForInput = flag;
     }
 }
