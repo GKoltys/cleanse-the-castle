@@ -8,7 +8,13 @@ public enum SoundGroupName
     COIN,
     HEAL,
     BUFF,
-    RELIC
+    RELIC,
+    CHEST,
+    LOCKEDCHEST,
+    PLAYERDEATH,
+    STAIRS,
+    KEY,
+    SWORDWHOOSH
 }
 
 // https://www.youtube.com/watch?v=rAX_r0yBwzQ

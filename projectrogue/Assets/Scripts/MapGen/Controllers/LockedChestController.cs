@@ -89,6 +89,7 @@ public class LockedChestController : MonoBehaviour, IMapGenInit, IInteractable
     private void OpenChest()
     {
         SetIsOpened(true);
+        SoundEffectManager.Play(SoundGroupName.LOCKEDCHEST);
         animator.SetTrigger("OpenLockedChest");
     }
 
