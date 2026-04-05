@@ -60,8 +60,34 @@ PrefabInstance:
       propertyPath: m_Name
       value: RedKnightBossEnemy
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -4395408449254237883, guid: 5a2cbb40cb69bdc4a94837bdc0f2638a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 7932342085576835313, guid: 5a2cbb40cb69bdc4a94837bdc0f2638a, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8769488477923425937}
   m_SourcePrefab: {fileID: 100100000, guid: 5a2cbb40cb69bdc4a94837bdc0f2638a, type: 3}
+--- !u!1 &1097383503746729326 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7932342085576835313, guid: 5a2cbb40cb69bdc4a94837bdc0f2638a, type: 3}
+  m_PrefabInstance: {fileID: 7003070357779432863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8769488477923425937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1097383503746729326}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51561cd4f64574f4a8ded1b203ef6ccb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RedKnightBossEnemy
+  maxHealth: 500
+  damage: 50
+  moveSpeed: 2
+  agroRadius: 8
+  movement: {fileID: 0}

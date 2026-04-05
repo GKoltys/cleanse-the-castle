@@ -87,41 +87,26 @@ PrefabInstance:
     m_RemovedComponents:
     - {fileID: 8068425484603737859, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
     - {fileID: 2297265468156238403, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+    - {fileID: 1386458032861941340, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+    - {fileID: 6572304710930160323, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 3408430495609360286, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2328930165573954855}
     - targetCorrespondingSourceObject: {fileID: 3408430495609360286, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4141398909171489894}
     - targetCorrespondingSourceObject: {fileID: 3408430495609360286, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
       insertIndex: -1
       addedObject: {fileID: 322078742635072567}
+    - targetCorrespondingSourceObject: {fileID: 3408430495609360286, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: -4395408449254237883}
   m_SourcePrefab: {fileID: 100100000, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
 --- !u!1 &7932342085576835313 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3408430495609360286, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
   m_PrefabInstance: {fileID: 4708647977442856815}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2328930165573954855
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7932342085576835313}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 776508c3d74d4c44d828f8dd0dfaaa7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RedKnightEnemy
-  maxHealth: 500
-  damage: 50
-  moveSpeed: 2
-  agroRadius: 8
-  movement: {fileID: 0}
 --- !u!114 &4141398909171489894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,6 +127,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
+  swipeDamage: 40
+  dashDamage: 30
   dashChainCount: 2
   dashForce: 10
 --- !u!114 &322078742635072567
@@ -156,3 +143,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7854655e2f28e5442beb26ea7dfd5b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyVisibility
+--- !u!114 &-4395408449254237883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7932342085576835313}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 776508c3d74d4c44d828f8dd0dfaaa7b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RedKnightEnemy
+  maxHealth: 500
+  damage: 50
+  moveSpeed: 2
+  agroRadius: 8
+  movement: {fileID: 0}

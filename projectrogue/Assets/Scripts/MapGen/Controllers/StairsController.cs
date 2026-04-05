@@ -5,6 +5,7 @@ public class StairsController : MonoBehaviour, IMapGenInit
 {
     private PlayerBase playerBase;
     private MapGenerator dungeon;
+    private bool isUnlocked = true;
 
     public void Init(MapGenerator controller)
     {
@@ -12,9 +13,23 @@ public class StairsController : MonoBehaviour, IMapGenInit
         dungeon = controller;
     }
 
+    // set stairs to active, used for boss floor after defeating boss
+    public void Unlock()
+    {
+        isUnlocked = true;
+    }
+
+    // set stairs to active, used for boss floor after defeating boss
+    public void Lock()
+    {
+        isUnlocked = false;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (dungeon == null) return;
+
+        if (!isUnlocked) return;
 
         if (other.CompareTag("Player"))
         {
