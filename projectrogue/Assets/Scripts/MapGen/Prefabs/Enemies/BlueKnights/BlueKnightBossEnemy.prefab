@@ -60,8 +60,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6572304710930160323, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3408430495609360286, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6683809945866396533}
   m_SourcePrefab: {fileID: 100100000, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+--- !u!1 &6506855668861177558 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3408430495609360286, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+  m_PrefabInstance: {fileID: 8431252780468044104}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &6683809945866396533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6506855668861177558}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ddefb12be96a1345b1afb7ec0fc1411, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BlueKnightBossEnemy
+  maxHealth: 300
+  damage: 50
+  moveSpeed: 1.5
+  agroRadius: 8
+  movement: {fileID: 0}
