@@ -8,13 +8,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2297265468156238403, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
+      propertyPath: agroRadius
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 2852358968330711830, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
       propertyPath: dropTable
       value: 
       objectReference: {fileID: 11400000, guid: 31ed17c1784483743a63a9c319249082, type: 2}
     - target: {fileID: 3408430495609360286, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
       propertyPath: m_Name
-      value: BlueKnightBossEnemy Variant
+      value: BlueKnightBossEnemy
       objectReference: {fileID: 0}
     - target: {fileID: 5275936383569819829, guid: 58fc756db9377d7408329e2f08e503d7, type: 3}
       propertyPath: m_LocalPosition.x

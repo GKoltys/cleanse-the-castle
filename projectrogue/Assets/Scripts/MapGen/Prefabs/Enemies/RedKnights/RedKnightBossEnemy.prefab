@@ -48,6 +48,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2328930165573954855, guid: 5a2cbb40cb69bdc4a94837bdc0f2638a, type: 3}
+      propertyPath: agroRadius
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 7407831214840069241, guid: 5a2cbb40cb69bdc4a94837bdc0f2638a, type: 3}
       propertyPath: dropTable
       value: 
