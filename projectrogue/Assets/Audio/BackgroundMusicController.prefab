@@ -143,6 +143,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DungeonBgmController
   startingArea: {fileID: 8300000, guid: 393d9d9e63d56514d8b5cf9f06b8f769, type: 3}
-  dungeon: {fileID: 8300000, guid: cab1ee86af76fdd4d9c45f3027b2304c, type: 3}
+  waterDungeon: {fileID: 8300000, guid: cab1ee86af76fdd4d9c45f3027b2304c, type: 3}
+  lavaDungeon: {fileID: 8300000, guid: bf09eccbd20ed284f81a5639a6588c69, type: 3}
   bossBattle: {fileID: 8300000, guid: 9a2284b8f72029c4a8d01cf329444c89, type: 3}
   finalBattle: {fileID: 8300000, guid: 1a812169ac4bd9143837efb262461667, type: 3}

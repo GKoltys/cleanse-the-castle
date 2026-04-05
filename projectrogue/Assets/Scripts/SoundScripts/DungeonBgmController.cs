@@ -1,4 +1,5 @@
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -7,7 +8,8 @@ public class DungeonBgmController : MonoBehaviour
     private AudioSource audioSource;
 
     [SerializeField] private AudioClip startingArea;
-    [SerializeField] private AudioClip dungeon;
+    [SerializeField] private AudioClip waterDungeon;
+    [SerializeField] private AudioClip lavaDungeon;
     [SerializeField] private AudioClip bossBattle;
     [SerializeField] private AudioClip finalBattle;
 
@@ -46,8 +48,16 @@ public class DungeonBgmController : MonoBehaviour
                 newClip = finalBattle;
                 break;
 
+            case < 16:
+                newClip = waterDungeon;
+                break;
+
+            case < 30:
+                newClip = lavaDungeon;
+                break;
+
             default:
-                newClip = dungeon;
+                newClip = waterDungeon;
                 break;
         }
 
