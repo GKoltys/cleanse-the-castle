@@ -89,5 +89,5 @@ MonoBehaviour:
   maxHealth: 500
   damage: 50
   moveSpeed: 2
-  agroRadius: 8
+  agroRadius: 100
   movement: {fileID: 0}

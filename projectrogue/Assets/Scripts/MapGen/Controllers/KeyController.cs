@@ -28,6 +28,7 @@ public class KeyController : MonoBehaviour, IMapGenInit
         if (col) col.enabled = false;
 
         SetIsCollected(true);
+        SoundEffectManager.Play(SoundGroupName.KEY);
         playerBase.KeyCollected();
         animator.SetTrigger("KeyCollected");
     }

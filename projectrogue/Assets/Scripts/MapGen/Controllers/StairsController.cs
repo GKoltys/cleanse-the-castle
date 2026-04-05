@@ -33,6 +33,8 @@ public class StairsController : MonoBehaviour, IMapGenInit
 
         if (other.CompareTag("Player"))
         {
+            SoundEffectManager.Play(SoundGroupName.STAIRS);
+
             // https://docs.unity3d.com/6000.3/Documentation/ScriptReference/RigidbodyConstraints2D.html
             // disable movement
             var rb = other.attachedRigidbody;
