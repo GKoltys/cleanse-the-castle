@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Tilemaps;
-using UnityEngine.EventSystems;
 
 public class MapGenerator : MonoBehaviour
 {
@@ -53,6 +52,7 @@ public class MapGenerator : MonoBehaviour
 
     private MapData currentMap;
     private int bossFloorThreshold = 10;
+    private int floorFireThreshold = 15;
     private GameObject currentBoss;
     private Vector2Int currentBossTile;
     private bool bossStairsSpawned;
@@ -108,7 +108,7 @@ public class MapGenerator : MonoBehaviour
         freeFloors.Remove(playerPos);
 
         // place prefabs on map
-        PlacePrefabs(currentMap, freeFloors, playerPos);
+        PlacePrefabs(freeFloors, playerPos);
 
         // place player position
         PlacePlayer(playerPos);
@@ -187,7 +187,7 @@ public class MapGenerator : MonoBehaviour
         TileBase currentColliderDecorTile;
 
         // change floor/wall tiles depending on floor count
-        if (floors < 15)
+        if (floors < floorFireThreshold)
         {
             currentFloorTile = floorTile;
             currentWallTile = wallTile;
@@ -256,15 +256,6 @@ public class MapGenerator : MonoBehaviour
         }
     }
 
-    private void PlacePlayerInCenter(MapData map)
-    {
-        int x = map.width / 2;
-        int y = map.height / 2;
-
-        // Center player in the tile
-        player.position = new Vector3(x + 0.5f, y + 0.5f, 0f);
-    }
-
     // set player to given position
     private void PlacePlayer(Vector2Int pos)
     {
@@ -273,7 +264,7 @@ public class MapGenerator : MonoBehaviour
 
     // randomly place different types of prefabs across the generated level
     // https://docs.unity3d.com/2020.3/Documentation/Manual/InstantiatingPrefabs.html
-    private void PlacePrefabs(MapData map, List<Vector2Int> floors, Vector2Int playerTile)
+    private void PlacePrefabs(List<Vector2Int> floors, Vector2Int playerTile)
     {
         // collect tiles from map that are set to floor
         if (floors.Count == 0) return;
@@ -472,7 +463,7 @@ public class MapGenerator : MonoBehaviour
     // check floor count so every 10 is a boss room
     private bool IsBossFloor(int nextFloorNumber)
     {
-        return nextFloorNumber % 10 == 0;
+        return nextFloorNumber % bossFloorThreshold == 0;
     }
 
     // called by boss enemy

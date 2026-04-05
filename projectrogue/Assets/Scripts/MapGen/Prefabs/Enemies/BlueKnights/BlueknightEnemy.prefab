@@ -213,7 +213,7 @@ GameObject:
   - component: {fileID: 2852358968330711830}
   - component: {fileID: 8068425484603737859}
   - component: {fileID: 5511267562438045038}
-  - component: {fileID: 1386458032861941340}
+  - component: {fileID: 6572304710930160323}
   m_Layer: 6
   m_Name: BlueknightEnemy
   m_TagString: Untagged
@@ -438,7 +438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad97548ce2ed4a4b9e58d5e4b5d7371, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyLootDropper
-  dropTable: {fileID: 11400000, guid: 31ed17c1784483743a63a9c319249082, type: 2}
+  dropTable: {fileID: 11400000, guid: a3efa235ee6ae034183b47f25823bc00, type: 2}
 --- !u!114 &8068425484603737859
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,7 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7854655e2f28e5442beb26ea7dfd5b08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyVisibility
---- !u!114 &1386458032861941340
+--- !u!114 &6572304710930160323
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -484,9 +484,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3408430495609360286}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5ddefb12be96a1345b1afb7ec0fc1411, type: 3}
+  m_Script: {fileID: 11500000, guid: 66202aad489243f48aeb8cf823da61a1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BlueKnightBossEnemy
+  m_EditorClassIdentifier: Assembly-CSharp::BlueKnightEnemy
   maxHealth: 300
   damage: 50
   moveSpeed: 1.5
