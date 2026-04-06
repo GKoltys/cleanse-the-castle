@@ -66,6 +66,9 @@ public class SaveController : MonoBehaviour
     // Called automatically by the engine after LoadScenceAsync()
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
+        // Keep this commented until final build
+        if (!shouldLoadOnNextScene) return;
+
         shouldLoadOnNextScene = false;
         Debug.Log(scene.name);
 
@@ -92,8 +95,7 @@ public class SaveController : MonoBehaviour
         playerStats = player.GetComponent<PlayerStats>();
         playerRelics = player.GetComponent<PlayerRelics>();
 
-        // Keep this commented until final build
-        //if (!shouldLoadOnNextScene) return;
+        
 
         LoadGame();
     }
