@@ -1,3 +1,5 @@
+using NUnit.Framework;
+using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -5,6 +7,7 @@ using UnityEngine.Audio;
 public class SaveSettingsController : MonoBehaviour
 {
     private string saveLocation;
+    private List<Resolution> uniqueResolutions;
     [SerializeField] private AudioMixer audioMixer;
     
     public SettingsData CurrentSettings {  get; private set; } = new SettingsData();
@@ -44,7 +47,7 @@ public class SaveSettingsController : MonoBehaviour
     {
         if (displayOption == 0)
         {
-            Screen.fullScreenMode = FullScreenMode.FullScreenWindow;
+            Screen.fullScreenMode = FullScreenMode.ExclusiveFullScreen;
             Cursor.lockState = CursorLockMode.Confined;
         }
         else if (displayOption == 1)
@@ -63,12 +66,16 @@ public class SaveSettingsController : MonoBehaviour
 
     public void ApplyResolution(int index)
     {
-        var resolutions = Screen.resolutions;
-
-        if (index >= 0 && index < resolutions.Length)
+        foreach (var res in uniqueResolutions)
         {
-            var r = resolutions[index];
-            Screen.SetResolution(r.width, r.height, Screen.fullScreenMode);
+            Debug.Log("Resolution: " + res);
+        }
+
+        if (index >= 0 && index < uniqueResolutions.Count)
+        {
+            var r = uniqueResolutions[index];
+            Debug.Log("Resolution changed to: " + r.width + " x " + r.height);
+            Screen.SetResolution(r.width, r.height, Screen.fullScreenMode, r.refreshRateRatio);
         }
     }
 
@@ -120,6 +127,11 @@ public class SaveSettingsController : MonoBehaviour
         CurrentSettings.sfxVolume = volume;
         ApplySfxVolume(volume);
         Save();
+    }
+
+    public void SetResolutionList(List<Resolution> resList)
+    {
+        this.uniqueResolutions = resList;
     }
 
     public void Save()

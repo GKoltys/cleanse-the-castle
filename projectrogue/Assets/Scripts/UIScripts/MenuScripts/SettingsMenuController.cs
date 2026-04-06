@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Audio;
@@ -10,7 +11,7 @@ public class SettingsMenuController: MonoBehaviour
 {
     public AudioMixer audioMixer;
 
-    private readonly List<Resolution> uniqueResolutions = new();
+    private List<Resolution> uniqueResolutions = new();
 
     [SerializeField] private TMP_Dropdown displayDropdown;
     [SerializeField] private TMP_Dropdown resolutionDropdown;
@@ -24,20 +25,40 @@ public class SettingsMenuController: MonoBehaviour
         var s = SaveSettingsController.Instance.CurrentSettings;
 
         // Filters out all resolution duplicates with different Hz values
-        HashSet<(int w, int h)> resolutionSet = new();
+        uniqueResolutions.Clear();
+
+        Dictionary<(int w, int h), Resolution> resolutionMap = new();
 
         foreach (var r in Screen.resolutions)
         {
             var key = (r.width, r.height);
-            if (resolutionSet.Add(key)) uniqueResolutions.Add(r);
+
+            if (!resolutionMap.ContainsKey(key))
+            {
+                resolutionMap[key] = r;
+            }
+            else
+            {
+                if (r.refreshRateRatio.value > resolutionMap[key].refreshRateRatio.value)
+                {
+                    resolutionMap[key] = r;
+                }
+            }
         }
+
+        uniqueResolutions = resolutionMap.Values
+            .OrderBy(r => r.width)
+            .ThenBy(r => r.height)
+            .ToList();
+
+        SaveSettingsController.Instance.SetResolutionList(uniqueResolutions);
 
         List<string> resList = new();
 
         for (int i = 0; i < uniqueResolutions.Count; i++)
         {
-            string res = uniqueResolutions[i].width + " x " + uniqueResolutions[i].height;
-            resList.Add(res);
+            var r = uniqueResolutions[i];
+            resList.Add($"{r.width} x {r.height}");
         }
 
         resolutionDropdown.AddOptions(resList);
