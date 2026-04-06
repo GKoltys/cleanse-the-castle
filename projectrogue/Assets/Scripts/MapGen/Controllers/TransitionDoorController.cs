@@ -14,10 +14,14 @@ public class TransitionDoorController : MonoBehaviour
             // https://discussions.unity.com/t/how-to-make-the-scene-change-on-a-collision/636855
             if (FadeUIController.Instance != null)
             {
+                playerBase.SetFloorCount(1);
+                SaveController.Instance.SaveGame();
                 FadeUIController.Instance.FadeAndLoadScene(sceneToLoad);
             }
             else
             {
+                playerBase.SetFloorCount(1);
+                SaveController.Instance.SaveGame();
                 SaveController.Instance.RequestLoad();
                 SceneManager.LoadSceneAsync(sceneToLoad);
             }

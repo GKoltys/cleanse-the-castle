@@ -57,9 +57,11 @@ public class MapGenerator : MonoBehaviour
     private Vector2Int currentBossTile;
     private bool bossStairsSpawned;
     private GameObject currentStairs;
+    private int floorNumber;
 
     private void Start()
     {
+        floorNumber = playerBase.GetFloorCount;
         BuildFloor();
     }
 
@@ -68,8 +70,6 @@ public class MapGenerator : MonoBehaviour
         // for clearing previous level entities
         ClearEntitiesRoot();
         ClearDecorRoot();
-
-        int floorNumber = playerBase.GetFloorCount + 1;
 
         bool isBoss = IsBossFloor(floorNumber);
 
@@ -157,6 +157,7 @@ public class MapGenerator : MonoBehaviour
 
     public void GoToNextFloor()
     {
+        floorNumber++;
         StartCoroutine(NextFloorTransitionRoutine());
     }
 
@@ -476,7 +477,7 @@ public class MapGenerator : MonoBehaviour
     // check floor count so every 10 is a boss room
     private bool IsBossFloor(int nextFloorNumber)
     {
-        return nextFloorNumber % bossFloorThreshold == 0;
+        return nextFloorNumber % bossFloorThreshold == 0 && nextFloorNumber != 0;
     }
 
     // called by boss enemy
