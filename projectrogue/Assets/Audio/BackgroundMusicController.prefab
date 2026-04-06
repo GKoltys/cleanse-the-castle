@@ -147,3 +147,4 @@ MonoBehaviour:
   lavaDungeon: {fileID: 8300000, guid: bf09eccbd20ed284f81a5639a6588c69, type: 3}
   bossBattle: {fileID: 8300000, guid: 9a2284b8f72029c4a8d01cf329444c89, type: 3}
   finalBattle: {fileID: 8300000, guid: 1a812169ac4bd9143837efb262461667, type: 3}
+  endingScene: {fileID: 8300000, guid: 3d086cb8979a2fb4d90d587060407654, type: 3}
