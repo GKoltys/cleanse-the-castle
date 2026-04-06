@@ -12,6 +12,7 @@ public class PauseMenuController : MonoBehaviour
     public void ResumeGame()
     {
         menuCanvas.SetActive(false);
+        UIController.Instance.SetPlayerInputs(true);
     }
     
     public void OnSavePressed()

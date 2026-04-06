@@ -39,6 +39,11 @@ public class UIController : MonoBehaviour
         }
     }
 
+    public void SetPlayerInputs(bool condition)
+    {
+        playerInput.enabled = condition;
+    }
+
     public void SetUiListener(bool flag)
     {
         listenForInput = flag;
