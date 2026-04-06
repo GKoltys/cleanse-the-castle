@@ -73,7 +73,7 @@ public class SaveController : MonoBehaviour
         {
             DungeonBgmController.Instance.ChangeMusic(0);
         }
-        if (scene.name == "MainMenu") return;
+        if (scene.name == "MainMenu" || scene.name == "EndingScene") return;
         if (scene.name == "OpeningScene")
         {
             WipeSaveFile();

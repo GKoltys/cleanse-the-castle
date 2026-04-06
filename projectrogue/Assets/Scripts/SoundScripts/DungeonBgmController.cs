@@ -12,6 +12,7 @@ public class DungeonBgmController : MonoBehaviour
     [SerializeField] private AudioClip lavaDungeon;
     [SerializeField] private AudioClip bossBattle;
     [SerializeField] private AudioClip finalBattle;
+    [SerializeField] private AudioClip endingScene;
 
     public static DungeonBgmController Instance { get; private set; }
 
@@ -64,6 +65,12 @@ public class DungeonBgmController : MonoBehaviour
         if (audioSource.clip == newClip) return;
 
         audioSource.clip = newClip;
+        audioSource.Play();
+    }
+
+    public void PlayEndingSceneMusic()
+    {
+        audioSource.clip = endingScene;
         audioSource.Play();
     }
 }

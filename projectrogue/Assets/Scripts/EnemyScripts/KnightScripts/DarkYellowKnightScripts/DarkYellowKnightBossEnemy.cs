@@ -16,6 +16,7 @@ public class DarkYellowKnightBossEnemy : EnemyBase, IMapGenInit
         if (despawn)
         {
             despawn = false;
+            DungeonBgmController.Instance.PlayEndingSceneMusic();
             SaveController.Instance.RequestLoad();
             SceneManager.LoadSceneAsync("EndingScene");
             base.Despawn();
