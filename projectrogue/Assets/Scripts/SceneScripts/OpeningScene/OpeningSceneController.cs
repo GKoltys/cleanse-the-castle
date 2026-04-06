@@ -31,8 +31,7 @@ public class OpeningSceneController : MonoBehaviour
         if (Keyboard.current != null && Keyboard.current.escapeKey.wasPressedThisFrame)
         {
             Debug.Log("cutscene was skipped");
-            SaveController.Instance.RequestLoad();
-            SaveController.Instance.StartNewRun();
+            director.Stop();
         }
     }
 }
