@@ -32,7 +32,7 @@ public class SpikeController : MonoBehaviour, IMapGenInit
 
         if (spikesActive)
         {
-            Collider2D hit = Physics2D.OverlapBox(transform.position, new Vector2(1, 1), 0f, playerLayer);
+            Collider2D hit = Physics2D.OverlapBox(transform.position, new Vector2(0.8f, 0.8f), 0f, playerLayer);
 
             if (hit != null)
             {
