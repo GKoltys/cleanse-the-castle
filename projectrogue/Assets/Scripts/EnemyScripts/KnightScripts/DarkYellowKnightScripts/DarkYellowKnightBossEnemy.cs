@@ -1,8 +1,10 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DarkYellowKnightBossEnemy : EnemyBase, IMapGenInit
 {
     private MapGenerator mapGenerator;
+    private bool despawn = true;
 
     public void Init(MapGenerator generator)
     {
@@ -11,7 +13,12 @@ public class DarkYellowKnightBossEnemy : EnemyBase, IMapGenInit
 
     public override void Despawn()
     {
-        // trigger ending cutscene?
-        base.Despawn();
+        if (despawn)
+        {
+            despawn = false;
+            SaveController.Instance.RequestLoad();
+            SceneManager.LoadSceneAsync("EndingScene");
+            base.Despawn();
+        }
     }
 }

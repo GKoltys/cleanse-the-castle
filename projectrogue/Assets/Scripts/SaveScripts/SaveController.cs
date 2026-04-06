@@ -69,7 +69,7 @@ public class SaveController : MonoBehaviour
         shouldLoadOnNextScene = false;
         Debug.Log(scene.name);
 
-        if (scene.name == "MainMenu") return;
+        if (scene.name == "MainMenu" || scene.name == "EndingScene") return;
         if (scene.name == "OpeningScene")
         {
             WipeSaveFile();
@@ -151,7 +151,18 @@ public class SaveController : MonoBehaviour
     public void StartNewRun()
     {
         newRun = true;
+        RequestLoad();
         SceneManager.LoadScene(2);
+    }
+
+    public void FinishGame()
+    {
+        if (HasSaveFile())
+        {
+            File.Delete(saveLocation);
+            RequestLoad();
+            SceneManager.LoadSceneAsync("MainMenu");
+        }
     }
 
     public void WipeSaveFile()
