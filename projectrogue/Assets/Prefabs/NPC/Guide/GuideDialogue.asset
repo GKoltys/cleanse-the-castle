@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: GuideDialogue
   m_EditorClassIdentifier: Assembly-CSharp::NPCDialogue
   npcName: Guide
-  npcPortrait: {fileID: -2828118504230255338, guid: 79ac7e2dab5c10f4b8eae5c0a3693438, type: 3}
+  npcPortrait: {fileID: 6524362745655765379, guid: 79ac7e2dab5c10f4b8eae5c0a3693438, type: 3}
   dialogueLines:
-  - Choose a weapon from the altar behind me..
-  - then venture to the right and..
-  - Cleanse the Castle!
+  - That Dark Knight sent you here too?
+  - We can't leave until we defeat him at the end of the castle..
+  - Grab a weapon from the altar behind me and try your best..
   typingSpeed: 0.05
