@@ -95,4 +95,9 @@ public class SettingsMenuController: MonoBehaviour
     {
         SaveSettingsController.Instance.SetSfxVolume(volume);
     }
+
+    public List<Resolution> GetUniqueResolutions()
+    {
+        return uniqueResolutions;
+    }
 }

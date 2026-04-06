@@ -9,6 +9,7 @@ public class SaveSettingsController : MonoBehaviour
     private string saveLocation;
     private List<Resolution> uniqueResolutions;
     [SerializeField] private AudioMixer audioMixer;
+    [SerializeField] private SettingsMenuController settingsMenuController;
     
     public SettingsData CurrentSettings {  get; private set; } = new SettingsData();
 
@@ -31,6 +32,7 @@ public class SaveSettingsController : MonoBehaviour
 
     private void Start()
     {
+        uniqueResolutions = settingsMenuController.GetUniqueResolutions();
         ApplySettings();
     }
 
@@ -66,15 +68,10 @@ public class SaveSettingsController : MonoBehaviour
 
     public void ApplyResolution(int index)
     {
-        foreach (var res in uniqueResolutions)
-        {
-            Debug.Log("Resolution: " + res);
-        }
-
         if (index >= 0 && index < uniqueResolutions.Count)
         {
             var r = uniqueResolutions[index];
-            Debug.Log("Resolution changed to: " + r.width + " x " + r.height);
+            //Debug.Log("Resolution changed to: " + r.width + " x " + r.height);
             Screen.SetResolution(r.width, r.height, Screen.fullScreenMode, r.refreshRateRatio);
         }
     }
