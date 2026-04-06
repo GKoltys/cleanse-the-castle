@@ -1,17 +1,17 @@
-using NUnit.Framework;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Audio;
 
 public class SaveSettingsController : MonoBehaviour
 {
     private string saveLocation;
-    private List<Resolution> uniqueResolutions;
+    private List<Resolution> uniqueResolutions = new();
     [SerializeField] private AudioMixer audioMixer;
     [SerializeField] private SettingsMenuController settingsMenuController;
-    
-    public SettingsData CurrentSettings {  get; private set; } = new SettingsData();
+
+    public SettingsData CurrentSettings;
 
     public static SaveSettingsController Instance { get; private set; }
 
@@ -26,13 +26,41 @@ public class SaveSettingsController : MonoBehaviour
         Instance = this;
         DontDestroyOnLoad(gameObject);
 
-        saveLocation = Path.Combine(Application.persistentDataPath, "settings.json");
-        Load();
+        CurrentSettings = new();
     }
 
     private void Start()
     {
-        uniqueResolutions = settingsMenuController.GetUniqueResolutions();
+        // Filters out all resolution duplicates with different Hz values
+        uniqueResolutions.Clear();
+
+        Dictionary<(int w, int h), Resolution> resolutionMap = new();
+
+        foreach (var r in Screen.resolutions)
+        {
+            var key = (r.width, r.height);
+
+            if (!resolutionMap.ContainsKey(key))
+            {
+                resolutionMap[key] = r;
+            }
+            else
+            {
+                if (r.refreshRateRatio.value > resolutionMap[key].refreshRateRatio.value)
+                {
+                    resolutionMap[key] = r;
+                }
+            }
+        }
+
+        uniqueResolutions = resolutionMap.Values
+            .OrderBy(r => r.width)
+            .ThenBy(r => r.height)
+            .ToList();
+
+        saveLocation = Path.Combine(Application.persistentDataPath, "settings.json");
+        Load();
+
         ApplySettings();
     }
 
@@ -126,9 +154,14 @@ public class SaveSettingsController : MonoBehaviour
         Save();
     }
 
-    public void SetResolutionList(List<Resolution> resList)
+    public List<Resolution> GetResolutionList()
     {
-        this.uniqueResolutions = resList;
+        return uniqueResolutions;
+    }
+
+    public int GetResolution()
+    {
+        return CurrentSettings.resolutionIndex;
     }
 
     public void Save()
@@ -140,6 +173,8 @@ public class SaveSettingsController : MonoBehaviour
     {
         if (!File.Exists(saveLocation))
         {
+            // Setting highest res by default
+            CurrentSettings.resolutionIndex = uniqueResolutions.Count - 1;
             Save();
             return;
         }

@@ -24,34 +24,7 @@ public class SettingsMenuController: MonoBehaviour
         resolutionDropdown.ClearOptions();
         var s = SaveSettingsController.Instance.CurrentSettings;
 
-        // Filters out all resolution duplicates with different Hz values
-        uniqueResolutions.Clear();
-
-        Dictionary<(int w, int h), Resolution> resolutionMap = new();
-
-        foreach (var r in Screen.resolutions)
-        {
-            var key = (r.width, r.height);
-
-            if (!resolutionMap.ContainsKey(key))
-            {
-                resolutionMap[key] = r;
-            }
-            else
-            {
-                if (r.refreshRateRatio.value > resolutionMap[key].refreshRateRatio.value)
-                {
-                    resolutionMap[key] = r;
-                }
-            }
-        }
-
-        uniqueResolutions = resolutionMap.Values
-            .OrderBy(r => r.width)
-            .ThenBy(r => r.height)
-            .ToList();
-
-        SaveSettingsController.Instance.SetResolutionList(uniqueResolutions);
+        uniqueResolutions = SaveSettingsController.Instance.GetResolutionList();
 
         List<string> resList = new();
 
