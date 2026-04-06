@@ -31,6 +31,11 @@ public class MainMenuController : MonoBehaviour
             continueText.color = new Color32(115, 115, 115, 255);
             continueText.GetComponent<TmpHoverHighlight>().SetActive(false);
         }
+
+        if (DungeonBgmController.Instance != null)
+        {
+            Destroy(DungeonBgmController.Instance.gameObject);
+        }
     }
 
     public void NewGame()

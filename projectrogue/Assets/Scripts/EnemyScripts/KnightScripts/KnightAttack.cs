@@ -98,6 +98,8 @@ public abstract class KnightAttack: EnemyAttack
 
         Collider2D hit = Physics2D.OverlapBox(attackPoint, new Vector2(1, 1), 0f, playerLayer);
 
+        SoundEffectManager.Play(SoundGroupName.SWORDSLASH);
+
         if (hit != null)
         {
             playerHealth.TakeDamage(swipeDamage, enemy);
@@ -118,6 +120,7 @@ public abstract class KnightAttack: EnemyAttack
     {
         dashQueued = false;
         isDashing = true;
+        SoundEffectManager.Play(SoundGroupName.SWORDWHOOSH);
         rb.linearVelocity = dashDirection * dashForce;
     }
 

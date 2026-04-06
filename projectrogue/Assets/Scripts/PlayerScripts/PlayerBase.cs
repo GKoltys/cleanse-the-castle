@@ -194,7 +194,9 @@ public class PlayerBase : MonoBehaviour
     private void Die()
     {
         movement.SetCanMove(false);
+        SoundEffectManager.Play(SoundGroupName.PLAYERDEATH);
         animator.SetTrigger("Dying");
+
     }
 
     // Called using animation event

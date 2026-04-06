@@ -91,6 +91,7 @@ public class MapGenerator : MonoBehaviour
         // Set the new floor count and SaveGame()
         playerBase.SetFloorCount(floorNumber);
         SaveController.Instance.SaveGame();
+        DungeonBgmController.Instance.ChangeMusic(floorNumber);
     }
 
     private void BuildDungeonFloor(bool isBoss)
