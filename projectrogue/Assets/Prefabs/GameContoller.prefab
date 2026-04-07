@@ -45,6 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fd23368ce3daee47b0550c6d1d700b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveController
+  playerStats: {fileID: 0}
+  relicLookup: {fileID: 11400000, guid: ef4ee8229fd95a24e95ed6dfa4895aff, type: 2}
 --- !u!114 &2894927728550960611
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -58,3 +60,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SaveSettings
   audioMixer: {fileID: 24100000, guid: 36faf0167d2e72e4bbcb741152c80da0, type: 2}
+  settingsMenuController: {fileID: 0}
+  CurrentSettings:
+    displayModeIndex: 0
+    resolutionIndex: 0
+    masterVolume: -30
+    musicVolume: 1
+    sfxVolume: 1

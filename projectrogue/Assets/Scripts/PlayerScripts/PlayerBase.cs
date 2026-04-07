@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 // Health stats will be saved from here to JSON
 public class PlayerBase : MonoBehaviour
@@ -17,6 +18,11 @@ public class PlayerBase : MonoBehaviour
 
     [SerializeField] private WeaponDatabase weaponDatabase;
 
+    [SerializeField] private float dodgeOpacity = 0.4f;
+    [SerializeField] private float dodgeVisualDuration = 0.2f;
+
+    private Coroutine dodgeVisualCoroutine;
+
     private float nextDamageTime;
     private bool isDead = false;
 
@@ -24,6 +30,7 @@ public class PlayerBase : MonoBehaviour
     private PlayerMovement movement;
     private PlayerHud playerHud;
     private PlayerCombat combat;
+    private SpriteRenderer spriteRenderer;
 
     private void Awake()
     {
@@ -32,6 +39,7 @@ public class PlayerBase : MonoBehaviour
         playerHud = GetComponent<PlayerHud>();
         weapon = GetComponentInChildren<MeleeWeapon>();
         combat = GetComponent<PlayerCombat>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
 
         PlayerStats stats = GetComponent<PlayerStats>();
         floorCount = stats.GetFloorCount;
@@ -65,20 +73,27 @@ public class PlayerBase : MonoBehaviour
     public void TakeDamage(float amount)
     {
         if (Time.time < nextDamageTime) return;
-        SoundEffectManager.Play(SoundGroupName.PLAYERHURT);
 
-        nextDamageTime = Time.time + iFrameSeconds;
         PlayerRelics playerRelics = GetComponent<PlayerRelics>();
+        bool dodged = playerRelics != null && playerRelics.TryDodge();
 
-        if (playerRelics != null && playerRelics.TryDodge())
+        if (dodged)
         {
             Debug.Log("Attack dodged!");
             nextDamageTime = Time.time + iFrameSeconds;
 
-            animator.SetTrigger("Hurt"); // replace with dodge animation later
+            SoundEffectManager.Play(SoundGroupName.PLAYERDODGE);
+
+            if (dodgeVisualCoroutine != null)
+                StopCoroutine(dodgeVisualCoroutine);
+
+            dodgeVisualCoroutine = StartCoroutine(DodgeVisual());
             return;
         }
 
+        Debug.Log("Tried to play PLAYERHURT");
+
+        nextDamageTime = Time.time + iFrameSeconds;
         float finalDamage = amount * damageTakenMultiplier;
         Debug.Log($"Incoming damage: {amount}, multiplier: {damageTakenMultiplier}, final: {finalDamage}");
 
@@ -105,19 +120,27 @@ public class PlayerBase : MonoBehaviour
     public void TakeDamage(float amount, EnemyBase attacker)
     {
         if (Time.time < nextDamageTime) return;
-        SoundEffectManager.Play(SoundGroupName.PLAYERHURT);
 
-        nextDamageTime = Time.time + iFrameSeconds;
         PlayerRelics playerRelics = GetComponent<PlayerRelics>();
+        bool dodged = playerRelics != null && playerRelics.TryDodge();
 
-        if (playerRelics != null && playerRelics.TryDodge())
+        if (dodged)
         {
             Debug.Log("Attack dodged!");
             nextDamageTime = Time.time + iFrameSeconds;
 
-            animator.SetTrigger("Hurt"); // replace with dodge animation later
+            SoundEffectManager.Play(SoundGroupName.PLAYERDODGE);
+
+            if (dodgeVisualCoroutine != null)
+                StopCoroutine(dodgeVisualCoroutine);
+
+            dodgeVisualCoroutine = StartCoroutine(DodgeVisual());
             return;
         }
+
+        SoundEffectManager.Play(SoundGroupName.PLAYERHURT);
+
+        nextDamageTime = Time.time + iFrameSeconds;
 
         float finalDamage = amount * damageTakenMultiplier;
         Debug.Log($"Incoming damage: {amount}, multiplier: {damageTakenMultiplier}, final: {finalDamage}");
@@ -240,6 +263,27 @@ public class PlayerBase : MonoBehaviour
     public void SetDamageTakenMultiplier(float multiplier)
     {
         damageTakenMultiplier = multiplier;
+    }
+
+    private System.Collections.IEnumerator DodgeVisual()
+    {
+        if (spriteRenderer == null)
+            yield break;
+
+        Color c = spriteRenderer.color;
+        float originalAlpha = c.a;
+
+        c.a = dodgeOpacity;
+        spriteRenderer.color = c;
+
+        Debug.Log("Dodge visual");
+
+        yield return new WaitForSeconds(dodgeVisualDuration);
+
+        c.a = originalAlpha;
+        spriteRenderer.color = c;
+
+        dodgeVisualCoroutine = null;
     }
 
     // Getter

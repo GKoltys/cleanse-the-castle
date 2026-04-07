@@ -15,3 +15,7 @@ MonoBehaviour:
   relics:
   - {fileID: 11400000, guid: c4758b0aa16acbf4485ca969dd444ece, type: 2}
   - {fileID: 11400000, guid: cb9a84999efdd954a9a83a636d0df74e, type: 2}
+  - {fileID: 11400000, guid: f990315cd0de50044b7c79d2cad38431, type: 2}
+  - {fileID: 11400000, guid: 9206d43f228f21f4b8006fab629a4699, type: 2}
+  - {fileID: 11400000, guid: 3b5da3cd1ce9c9e4db4eb7dab6251584, type: 2}
+  - {fileID: 11400000, guid: e42ae548f15c2af499e80a868144e3ca, type: 2}

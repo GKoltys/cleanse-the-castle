@@ -14,7 +14,8 @@ public enum SoundGroupName
     PLAYERDEATH,
     STAIRS,
     KEY,
-    SWORDWHOOSH
+    SWORDWHOOSH,
+    PLAYERDODGE
 }
 
 // https://www.youtube.com/watch?v=rAX_r0yBwzQ
