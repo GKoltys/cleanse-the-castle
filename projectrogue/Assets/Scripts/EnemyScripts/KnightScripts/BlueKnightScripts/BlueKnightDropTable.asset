@@ -23,6 +23,4 @@ MonoBehaviour:
     weight: 15
   - itemPrefab: {fileID: 5648255974331334683, guid: da6718c887231b7498dcf139d24fa331, type: 3}
     weight: 25
-  - itemPrefab: {fileID: 813777909600454607, guid: 9a6fc01e6d80fea438f3dbdf8ee5d049, type: 3}
-    weight: 15
-  noDropWeight: 0
+  noDropWeight: 15
