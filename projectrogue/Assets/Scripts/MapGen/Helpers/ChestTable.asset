@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyDropTable
   lootTable:
   - itemPrefab: {fileID: 5648255974331334683, guid: da6718c887231b7498dcf139d24fa331, type: 3}
-    weight: 30
+    weight: 50
   - itemPrefab: {fileID: 813777909600454607, guid: 9a6fc01e6d80fea438f3dbdf8ee5d049, type: 3}
     weight: 30
   - itemPrefab: {fileID: 3159388518355482823, guid: c7b3509f70f254b4cb13723ace539bb3, type: 3}
-    weight: 40
+    weight: 20
   noDropWeight: 0
