@@ -63,6 +63,7 @@ public class PlayerMovement : MonoBehaviour
     public void SetCanMove(bool flag)
     {
         canMove = flag;
+        moveInput = Vector2.zero;
     }
 
     public void SetMoveSpeed(float speed) { moveSpeed = speed; }

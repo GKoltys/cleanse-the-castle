@@ -57,7 +57,7 @@ public class NPC : MonoBehaviour, IInteractable
         nameText.SetText(dialogueData.npcName);
         portraitImage.sprite = dialogueData.npcPortrait;
 
-        lastInteractor.GetComponent<PlayerMovement>().enabled = false;
+        lastInteractor.GetComponent<PlayerMovement>().SetCanMove(false);
 
         dialoguePanel.SetActive(true);
         StartCoroutine(Typeline());
@@ -106,7 +106,7 @@ public class NPC : MonoBehaviour, IInteractable
         dialoguePanel.SetActive(false);
 
         if (lastInteractor != null)
-            lastInteractor.GetComponent<PlayerMovement>().enabled = true;
+            lastInteractor.GetComponent<PlayerMovement>().SetCanMove(true);
     }
 
 }
