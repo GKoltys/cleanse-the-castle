@@ -354,7 +354,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2416448078568258391
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1643,7 +1643,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -2204,6 +2204,8 @@ MonoBehaviour:
   damageMultiplier: 0
   damageTakenMultiplier: 1
   weaponDatabase: {fileID: 11400000, guid: b1897e7230ef1864db2bb0e76c39df3f, type: 2}
+  dodgeOpacity: 0.4
+  dodgeVisualDuration: 0.2
 --- !u!114 &3921989527922571780
 MonoBehaviour:
   m_ObjectHideFlags: 0
