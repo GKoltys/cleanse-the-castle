@@ -38,6 +38,12 @@ public class AiController : MonoBehaviour
 
         nextAllowedTime = Time.time + 5f;
 
+        if (!InternetController.Instance.HasInternet())
+        {
+            Debug.Log("No internet connection");
+            return;
+        }
+
         responseReturned = true;
         string response = await CallOpenRouterAPI(prompt);
 
