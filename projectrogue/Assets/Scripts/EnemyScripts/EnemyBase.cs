@@ -18,6 +18,7 @@ public abstract class EnemyBase: MonoBehaviour
     protected EnemyCombatUI enemyCombatUI;
     protected EnemyLootDropper enemyLootDropper;
     protected PlayerRelics playerRelics;
+    protected PlayerBase playerBase;
 
     protected virtual void Awake()
     {
@@ -32,6 +33,7 @@ public abstract class EnemyBase: MonoBehaviour
         if (player != null)
         {
             playerRelics = player.GetComponent<PlayerRelics>();
+            playerBase = player.GetComponent<PlayerBase>();
         }
     }
 
