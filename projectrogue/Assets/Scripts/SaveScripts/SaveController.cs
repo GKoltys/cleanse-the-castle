@@ -67,7 +67,7 @@ public class SaveController : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         // Keep this commented until final build
-        // if (!shouldLoadOnNextScene) return;
+        if (!shouldLoadOnNextScene) return;
 
         shouldLoadOnNextScene = false;
         Debug.Log(scene.name);

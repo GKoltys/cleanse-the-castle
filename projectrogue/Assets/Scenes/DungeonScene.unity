@@ -794,7 +794,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: -8666559414442002672, guid: 06eb99cd45a79d54391a7d472a209a60, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1499,7 +1499,7 @@ GameObject:
   - component: {fileID: 1076541281}
   - component: {fileID: 1076541280}
   m_Layer: 5
-  m_Name: DialoguePanel
+  m_Name: AiDialoguePanel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1559,11 +1559,11 @@ RectTransform:
   - {fileID: 1346758552}
   - {fileID: 1161830448}
   - {fileID: 2009243665}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1599518775}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 960, y: 200}
+  m_AnchoredPosition: {x: 0.00012207031, y: 200}
   m_SizeDelta: {x: 1000, y: 250}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1099365925
@@ -2062,7 +2062,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: NPC Name
+  m_text: ???
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -3087,6 +3087,7 @@ RectTransform:
   - {fileID: 887223657}
   - {fileID: 920627947}
   - {fileID: 1374203287}
+  - {fileID: 1076541282}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -3104,6 +3105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1612338942}
   - component: {fileID: 1612338943}
+  - component: {fileID: 1612338944}
   m_Layer: 0
   m_Name: AiController
   m_TagString: Untagged
@@ -3139,6 +3141,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AiController
   apiKey: API_KEY
+--- !u!114 &1612338944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1612338941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3235728192c8c964f9871c422827aeab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AiNarratorController
+  dialoguePanel: {fileID: 1076541279}
+  dialogueText: {fileID: 1161830449}
+  nameText: {fileID: 1346758553}
+  typingSpeed: 0.05
 --- !u!4 &1681050575 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8705102305236551486, guid: 477b3ff5ed06350499df9b25f99a4e1f, type: 3}
@@ -3609,9 +3627,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: NPC, Assembly-CSharp
-        m_MethodName: EndDialogue
+      - m_Target: {fileID: 1612338944}
+        m_TargetAssemblyTypeName: AiNarratorController, Assembly-CSharp
+        m_MethodName: CloseDialogue
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4949,4 +4967,3 @@ SceneRoots:
   - {fileID: 1182259967}
   - {fileID: 171272271}
   - {fileID: 1612338942}
-  - {fileID: 1076541282}

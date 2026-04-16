@@ -16,9 +16,9 @@ public class AiController : MonoBehaviour
     private bool responseReturned = false;
 
     [SerializeField] private string apiKey = "API_KEY";
-    private readonly string model = "google/gemma-4-26b-a4b-it:free";
+    private readonly string model = "nvidia/nemotron-3-super-120b-a12b:free";
     // google/gemma-4-26b-a4b-it:free - only good free one I could find. Though limit is reached quickly by all users
-    // nvidia/nemotron-3-super-120b-a12b:free - using for testing, responses inadequit
+    // nvidia/nemotron-3-super-120b-a12b:free - using for testing, responses inadequit but limit not being reached
 
     private void Awake()
     {
@@ -29,7 +29,6 @@ public class AiController : MonoBehaviour
         }
 
         Instance = this;
-        DontDestroyOnLoad(gameObject);
     }
 
     public async void AskAi(string prompt)
@@ -51,7 +50,8 @@ public class AiController : MonoBehaviour
 
         if (responseReturned)
         {
-
+            Debug.Log("Should be displaying AI response");
+            AiNarratorController.Instance.ShowDialogue(response);
         }
     }
 
