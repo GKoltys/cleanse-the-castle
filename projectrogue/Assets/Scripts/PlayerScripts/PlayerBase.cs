@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 // Health stats will be saved from here to JSON
-public class PlayerBase : MonoBehaviour
+public class PlayerBase : MonoBehaviour, IShopPlayer
 {
     [Header("Stats and Equipment (Current)")]
     [SerializeField] private int floorCount;

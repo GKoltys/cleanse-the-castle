@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHud : MonoBehaviour
+public class PlayerHud : MonoBehaviour, IShopHud
 {
     private PlayerStats playerStats;
     private PlayerBase playerBase;
