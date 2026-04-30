@@ -67,7 +67,7 @@ public class RedKnightBossEnemy : EnemyBase, IMapGenInit
                 break;
 
             case > 0.6f:
-                performance = "confortable";
+                performance = "comfortable";
                 playerHealth = "above half";
                 break;
 
