@@ -21,5 +21,5 @@ MonoBehaviour:
   description: Gives the player a permanent speed boost
   statDescription: 
   effect: {fileID: 11400000, guid: 0e57d4877750a4040996b477c4725d65, type: 2}
-  buyPrice: 30
+  buyPrice: 45
   itemPrefab: {fileID: 4227109411642996397, guid: 16cef5ea255798b42a8f884f817b7a46, type: 3}

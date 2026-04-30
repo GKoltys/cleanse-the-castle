@@ -459,8 +459,8 @@ MonoBehaviour:
   playerLayer:
     serializedVersion: 2
     m_Bits: 8
-  swipeDamage: 40
-  dashDamage: 30
+  swipeDamage: 50
+  dashDamage: 35
   dashChainCount: 1
   dashForce: 8
 --- !u!114 &5511267562438045038

@@ -589,9 +589,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SlimeEnemy
   maxHealth: 80
-  damage: 10
+  damage: 20
   moveSpeed: 1.5
   agroRadius: 5
+  movement: {fileID: 0}
 --- !u!114 &314052343704183663
 MonoBehaviour:
   m_ObjectHideFlags: 0

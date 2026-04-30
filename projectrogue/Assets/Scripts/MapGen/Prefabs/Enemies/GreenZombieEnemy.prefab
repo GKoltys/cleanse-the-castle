@@ -384,9 +384,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ZombieEnemy
   maxHealth: 100
-  damage: 10
+  damage: 25
   moveSpeed: 2
   agroRadius: 5
+  movement: {fileID: 0}
 --- !u!114 &9165406746645325477
 MonoBehaviour:
   m_ObjectHideFlags: 0
