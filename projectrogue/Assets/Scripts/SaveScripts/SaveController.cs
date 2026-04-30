@@ -202,4 +202,9 @@ public class SaveController : MonoBehaviour
     }
 
     public String GetSaveLocation() { return saveLocation; }
+
+    internal void SetSaveLocation(string path)
+    {
+        saveLocation = path;
+    }
 }
