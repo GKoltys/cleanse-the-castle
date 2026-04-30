@@ -33,6 +33,15 @@ public class UIController : MonoBehaviour
         {
             bool isActive = !menuCanvas.activeSelf;
 
+            if (isActive)
+            {
+                Time.timeScale = 0f;
+            }
+            else
+            {
+                Time.timeScale = 1f;
+            }
+
             menuCanvas.SetActive(!menuCanvas.activeSelf);
 
             playerInput.enabled = !isActive;

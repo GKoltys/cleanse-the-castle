@@ -12,6 +12,7 @@ public class PauseMenuController : MonoBehaviour
     public void ResumeGame()
     {
         menuCanvas.SetActive(false);
+        Time.timeScale = 1f;
         UIController.Instance.SetPlayerInputs(true);
     }
     
@@ -40,6 +41,7 @@ public class PauseMenuController : MonoBehaviour
 
     public void QuitMainMenu()
     {
+        Time.timeScale = 1f;
         OnSavePressed();
         SceneManager.LoadSceneAsync(0);
     }
