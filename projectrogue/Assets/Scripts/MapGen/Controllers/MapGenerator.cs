@@ -49,6 +49,7 @@ public class MapGenerator : MonoBehaviour
     [SerializeField] private SpawnTable[] spawnEntries;
 
     [SerializeField] private StartingAreaCameraClamp cameraClamp;
+    [SerializeField] private bool buildOnStart = true;
 
     private MapData currentMap;
     private int bossFloorThreshold = 10;
@@ -61,6 +62,11 @@ public class MapGenerator : MonoBehaviour
 
     private void Start()
     {
+        if (!buildOnStart)
+        {
+            return;
+        }
+
         floorNumber = playerBase.GetFloorCount;
         BuildFloor();
     }
@@ -100,7 +106,7 @@ public class MapGenerator : MonoBehaviour
         floorSeed = Random.Range(int.MinValue, int.MaxValue);
         currentMap = ProceduralGenerator.GenerateFloor(width, height, padding,
             bspMaxDepth, minLeafSize, minRoomSize, maxRoomSize, floorSeed, corridorWidth);
-        Render(currentMap, isBoss);
+        Render(currentMap, isBoss, playerBase.GetFloorCount);
 
         var freeFloors = CollectFloorTiles(currentMap);
 
@@ -111,7 +117,7 @@ public class MapGenerator : MonoBehaviour
         freeFloors.Remove(playerPos);
 
         // place prefabs on map
-        PlacePrefabs(freeFloors, playerPos);
+        PlacePrefabs(freeFloors, playerPos, playerBase.GetFloorCount);
 
         // place player position
         PlacePlayer(playerPos);
@@ -121,7 +127,7 @@ public class MapGenerator : MonoBehaviour
     private void BuildBossFloor(int floorNumber, bool isBoss)
     {
         currentMap = BossFloorGenerator.GenerateBossRoom(bossWidth, bossHeight, padding);
-        Render(currentMap, isBoss);
+        Render(currentMap, isBoss, playerBase.GetFloorCount);
 
         Vector2Int bossTile = BossFloorGenerator.GetBossSpawnTile(currentMap);
         Vector2Int playerTile = BossFloorGenerator.GetPlayerSpawnTile(currentMap, padding);
@@ -175,16 +181,13 @@ public class MapGenerator : MonoBehaviour
             yield return FadeUIController.Instance.FadeIn();
     }
 
-    private void Render(MapData map, bool isBoss)
+    internal void Render(MapData map, bool isBoss, int floors)
     {
         // for clearing previous generated map's tiles
         floorTilemap.ClearAllTiles();
         wallTilemap.ClearAllTiles();
         decorTilemap.ClearAllTiles();
         colliderDecorTilemap.ClearAllTiles();
-
-        // get reference to player floor count
-        float floors = playerBase.GetFloorCount;
 
         TileBase currentFloorTile;
         TileBase currentWallTile;
@@ -278,7 +281,7 @@ public class MapGenerator : MonoBehaviour
 
     // randomly place different types of prefabs across the generated level
     // https://docs.unity3d.com/2020.3/Documentation/Manual/InstantiatingPrefabs.html
-    private void PlacePrefabs(List<Vector2Int> floors, Vector2Int playerTile)
+    internal void PlacePrefabs(List<Vector2Int> floors, Vector2Int playerTile, int floorCount)
     {
         // collect tiles from map that are set to floor
         if (floors.Count == 0) return;
@@ -300,7 +303,7 @@ public class MapGenerator : MonoBehaviour
             for (int i = 0; i < n; i++)
             {
                 // increase/decrease spawnchance of spawn entry
-                float chance = entry.GetSpawnChance(playerBase.GetFloorCount);
+                float chance = entry.GetSpawnChance(floorCount);
 
                 // roll chance for this instance of the object
                 if (Random.value > chance)
@@ -419,7 +422,7 @@ public class MapGenerator : MonoBehaviour
     }
 
     // remove entities/prefabs from the map
-    private void ClearEntitiesRoot()
+    internal void ClearEntitiesRoot()
     {
         if (entitiesRoot == null) return;
         for (int i = entitiesRoot.childCount - 1; i >= 0; i--)
@@ -475,7 +478,7 @@ public class MapGenerator : MonoBehaviour
     }
 
     // check floor count so every 10 is a boss room
-    private bool IsBossFloor(int nextFloorNumber)
+    internal bool IsBossFloor(int nextFloorNumber)
     {
         return nextFloorNumber % bossFloorThreshold == 0 && nextFloorNumber != 0;
     }

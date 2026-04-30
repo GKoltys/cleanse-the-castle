@@ -27,12 +27,20 @@ public class AiNarratorController : MonoBehaviour
 
         Instance = this;
 
-        dialoguePanel.SetActive(false);
+        if (dialoguePanel != null)
+        {
+            dialoguePanel.SetActive(false);
+        }
     }
 
     private void Start()
     {
-        playerInput = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerInput>();
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+
+        if (player != null)
+        {
+            playerInput = player.GetComponent<PlayerInput>();
+        }
     }
 
     public void ShowDialogue(string text)
@@ -41,8 +49,11 @@ public class AiNarratorController : MonoBehaviour
 
         isActive = true;
 
-        playerInput.actions["Attack"].Disable();
-        playerInput.actions["Move"].Disable();
+        if (playerInput != null)
+        {
+            playerInput.actions["Attack"].Disable();
+            playerInput.actions["Move"].Disable();
+        }
 
         nameText.SetText("???");
 
@@ -73,8 +84,11 @@ public class AiNarratorController : MonoBehaviour
         dialoguePanel.SetActive(false);
         isActive = false;
 
-        playerInput.actions["Attack"].Enable();
-        playerInput.actions["Move"].Enable();
+        if (playerInput != null)
+        {
+            playerInput.actions["Attack"].Enable();
+            playerInput.actions["Move"].Enable();
+        }
     }
 
     private void Update()

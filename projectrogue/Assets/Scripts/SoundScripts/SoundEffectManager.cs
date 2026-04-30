@@ -25,7 +25,13 @@ public class SoundEffectManager : MonoBehaviour
 
     public static void Play(SoundGroupName soundName)
     {
+        if (soundEffectLibrary == null || audioSource == null)
+        {
+            return;
+        }
+
         AudioClip audioClip = soundEffectLibrary.GetRandomClip(soundName);
+
         if (audioClip != null)
         {
             audioSource.PlayOneShot(audioClip);

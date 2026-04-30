@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ShopNPC : MonoBehaviour, IInteractable
+public class ShopNPC : MonoBehaviour, IInteractable, IShopStock
 {
     private PlayerInput playerInput;
 

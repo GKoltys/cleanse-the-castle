@@ -17,6 +17,8 @@ public class ShopController : MonoBehaviour
     // current instance of shop, can have multiple different shops
     private ShopNPC currentShop;
 
+    private ShopPurchaseService purchaseService = new ShopPurchaseService();
+
     private void Awake()
     {
         instance = this;
@@ -25,13 +27,15 @@ public class ShopController : MonoBehaviour
     // set shop ui to hide on start and get reference to player gold
     void Start()
     {
-        shopPanel.SetActive(false);
+        if (shopPanel != null)
+        {
+            shopPanel.SetActive(false);
+        }
 
-        if (playerBase != null) {
-        
+        if (playerBase != null)
+        {
             UpdateMoneyDisplay(playerBase.GetCoinCount);
         }
-        
     }
 
     // update the player's current money in the shop ui
@@ -49,22 +53,33 @@ public class ShopController : MonoBehaviour
         UIController.Instance.SetUiListener(false);
 
         currentShop = shop;
-        shopPanel.SetActive(true);
+
+        if (shopPanel != null)
+        {
+            shopPanel.SetActive(true);
+        }
+
         if (shopTitleText != null)
         {
             shopTitleText.text = shop.shopkeeperName + "'s Shop";
         }
+
         if (playerBase != null)
         {
             UpdateMoneyDisplay(playerBase.GetCoinCount);
         }
+
         RefreshShopDisplay();
     }
 
     // close the shop ui of a given shop npc
     public void CloseShop()
     {
-        shopPanel.SetActive(false);
+        if (shopPanel != null)
+        {
+            shopPanel.SetActive(false);
+        }
+
         currentShop = null;
 
         UIController.Instance.SetUiListener(true);
@@ -73,7 +88,7 @@ public class ShopController : MonoBehaviour
     // clear the shop grid and re add shop slots with current stock
     public void RefreshShopDisplay()
     {
-        if (currentShop == null)
+        if (currentShop == null || shopGrid == null || shopSlotPrefab == null)
         {
             return;
         }
@@ -107,36 +122,47 @@ public class ShopController : MonoBehaviour
     // buys the selected item
     public void BuyItem(ConsumableItemData itemData, int price)
     {
+        bool bought = TryBuyItem(itemData, price);
 
+        if (bought)
+        {
+            // refresh shop grid
+            RefreshShopDisplay();
+        }
+    }
+
+    // core purchase logic separated so it can be tested more easily
+    public bool TryBuyItem(ConsumableItemData itemData, int price)
+    {
         if (currentShop == null || itemData == null || playerBase == null)
         {
             Debug.Log("Null error");
-            return;
+            return false;
         }
 
-        // not enough gold
-        if (!playerBase.SpendGold(price))
+        bool bought = purchaseService.TryBuyItem(
+            itemData,
+            price,
+            playerBase,
+            playerEffect,
+            playerHud,
+            currentShop
+        );
+
+        if (!bought)
         {
             ShowStatus("Not enough gold!");
-            return;
+            return false;
         }
-
-        // apply effect of item to player
-        itemData.effect.Apply(playerEffect);
-
-        // update buff icon display in player hud
-        playerHud.AddBuffIcon(itemData);
-
-        // remove one of the purchased item from the shop stock
-        bool removed = currentShop.RemoveFromShopStock(itemData, 1);
 
         Debug.Log($"Bought {itemData.itemName} for {price} gold.");
 
         // update player money count
         UpdateMoneyDisplay(playerBase.GetCoinCount);
-        // refresh shop grid
-        RefreshShopDisplay();
+
         ShowStatus("Item bought!");
+
+        return true;
     }
 
     // display a text in the shop ui on successful/unsuccessful shop purchase
@@ -174,5 +200,10 @@ public class ShopController : MonoBehaviour
             itemDescriptionText.text = "";
         }
     }
+
+    // helper method to allow tests to inject a shop instance
+    public void SetCurrentShopForTesting(ShopNPC shop)
+    {
+        currentShop = shop;
+    }
 }
-    

@@ -82,8 +82,8 @@ public class AiController : MonoBehaviour
 
             if (response.IsSuccessStatusCode)
             {
-                OpenRouterResponse responseObject = JsonConvert.DeserializeObject<OpenRouterResponse>(result);
-                return responseObject.choices[0].message.content;
+                string end = ParseOpenRouterResponse(result);
+                return end;
             }
             else
             {
@@ -117,6 +117,14 @@ public class AiController : MonoBehaviour
             "Fight duration: " + duration + "\n" +
 
             "Tone: ominous, mocking.";
+    }
+
+    internal string ParseOpenRouterResponse(string json)
+    {
+        OpenRouterResponse responseObject =
+            JsonConvert.DeserializeObject<OpenRouterResponse>(json);
+
+        return responseObject.choices[0].message.content;
     }
 
     // Helper classes for JSON parsing

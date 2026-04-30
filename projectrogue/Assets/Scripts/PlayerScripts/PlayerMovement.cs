@@ -16,7 +16,11 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        moveSpeed = GetComponent<PlayerStats>().GetSpeed;
+        PlayerStats stats = GetComponent<PlayerStats>();
+        if (stats != null)
+        {
+            moveSpeed = stats.GetSpeed;
+        }
     }
 
     private void OnMove(InputValue value)
@@ -29,8 +33,11 @@ public class PlayerMovement : MonoBehaviour
             {
                 lastMoveDirection = moveInput.normalized;
 
-                animator.SetFloat("LastInputX", lastMoveDirection.x);
-                animator.SetFloat("LastInputY", lastMoveDirection.y);
+                if (animator != null && animator.runtimeAnimatorController != null)
+                {
+                    animator.SetFloat("LastInputX", lastMoveDirection.x);
+                    animator.SetFloat("LastInputY", lastMoveDirection.y);
+                }
             }
         }
     }
@@ -41,22 +48,29 @@ public class PlayerMovement : MonoBehaviour
         {
             // Movement
             Vector2 direction = moveInput.normalized; // "normalized" prevents faster diagonal movement
-            rb.linearVelocity = direction * moveSpeed;
+            if (rb != null)
+                rb.linearVelocity = direction * moveSpeed;
 
-            // Animation
             bool isMoving = moveInput.sqrMagnitude > 0.01f;
-            animator.SetBool("IsRunning", isMoving);
 
-            animator.SetFloat("InputX", moveInput.x);
-            animator.SetFloat("InputY", moveInput.y);
+            if (animator != null && animator.runtimeAnimatorController != null)
+            {
+                animator.SetBool("IsRunning", isMoving);
+                animator.SetFloat("InputX", moveInput.x);
+                animator.SetFloat("InputY", moveInput.y);
+            }
         }
         else
         {
-            rb.linearVelocity = Vector2.zero;
+            if (rb != null)
+                rb.linearVelocity = Vector2.zero;
 
-            animator.SetBool("IsRunning", false);
-            animator.SetFloat("InputX", 0f);
-            animator.SetFloat("InputY", 0f);
+            if (animator != null && animator.runtimeAnimatorController != null)
+            {
+                animator.SetBool("IsRunning", false);
+                animator.SetFloat("InputX", 0f);
+                animator.SetFloat("InputY", 0f);
+            }
         }
     }
 
@@ -64,6 +78,11 @@ public class PlayerMovement : MonoBehaviour
     {
         canMove = flag;
         moveInput = Vector2.zero;
+    }
+
+    public bool CanMove()
+    {
+        return canMove;
     }
 
     public void SetMoveSpeed(float speed) { moveSpeed = speed; }

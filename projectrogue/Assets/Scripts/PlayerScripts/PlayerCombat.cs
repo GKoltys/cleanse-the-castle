@@ -19,9 +19,18 @@ public class PlayerCombat : MonoBehaviour
         animator = GetComponent<Animator>();
 
         PlayerBase player = GetComponent<PlayerBase>();
-        weapon = player.GetWeapon;
-        attackCooldown = weapon.AttackCooldown;
-        damageMultiplier = player.GetDamageMultiplier;
+
+        if (player != null)
+        {
+            weapon = player.GetWeapon;
+
+            if (weapon != null)
+            {
+                attackCooldown = weapon.AttackCooldown;
+            }
+
+            damageMultiplier = player.GetDamageMultiplier;
+        }
     }
 
     public void OnAttack()
@@ -62,11 +71,18 @@ public class PlayerCombat : MonoBehaviour
     // Called by attackAnimation event
     public void ApplyAttackHit()
     {
+        if (weapon == null) return;
         weapon.Attack(lastFacing, transform.position, damageMultiplier);
     }
 
     public void SetDamageMultiplier(float damageMultiplier)
     {
         this.damageMultiplier = damageMultiplier;
+    }
+
+    internal void SetWeaponForTesting(MeleeWeapon testWeapon, float cooldown)
+    {
+        weapon = testWeapon;
+        attackCooldown = cooldown;
     }
 }

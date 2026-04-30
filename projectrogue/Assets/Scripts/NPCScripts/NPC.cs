@@ -18,7 +18,10 @@ public class NPC : MonoBehaviour, IInteractable
 
     private void Awake()
     {
-        interactionIcon.SetActive(false);
+        if (interactionIcon != null)
+        {
+            interactionIcon.SetActive(false);
+        }
     }
 
     public void Interact(GameObject interactor)

@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections;
 
 // Health stats will be saved from here to JSON
-public class PlayerBase : MonoBehaviour
+public class PlayerBase : MonoBehaviour, IShopPlayer
 {
     [Header("Stats and Equipment (Current)")]
     [SerializeField] private int floorCount;
@@ -42,15 +42,23 @@ public class PlayerBase : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         PlayerStats stats = GetComponent<PlayerStats>();
-        floorCount = stats.GetFloorCount;
-        speed = stats.GetSpeed;
-        iFrameSeconds = stats.GetIFrameSeconds;
-        maxHealth = stats.GetMaxHealth;
-        health = stats.GetHealth;
-        coinCount = stats.GetCoinCount;
-        keyCount = stats.GetKeyCount;
-        weapon.SetWeaponData(weaponDatabase.GetWeaponById(stats.GetWeapon));
-        damageMultiplier = stats.GetDamageMultiplier;
+
+        if (stats != null)
+        {
+            floorCount = stats.GetFloorCount;
+            speed = stats.GetSpeed;
+            iFrameSeconds = stats.GetIFrameSeconds;
+            maxHealth = stats.GetMaxHealth;
+            health = stats.GetHealth;
+            coinCount = stats.GetCoinCount;
+            keyCount = stats.GetKeyCount;
+            damageMultiplier = stats.GetDamageMultiplier;
+
+            if (weapon != null && weaponDatabase != null)
+            {
+                weapon.SetWeaponData(weaponDatabase.GetWeaponById(stats.GetWeapon));
+            }
+        }
     }
 
     public void ApplyLoadedStats(PlayerStats stats)
@@ -98,11 +106,18 @@ public class PlayerBase : MonoBehaviour
         Debug.Log($"Incoming damage: {amount}, multiplier: {damageTakenMultiplier}, final: {finalDamage}");
 
         health -= finalDamage;
-        playerHud.UpdateHealth(health);
+
+        if (playerHud != null)
+        {
+            playerHud.UpdateHealth(health);
+        }
+
+        if (animator != null && animator.runtimeAnimatorController != null)
+        {
+            animator.SetTrigger("Hurt");
+        }
 
         Debug.Log("Hurt " + health);
-
-        animator.SetTrigger("Hurt");
 
         if (health <= 0)
         {
@@ -146,14 +161,21 @@ public class PlayerBase : MonoBehaviour
         Debug.Log($"Incoming damage: {amount}, multiplier: {damageTakenMultiplier}, final: {finalDamage}");
 
         health -= finalDamage;
-        playerHud.UpdateHealth(health);
+
+        if (playerHud != null)
+        {
+            playerHud.UpdateHealth(health);
+        }
 
         // deals damage when attacked by enemy if player has thorns multiplier
         playerRelics?.TriggerThorns(attacker);
 
         Debug.Log("Hurt " + health);
 
-        animator.SetTrigger("Hurt");
+        if (animator != null && animator.runtimeAnimatorController != null)
+        {
+            animator.SetTrigger("Hurt");
+        }
 
 
 
